@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarLocationMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.Location" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="loc_x" property="locX" jdbcType="DOUBLE" />
+    <result column="loc_y" property="locY" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id,user_id,create_time,update_time,type,X(point) AS loc_x,Y(point) AS loc_y
+  </sql>
+  <select id="findLocationByTimeAndUserId" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"></include>
+  	from realtime_location
+  	WHERE user_id = #{userId,jdbcType=INTEGER} 
+  	AND unix_timestamp(create_time) <![CDATA[ >=]]> unix_timestamp(#{start,jdbcType=TIMESTAMP})
+  	AND unix_timestamp(create_time) <![CDATA[ <=]]> unix_timestamp(#{end,jdbcType=TIMESTAMP})
+  	ORDER BY create_time
+  </select>
+  
+  <insert id="insertSelective" parameterType="com.yinghai.macao.common.model.Location">
+  	insert into realtime_location
+  	<trim  prefix="(" suffix=")" suffixOverrides=",">
+  		<if test="id != null">
+  			id,
+  		</if>
+  		<if test="userId != null">
+  			user_id,
+  		</if>
+  		<if test="createTime != null">
+  			create_time,
+  		</if>
+  		<if test="updateTime != null">
+  			update_time,
+  		</if>
+  		<if test="type != null">
+  			type,
+  		</if>
+  		<if test="locX != null and locY != null">
+  			point,
+  		</if>
+  	</trim>
+  	values
+  	<trim prefix="(" suffix=")" suffixOverrides=",">
+  		<if test="id != null">
+  			#{id,jdbcType=INTEGER},
+  		</if>
+  		<if test="userId != null">
+  			#{userId,jdbcType=INTEGER},
+  		</if>
+  		<if test="createTime != null">
+  			#{createTime,jdbcType=TIMESTAMP},
+  		</if>
+  		<if test="updateTime != null">
+  			#{updateTime,jdbcType=TIMESTAMP},
+  		</if>
+  		<if test="type != null">
+  			#{type,jdbcType=INTEGER},
+  		</if>
+  		<if test="locX != null and locY != null">
+  			GeomFromText(CONCAT("POINT(",#{locX,jdbcType=DOUBLE}," ",#{locY,jdbcType=DOUBLE})),
+  		</if>
+  	</trim>
+  </insert>
+</mapper>

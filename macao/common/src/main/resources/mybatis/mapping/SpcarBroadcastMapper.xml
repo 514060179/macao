@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarBroadcastMapper">
+
+<resultMap type="com.yinghai.macao.common.model.SpcarBroadcast" id="BaseResultMap">
+
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="content" property="content" jdbcType="LONGVARCHAR" />
+		<result column="createtime" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="updatetime" property="updateTime" jdbcType="TIMESTAMP" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+		
+</resultMap>
+
+<sql id="Base_Column_List">
+	id, title, content, createtime,updatetime,type
+</sql>
+
+<select id="selectByPrimaryKey" parameterType="Integer" resultMap="BaseResultMap">
+	select 
+	 <include refid="Base_Column_List" />
+	 from spcar_broadcast
+	 where id = #{id,jdbcType=INTEGER}
+</select>
+
+<insert id="insert" parameterType="com.yinghai.macao.common.model.SpcarBroadcast">
+insert into spcar_broadcast (id,title,content,createtime,updatetime,type) 
+values(#{id,jdbcType=INTEGER},#{title,jdbcType=VARCHAR},#{content,jdbcType=LONGVARCHAR},
+#{createTime,jdbcType=TIMESTAMP},#{updateTime,jdbcType=TIMESTAMP},#{type,jdbcType=INTEGER})
+</insert>
+
+<update id="updateByPrimaryKey" parameterType="com.yinghai.macao.common.model.SpcarBroadcast">
+update spcar_broadcast
+<trim prefix="set" suffixOverrides=",">
+<if test="title!=null">title=#{title,jdbcType=VARCHAR},</if>
+<if test="content!=null">content=#{content,jdbcType=LONGVARCHAR},</if>
+<if test="createTime!=null">createtime=#{createTime,jdbcType=TIMESTAMP},</if>
+<if test="updateTime!=null">updatetime=#{updateTime,jdbcType=TIMESTAMP},</if>
+<if test="type!=null">type=#{type,jdbcType=INTEGER},</if>
+</trim>
+where id = #{id,jdbcType=INTEGER}
+</update>
+
+<delete id="deleteByPrimaryKey" parameterType="Integer">
+delete from spcar_broadcast where id = #{id,jdbcType=INTEGER}
+</delete>
+
+<select id="findList"  resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.SpcarBroadcast">
+select 
+<include refid="Base_Column_List" />
+	 from spcar_broadcast where 1=1 
+	 	 <if test="id!=null">
+	    	and id = #{id,jdbcType=INTEGER}
+	    </if>
+	    <if test="title!=null">
+	    	and title = #{title,jdbcType=VARCHAR}
+	    </if>
+	      <if test="content!=null">
+	    	and content like #{content,jdbcType=LONGVARCHAR}
+	    </if>
+	      <if test="createTime!=null">
+	    	and createtime = #{createTime,jdbcType=TIMESTAMP}
+	    </if>
+	       <if test="updateTime!=null">
+	    	and updatetime = #{updateTime,jdbcType=TIMESTAMP}
+	    </if>
+	     <if test="type!=null">
+	    	and type = #{type,jdbcType=INTEGER}
+	    </if>
+	    order by id desc
+</select>
+
+<select id="getList"  resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.SpcarBroadcast">
+select 
+<include refid="Base_Column_List" />
+	 from spcar_broadcast where 1=1 
+	 	 <if test="id!=null">
+	    	and id = #{id,jdbcType=INTEGER}
+	    </if>
+	    <if test="title!=null">
+	    	and title = #{title,jdbcType=VARCHAR}
+	    </if>
+	      <if test="content!=null">
+	    	and content like #{content,jdbcType=LONGVARCHAR}
+	    </if>
+	      <if test="createTime!=null">
+	    	and createtime = #{createTime,jdbcType=TIMESTAMP}
+	    </if>
+	       <if test="updateTime!=null">
+	    	and updatetime = #{updateTime,jdbcType=TIMESTAMP}
+	    </if>
+	     <if test="type!=null">
+	    	and type = #{type,jdbcType=INTEGER}
+	    </if>
+	    order by id desc
+</select>
+
+
+</mapper>

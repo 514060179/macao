@@ -1,0 +1,33 @@
+<!-- Page Sidebar -->
+<div class="page-sidebar" id="sidebar">
+    <!-- Page Sidebar Header-->
+    <div class="sidebar-header-wrapper">
+        <input type="text" class="searchinput"/>
+        <i class="searchicon fa fa-search"></i>
+    </div>
+    <ul class="nav sidebar-menu">
+        <#if menu??>
+            <#list menu as item>
+                <#if spcarManager??>
+                    <#if Session.spcarManager.roleId=0>
+                        <li class="<#if item.lable='${lable!}'>active</#if>">
+                            <a href="${base!}/${item.url!}">
+                                <i class="${item.icon!}"></i>
+                                <span class="menu-text"> ${item.name!} </span>
+                            </a>
+                        </li>
+                        <#else>
+                            <#if item.jurisdiction=false>
+                                <li class="<#if item.lable='${lable!}'>active</#if>">
+                                    <a href="${base!}/${item.url!}">
+                                        <i class="${item.icon!}"></i>
+                                        <span class="menu-text"> ${item.name!} </span>
+                                    </a>
+                                </li>
+                            </#if>
+                    </#if>
+                </#if>
+            </#list>
+        </#if>
+    </ul>
+</div>

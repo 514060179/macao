@@ -1,0 +1,407 @@
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-1] ERROR com.paypal.base.HttpConnection - Response code: 401	Error response: {"error":"invalid_client","error_description":"Client Authentication failed"}
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-9] ERROR com.paypal.base.HttpConnection - Response code: 401	Error response: {"error":"invalid_client","error_description":"Client Authentication failed"}
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.OAuthTokenCredential - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-2] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-2] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-2] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-10] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-10] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"MALFORMED_REQUEST","message":"Incoming JSON request does not map to API request","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#MALFORMED_REQUEST","debug_id":"64c71a40d1c23"}
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@13bc3e72, org.apache.catalina.connector.ResponseFacade@53fc1bf6]
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@33d079a7, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@33d079a7, org.apache.catalina.connector.ResponseFacade@137c881]
+[http-apr-8089-exec-9] WARN com.paypal.base.rest.OAuthTokenCredential - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-9] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@33d079a7, org.apache.catalina.connector.ResponseFacade@137c881]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@33d079a7, org.apache.catalina.connector.ResponseFacade@137c881]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"PAYMENT_ALREADY_DONE","message":"Payment has been done already for this cart.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"cee7daeb51916"}
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@33d079a7, org.apache.catalina.connector.ResponseFacade@137c881]
+[http-apr-8089-exec-5] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@33d079a7, org.apache.catalina.connector.ResponseFacade@137c881]
+[http-apr-8089-exec-2] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-2] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@33d079a7]
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"amount.total","issue":"Value must not be blank."},{"field":"amount","issue":"Refund amount cannot be zero."},{"field":"amount","issue":"Amount object in this resource type must not include amount details."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"2c297249a6d6"}
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@33d079a7]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"amount.total","issue":"Value must not be blank."},{"field":"amount","issue":"Refund amount cannot be zero."},{"field":"amount","issue":"Amount object in this resource type must not include amount details."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"f5bd579d75bf5"}
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@33d079a7]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"amount.total","issue":"Value must not be blank."},{"field":"amount","issue":"Amount object in this resource type must not include amount details."},{"field":"amount","issue":"Refund amount cannot be zero."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"2ce81907136f2"}
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@33d079a7]
+[http-apr-8089-exec-5] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-5] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"amount.total","issue":"Value must not be blank."},{"field":"amount","issue":"Amount object in this resource type must not include amount details."},{"field":"amount","issue":"Refund amount cannot be zero."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"11a476fe1ee9d"}
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@33d079a7]
+[http-apr-8089-exec-2] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-2] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"amount.total","issue":"Value must not be blank."},{"field":"amount","issue":"Refund amount cannot be zero."},{"field":"amount","issue":"Amount object in this resource type must not include amount details."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"8e116936d3a6e"}
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@481ae8a8]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-10] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-10] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"amount.total","issue":"Value must not be blank."},{"field":"amount","issue":"Amount object in this resource type must not include amount details."},{"field":"amount","issue":"Refund amount cannot be zero."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"2adf48986f40d"}
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@3d35f8c6, org.apache.catalina.connector.ResponseFacade@2baa203d]
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.OAuthTokenCredential - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@3d35f8c6, org.apache.catalina.connector.ResponseFacade@2baa203d]
+[http-apr-8089-exec-9] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@5935ad3f, org.apache.catalina.connector.ResponseFacade@f75fc79]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.OAuthTokenCredential - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-5] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@14edb8fa, org.apache.catalina.connector.ResponseFacade@7b4a82d0]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.OAuthTokenCredential - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-3] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-3] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 01:55:53 Exception:PayPalController/remackMoney msg:java.lang.IllegalArgumentException: Path http://192.168.0.150:8089/macao/assets/order/response.jsp does not start with a "/" character
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-5] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-3] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-9] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-10] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-5] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-5] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"INSTRUMENT_DECLINED","details":[],"message":"The instrument presented  was either declined by the processor or bank, or it can't be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"d4cd0d05d2934"}
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@58d5beab, org.apache.catalina.connector.ResponseFacade@1132a20b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@58d5beab, org.apache.catalina.connector.ResponseFacade@1132a20b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@2a54a067, org.apache.catalina.connector.ResponseFacade@5b367075]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@2a54a067, org.apache.catalina.connector.ResponseFacade@5b367075]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@2a54a067, org.apache.catalina.connector.ResponseFacade@5b367075]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@2a54a067, org.apache.catalina.connector.ResponseFacade@5b367075]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@b05ac4b, org.apache.catalina.connector.ResponseFacade@460293ae]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@38d9fb23, org.apache.catalina.connector.ResponseFacade@361e0248]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@485de853, org.apache.catalina.connector.ResponseFacade@16088426]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@2a54a067, org.apache.catalina.connector.ResponseFacade@5b367075]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@3656050a, org.apache.catalina.connector.ResponseFacade@3b44a4b1]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@716e8aa2, org.apache.catalina.connector.ResponseFacade@6462764e]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:404
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-11] WARN com.paypal.base.rest.OAuthTokenCredential - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-11] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-11] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.cancel_url","issue":"{Url}"},{"field":"redirect_urls.return_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"3a93970927b0c"}
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-13] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-13] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.return_url","issue":"{Url}"},{"field":"redirect_urls.cancel_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"71f24ea728b9f"}
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-14] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-14] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.return_url","issue":"{Url}"},{"field":"redirect_urls.cancel_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"9bfb6a26d39ae"}
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.cancel_url","issue":"{Url}"},{"field":"redirect_urls.return_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"a2745513631a1"}
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-3] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-3] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.return_url","issue":"{Url}"},{"field":"redirect_urls.cancel_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"803ad4ec95642"}
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-9] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-9] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.return_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"85e8dea2892f"}
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-15] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-15] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.return_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"bc72fcfa80203"}
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@1dbdabe5, org.apache.catalina.connector.ResponseFacade@40000b64]
+[http-apr-8089-exec-14] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-14] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.return_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"9609aa9c93d1"}
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.OAuthTokenCredential - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"7ff167a08b909"}
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-3] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-10] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-9] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"INSTRUMENT_DECLINED","details":[],"message":"The instrument presented  was either declined by the processor or bank, or it can't be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"8ed575a09f51b"}
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:500
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-3] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method remackMoney end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-10] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"INSTRUMENT_DECLINED","details":[],"message":"The instrument presented  was either declined by the processor or bank, or it can't be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"678c0606c6b88"}
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:500
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"INSTRUMENT_DECLINED","details":[],"message":"The instrument presented  was either declined by the processor or bank, or it can't be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"be46dd613fa06"}
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:500
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.cancel_url","issue":"{Url}"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"f2be9d3a2836c"}
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-2] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-2] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"INSTRUMENT_DECLINED","details":[],"message":"The instrument presented  was either declined by the processor or bank, or it can't be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"d0a3bb89d1249"}
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:500
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"MALFORMED_REQUEST","message":"Incoming JSON request does not map to API request","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#MALFORMED_REQUEST","debug_id":"3c5eb2ffed2a4"}
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-5] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-4] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:success
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@5d96316c, org.apache.catalina.connector.ResponseFacade@5c29fe3e]
+[http-apr-8089-exec-1] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:success
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.OAuthTokenCredential - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 05:30:07 Exception:PayPalController/makeSure msg:java.lang.IllegalArgumentException: Id cannot be null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-9] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 05:32:00 Exception:PayPalController/makeSure msg:java.lang.IllegalArgumentException: Id cannot be null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-2] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-6] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 05:39:23 Exception:PayPalController/makeSure msg:java.lang.IllegalArgumentException: Id cannot be null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 05:39:31 Exception:PayPalController/makeSure msg:java.lang.IllegalArgumentException: Id cannot be null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-7] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 05:40:18 Exception:PayPalController/makeSure msg:java.lang.IllegalArgumentException: Id cannot be null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-10] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 05:41:42 Exception:PayPalController/makeSure msg:java.lang.IllegalArgumentException: Id cannot be null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@4f9e5143, org.apache.catalina.connector.ResponseFacade@76795fb9]
+[http-apr-8089-exec-9] WARN com.paypal.base.rest.PayPalResource - Log level cannot be set to DEBUG in live mode. Skipping request/response logging...
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@b2a5246, org.apache.catalina.connector.ResponseFacade@21b1ee84]
+[http-apr-8089-exec-1] ERROR com.paypal.base.HttpConnection - Response code: 401	Error response: {"error":"invalid_client","error_description":"Client Authentication failed"}
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@b2a5246, org.apache.catalina.connector.ResponseFacade@21b1ee84]
+[http-apr-8089-exec-6] ERROR com.paypal.base.HttpConnection - Response code: 401	Error response: {"error":"invalid_client","error_description":"Client Authentication failed"}
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@798958e9, org.apache.catalina.connector.ResponseFacade@44a00ad2]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@798958e9, org.apache.catalina.connector.ResponseFacade@44a00ad2]
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 05:54:17 Exception:PayPalController/makeSure msg:java.lang.NullPointerException
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@798958e9, org.apache.catalina.connector.ResponseFacade@44a00ad2]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@798958e9, org.apache.catalina.connector.ResponseFacade@44a00ad2]
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 06:02:05 Exception:PayPalController/makeSure msg:java.lang.NullPointerException
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@340796b3, org.apache.catalina.connector.ResponseFacade@240644e1]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@69d78590, org.apache.catalina.connector.ResponseFacade@671066da]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-4] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"PAYMENT_ALREADY_DONE","message":"Payment has been done already for this cart.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"1fc3d2f5b8ffe"}
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:500
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 06:08:41 Exception:PayPalController/makeSure msg:java.lang.NullPointerException
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:success
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:success
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:success
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:success
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-10] ERROR com.paypal.base.HttpConnection - Response code: 400	Error response: {"name":"PAYMENT_ALREADY_DONE","message":"Payment has been done already for this cart.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"6b39e85788648"}
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:500
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:success
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@7f9d6cd4, org.apache.catalina.connector.ResponseFacade@4c5adc6d]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure end with massage:success
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@23c023e3, org.apache.catalina.connector.ResponseFacade@6e6e907f]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal begins with [org.apache.catalina.connector.RequestFacade@23c023e3, org.apache.catalina.connector.ResponseFacade@6e6e907f]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method handlePaypal end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method makeSure begins with [org.apache.catalina.connector.RequestFacade@23c023e3, org.apache.catalina.connector.ResponseFacade@6e6e907f, {}]
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-01 06:48:09 Exception:PayPalController/makeSure msg:java.lang.NullPointerException

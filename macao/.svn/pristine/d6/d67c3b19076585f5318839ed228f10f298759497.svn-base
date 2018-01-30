@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarDriverMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.SpcarDriver" >
+    <id column="spcar_driver_id" property="spcarDriverId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="loc_x" property="locX" jdbcType="DOUBLE" />
+    <result column="loc_y" property="locY" jdbcType="DOUBLE" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="license" property="license" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="driver_type" property="driverType" jdbcType="VARCHAR" />
+    <result column="spcar_type" property="spcarType" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_update" property="lastUpdate" jdbcType="TIMESTAMP" />
+    <result column="device_id" property="deviceId" jdbcType="VARCHAR" />
+    <result column="verification" property="verification" jdbcType="VARCHAR" />
+    <result column="country_code" property="countryCode" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="given_name" property="givenName" jdbcType="VARCHAR" />
+    <result column="family_name" property="familyName" jdbcType="VARCHAR" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="rating" property="rating" jdbcType="DOUBLE" />
+    <result column="english_capability" property="englishCapability" jdbcType="BIT" />
+    <result column="profile_image" property="profileImage" jdbcType="VARCHAR" />
+    <result column="order_count" property="orderCount" jdbcType="INTEGER" />
+    <result column="cancel_count" property="cancelCount" jdbcType="INTEGER" />
+    <result column="finish_count" property="finishCount" jdbcType="INTEGER" />
+    <result column="deleted" property="deleted" jdbcType="BIT" />
+    <result column="license_true" property="licenseTrue" jdbcType="VARCHAR" />
+    <result column="license_till" property="licenseTill" jdbcType="TIMESTAMP" />
+    <result column="driver_arrive_time" property="driverArriveTime" jdbcType="TIMESTAMP" />
+    <result column="driver_setout_time" property="driverSetoutTime" jdbcType="TIMESTAMP" />
+    <result column="passenger_getin_time" property="passengerGetinTime" jdbcType="TIMESTAMP" />
+    <result column="shift" property="shift" jdbcType="VARCHAR" />
+    <result column="device_type" property="deviceType" jdbcType="VARCHAR" />
+    <result column="sign" property="sign" jdbcType="VARCHAR" />
+    <result column="im_name" property="imName" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yinghai.macao.common.model.SpcarDriver" extends="BaseResultMap" >
+    <result column="loc_str" property="locStr" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    spcar_driver_id, name, loc_x, loc_y, status, license, image, driver_type, spcar_type, 
+    create_time, last_update, device_id, verification, country_code, tel, given_name, 
+    family_name, userId, rating, english_capability, profile_image, order_count, cancel_count, 
+    finish_count, deleted, license_true, license_till,driver_arrive_time,driver_setout_time,passenger_getin_time, shift, device_type,sign,im_name
+  </sql>
+  <sql id="Blob_Column_List" >
+    loc_str
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from spcar_driver
+    where spcar_driver_id = #{spcarDriverId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from spcar_driver
+    where spcar_driver_id = #{spcarDriverId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yinghai.macao.common.model.SpcarDriver" >
+    insert into spcar_driver (spcar_driver_id, name, loc_x, 
+      loc_y, status, license, 
+      image, driver_type, spcar_type, 
+      create_time, last_update, device_id, 
+      verification, country_code, tel, 
+      given_name, family_name, userId, 
+      rating, english_capability, profile_image, 
+      order_count, cancel_count, finish_count, 
+      deleted, license_true, license_till,driver_arrive_time,driver_setout_time,passenger_getin_time,
+      shift, device_type, loc_str
+      )
+    values (#{spcarDriverId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{locX,jdbcType=DOUBLE}, 
+      #{locY,jdbcType=DOUBLE}, #{status,jdbcType=VARCHAR}, #{license,jdbcType=VARCHAR}, 
+      #{image,jdbcType=VARCHAR}, #{driverType,jdbcType=VARCHAR}, #{spcarType,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastUpdate,jdbcType=TIMESTAMP}, #{deviceId,jdbcType=VARCHAR}, 
+      #{verification,jdbcType=VARCHAR}, #{countryCode,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{givenName,jdbcType=VARCHAR}, #{familyName,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER}, 
+      #{rating,jdbcType=DOUBLE}, #{englishCapability,jdbcType=BIT}, #{profileImage,jdbcType=VARCHAR}, 
+      #{orderCount,jdbcType=INTEGER}, #{cancelCount,jdbcType=INTEGER}, #{finishCount,jdbcType=INTEGER},
+      #{deleted,jdbcType=BIT}, #{licenseTrue,jdbcType=VARCHAR}, #{licenseTill,jdbcType=TIMESTAMP},#{driverArriveTime,jdbcType=TIMESTAMP},#{driverSetoutTime,jdbcType=TIMESTAMP},#{passengerGetinTime,jdbcType=TIMESTAMP},
+      #{shift,jdbcType=VARCHAR}, #{deviceType,jdbcType=VARCHAR}, #{locStr,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yinghai.macao.common.model.SpcarDriver" useGeneratedKeys="true" keyProperty="spcarDriverId">
+    insert into spcar_driver
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="spcarDriverId != null" >
+        spcar_driver_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="locX != null" >
+        loc_x,
+      </if>
+      <if test="locY != null" >
+        loc_y,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="license != null" >
+        license,
+      </if>
+      <if test="image != null" >
+        image,
+      </if>
+      <if test="driverType != null" >
+        driver_type,
+      </if>
+      <if test="spcarType != null" >
+        spcar_type,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastUpdate != null" >
+        last_update,
+      </if>
+      <if test="deviceId != null" >
+        device_id,
+      </if>
+      <if test="verification != null" >
+        verification,
+      </if>
+      <if test="countryCode != null" >
+        country_code,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="givenName != null" >
+        given_name,
+      </if>
+      <if test="familyName != null" >
+        family_name,
+      </if>
+      <if test="userid != null" >
+        userId,
+      </if>
+      <if test="rating != null" >
+        rating,
+      </if>
+      <if test="englishCapability != null" >
+        english_capability,
+      </if>
+      <if test="profileImage != null" >
+        profile_image,
+      </if>
+      <if test="orderCount != null" >
+        order_count,
+      </if>
+      <if test="cancelCount != null" >
+        cancel_count,
+      </if>
+      <if test="finishCount != null" >
+        finish_count,
+      </if>
+      <if test="deleted != null" >
+        deleted,
+      </if>
+      <if test="licenseTrue != null" >
+        license_true,
+      </if>
+      <if test="licenseTill != null" >
+        license_till,
+      </if>
+      <if test="driverArriveTime != null" >
+        driver_arrive_time,
+      </if>
+      <if test="driverSetoutTime != null" >
+        driver_setout_time,
+      </if>
+      <if test="passengerGetinTime != null" >
+        passenger_getin_time,
+      </if>
+      <if test="shift != null" >
+        shift,
+      </if>
+      <if test="deviceType != null" >
+        device_type,
+      </if>
+      <if test="locStr != null" >
+        loc_str,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="spcarDriverId != null" >
+        #{spcarDriverId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="locX != null" >
+        #{locX,jdbcType=DOUBLE},
+      </if>
+      <if test="locY != null" >
+        #{locY,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null" >
+        #{license,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="driverType != null" >
+        #{driverType,jdbcType=VARCHAR},
+      </if>
+      <if test="spcarType != null" >
+        #{spcarType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdate != null" >
+        #{lastUpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceId != null" >
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="verification != null" >
+        #{verification,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null" >
+        #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="givenName != null" >
+        #{givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="familyName != null" >
+        #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="rating != null" >
+        #{rating,jdbcType=DOUBLE},
+      </if>
+      <if test="englishCapability != null" >
+        #{englishCapability,jdbcType=BIT},
+      </if>
+      <if test="profileImage != null" >
+        #{profileImage,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCount != null" >
+        #{orderCount,jdbcType=INTEGER},
+      </if>
+      <if test="cancelCount != null" >
+        #{cancelCount,jdbcType=INTEGER},
+      </if>
+      <if test="finishCount != null" >
+        #{finishCount,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null" >
+        #{deleted,jdbcType=BIT},
+      </if>
+      <if test="licenseTrue != null" >
+        #{licenseTrue,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseTill != null" >
+        #{licenseTill,jdbcType=TIMESTAMP},
+      </if>
+      <if test="driverArriveTime != null" >
+        #{driverArriveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="driverSetoutTime != null" >
+        #{driverSetoutTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="passengerGetinTime != null" >
+        #{passengerGetinTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shift != null" >
+        #{shift,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="locStr != null" >
+        #{locStr,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.common.model.SpcarDriver" >
+    update spcar_driver
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="locX != null" >
+        loc_x = #{locX,jdbcType=DOUBLE},
+      </if>
+      <if test="locY != null" >
+        loc_y = #{locY,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null" >
+        license = #{license,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="driverType != null" >
+        driver_type = #{driverType,jdbcType=VARCHAR},
+      </if>
+      <if test="spcarType != null" >
+        spcar_type = #{spcarType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdate != null" >
+        last_update = #{lastUpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceId != null" >
+        device_id = #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="verification != null" >
+        verification = #{verification,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null" >
+        country_code = #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="givenName != null" >
+        given_name = #{givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="familyName != null" >
+        family_name = #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="rating != null" >
+        rating = #{rating,jdbcType=DOUBLE},
+      </if>
+      <if test="englishCapability != null" >
+        english_capability = #{englishCapability,jdbcType=BIT},
+      </if>
+      <if test="profileImage != null" >
+        profile_image = #{profileImage,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCount != null" >
+        order_count = #{orderCount,jdbcType=INTEGER},
+      </if>
+      <if test="cancelCount != null" >
+        cancel_count = #{cancelCount,jdbcType=INTEGER},
+      </if>
+      <if test="finishCount != null" >
+        finish_count = #{finishCount,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null" >
+        deleted = #{deleted,jdbcType=BIT},
+      </if>
+      <if test="licenseTrue != null" >
+        license_true = #{licenseTrue,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseTill != null" >
+        license_till = #{licenseTill,jdbcType=TIMESTAMP},
+      </if>
+      <if test="driverArriveTime != null" >
+        driver_arrive_time = #{driverArriveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="driverSetoutTime != null" >
+        driver_setout_time = #{driverSetoutTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="passengerGetinTime != null" >
+        passenger_getin_time = #{passengerGetinTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shift != null" >
+        shift = #{shift,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        device_type = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="locStr != null" >
+        loc_str = #{locStr,jdbcType=LONGVARCHAR},
+      </if>
+        <if test="sign != null" >
+        sign = #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="imName != null" >
+        im_name = #{imName,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where spcar_driver_id = #{spcarDriverId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yinghai.macao.common.model.SpcarDriver" >
+    update spcar_driver
+    set name = #{name,jdbcType=VARCHAR},
+      loc_x = #{locX,jdbcType=DOUBLE},
+      loc_y = #{locY,jdbcType=DOUBLE},
+      status = #{status,jdbcType=VARCHAR},
+      license = #{license,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      driver_type = #{driverType,jdbcType=VARCHAR},
+      spcar_type = #{spcarType,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update = #{lastUpdate,jdbcType=TIMESTAMP},
+      device_id = #{deviceId,jdbcType=VARCHAR},
+      verification = #{verification,jdbcType=VARCHAR},
+      country_code = #{countryCode,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      given_name = #{givenName,jdbcType=VARCHAR},
+      family_name = #{familyName,jdbcType=VARCHAR},
+      userId = #{userid,jdbcType=INTEGER},
+      rating = #{rating,jdbcType=DOUBLE},
+      english_capability = #{englishCapability,jdbcType=BIT},
+      profile_image = #{profileImage,jdbcType=VARCHAR},
+      order_count = #{orderCount,jdbcType=INTEGER},
+      cancel_count = #{cancelCount,jdbcType=INTEGER},
+      finish_count = #{finishCount,jdbcType=INTEGER},
+      deleted = #{deleted,jdbcType=BIT},
+      license_true = #{licenseTrue,jdbcType=VARCHAR},
+      license_till = #{licenseTill,jdbcType=TIMESTAMP},
+      driver_arrive_time = #{driverArriveTime,jdbcType=TIMESTAMP},
+      driver_setout_time = #{driverSetoutTime,jdbcType=TIMESTAMP},
+      passenger_getin_time = #{passengerGetinTime,jdbcType=TIMESTAMP},
+      shift = #{shift,jdbcType=VARCHAR},
+      device_type = #{deviceType,jdbcType=VARCHAR},
+      loc_str = #{locStr,jdbcType=LONGVARCHAR},
+      im_name = #{imName,jdbcType=LONGVARCHAR},
+      sign = #{sign,jdbcType=VARCHAR}
+    where spcar_driver_id = #{spcarDriverId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yinghai.macao.common.model.SpcarDriver" >
+    update spcar_driver
+    set name = #{name,jdbcType=VARCHAR},
+      loc_x = #{locX,jdbcType=DOUBLE},
+      loc_y = #{locY,jdbcType=DOUBLE},
+      status = #{status,jdbcType=VARCHAR},
+      license = #{license,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      driver_type = #{driverType,jdbcType=VARCHAR},
+      spcar_type = #{spcarType,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update = #{lastUpdate,jdbcType=TIMESTAMP},
+      device_id = #{deviceId,jdbcType=VARCHAR},
+      verification = #{verification,jdbcType=VARCHAR},
+      country_code = #{countryCode,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      given_name = #{givenName,jdbcType=VARCHAR},
+      family_name = #{familyName,jdbcType=VARCHAR},
+      userId = #{userid,jdbcType=INTEGER},
+      rating = #{rating,jdbcType=DOUBLE},
+      english_capability = #{englishCapability,jdbcType=BIT},
+      profile_image = #{profileImage,jdbcType=VARCHAR},
+      order_count = #{orderCount,jdbcType=INTEGER},
+      cancel_count = #{cancelCount,jdbcType=INTEGER},
+      finish_count = #{finishCount,jdbcType=INTEGER},
+      deleted = #{deleted,jdbcType=BIT},
+      license_true = #{licenseTrue,jdbcType=VARCHAR},
+      license_till = #{licenseTill,jdbcType=TIMESTAMP},
+      driver_arrive_time = #{driverArriveTime,jdbcType=TIMESTAMP},
+      driver_setout_time = #{driverSetoutTime,jdbcType=TIMESTAMP},
+      passenger_getin_time = #{passengerGetinTime,jdbcType=TIMESTAMP},
+      shift = #{shift,jdbcType=VARCHAR},
+      device_type = #{deviceType,jdbcType=VARCHAR}
+        im_name = #{imName,jdbcType=LONGVARCHAR},
+      sign = #{sign,jdbcType=VARCHAR}
+    where spcar_driver_id = #{spcarDriverId,jdbcType=INTEGER}
+  </update>
+
+  <select id="findListByCondition" parameterType="com.yinghai.macao.common.model.SpcarDriver" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from spcar_driver where 1=1
+    <if test="name != null" >
+     and name = #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="locX != null" >
+      and  loc_x = #{locX,jdbcType=DOUBLE}
+    </if>
+    <if test="locY != null" >
+      and  loc_y = #{locY,jdbcType=DOUBLE}
+    </if>
+    <if test="status != null" >
+      and status = #{status,jdbcType=VARCHAR}
+    </if>
+    <if test="license != null" >
+      and license = #{license,jdbcType=VARCHAR}
+    </if>
+    <if test="image != null" >
+      and image = #{image,jdbcType=VARCHAR}
+    </if>
+    <if test="driverType != null" >
+      and driver_type = #{driverType,jdbcType=VARCHAR}
+    </if>
+    <if test="spcarType != null" >
+      and spcar_type = #{spcarType,jdbcType=VARCHAR}
+    </if>
+    <if test="createTime != null" >
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="lastUpdate != null" >
+      and last_update  <![CDATA[ >= ]]> DATE_SUB(NOW(),INTERVAL 15 MINUTE)
+    </if>
+    <if test="deviceId != null" >
+      and device_id = #{deviceId,jdbcType=VARCHAR}
+    </if>
+    <if test="verification != null" >
+      and status != 999
+    </if>
+    <if test="countryCode != null" >
+      and country_code = #{countryCode,jdbcType=VARCHAR}
+    </if>
+    <if test="tel != null" >
+      and tel = #{tel,jdbcType=VARCHAR}
+    </if>
+    <if test="givenName != null" >
+      and given_name = #{givenName,jdbcType=VARCHAR}
+    </if>
+    <if test="familyName != null" >
+      and family_name = #{familyName,jdbcType=VARCHAR}
+    </if>
+    <if test="userid != null" >
+      and userId = #{userid,jdbcType=INTEGER}
+    </if>
+    <if test="rating != null" >
+      and rating = #{rating,jdbcType=DOUBLE}
+    </if>
+    <if test="englishCapability != null" >
+      and english_capability = #{englishCapability,jdbcType=BIT}
+    </if>
+    <if test="profileImage != null" >
+      and profile_image = #{profileImage,jdbcType=VARCHAR}
+    </if>
+    <if test="orderCount != null" >
+      and order_count = #{orderCount,jdbcType=INTEGER}
+    </if>
+    <if test="cancelCount != null" >
+      and cancel_count = #{cancelCount,jdbcType=INTEGER}
+    </if>
+    <if test="finishCount != null" >
+      and finish_count = #{finishCount,jdbcType=INTEGER}
+    </if>
+    <if test="deleted != null" >
+      and deleted = #{deleted,jdbcType=BIT}
+    </if>
+    <if test="licenseTrue != null" >
+      and license_true = #{licenseTrue,jdbcType=VARCHAR}
+    </if>
+    <if test="licenseTill != null" >
+      and license_till = #{licenseTill,jdbcType=TIMESTAMP}
+    </if>
+    <if test="driverArriveTime != null" >
+      and driver_arrive_time = #{driverArriveTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="driverSetoutTime != null" >
+      and driver_setout_time = #{driverSetoutTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="passengerGetinTime != null" >
+      and passenger_getin_time = #{passengerGetinTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="shift != null" >
+      and shift = #{shift,jdbcType=VARCHAR}
+    </if>
+    <if test="deviceType != null" >
+      and device_type = #{deviceType,jdbcType=VARCHAR}
+    </if>
+    <if test="locStr != null" >
+      and loc_str = #{locStr,jdbcType=LONGVARCHAR}
+    </if>
+  </select>
+     <select id="findList" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.SpcarDriver" >
+    select
+    <include refid="Base_Column_List" />
+    from spcar_driver
+    where 1=1
+    <if test="givenName != null" >
+    and  given_name like #{givenName,jdbcType=VARCHAR}
+    </if>
+    <if test="familyName != null" >
+    and  family_name like #{familyName,jdbcType=VARCHAR}
+    </if><if test="name != null" >
+    and  name like #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="countryCode != null" >
+    and  country_code = #{countryCode,jdbcType=VARCHAR}
+    </if>
+    <if test="tel != null" >
+      and  tel like #{tel,jdbcType=VARCHAR}
+    </if>
+    <if test="createTime != null" >
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+      <if test="status != null" >
+      and status = #{status,jdbcType=VARCHAR}
+    </if>
+  </select>
+  <select id="findByTel" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from spcar_driver
+    where country_code = #{countryCode,jdbcType=VARCHAR} 
+    and tel = #{tel,jdbcType=VARCHAR}
+  </select>
+</mapper>

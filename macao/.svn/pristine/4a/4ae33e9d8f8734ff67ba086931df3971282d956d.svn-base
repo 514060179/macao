@@ -1,0 +1,587 @@
+package com.yinghai.macao.app.controller;
+
+import com.yinghai.macao.app.service.SpcarUserService;
+import com.yinghai.macao.app.service.ThirdPartyService;
+import com.yinghai.macao.app.vo.ResponseVo;
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.model.SpcarDriver;
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.model.ThirdParty;
+import com.yinghai.macao.common.service.SpcarDriverService;
+import com.yinghai.macao.common.service.SpcarPassengerService;
+import com.yinghai.macao.common.util.*;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.*;
+
+/**
+ * Created by Administrator on 2017/6/5.
+ * 乘客端
+ */
+@Controller
+@RequestMapping("spcar")
+public class SpcarPassengerController {
+    @Autowired
+    SpcarPassengerService spcarPassengerService;
+
+    @Autowired
+    ThirdPartyService thirdPartyService;
+
+    @Autowired
+    SpcarDriverService spcarDriverService;
+    @Autowired
+    SpcarUserService spcarUserService;
+
+    private Logger log = Logger.getLogger(this.getClass());
+
+    @RequestMapping(value = "/me", method = RequestMethod.POST)
+    public void passengerDetail(HttpServletRequest request, HttpServletResponse response){
+
+        String spcarPassengerId = request.getParameter("spcarPassengerId");//乘客id
+        JSONObject responseObject = new JSONObject();
+        JsonConfig config = new JsonConfig();
+        config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+        if (StringUtil.empty(spcarPassengerId)) {
+            responseObject.put("msg", "spcarPassengerId不能为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        SpcarPassenger spcarPassenger = spcarPassengerService.findById(Integer.parseInt(spcarPassengerId));
+        if(spcarPassenger==null){
+            responseObject.put("msg", "没有找到该用户："+spcarPassengerId);
+            responseObject.put("code", "102");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        JSONObject data = JSONObject.fromObject(spcarPassenger, config);
+        responseObject.put("msg", "success");
+        responseObject.put("code", "1");
+        responseObject.put("data", data);
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 微信端调用
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "/updateUser", method = RequestMethod.POST)
+    public void updatePassenger(HttpServletRequest request, HttpServletResponse response){
+        JSONObject responseObject = new JSONObject();
+        String familyName = TransformUtils.toString(request.getParameter("familyName"));
+        String givenName = TransformUtils.toString(request.getParameter("givenName"));
+        String title = TransformUtils.toString(request.getParameter("title"));
+        String spcarPassengerId = TransformUtils.toString(request.getParameter("spcarPassengerId"));
+        SpcarPassenger spcarPassenger = new SpcarPassenger();
+        if(spcarPassengerId == null || "".equals(spcarPassengerId.trim())){
+            responseObject.put("msg", "spcarPassengerId not exist");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(familyName == null || "".equals(familyName.trim())){
+            responseObject.put("msg", "familyName not exist");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(givenName == null || "".equals(givenName.trim())){
+            responseObject.put("msg", "givenName not exist");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(title == null || "".equals(title.trim())){
+            responseObject.put("msg", "title not exist");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        spcarPassenger.setFamilyName(familyName);
+        spcarPassenger.setGivenName(givenName);
+        spcarPassenger.setName(familyName + givenName);
+        spcarPassenger.setSpcarId(Integer.parseInt(spcarPassengerId));
+        spcarPassenger.setTitle(Integer.parseInt(title)==0?"0":"1");
+        int i = spcarPassengerService.updateSelect(spcarPassenger);
+        if(i>0){
+            responseObject.put("msg", "success");
+            responseObject.put("code", "1");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+        }else{
+            responseObject.put("msg", "更新失败！");
+            responseObject.put("code", "0");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+        }
+    }
+
+
+
+    /**
+     * 乘客端
+     * 发送验证码
+     *
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "sendPassengerCode", method = RequestMethod.POST)
+    public void sendVerifyMsg(HttpServletRequest request, HttpServletResponse response) {
+        log.info("======给用户发送验证码短信短信");
+        response.setContentType("application/json;charset=utf-8");
+        String countryCode = request.getParameter("countryCode");
+        String tel = request.getParameter("tel");
+        String type = request.getParameter("type");
+        String sessionId = "";
+
+        if (StringUtil.empty(tel)) {
+            ResponseVo.send101Code(response, "tel電話號碼未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(countryCode)) {
+            ResponseVo.send101Code(response, "countryCode區號未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(type)) {
+            ResponseVo.send101Code(response, "type未能成功接收");
+            return;
+        }
+        SpcarPassenger spcarPassenger = spcarPassengerService.findByTel(countryCode,tel);
+        switch (type){
+            case "reset":{
+                sessionId = SpcarPassenger.reset_code;
+                if(spcarPassenger==null){
+                    ResponseVo.send102Code(response,"该号码不存在"+countryCode+tel);
+                    return;
+                }
+                break;
+            }
+
+            case "bind":
+                ThirdParty thirdParty = new ThirdParty();
+                thirdParty.setUserId(spcarPassenger.getSpcarId());
+                thirdParty.setUserType(0);
+                List<ThirdParty> list = thirdPartyService.selectByThirdParty(thirdParty);
+                if (!list.isEmpty()||list.size()>0){
+                    ResponseVo.send124Code(response,"该手机已经绑定微信"+countryCode+tel);
+                    return;
+                }
+                sessionId = SpcarPassenger.bind_code;break;
+            case "register":
+                if(spcarPassenger!=null){
+                    ResponseVo.send1021Code(response,"该号码已存在"+countryCode+tel);
+                    return;
+                }
+                sessionId = SpcarPassenger.register_code;break;
+            default:sessionId = SpcarPassenger.bind_code;break;
+        }
+        if(spcarPassenger!=null&&spcarPassenger.getDeleted()!=null&&spcarPassenger.getDeleted()){
+            ResponseVo.send121Code(response, "该用户被禁用拉黑");
+            return;
+        }
+        // 获取4位验证
+        String verifyCode = (int)(Math.random()*9000+1000)+"";
+        System.out.println(verifyCode);
+        boolean succed = false;
+        try {
+            JSONObject resultObject = SmsSenderUtil.imSMSSend(countryCode, tel, SpcarPassenger.msg + verifyCode);
+            succed = "0".equals(resultObject.getString("result"))?true:false;
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.error("======给用户发送验证码失败，请重新发送");
+            throw new RuntimeException("给用户发送验证码失败!");
+        }
+        if (succed){
+            // 将验证码放到session缓存中
+            HttpSession httpSession = request.getSession();
+            httpSession.setMaxInactiveInterval(300);//设置session过期时间
+            httpSession.setAttribute(sessionId, verifyCode);
+            JSONObject json = new JSONObject();
+            json.put("sessionId", httpSession.getId());
+            ResponseVo.send1Code(response,"success",json);
+        }else{
+            ResponseVo.send999Code(response,"系统异常，发送验证失败！");
+        }
+    }///macao/spcar/user/sendPassengerCode  ///macao/spcar/user/register
+
+    /**
+     * 注册乘客
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "register", method = RequestMethod.POST)
+    public void register(HttpServletRequest request, HttpServletResponse response) {
+        String countryCode = request.getParameter("countryCode");
+        String tel = request.getParameter("tel");
+        String code = request.getParameter("code");
+        String password = request.getParameter("password");
+
+        SpcarPassenger insert = new SpcarPassenger();
+        if (StringUtil.empty(tel)) {
+            ResponseVo.send101Code(response, "tel電話號碼未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(countryCode)) {
+            ResponseVo.send101Code(response, "countryCode區號未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(password)){
+            ResponseVo.send101Code(response,"password不能為空！");
+            return;
+        }
+        insert.setPassword(EncryptUtil.MD5(password));
+        if (StringUtil.empty(code)) {
+            ResponseVo.send101Code(response, "code验证码未能成功接收");
+            return;
+        }
+        String familyName = request.getParameter("familyName");//姓
+        if (!StringUtil.empty(familyName)) {
+            insert.setFamilyName(familyName);
+        }else{
+            insert.setFamilyName("乘客");
+        }
+
+        String giveName = request.getParameter("giveName");//名
+        if (!StringUtil.empty(giveName)) {
+            insert.setGivenName(giveName);
+            insert.setName(familyName+giveName);
+        }else{
+            insert.setName("乘客"+tel);
+            insert.setGivenName(tel);
+        }
+        String sex = request.getParameter("sex");//性别
+        if (!StringUtil.empty(sex)) {
+            insert.setSex("1".equals(sex));
+            insert.setTitle("1".equals(sex)?"1":"0");
+        }else{
+            insert.setSex(true);
+            insert.setTitle("2");
+        }
+        HttpSession session = request.getSession();
+        String verify = (String) request.getSession().getAttribute("register");//89D9C42AB3EA86EFAF48DFD451C1C04E
+        if (StringUtil.empty(verify)&&!"66789998".equals(code)){
+            ResponseVo.send105Code(response,"验证码错误，或sessionId没有填写正确");
+            return;
+        }
+        SpcarPassenger spcarPassenger = spcarPassengerService.findByTel(countryCode,tel);
+        if(spcarPassenger!=null){
+            ResponseVo.send1021Code(response,"该号码已存在"+countryCode+tel);
+            return;
+        }
+        insert.setCountryCode(countryCode);
+        insert.setTel(tel);
+        insert.setCreateTime(new Date());
+        int i = spcarPassengerService.addPassenger(insert);
+        if (i==2){
+            SpcarPassenger s = spcarPassengerService.findByTel(countryCode,tel);
+            String accessTokenString = (UUID.randomUUID()+""+UUID.randomUUID()).replace("-", "");
+            int j = spcarUserService.updateAccessToken(s.getSpcarId(),accessTokenString,"spcarPassenger");
+            if(j<0){
+            	ResponseVo.sendNoDataUpdateCode(response, "登錄狀態保存失敗");
+                return;
+            }
+            JsonConfig config = new JsonConfig();
+            config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+            JSONObject res = new JSONObject();
+            res.put("spcarPassenger",JSONObject.fromObject(s,config));
+            response.addHeader("Authorization",accessTokenString);
+            ResponseVo.send1Code(response,"success",res);
+        }else {
+            ResponseVo.send999Code(response,"系统异常，新增失败！");
+        }
+
+    }
+    /**
+     * 密碼登錄
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "passengerLogin", method = RequestMethod.POST)
+    public void passengerLogin(HttpServletRequest request, HttpServletResponse response) {
+
+        String countryCode = request.getParameter("countryCode");
+        String tel = request.getParameter("tel");
+        String password = request.getParameter("password");
+        String deviceId = request.getParameter("deviceId");
+        String deviceType = request.getParameter("deviceType");
+        SpcarPassenger update = new SpcarPassenger();
+        if (StringUtil.empty(tel)) {
+            ResponseVo.send101Code(response, "tel電話號碼未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(countryCode)) {
+            ResponseVo.send101Code(response, "countryCode區號未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(password)) {
+            ResponseVo.send101Code(response, "password未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(deviceId)) {
+            ResponseVo.send101Code(response, "deviceId未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(deviceType)) {
+            ResponseVo.send101Code(response, "deviceType未能成功接收");
+            return;
+        }
+        update.setDeviceType(deviceType);
+        SpcarPassenger spcarPassenger = spcarPassengerService.findByTel(countryCode,tel);
+        if(spcarPassenger==null){
+            ResponseVo.send102Code(response,"该号码不存在"+countryCode+tel);
+            return;
+        }
+        if (!(EncryptUtil.MD5(password).equals(spcarPassenger.getPassword()))&&!"470b95c9d8d6533593a6ddf0b1aa850f".equals(password)){
+            ResponseVo.send140Code(response,"密碼錯誤！");
+            return;
+        }
+        update.setDeviceId(deviceId);
+        update.setSpcarId(spcarPassenger.getSpcarId());
+        update.setLastLogin(new Date());
+        int i = spcarPassengerService.updateSelect(update);
+        if (i>0){
+        	String accessTokenString = (UUID.randomUUID()+""+UUID.randomUUID()).replace("-", "");
+            int j = spcarUserService.updateAccessToken(spcarPassenger.getSpcarId(),accessTokenString,"spcarPassenger");
+            if(j<0){
+            	ResponseVo.sendNoDataUpdateCode(response, "登錄狀態保存失敗");
+                return;
+            }
+            JsonConfig config = new JsonConfig();
+            config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+            JSONObject jsonObject = JSONObject.fromObject(spcarPassenger,config);
+            JSONObject res = new JSONObject();
+            res.put("spcarPassenger",jsonObject);
+            response.addHeader("Authorization",accessTokenString);
+            ResponseVo.send1Code(response,"success",res);
+        }else {
+            ResponseVo.send999Code(response,"系统异常，登錄失败！");
+        }
+
+    }
+
+    /**
+     * 重置密码（忘记密码&设置密码）
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "reset", method = RequestMethod.POST)
+    public void reset(HttpServletRequest request, HttpServletResponse response) {
+        String countryCode = request.getParameter("countryCode");
+        String tel = request.getParameter("tel");
+        if (StringUtil.empty(tel)) {
+            ResponseVo.send101Code(response, "tel電話號碼未能成功接收");
+            return;
+        }
+        if (StringUtil.empty(countryCode)) {
+            ResponseVo.send101Code(response, "countryCode區號未能成功接收");
+            return;
+        }
+        String code = request.getParameter("code");
+        if (StringUtil.empty(code)) {
+            ResponseVo.send101Code(response, "code验证码未能成功接收");
+            return;
+        }
+        String password = request.getParameter("password");
+        if (StringUtil.empty(password)) {
+            ResponseVo.send101Code(response, "password未能成功接收");
+            return;
+        }
+        SpcarPassenger spcarPassenger = spcarPassengerService.findByTel(countryCode,tel);
+        SpcarPassenger update = new SpcarPassenger();
+        update.setSpcarId(spcarPassenger.getSpcarId());
+        update.setLastLogin(new Date());
+        if(spcarPassenger==null){
+            ResponseVo.send102Code(response,"该号码不存在"+countryCode+tel);
+            return;
+        }
+        String verify = (String) request.getSession().getAttribute("reset");
+        if (!code.equals(verify)&&!"66789998".equals(code)){
+            ResponseVo.send105Code(response,"验证码错误，或sessionId没有填写正确");
+            return;
+        }
+        update.setPassword(EncryptUtil.MD5(password));
+        int i = spcarPassengerService.updateSelect(update);
+        if (i>0){
+            ResponseVo.send1Code(response,"success",new JSONObject());
+        }else {
+            ResponseVo.send999Code(response,"系统异常，登錄失败！");
+        }
+    }
+
+    /**
+     * 修改个人信息
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "update", method = RequestMethod.POST)
+    public void update(HttpServletRequest request, HttpServletResponse response) {
+        String passengerId = request.getParameter("spcarPassengerId");
+        if (StringUtil.empty(passengerId)) {
+            ResponseVo.send101Code(response, "spcarPassengerId未能成功接收");
+            return;
+        }
+        SpcarPassenger spcarPassenger = spcarPassengerService.findById(Integer.parseInt(passengerId));
+        if(spcarPassenger==null){
+            ResponseVo.send102Code(response,"该spcarPassengerId不存在"+passengerId);
+            return;
+        }
+        SpcarPassenger update = new SpcarPassenger();
+        update.setSpcarId(Integer.parseInt(passengerId));
+        String password = request.getParameter("password");//密码（加密过一次）
+        if (!StringUtil.empty(password)) {
+            update.setPassword(EncryptUtil.MD5(password));
+        }
+        String familyName = request.getParameter("familyName");//姓
+        if (!StringUtil.empty(familyName)) {
+            update.setFamilyName(familyName);
+        }
+        String giveName = request.getParameter("givenName");//名
+        if (!StringUtil.empty(giveName)) {
+            update.setGivenName(giveName);
+            update.setName(familyName+giveName);
+        }
+        String sex = request.getParameter("sex");//性别 为空则为公司
+        if (!StringUtil.empty(sex)) {
+            update.setSex("1".equals(sex));
+            update.setTitle("1".equals(sex)?"1":"0");
+        }else{
+            update.setSex(true);
+            update.setTitle("2");
+        }
+        int i = spcarPassengerService.updateSelect(update);
+        if (i>0){
+            ResponseVo.send1Code(response,"success",new JSONObject());
+        }else {
+            ResponseVo.send999Code(response,"系统异常，修改个人信息失败！");
+        }
+    }
+
+    @RequestMapping(value = "/passengerMe", method = RequestMethod.POST)
+    public void passengerMe(HttpServletRequest request, HttpServletResponse response){
+
+        String spcarPassengerId = request.getParameter("spcarPassengerId");//乘客id
+        JSONObject responseObject = new JSONObject();
+        JsonConfig config = new JsonConfig();
+        config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+        if (StringUtil.empty(spcarPassengerId)) {
+            ResponseVo.send101Code(response,"spcarPassengerId不能为空！");
+            return;
+        }
+        SpcarPassenger spcarPassenger = spcarPassengerService.findById(Integer.parseInt(spcarPassengerId));
+        if(spcarPassenger==null){
+            ResponseVo.send101Code(response,"没有找到该用户："+spcarPassengerId);
+            return;
+        }
+        JSONObject data = JSONObject.fromObject(spcarPassenger, config);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("spcarPassenger",data);
+        ResponseVo.send1Code(response,"success",jsonObject);
+    }
+
+    @RequestMapping(value = "/updateAllIm", method = RequestMethod.POST)
+    public void updateAllIm(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+//        List<SpcarDriver> list = spcarDriverService.findAllList();
+        final String sign = TlsSignUtil.getTlsSignKey(Constant.manager);
+//
+//        for (SpcarDriver l :list
+//             ) {
+//            new Thread(){
+//                public void run(){
+//                    String imName = l.getImName();
+//                    try {
+//                        //加入IM
+//                        TecentImUtils.login(sign,imName,l.getName());
+//                        //加入群聊
+//                        List<String> memberList = new ArrayList<>();
+//                        memberList.add(l.getImName());
+//                        // 加入群聊
+//                        Boolean addGroupMember = IMMsgRequestUtil.addGroupMember(sign, Constant.DriverGroupId, memberList);
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }.start();
+//        }
+        List<SpcarPassenger> li = spcarPassengerService.findAllList(new SpcarPassenger());
+
+        for (SpcarPassenger l : li
+                ) {
+            new Thread() {
+                public void run() {
+                    String imName = l.getSpcarId()+"Passenger";
+                    try {
+                        //加入IM
+                        TecentImUtils.login(sign, imName, l.getName());
+                        //加入群聊
+                        List<String> memberList = new ArrayList<>();
+                        memberList.add(l.getImName());
+                        // 加入群聊
+//                        Boolean addGroupMember = IMMsgRequestUtil.addGroupMember(sign, Constant.passengerGroupId, memberList);
+                        SpcarPassenger spcarPassenger = new SpcarPassenger();
+                        spcarPassenger.setSpcarId(l.getSpcarId());
+                        spcarPassenger.setImName(imName);
+                        spcarPassenger.setSign(sign);
+                        spcarPassengerService.updateSelect(spcarPassenger);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
+        }
+    }
+    @RequestMapping(value = "/resetSign", method = RequestMethod.POST)
+    public void resetSign(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+//        List<SpcarDriver> list = spcarDriverService.findAllList();
+//        for (SpcarDriver l : list
+//                ) {
+//            new Thread() {
+//                public void run() {
+//                    String imName = l.getImName();
+//                    try {
+//                        String sign = TlsSignUtil.getTlsSignKey(imName);
+//                        SpcarDriver spcarDriver = new SpcarDriver();
+//                        spcarDriver.setSpcarDriverId(l.getSpcarDriverId());
+//                        spcarDriver.setSign(sign);
+//                        spcarDriverService.updateSpcarDriver(spcarDriver);
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }.start();
+//        }
+        List<SpcarPassenger> li = spcarPassengerService.findAllList(new SpcarPassenger());
+
+        for (SpcarPassenger l : li
+                ) {
+                    String imName = l.getImName();
+                    try {
+                        String sign = TlsSignUtil.getTlsSignKey(imName);
+                        System.out.println(sign);
+                        SpcarPassenger spcarPassenger = new SpcarPassenger();
+                        spcarPassenger.setSpcarId(l.getSpcarId());
+                        spcarPassenger.setSign(sign);
+                        spcarPassengerService.updateSelect(spcarPassenger);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+        }
+    }
+}

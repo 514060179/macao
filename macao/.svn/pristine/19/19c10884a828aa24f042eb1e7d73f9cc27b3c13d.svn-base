@@ -1,0 +1,57 @@
+package com.yinghai.macao.common.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import com.yinghai.macao.common.model.SpcarOrder;
+import com.yinghai.macao.common.util.Page;
+import org.apache.ibatis.annotations.Param;
+
+
+/**
+ * 专车订单DAO
+ */
+public interface SpcarOrderMapper {
+
+//	SpcarOrder getSpcarOrderByOrderNo(String orderNo);
+//	SpcarOrder getAppSpcarOrderByOrderNo(String orderNo);
+	int deleteByPrimaryKey(Integer spcarOrderId);
+
+	int insert(SpcarOrder record);
+
+	int insertSelective(SpcarOrder record);
+
+	SpcarOrder selectByPrimaryKey(Integer spcarOrderId);
+
+	int updateByPrimaryKeySelective(SpcarOrder record);
+
+	int updateByPrimaryKeyWithBLOBs(SpcarOrder record);
+
+	int updateByPrimaryKey(SpcarOrder record);
+
+	/**
+	 * 根据条件查询
+	 * @param spcarOrder
+	 * @return
+	 */
+	SpcarOrder selectByCondition(SpcarOrder spcarOrder);
+
+	/**
+	 * 分页查询
+	 * @param spcarOrder
+	 * @return
+	 */
+	Page<SpcarOrder> findListPage(SpcarOrder spcarOrder);
+	
+	Page<SpcarOrder> findFinishList(SpcarOrder spcarOrder);
+
+	SpcarOrder selectByPrimaryKeyToApp(Integer spcarOrderId);
+	
+	List<SpcarOrder> getNewAppointmentOrder(@Param("map")Map<String, Object> map);
+
+	List<SpcarOrder> selectByDriverId(@Param("driverId")Integer driverId,@Param("status")String status);
+	
+	List<SpcarOrder> findGoingDriverOrder(String driverId);
+	
+	Page<SpcarOrder> findPageGoingDriverOrder(SpcarOrder spcarOrder);
+}

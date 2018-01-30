@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.ParameterMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.Parameter" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="hour" property="hour" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="INTEGER" />
+    <result column="coefficient" property="coefficient" jdbcType="DOUBLE" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="item" property="item" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yinghai.macao.common.model.Parameter" extends="BaseResultMap" >
+    <result column="loc_str" property="locStr" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, hour, price, coefficient,remark,item
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from parameter
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+    <select id="findByHour" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from parameter
+    where hour = #{hour,jdbcType=INTEGER} limit 0,1
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from parameter
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yinghai.macao.common.model.Parameter" >
+    insert into parameter (id, hour, price, 
+      coefficient,remark,item
+      )
+    values (#{id,jdbcType=INTEGER}, #{hour,jdbcType=INTEGER}, #{price,jdbcType=INTEGER}, 
+      #{coefficient,jdbcType=DOUBLE},#{remark,jdbcType=VARCHAR},#{item,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yinghai.macao.common.model.Parameter" useGeneratedKeys="true" keyProperty="id">
+    insert into parameter
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="hour != null" >
+        hour,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="coefficient != null" >
+        coefficient,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="item != null" >
+        item,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="hour != null" >
+        #{hour,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=INTEGER},
+      </if>
+      <if test="coefficient != null" >
+        #{coefficient,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="item != null" >
+        #{item,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.common.model.Parameter" >
+    update parameter
+    <set >
+      <if test="hour != null" >
+        hour = #{hour,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=INTEGER},
+      </if>
+      <if test="coefficient != null" >
+        coefficient = #{coefficient,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="item != null" >
+        item = #{item,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yinghai.macao.common.model.Parameter" >
+    update parameter
+    set hour = #{hour,jdbcType=INTEGER},
+      price = #{price,jdbcType=INTEGER},
+      coefficient = #{coefficient,jdbcType=DOUBLE},
+      remark = #{remark,jdbcType=VARCHAR},
+      item = #{item,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yinghai.macao.common.model.Parameter" >
+    update parameter
+    set hour = #{hour,jdbcType=INTEGER},
+      price = #{price,jdbcType=INTEGER},
+      coefficient = #{coefficient,jdbcType=DOUBLE},
+      remark = #{remark,jdbcType=VARCHAR},
+      item = #{item,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findList" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.Parameter" >
+    select
+    <include refid="Base_Column_List" />
+    from parameter
+  </select>
+  
+  <select id="findListApp" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.Parameter" >
+    select
+    <include refid="Base_Column_List" />
+    from parameter
+    where 1=1 
+   	<choose>
+		<when test="item != null">
+			and item = #{item,jdbcType=VARCHAR}
+		</when>
+		<otherwise>
+			and item is null
+		</otherwise>
+	</choose>
+  </select>
+  
+  <select id="findSame" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.Parameter">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from parameter
+  	where hour = #{hour,jdbcType=INTEGER}
+  	<choose>
+   		<when test="item != null">
+  			and item = #{item,jdbcType=VARCHAR}
+  		</when>
+  		<otherwise>
+  			and item is null
+  		</otherwise>
+  		
+  	</choose>
+  </select>
+</mapper>

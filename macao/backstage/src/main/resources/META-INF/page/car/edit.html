@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Loading Container -->
+	<#include "../common/head.html"/>
+
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+						<li><a href="${base!}/admin/spcar/list">返回列表</a></li>
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title">
+						<h1>專車</h1>
+						<small> <i class="fa fa-angle-right"></i> <#if
+							spcar??>编辑專車#${spcar.spcarId}<#else>新增專車</#if>
+						</small>
+					</div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="${base!}/admin/spcar/edit" title="新增"> <i
+							class="glyphicon glyphicon-plus"></i>
+						</a>
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body">
+					<div class="row">
+						<div class="col-xs-2"></div>
+						<div class="col-sm-8">
+							<div class="widget radius-bordered">
+								<div class="widget-header">
+									<span class="widget-caption"> <#if
+										spcar??>编辑<#else>新增</#if> </span>
+								</div>
+								<div class="widget-body">
+									<form action='${base}/admin/spcar/save' enctype="multipart/form-data"  id="registrationForm" method="post" class="form-horizontal bv-form" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" novalidate="novalidate">
+										<div class="form-title">根據提示填寫以下內容</div>
+										 <input type="hidden" class="form-control" id="id" name="id" value="<#if spcar??>${spcar.spcarId!}</#if>" >
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">車型</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if spcar??>${spcar.spcarType!}</#if>'
+													id="spcarType" name="spcarType" placeholder="spcarType"
+													data-bv-notempty="true"
+													data-bv-notempty-message="The spcarType is required and cannot be empty"
+													data-bv-field="spcarType"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The spcarType is required
+													and cannot be empty</small>
+											</div>
+
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">車色</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if spcar??>${spcar.spcarColor!}</#if>'
+													id="spcarColor" name="spcarColor" placeholder="spcarColor"
+													data-bv-notempty="true"
+													data-bv-notempty-message="The spcarColor is required and cannot be empty"
+													data-bv-field="lastName"><i
+													class="form-control-feedback" data-bv-field="lastName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="lastName" class="help-block"
+													style="display: none;">The last name is required
+													and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">車牌號碼</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control" onchange = "checkSpcarNo()"
+													<#if spcar??>disabled="disabled"</#if>
+													value='<#if spcar??>${spcar.spcarNo!}</#if>' id="spcarNo"
+													name="spcarNo" placeholder="spcarType"
+													data-bv-notempty="true"
+													data-bv-notempty-message="The spcarType is required and cannot be empty"
+													data-bv-field="spcarType"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The spcarType is required
+													and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">限坐</label>
+											<div class="col-lg-4">
+												<input type="text"
+													value='<#if spcar??>${spcar.spcarSit!}</#if>'
+													class="form-control" id="spcarSit" name="spcarSit"
+													placeholder="spcarSit" data-bv-notempty="true"
+													data-bv-notempty-message="The last name is required and cannot be empty"
+													data-bv-field="lastName"><i
+													class="form-control-feedback" data-bv-field="lastName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="lastName" class="help-block"
+													style="display: none;">The last name is required
+													and cannot be empty</small>
+											</div>
+											<p class="help-block" style="color: red; font-size: 10px;"></p>
+
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">使用狀態</label>
+											<div class="col-lg-8">
+												<select class="selectpicker" id="spcarUsed" name='spcarUsed'>
+													<option value="false"<#if spcar??><#if
+														spcar.spcarUsed?string("1","0")='0'>selected</#if></#if>
+														>未使用</option>
+													<option value="true"<#if spcar??><#if
+														spcar.spcarUsed?string("1","0")='1'>selected</#if></#if>
+														>已使用</option>
+												</select>
+											</div>
+										</div>
+										                      <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">圖片</label>
+                                        <div class="col-lg-8">
+                                            <img src="<#if spcar??>/images/${spcar.image!}</#if>" id="previewFile" style="height:150px;width:150px;border: 1px solid #ddd;" />
+                                            <a href="javascript:;" class="a-upload">
+                                                <input type="file" id="file" name="file" >
+                                                 <input type="hidden" id="boochange" name="boochange" value='false'>
+                                            </a><i class="form-control-feedback" data-bv-field="confirmPassword" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The password cannot be the same as username</small><small data-bv-validator="identical" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The password and its confirm are not the same</small><small data-bv-validator="notEmpty" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The confirm password is required and cannot be empty</small></div>
+                                    </div>
+                                    
+										<div class="form-group">
+											<div class="col-xs-4"></div>
+											<div class="col-xs-4">
+												<input class="btn btn-default btn-lg btn-block"
+													type="button" id='submits' value="Validate">
+											</div>
+											<div class="col-xs-4"></div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2"></div>
+					</div>
+				</div>
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+	<!--Page Related Scripts-->
+	<!--Sparkline Charts Needed Scripts-->
+
+
+	<script>
+		function getFileType(filePath) {
+			var startIndex = filePath.lastIndexOf(".");
+			if (startIndex != -1)
+				return filePath.substring(startIndex + 1, filePath.length)
+						.toLowerCase();
+			else
+				return "";
+		}
+		$("#submits")
+				.click(
+						function() {
+							var spcarType = document
+									.getElementById("spcarType").value;
+							var spcarColor = document.getElementById('spcarColor').value;
+							var spcarNo = document.getElementById('spcarNo').value;
+							var spcarSit = document
+									.getElementById('spcarSit').value;
+							  var spcarUsed = $('#spcarUsed option:selected').val();
+							if (spcarType == "") {
+								$("#spcarType").focus();
+								alert("请輸入姓車型!");
+								return false;
+							}
+							if (spcarColor == "") {
+								$("#spcarColor").focus();
+								alert("请輸入車色 ！");
+								return false;
+							}
+							if (spcarNo == "") {
+								$("#spcarNo").focus();
+								alert("请输入車牌號碼!");
+								return false;
+							}
+							if (spcarSit == "") {
+								$("#spcarSit").focus();
+								alert("請輸入限坐人數!");
+								return false;
+							}
+							var id = document.getElementById("id").value;
+							if(id.trim()==""){
+								var jsonUser = {};
+					    		if(id.trim()!=""){
+					    			jsonUser["id"]=id;
+					    		}
+				                jsonUser["spcarNo"]=spcarNo;
+								$.post("${base}/admin/spcar/checkSpcarNo", jsonUser,
+										function(date) {
+											if(date.code == "-1"){
+												alert(date.msg);
+												return false;
+											}
+					    		});
+							}
+							var filePath = $("#file").val();  
+							if("" != filePath){  
+							    var fileType = getFileType(filePath);  
+							    //判断上传的附件是否为图片  
+							    if("jpg"!=fileType && "jpeg"!=fileType && "bmp"!=fileType && "png"!=fileType && "gif"!=fileType){  
+							        alert("请上传JPG,JPEG,BMP,PNG,GIF格式的图片");  
+							        return false;
+							    }  
+							    else{  
+							        //获取附件大小（单位：KB）  
+							        var fileSize = document.getElementById("file").files[0].size / 1024;  
+							        if(fileSize > 2048){  
+							            alert("图片大小不能超过2MB");  
+							            return false;
+							        }  
+							    } 
+							}
+							var formData = new FormData(
+									$("#registrationForm")[0]);
+							$
+							.ajax({
+								url : '${base}/admin/spcar/save',
+								type : 'POST',
+								data : formData,
+								async : false,
+								cache : false,
+								contentType : false,
+								processData : false,
+								success : function(returndata) {
+									if (returndata.code == "1"||returndata.code == "2") {
+										alert(returndata.msg);
+										window.location.href = '${base}/admin/spcar/list';
+									}else{
+										alert(returndata.msg);
+									}
+								},
+								error : function(returndata) {
+									alert(returndata);
+								}
+							});
+							//document.getElementById("registrationForm").submit();
+		               
+						});
+		
+	    $('#date-picker').datepicker();
+	    $(document).ready(function () {
+	        document.getElementById('file').onchange = function(evt) {
+	            // 如果浏览器不支持FileReader，则不处理
+	            if (!window.FileReader) return;
+	            document.getElementById("boochange").value='true';
+	            var files = evt.target.files;
+	            for (var i = 0, f; f = files[i]; i++) {
+	                if (!f.type.match('image.*')) {
+	                    continue;
+	                }
+	                var reader = new FileReader();
+	                reader.onload = (function(theFile) {
+
+	                    return function(e) {
+	                        // img 元素
+	                        document.getElementById('previewFile').style.display='block';
+	                        document.getElementById('previewFile').src = e.target.result;
+	                    };
+	                })(f);
+	                reader.readAsDataURL(f);
+	            }
+	        } 
+	    	
+	    })
+		function checkSpcarNo(){
+	    	var spcarNo = document.getElementById('spcarNo').value;
+	    	var id = document.getElementById('id').value;
+	    	if(spcarNo.trim()!=""){
+	    		var jsonUser = {};
+	    		if(id.trim()!=""){
+	    			jsonUser["id"]=id;
+	    		}
+	    		
+                jsonUser["spcarNo"]=spcarNo;
+					$.post("${base}/admin/spcar/checkSpcarNo", jsonUser,
+						function(date) {
+							if(date.code == "-1"){
+								alert(date.msg);
+								return false;
+							}
+	    		});
+	    	}
+	    }
+	</script>
+
+
+</body>
+<!--  /Body -->
+</html>

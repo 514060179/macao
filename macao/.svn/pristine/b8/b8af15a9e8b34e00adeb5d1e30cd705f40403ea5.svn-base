@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<#include "../common/head.html"/>
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+						<li><a href="list.html">返回列表</a></li>
+
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title">
+						<h1>訂單</h1>
+						<small> <i class="fa fa-angle-right"></i> <#if
+							order??>编辑專車#${order.spcarOrderId}<#else>新增訂單</#if>
+						</small>
+					</div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="#" title="新增"> <i class="glyphicon glyphicon-plus"></i>
+						</a>
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body">
+					<div class="row">
+						<div class="col-xs-2"></div>
+						<div class="col-sm-8">
+							<div class="widget radius-bordered">
+								<div class="widget-header">
+									<span class="widget-caption"><#if order??>编辑專車#${order.spcarOrderId}<#else>新增訂單</#if></span>
+								</div>
+								 <input type="hidden" class="form-control" id="id" name="id" value="<#if order??>${order.spcarOrderId!}</#if>" <#if order??>disabled="disabled"</#if>>
+								<div class="widget-body">
+									<form id="registrationForm" method="post"
+										class="form-horizontal bv-form"
+										data-bv-message="This value is not valid"
+										data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+										data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+										data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+										novalidate="novalidate">
+										<div class="form-title">根據提示填寫以下內容</div>
+										<div class="form-group has-feedback" id = "phone">
+											<label class="col-lg-4 control-label">乘客手機</label>
+											<div class="col-lg-4">
+												<select class="selectpicker" id='countryCode'
+													name="countryCode" onchange='checkTel()'>
+													<option value="853">Macaw 853</option>
+													<option value="852">HK 852</option>
+													<option value="86">P.R.C 86</option>
+												</select> <i class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The first name is required
+													and cannot be empty</small>
+											</div>
+											<div class="col-lg-4">
+												<input type="text" class="form-control" id='tel' name="tel"onchange='checkTel()'
+													placeholder="tel" data-bv-notempty="true"
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel"><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">預約時長（小時）</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													onkeyup="this.value=this.value.replace(/\D/g,'')"
+													onafterpaste="this.value=this.value.replace(/\D/g,'')"
+													maxlength="2" size="14" id="totalHour" name="totalHour"
+													placeholder="totalHour" data-bv-notempty="true"
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The amount is required and
+													cannot be empty</small>
+											</div>
+										</div>
+												<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">是否輸入價錢</label>
+											<div class="col-lg-4">
+											<select class="selectpicker" id='booleanAmount'
+													name="booleanAmount" onchange='checkAmount()'>
+													<option value="0">否</option>
+													<option value="1">是</option>
+												</select><i class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The first name is required
+													and cannot be empty</small>
+											</div>
+											<label class="col-lg-2 control-label" id = 'nameAmount'style="display:none;">總價（元）</label>
+											<div id='divAmount' name='divAmount' class="col-lg-2" style="display:none;">
+													<input type="text" class="form-control"
+													maxlength="11" size="14" id="amount" name="amount"
+													placeholder="amount" data-bv-notempty="true"
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The amount is required and
+													cannot be empty</small>
+													
+											</div>
+											</div>
+											
+											<div class="form-group has-feedback" id = "booleanCash">
+											<label class="col-lg-4 control-label">是否现金</label>
+											<div class="col-lg-4">
+											<select class="selectpicker" 
+													name="'booleanCash'" >
+													<option value="0">否</option>
+													<option value="1">是</option>
+												</select><i class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The first name is required
+													and cannot be empty</small>
+											</div>
+											</div>
+											<div class="form-group has-feedback" id = 'orderIdDiv' >
+										<label class="col-lg-4 control-label">原訂單號</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control" value = '${orderId!}' name="orderId" id = 'orderId'  readonly='readonly'
+													placeholder="原訂單號" data-bv-notempty="true"
+													onkeyup="this.value=this.value.replace(/\D/g,'')"
+													onafterpaste="this.value=this.value.replace(/\D/g,'')"
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The first name is required
+													and cannot be empty</small>
+											</div>
+											</div>
+											   <div class="form-group has-feedback" id = 'time'>
+                                        <label class="col-lg-4 control-label">上車時間</label>
+                                        <div class="col-lg-8">
+                                         <input type="datetime-local"  data-date-format="yyyy-MM-ddThh:mm" class="form-control" id="startTime" name="startTime" data-bv-message="The form-control is not valid" data-bv-notempty="true" data-bv-notempty-message="The license is required and cannot be empty" data-bv-regexp="true" data-bv-regexp-regexp="[a-zA-Z0-9_\.]+" data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore" data-bv-stringlength="true" data-bv-stringlength-min="10" data-bv-stringlength-max="30" data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long" data-bv-different="true" data-bv-different-field="password" data-bv-different-message="The username and password cannot be the same as each other" data-bv-field="username"><i class="form-control-feedback" data-bv-field="username" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="password" class="help-block" style="display: none;">The password cannot be the same as username</small><small data-bv-validator="startTime" data-bv-validator-for="password" class="help-block" style="display: none;">The password and its confirm are not the same</small><small data-bv-validator="notEmpty" data-bv-validator-for="password" class="help-block" style="display: none;">The password is required and cannot be empty</small></div>
+                                    	</div>
+							
+										<div class="form-group has-feedback" id = "coordinate">
+											<label class="col-lg-4 control-label">上車位置坐標</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control" name="startX"  id = 'startX'onchange='checkX()'
+													placeholder="x坐標" data-bv-notempty="true"
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The first name is required
+													and cannot be empty</small>
+											</div>
+											<p class="help-block" style="color: red; font-size: 10px;"></p>
+											<div class="col-lg-4">
+												<input type="text" class="form-control" name="startY" id = 'startY' onchange='checkY()'
+													placeholder="y坐標" data-bv-notempty="true"
+													data-bv-notempty-message="The last name is required and cannot be empty"
+													data-bv-field="lastName"><i
+													class="form-control-feedback" data-bv-field="lastName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="lastName" class="help-block"
+													style="display: none;">The last name is required
+													and cannot be empty</small>
+											</div>
+											<p class="help-block" style="color: red; font-size: 10px;"></p>
+										</div>
+										<div class="form-group has-feedback" id = "localtion">
+											<label class="col-lg-4 control-label">上車地點</label>
+											<div class="col-lg-8">
+												<input type="text" class="form-control" name="startAddress" id = 'startAddress'
+													placeholder="上車地點" data-bv-notempty="true"
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The first name is required
+													and cannot be empty</small>
+											</div>
+										<p class="help-block" style="color: red; font-size: 10px;"></p>
+										</div>
+										
+										
+										<div class="form-group">
+											<div class="col-xs-4"></div>
+											<div class="col-xs-4">
+												<input class="btn btn-default btn-lg btn-block"
+													type="button" id='submit' value="Validate">
+											</div>
+											<div class="col-xs-4"></div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2"></div>
+					</div>
+				</div>
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+	<!--Page Related Scripts-->
+	<!--Sparkline Charts Needed Scripts-->
+
+
+	<script>
+	window.onload=function(){
+		isRenew();
+		}
+		$('#date-picker').datepicker();
+		$("#submit")
+				.click(
+						function() {
+							var countryCode = $('#countryCode option:selected')
+							.val();
+							var booleanCash = $('#booleanCash option:selected')
+							.val();
+							var tel = document.getElementById('tel').value;
+							var orderId = document.getElementById('orderId').value;
+							var totalHour = document.getElementById('totalHour').value;
+							var startTime = document.getElementById('startTime').value;
+							var startX = document.getElementById('startX').value;
+							var startY = document.getElementById('startY').value;
+							var startAddress = document.getElementById('startAddress').value;
+							var amount = document.getElementById('amount').value;
+							var booleanAmount = $('#booleanAmount option:selected')
+							.val();
+							
+							if (totalHour == "") {
+								$("#totalHour").focus();
+								alert("请输入預約時長!");
+								return false;
+							}
+							if(orderId=""){
+								if (tel == "") {
+									$("#tel").focus();
+									alert("请輸入手機號 ！");
+									return false;
+								}
+								if (startTime == "") {
+									$("#startTime").focus();
+									alert("請輸入起始時間!");
+									return false;
+								}
+								if (startX == "") {
+									$("#startX").focus();
+									alert("请输入坐標X軸!");
+									return false;
+								}
+								if (startY == "") {
+									$("#startY").focus();
+									alert("請輸入坐標Y軸!");
+									return false;
+								}
+								if (startAddress == "") {
+									$("#startAddress").focus();
+									alert("請輸入開始位置!");
+									return false;
+								}
+							}
+					
+							var jsonUser = {};
+							var id = $("#id").val();
+							orderId = $("#orderId").val();
+							if(orderId!=""){
+								jsonUser["orderId"] = orderId;
+							}else{
+								var tel = document.getElementById("tel").value;
+								var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+								var countryCode = $('#countryCode option:selected').val();
+								if (tel != null && tel != '') {
+									if (countryCode == 853 || countryCode == 852) {
+										reg = /^0?6\d{7}$/;
+										if (!reg.test(tel)) {
+											// alert("");
+											$("#tel").focus();
+											$("#tel").next().text("該手機號不合法！");
+											alert("該手機號不合法！");
+											return false;
+										} else {
+											$("#tel").next().text("");
+										}
+									} else {
+										if (!reg.test(tel)) {
+											$("#tel").focus();
+											$("#tel").next().text("該手機號不合法！");
+											alert("該手機號不合法！");
+											return false;
+										} else {
+											$("#tel").next().text("");
+										}
+									}
+								}
+							 reg = /^\d+\.\d+$/;
+								if (!reg.test(startX)) {
+									$("#startX").focus();
+									$("#startX").next().text("坐标X不合法！");
+									alert("坐标X不合法！");
+									return false;
+								}
+								$("#startX").next().text("");
+								
+									if (!reg.test(startY)) {
+										$("#startY").focus();
+										$("#startY").next().text("坐标Y不合法！");
+										alert("坐标Y不合法！");
+										return false;
+									}
+								$("#startY").next().text("");
+								jsonUser["startTime"] = startTime;
+								jsonUser["startX"] = startX;
+								jsonUser["startY"] = startY;
+								jsonUser["startAddress"] = startAddress;
+								jsonUser["countryCode"] = countryCode;
+								jsonUser["tel"] = tel;
+							}
+						
+							jsonUser["totalHour"] = totalHour;
+							if(booleanAmount=="1"){
+								jsonUser["amount"] = amount;
+							}
+							jsonUser["booleanCash"] = booleanCash;
+							var act = "add";
+							if (id.trim() != "") {
+								jsonUser["id"] = id;
+								act = "upd";
+							}
+							$
+									.post(
+											"${base}/admin/order/save?act="
+													+ act,
+											jsonUser,
+											function(date) {
+													if (date.code == "1") {
+														alert("create success");
+														window.location.href = '${base}/admin/order/list';
+													} else{
+														alert(date.msg);
+													}
+											})
+						});
+
+		function checkTel() {
+			var tel = document.getElementById("tel").value;
+			var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+			var countryCode = $('#countryCode option:selected').val();
+			if (tel != null && tel != '') {
+				if (countryCode == 853 || countryCode == 852) {
+					reg = /^0?6\d{7}$/;
+					if (!reg.test(tel)) {
+						// alert("");
+						$("#tel").focus();
+						$("#tel").next().text("該手機號不合法！");
+						alert("該手機號不合法！");
+						return false;
+					} else {
+						$("#tel").next().text("");
+					}
+				} else {
+					if (!reg.test(tel)) {
+						$("#tel").focus();
+						$("#tel").next().text("該手機號不合法！");
+						alert("該手機號不合法！");
+						return false;
+					} else {
+						$("#tel").next().text("");
+					}
+				}
+			}
+		}
+
+		function checkX() {
+			var startX = document.getElementById("startX").value;
+			var reg = /^([\d]+|([\d]+[.]?|[\d]+[.]?[\d]+))$/;
+				if (!reg.test(startX)) {
+					$("#startX").focus();
+					$("#startX").next().text("坐标X不合法！");
+					return false;
+				}
+			$("#startX").next().text("");
+		}
+		
+		function checkY() {
+			var startY = document.getElementById("startY").value;
+			var reg = /^([\d]+|([\d]+[.]?|[\d]+[.]?[\d]+))$/;
+				if (!reg.test(startY)) {
+					$("#startY").focus();
+					$("#startY").next().text("坐标Y不合法！");
+					return false;
+				}
+			$("#startY").next().text("");
+		}
+		function checkAmount(){
+			var booleanAmount = $('#booleanAmount option:selected')
+			.val();
+			if(booleanAmount=="1"){
+				   $("#divAmount").show();
+				   $("#nameAmount").show();
+				   
+			}else{
+				   $("#divAmount").hide();
+				   $("#nameAmount").hide();
+				   
+			}
+			
+		}
+		function isRenew(){
+			var orderId = document.getElementById("orderId").value;
+			if(orderId==""){
+				   $("#coordinate").show();
+				   $("#localtion").show();
+				   $("#time").show();
+				   $("#booleanCash").show();
+				   $("#phone").show();
+				   $("#orderIdDiv").hide();
+			}else{
+				   $("#coordinate").hide();
+				   $("#localtion").hide();
+				   $("#time").hide();
+				   $("#booleanCash").hide();
+				   $("#phone").hide();
+				   $("#orderIdDiv").show();
+				   
+			}
+		}
+	</script>
+
+
+</body>
+<!--  /Body -->
+</html>

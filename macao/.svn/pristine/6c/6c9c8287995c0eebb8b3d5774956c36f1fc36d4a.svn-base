@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Loading Container -->
+	<!--  /Loading Container -->
+	<!-- Navbar -->
+<#include "../common/head.html"/>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+        <!-- Page Sidebar -->
+
+        <#include "../common/menu.html"/>
+            <!-- /Sidebar Menu -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                </div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="${base!}/admin/driver/edit" title="新增"> <i
+							class="glyphicon glyphicon-plus"></i>
+						</a>
+						<a  title="推送廣告" onclick="pushInfo()"> <i
+							class="glyphicon glyphicon-export"></i>
+						</a>
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body">
+					<div class="row">
+						<div class="col-xs-12 col-md-12">
+							<div class="widget">
+							<form action='${base!}/admin/driver/list' id='searchs' method="POST">
+								<div class="widget-header ">
+									<span class="widget-caption">專車列表</span> 狀態： 
+									<select class="selectpicker" id="query.status" name='query.status' onchange="runQuery();">
+									<option value=""></option>
+										<option value="0" <#if spcarDriver.status??><#if
+											spcarDriver.status='0'>selected</#if></#if> >載客中</option>
+										<option value="1" <#if spcarDriver.status??><#if
+											spcarDriver.status='1'>selected</#if></#if> >上線中</option>
+										<option value="2" <#if spcarDriver.status??><#if
+											spcarDriver.status='2'>selected</#if></#if>>指派派單</option>
+												<option value="3" <#if spcarDriver.status??><#if
+											spcarDriver.status='3'>selected</#if></#if> >前往接客</option>
+										<option value="999" <#if spcarDriver.status??><#if
+											spcarDriver.status='999'>selected</#if></#if> >離線</option>
+									</select> 手機號： <select id="query.countryCode" name='query.countryCode'
+										class="selectpicker">
+										<option value=""></option>
+										<option value="853" <#if spcarDriver.countryCode??><#if
+											spcarDriver.countryCode='853'>selected</#if></#if> >Macaw 853</option>
+										<option value="852" <#if spcarDriver.countryCode??><#if
+											spcarDriver.countryCode='852'>selected</#if></#if> >HK 852</option>
+										<option value="86" <#if spcarDriver.countryCode??><#if
+											spcarDriver.countryCode='86'>selected</#if></#if>>P.R.C 86</option>
+									</select> -  <input
+										class="searchinput" type="text"
+										value='<#if spcarDriver??> ${spcarDriver.tel!}</#if>' id='query.tel'
+										name='query.tel' onkeyup="searchenter(event);"> 姓名： <input type="text"
+										class="searchinput"value='<#if spcarDriver??>${spcarDriver.name!}</#if>' id='query.name'
+										name='query.name' onkeyup="searchenter(event);">
+										</form>
+										<i onclick='search()'
+										class="searchicon fa fa-search"></i>
+									<div class="widget-buttons">
+										<a href="#" data-toggle="maximize"> <i
+											class="fa fa-expand"></i>
+										</a>
+									</div>
+								</div>
+								
+								<div class="widget-body">
+									<table class="table table-striped table-bordered table-hover"
+										id="simpledatatable">
+										<thead>
+											<tr>
+												<th>編號</th>
+												<th>司機姓名</th>
+												<th>司機狀態</th>
+												<th>區號</th>
+												<th>手機</th>
+												<th>备注</th>
+												<th>更多操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<#if page??> <#list page as item>
+											<tr id="${item.spcarDriverId!}Tr">
+												<td>
+													<div class="checker">
+														<span class=""><input type="checkbox"
+															class="checkboxes" value="${item.spcarDriverId!}"></span>${item.spcarDriverId!}
+													</div>
+												</td>
+												<td>${item.name!}</td>
+												<td>
+												<#if item.status??> <#if item.status='0'>載客中</#if>
+												 <#if item.status='1'>上線中</#if>
+												 <#if item.status='2'>指派派單</#if>
+												 <#if item.status='3'>前往接客</#if>
+												 <#if item.status='999'>離線</#if></#if>
+												</td>
+												<td>${item.countryCode!}</td>
+												<td class="center">${item.tel!}</td>
+												<td class="center" width="15%">
+													<#if item.remark??>
+			                                        		<#if item.remark?length gt 16>${item.remark[0..12]}...<a href="#" data-container="body"  data-toggle="popover"  data-content="${item.remark!}" data-placement="auto">详情</a>
+			                                        		<#else>
+			                                        			${item.remark!}
+			                                        		</#if>
+			                                        </#if>
+												</td>
+												<td><ma-column> <ma-string-column>
+													<span class="ng-binding"> <a
+														href="${base!}/admin/driver/edit?id=${item.spcarDriverId!}&act=upd">编辑</a>
+														&nbsp <a href="javascript:void(0)"
+														onclick="delManager('${item.spcarDriverId!}')">删除</a>
+											  			<a href="${base}/admin/driver/footprint?id=${item.spcarDriverId!}">历史行程</a>
+													</span></ma-string-column></ma-column></td>
+											</tr>
+  										</#list> 
+										</#if>
+										</tbody>
+									</table>
+									<div class="row DTTTFooter">
+										<div class="col-sm-6">
+											<div class="dataTables_info" id="simpledatatable_info"
+												role="alert" aria-live="polite" aria-relevant="all"></div>
+										</div>
+										<div class="col-sm-6"><#import "/ftl/pager.ftl" as p/>
+											<#if page??> <@p.pager pageNo=pageNo pageSize=pageSize
+											recordCount=recordCount pageCount=pageCount
+											toURL="${base!}/admin/driver/list" method="post"/> </#if></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+
+	<!--Page Related Scripts-->
+	<!--Sparkline Charts Needed Scripts-->
+
+
+	<script>
+		$(function(){
+			$('[data-toggle="popover"]').popover({trigger: 'focus'});
+		});
+		$('#date-picker').datepicker();
+		var h = parseFloat(screen.height) / 5 * 3;
+		var w = parseFloat(screen.width) / 7 * 3;
+		$("#message").click(function() {
+			
+			/* layer.open({
+			     type: 2,
+			     area: ['750px', '718px'],
+			     offset: 'auto',
+			     content: ['../index.html', 'yes'],
+			     shadeClose :true,
+			     scrollbar: false,
+			     shadowOpacity:0.1
+			 });*/
+			//        layer.open({
+			//            title:false,
+			//            shift:6,
+			//            type: 2,
+			//            area: ['750px', '718px'],
+			//            shadeClose :true,
+			//            shade: false,
+			//            content: ['../index.html', 'yes']
+			//        });
+			//        layer.open({
+			//            type: 1,
+			//            title: false,
+			//            closeBtn: 0,
+			//            shadeClose: true,
+			//            skin: 'yourclass',
+			//            content: '../index.html'
+			//        });
+		})
+		
+		 function delManager(id) {
+        var sure = confirm("確定刪除?");
+        if(sure) {
+            $.post("${base}/admin/driver/del", {
+                    "id" : id
+                },
+                function(data) {
+                    if (data.code == "1") {
+                        alert("刪除成功!");
+                        $("#" + id + "Tr").remove();
+                    } else {
+                        alert("刪除失敗!");
+                    }
+                });
+        }
+	}
+		function search(){
+			 document.getElementById("searchs").submit();
+		}
+		function pushInfo(){
+        	layer.open({
+             	  title: '推送消息',
+        //     	  area: ['350px', '350px'],
+             	  content: '<textarea style="width:250px;height:100px;" id="pushInfos" placeholder="推送內容" ></textarea>',
+             	  yes : function(index){
+             		 var pushInfos = $('#pushInfos').val()
+             	//	alert(score)
+             	//	alert(comments)
+             	 var json = {
+             			  "msg" : pushInfos,
+					 		"type":"driver"
+             	  }
+             		$.post("${base}/admin/driver/pushMsgToDriver",json,function(data){
+             	          		if (data.code == "1") {
+             	           			alert("success");
+             	           		   layer.close(index);
+            	                    window.location.reload();
+             	                }else{
+             	           			alert("推送失敗！稍後重試"+data.code);
+             	           			layer.close(index);
+             	           		}
+
+             							});
+ 
+             		var json2 = {
+             				"broadcastContent" : pushInfos,
+             				"broadcastType" :0
+             		}
+             		
+             		$.post("${base}/admin/broadcast/save",json2,function(data){
+     	          		if (data.code == "1") {
+     	           		//	alert("success");
+     	                 
+     	                }else{
+     	           	//		alert("推送失敗！稍後重試"+data.code);
+     	                    
+     	           		}
+
+     							});
+             	  }
+             	});    
+		}
+		function runQuery(){
+			search();
+		}
+		function searchenter(event) {
+	        event = event || window.event;
+	        if (event.keyCode == 13) {
+	            search();
+	        }
+	    }
+	</script>
+
+
+</body>
+<!--  /Body -->
+</html>

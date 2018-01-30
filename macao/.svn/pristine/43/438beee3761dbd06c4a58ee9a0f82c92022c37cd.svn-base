@@ -1,0 +1,55 @@
+package com.yinghai.macao.common.service;
+
+import java.util.List;
+
+import com.yinghai.macao.common.model.SpcarComment;
+import com.yinghai.macao.common.model.SpcarNews;
+import com.yinghai.macao.common.util.Page;
+
+/**
+ * Created by Administrator on 2017/8/28.
+ * @author Administrator
+ *
+ */
+public interface SpcarNewsService {
+	/**
+	 * 根據條件分頁查詢最新消息
+	 * @param pageNum	第幾頁
+	 * @param pageSize	每頁記錄數
+	 * @param spcarNews	查詢條件
+	 * @return
+	 */
+	Page<SpcarNews> findListSelectiveAndPage(int pageNum,int pageSize,SpcarNews spcarNews);
+	/**
+	 * 根據條件查詢最新消息
+	 * @param spcarNews
+	 * @return
+	 */
+	List<SpcarNews> findListSelective(SpcarNews spcarNews);
+	/**
+	 * 根据ID查找最新消息
+	 * @param newsId
+	 * @return
+	 */
+	SpcarNews findNewsById(Integer newsId);
+	/**
+	 * 更新消息(根據條件)
+	 * @param news
+	 * @return
+	 */
+	int updateNews(SpcarNews news);
+	
+	/**
+	 * 新增消息
+	 * @param news
+	 * @return
+	 */
+	int addNews(SpcarNews news);
+	/**
+	 * 删除消息
+	 * @param newsId
+	 * @return
+	 */
+
+	int deleteNews(Integer newsId);
+}

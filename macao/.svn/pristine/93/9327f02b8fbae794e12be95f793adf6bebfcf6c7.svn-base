@@ -1,0 +1,154 @@
+package com.yinghai.macao.app.service.impl;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.yinghai.macao.app.service.ThirdPartyService;
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.dao.ThirdPartyMapper;
+import com.yinghai.macao.common.model.ThirdParty;
+import com.yinghai.macao.common.util.EmojiUtil;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+import net.sf.json.JSONObject;
+
+public class ThirdPartyServiceImpl implements ThirdPartyService {
+	
+	private Logger log = Logger.getLogger(this.getClass());
+	@Autowired
+	private ThirdPartyMapper thirdPartyMapper;
+	@Override
+	public Map<String, Object> getAccessToken(String code, String deviceType, String type,String realm) {
+		Map<String,Object> map = new HashMap<String,Object>();
+		String appid=Constant.APPID_LOGIN;
+		String appsecret = Constant.APPSECRET;
+		if(StringUtil.notEmpty(realm)&&"passenger".equals(realm)){
+			appid = Constant.APPID_PASSENGER;
+			appsecret = Constant.APPSECRET_PASSENGER;
+		}
+		String url = "";
+		if(Constant.WX_LOGIN.equals(type)){//微信登录
+			if(deviceType!=null&&"3".equals(deviceType)){//公众号与微信、APP的接口有区别
+				url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="
+						+ appid+ "&secret="
+						+ appsecret + "&code=" + code
+						+ "&grant_type=authorization_code";
+			}else{
+				url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="
+						+ appid + "&secret="
+						+ appsecret + "&code=" + code
+						+ "&grant_type=authorization_code";
+			}
+		}
+		
+		try {
+			URL u = new URL(url);
+			URLConnection urlcon = u.openConnection();
+			InputStream is = urlcon.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+			StringBuffer bf = new StringBuffer();
+			String s = null;
+			while((s=br.readLine())!=null){
+				bf.append(s);
+			}
+			JSONObject json = JSONObject.fromObject(bf.toString());
+			System.out.println("******************"+json.toString());
+			System.out.println("*****appid="+appid);
+			System.out.println("*****appsecret="+appsecret);
+			map.put("accessToken", (String) json.getString("access_token"));
+			map.put("openid", (String) json.getString("openid"));//获取用户信息时所需，由于APP跟微信返回的值不一样，所以不能当做唯一标识
+			map.put("unionid", (String) json.getString("unionid"));//唯一标识，APP 公众号都统一
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return map;
+	}
+
+	@Override
+	public Map<String, Object> getInfo(String accessToken, String openid, String type) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		String URL="";
+		if(Constant.WX_LOGIN.equals(type)){//判断是否为微信登录，暂时先做微信登录
+			 URL = "https://api.weixin.qq.com/sns/userinfo?access_token="
+					+ accessToken + "&openid=" + openid;
+			try {
+				URL url = new URL(URL);
+				URLConnection urlcon = url.openConnection();
+				InputStream is = urlcon.getInputStream();
+				BufferedReader buffer = new BufferedReader(new InputStreamReader(
+						is, "UTF-8"));
+				StringBuffer bs = new StringBuffer();
+				String l = null;
+				while ((l = buffer.readLine()) != null) {
+					bs.append(l);
+				}
+				JSONObject json = JSONObject.fromObject(bs.toString());
+				System.out.println("************"+json.toString());
+				map.put("nickname",EmojiUtil.filterEmoji((String) json.getString("nickname"))); // 昵称
+				map.put("headimgurl", (String) json.getString("headimgurl")); // 头像
+				map.put("sex", TransformUtils.toString(json.getString("sex"))); // 性别1:男，2:女
+				map.put("province", TransformUtils.toString(json.getString("province"))); 
+				map.put("city", TransformUtils.toString(json.getString("city"))); 
+				map.put("country", TransformUtils.toString(json.getString("country"))); 
+				map.put("unionid", TransformUtils.toString(json.getString("unionid"))); //ios与安卓都相同的唯一标识
+			} catch (IOException e) {
+				log.error("get wechat info fail" + e);
+				return null;
+			}
+		}
+		return map;
+	}
+
+	@Override
+	public ThirdParty selectByOpenid(String openId,Integer userType) {
+		return thirdPartyMapper.selectByOpenid(openId,userType);
+	}
+
+	@Override
+	public int create(ThirdParty thirdParty) {
+		return thirdPartyMapper.create(thirdParty);
+	}
+
+	@Override
+	public List<ThirdParty> findListByUserId(Integer spcarDriverId) {
+		return thirdPartyMapper.findListByUserId(spcarDriverId);
+	}
+
+	@Override
+	public int updateSelective(ThirdParty thirdParty) {
+		return thirdPartyMapper.updateData(thirdParty);
+	}
+
+	@Override
+	public List<ThirdParty> selectByThirdParty(ThirdParty third) {
+		return thirdPartyMapper.findListSelective(third);
+	}
+
+	@Override
+	public ThirdParty selectByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return thirdPartyMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public int updateByPrimaryKeySelective(ThirdParty third) {
+		// TODO Auto-generated method stub
+		return thirdPartyMapper.updateByPrimaryKeySelective(third);
+	}
+
+
+}

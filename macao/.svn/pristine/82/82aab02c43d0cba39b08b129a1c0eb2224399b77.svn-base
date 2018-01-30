@@ -1,0 +1,377 @@
+package com.yinghai.macao.backstage.controller;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.alibaba.fastjson.JSONObject;
+import com.yinghai.macao.backstage.service.impl.MenuService;
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.constant.SpcarDriverPushCode;
+import com.yinghai.macao.common.constant.SpcarPassengerPushCode;
+import com.yinghai.macao.common.model.SpcarNews;
+import com.yinghai.macao.common.service.SpcarNewsService;
+import com.yinghai.macao.common.util.ImageUploadUtil;
+import com.yinghai.macao.common.util.Page;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TecentImUtils;
+import com.yinghai.macao.common.util.TlsSignUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+/**
+ * 最新消息
+ * @author Administrator
+ * Created by Administrator on 2017/8/28.
+ */
+@Controller
+@RequestMapping("admin/spcarnews")
+public class BackSpcarNewsController {
+	private Logger log = Logger.getLogger(this.getClass());
+	@Resource
+	private SpcarNewsService spcarNewsService;
+	@Resource
+	private MenuService menuService;
+	
+	/**
+	 * 最新消息列表
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("list")
+	public String list(HttpServletRequest request,ModelMap model){
+		log.debug("======最新消息列表======");
+		try {
+            request.setCharacterEncoding("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+		Integer pageNo = TransformUtils.toInt(request.getParameter("page"));
+        pageNo = pageNo==0?1:pageNo;
+        Integer pageSize = 10;
+        SpcarNews news = new SpcarNews();
+        String title = request.getParameter("newsTitle");
+        if(title!=null&&title!=""){
+            model.put("newsTitle",title);//将值重新传回前端
+            news.setNewsTitle(title);
+        }
+        //查詢最新消息
+        Page<SpcarNews> page = spcarNewsService.findListSelectiveAndPage(pageNo, pageSize, news);
+        model.put("page", page);
+        model.addAttribute("pageNo", page.getPageNum());
+        model.addAttribute("pageSize", page.getPageSize());
+        model.addAttribute("recordCount", page.getTotal());
+        model.addAttribute("pageCount", page.getPages());
+		return "news/list";
+	}
+	/**
+	 * 進入編輯或新增消息頁面
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="toEdit")
+	public String toEdit(HttpServletRequest request,ModelMap model){
+		log.debug("======進入編輯或新增消息頁面======");
+		try {
+            request.setCharacterEncoding("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+		//根據狀態判斷是新增還是修改
+		String act = request.getParameter("act");
+		String result = "news/edit";
+		if("upd".equals(act)){
+			String id = request.getParameter("id");
+			if(!StringUtil.empty(id)&&id.matches("[0-9]+")){
+                model.addAttribute("spcarNews",spcarNewsService.findNewsById(Integer.valueOf(id)));
+            }else{
+                log.error("======edit one news.id can not null======");
+                model.addAttribute("msg","id can not be null");
+                return "500";
+            }
+		}
+		Date now = new Date();
+		model.addAttribute("now", now);
+		return "news/edit";
+	}
+	/**
+	 * 保存編輯或新增消息
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value="save")
+	public void save(HttpServletRequest request,HttpServletResponse response){
+		log.debug("======保存編輯或新增消息======");
+		try {
+            request.setCharacterEncoding("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+		//獲取參數
+		JSONObject responseObject = new JSONObject();
+		String act =request.getParameter("act");
+		SpcarNews news = new SpcarNews();
+		String title = request.getParameter("title");
+		String pushMsg = request.getParameter("pushMsg");
+		String content = request.getParameter("content");
+		String publishSince = request.getParameter("publishSince");
+		String publishTill = request.getParameter("publishTill");
+		String realm = request.getParameter("realm");
+		if(StringUtil.empty(title)){
+			responseObject.put("msg", "標題為空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+		}
+		if(StringUtil.empty(pushMsg)){
+			responseObject.put("msg", "发布內容為空！");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		if(StringUtil.empty(content)){
+			responseObject.put("msg", "內容為空！");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		if(StringUtil.empty(publishSince)){
+			responseObject.put("msg", "发布日期為空！");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		if(StringUtil.empty(publishTill)){
+			responseObject.put("msg", "发布截止日期為空！");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		if(StringUtil.empty(realm)){
+			responseObject.put("msg", "設備端類型為空！");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		Date since=null;
+		Date till=null;
+		try {
+			since = sdf.parse(publishSince);
+			till = sdf.parse(publishTill);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			responseObject.put("msg", "发布日期或截止日期格式錯誤！");
+			responseObject.put("code", "119");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		if(till.getTime()-since.getTime()<0){
+			responseObject.put("msg", "发布截止日期不能早于发布日期！");
+			responseObject.put("code", "119");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		news.setNewsTitle(title);
+		news.setPublishSince(since);
+		news.setPublishTill(till);
+		news.setPushMsg(pushMsg);
+		news.setRealm(realm);
+		news.setContent(content);
+		if("upd".equals(act)){//保存編輯
+			String newsId = request.getParameter("id");
+			if(StringUtil.empty(newsId)){
+				responseObject.put("msg", "消息id為空！");
+				responseObject.put("code", "101");
+				responseObject.put("data", new JSONObject());
+				ResponseUtils.renderJson(response, responseObject.toString());
+				return;
+			}
+			news.setNewsId(TransformUtils.toInt(newsId));
+			SpcarNews n = spcarNewsService.findNewsById(TransformUtils.toInt(newsId));
+			if(n==null){
+				responseObject.put("msg", "对应消息不存在！");
+				responseObject.put("code", "102");
+				responseObject.put("data", new JSONObject());
+				ResponseUtils.renderJson(response, responseObject.toString());
+				return;
+			}
+			//更新消息
+			int i = spcarNewsService.updateNews(news);
+			if(i!=1){
+				responseObject.put("msg", "更新消息失败！");
+				responseObject.put("code", "110");
+			}else{
+				responseObject.put("msg", "更新消息成功！");
+				responseObject.put("code", "10");
+			}
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+		}else{//新增消息
+			int j = spcarNewsService.addNews(news);
+			int i = news.getNewsId();
+			if(j!=1){
+				responseObject.put("msg", "新增消息失败！");
+				responseObject.put("code", "110");
+			}else{
+				responseObject.put("msg", "新增消息成功！");
+				responseObject.put("code", "11");
+			}
+			responseObject.put("data", i);
+			ResponseUtils.renderJson(response, responseObject.toString());
+		}
+	}
+	
+	@RequestMapping(value="del")
+	public void deleteNews(HttpServletRequest request,HttpServletResponse response){
+		log.debug("======删除消息======");
+		try {
+            request.setCharacterEncoding("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+		JSONObject responseObject = new JSONObject();
+		//获取参数
+		String newsId = request.getParameter("id");
+		if(StringUtil.empty(newsId)){
+			responseObject.put("msg", "id不能为空！");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		SpcarNews n = spcarNewsService.findNewsById(TransformUtils.toInt(newsId));
+		if(n==null){
+			responseObject.put("msg", "对应消息不存在！");
+			responseObject.put("code", "102");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		int i = spcarNewsService.deleteNews(n.getNewsId());
+		if(i!=1){
+			responseObject.put("msg", "删除消息失败！");
+			responseObject.put("code", "110");
+		}else{
+			responseObject.put("msg", "删除消息成功！");
+			responseObject.put("code", "1");
+		}
+		responseObject.put("data", new JSONObject());
+		ResponseUtils.renderJson(response, responseObject.toString());
+	}
+	
+	
+	
+	/**
+	 * ckeditor图片上传
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value="imageUpload")
+	public void imageUpload(HttpServletRequest request,HttpServletResponse response){
+		String DirectoryName = "upload";
+        try {
+            ImageUploadUtil.ckeditor(request, response, DirectoryName);
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	/**
+	 * 推送最新消息给乘客或司机
+	 * @param request
+	 * @param response
+	 * @throws Exception 
+	 */
+	@RequestMapping(value="pushMsg")
+	public void pushMsgToUser(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		log.debug("======推送消息======");
+		try {
+            request.setCharacterEncoding("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+		JSONObject responseObject = new JSONObject();
+		String newsId = request.getParameter("id");
+		if(StringUtil.empty(newsId)){
+			responseObject.put("msg", "id不能为空！");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		SpcarNews n = spcarNewsService.findNewsById(TransformUtils.toInt(newsId));
+		if(n==null){
+			responseObject.put("msg", "对应消息不存在！");
+			responseObject.put("code", "102");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		n.setPushMsg("推送消息："+n.getPushMsg());//推送內容前添加"推送消息："
+		responseObject.put("msg", "success");
+		responseObject.put("data", n);
+		String sign = TlsSignUtil.getTlsSignKey("admin");//tls后台签名
+		String groupTag = "";
+		if("driver".equals(n.getRealm())){//向司机端推送
+			responseObject.put("code", SpcarDriverPushCode.PUSHBYTAGS);
+			groupTag = Constant.driver;
+		}else{//向乘客端推送
+			responseObject.put("code", SpcarPassengerPushCode.PUSHBYTAGS);
+			groupTag = Constant.passenger;
+		}
+		String restr = TecentImUtils.pushOne(sign, groupTag, responseObject.toString());
+		net.sf.json.JSONObject addTagsJson = net.sf.json.JSONObject.fromObject(restr);
+		if (!addTagsJson.getString("ActionStatus").equals("OK")) {
+			if("driver".equals(n.getRealm())){
+				log.error("===================推送901司机失败 ====BackSpcarNewsController/pushMsgToUser："+restr);
+			}else{
+				log.error("===================推送709乘客失败 ====BackSpcarNewsController/pushMsgToUser："+restr);
+			}
+			responseObject = new JSONObject();
+			responseObject.put("msg", "fail");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			return;
+		}
+		//推送次數增加，更新最新推送時間
+		SpcarNews news = new SpcarNews();
+		news.setNewsId(n.getNewsId());
+		news.setPushTotalTimes(n.getPushTotalTimes()+1);
+		System.out.println("*******************"+news.getPushTotalTimes());
+		news.setPushLatestTime(new Date());
+		System.out.println("*******************"+news.getPushLatestTime());
+		int i = spcarNewsService.updateNews(news);
+		if(i!=1){
+			log.error("======推送次數及推送結果更新失敗======");
+		}
+		responseObject = new JSONObject();
+		responseObject.put("msg", "success");
+		responseObject.put("code", "1");
+		responseObject.put("data", new JSONObject());
+		ResponseUtils.renderJson(response,responseObject.toJSONString());
+	}
+}

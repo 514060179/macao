@@ -1,0 +1,134 @@
+package com.yinghai.macao.backstage.controller;
+
+import java.io.UnsupportedEncodingException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.alibaba.fastjson.JSONObject;
+import com.yinghai.macao.backstage.model.SpcarManager;
+import com.yinghai.macao.backstage.service.impl.SpcarManagerService;
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.service.SpcarPassengerService;
+import com.yinghai.macao.common.util.Page;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+@Controller
+@RequestMapping("/admin/passenger")
+public class SpcarPassengerAction {
+	private Logger log = Logger.getLogger(this.getClass());
+    @Autowired
+    private SpcarPassengerService spcarPassengerService;
+	 @RequestMapping("/list")
+	    public String list(HttpServletRequest request, ModelMap model) {
+	        log.debug("======获取管理员列表======");
+	        try {
+				request.setCharacterEncoding("utf-8");
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        SpcarPassenger spcarPassenger = new SpcarPassenger();
+	        String id = request.getParameter("id");
+	        if(!StringUtil.empty(id)){
+	        	spcarPassenger.setSpcarId(Integer.valueOf(id));
+	        }
+	        String status = request.getParameter("query.status");
+	        if(!StringUtil.empty(status)){
+	        	spcarPassenger.setStatus(TransformUtils.toInt(status));
+	        }
+	        String countryCode = request.getParameter("query.countryCode");
+	        if(!StringUtil.empty(countryCode)){
+	        	spcarPassenger.setCountryCode(countryCode.trim());;
+	        }
+	        String tel = request.getParameter("query.tel");
+	        if(!StringUtil.empty(tel)){
+	        	spcarPassenger.setTel("%"+tel.trim()+"%");;
+	        }
+	        String name = request.getParameter("query.name");
+	        if(!StringUtil.empty(name)){
+	        	spcarPassenger.setName("%"+name.trim()+"%");;
+	        }
+
+	        String sex = request.getParameter("query.sex");
+	        if(!StringUtil.empty(sex)){
+	        		 spcarPassenger.setSex( Boolean.valueOf(sex).booleanValue());
+	        }else{
+	        	spcarPassenger.setSex(null);
+	        }
+	        String num = request.getParameter("page");
+	        Integer pageNum;
+	        if(StringUtil.empty(num)){
+	            pageNum = 1;
+	        }else{
+	            pageNum = Integer.valueOf(num);
+	        }
+	        String size = request.getParameter("pageSize");
+	        Integer pageSize;
+	        if(StringUtil.empty(size)){
+	            pageSize = 10;
+	        }else{
+	            pageSize = Integer.valueOf(size);
+	        }
+	       Page<SpcarPassenger> page = spcarPassengerService.findList(pageNum,pageSize,spcarPassenger);
+	        model.addAttribute("managerList",page);
+	        model.addAttribute("page",page);
+	        if(spcarPassenger.getTel()!=null&&spcarPassenger.getTel().startsWith("%")){
+	        	spcarPassenger.setTel(tel.trim());
+	        }
+	        if(spcarPassenger.getName()!=null&&spcarPassenger.getName().startsWith("%")){
+	        	spcarPassenger.setName(name.trim());
+	        }
+
+	        model.addAttribute("spcarPassenger",spcarPassenger);
+	        model.addAttribute("pageNo",page.getPageNum());
+	        model.addAttribute("pageSize",page.getPageSize());
+	        model.addAttribute("recordCount",page.getTotal());
+	        model.addAttribute("pageCount",page.getPages());
+	        return "passenger/list";
+	    }
+	 //addorDelVip
+	 @RequestMapping("/addorDelVip")
+	    public void addorDelVip(HttpServletRequest request, ModelMap model, HttpServletResponse response) {
+	        log.debug("======获取管理员列表======");
+	        try {
+				request.setCharacterEncoding("utf-8");
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        JSONObject responseObject = new JSONObject();
+	        String id = request.getParameter("id");
+	        if(StringUtil.empty(id)){
+	        	log.error("id is null");
+	        	 responseObject.put("msg", "id is null");
+	             responseObject.put("code", "101");
+	             responseObject.put("data", new JSONObject());
+	             ResponseUtils.renderJson(response, responseObject.toString());
+	        }
+	        SpcarPassenger spcarPassenger = spcarPassengerService.findById(TransformUtils.toInt(id));
+	        if(spcarPassenger==null){
+	        	log.error("spcarPassenger is null");
+	        	 responseObject.put("msg", "spcarPassenger is null");
+	             responseObject.put("code", "102");
+	             responseObject.put("data", new JSONObject());
+	             ResponseUtils.renderJson(response, responseObject.toString());
+	        }
+	       int i= spcarPassengerService.updateSpcarPaaenger(spcarPassenger);
+	       if(i==2){
+	    	   responseObject.put("msg", "success");
+	             responseObject.put("code", "1");
+	             responseObject.put("data", new JSONObject());
+	             ResponseUtils.renderJson(response, responseObject.toString());
+	       }
+	        
+	 }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8"/>
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+    <!--Basic Styles-->
+    <link href="${base!}/assets/admin/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="${base!}/assets/admin/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="${base!}/assets/admin/css/weather-icons.min.css" rel="stylesheet"/>
+
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="${base!}/assets/admin/css/beyond.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${base!}/assets/admin/css/demo.min.css" rel="stylesheet"/>
+    <link href="${base!}/assets/admin/css/typicons.min.css" rel="stylesheet"/>
+    <link href="${base!}/assets/admin/css/animate.min.css" rel="stylesheet"/>
+    <link id="skin-link" href="" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="${base!}/assets/admin/css/jquery-ui.css"/>
+
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<input id='id' name='id' type='hidden' value='${orderId!}'>
+ <div class="widget-body">
+<tr>
+<td><#if spcarOrder??>${spcarOrder.startAddress!}(起点)-></#if> </td>
+   <#list orderDirectionList as item>
+   <td><#if item.descript??>${item.descript!}(途径)-></#if> </td>
+   </#list>
+<td><#if spcarOrder??>${spcarOrder.endAddress!}(终点)</#if> </td>
+</tr>
+</div>
+</body>
+<!--  /Body -->
+<script>
+   
+</script>
+
+
+</html>

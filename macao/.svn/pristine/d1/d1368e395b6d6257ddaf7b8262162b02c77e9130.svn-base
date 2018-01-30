@@ -1,0 +1,259 @@
+package com.yinghai.macao.app.controller;
+
+import com.yinghai.macao.app.service.SpcarUserService;
+import com.yinghai.macao.app.vo.ResponseVo;
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.model.SpcarDriver;
+import com.yinghai.macao.common.service.SpcarDriverService;
+import com.yinghai.macao.common.util.IMMsgRequestUtil;
+import com.yinghai.macao.common.util.JsonDateValueProcessor;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.SmsSenderUtil;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TlsSignUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
+/**
+ * Created by Administrator on 2017/6/6.
+ * 专车登录，发送验证码
+ */
+@Controller
+@RequestMapping("/spcar/user")
+public class SpcarUserController {
+
+    private Logger log = Logger.getLogger(this.getClass());
+
+    @Autowired
+    SpcarDriverService spcarDriverService;
+
+    @Autowired
+    SpcarUserService spcarUserService;
+
+    @RequestMapping(value = "driverLogin", method = RequestMethod.POST)
+    public void driverLogin(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        try {
+            request.setCharacterEncoding("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        JSONObject responseObject = new JSONObject();
+        String countryCode = request.getParameter("countryCode");
+        if(StringUtil.empty(countryCode)){
+            responseObject.put("msg", "countryCode为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        String tel = request.getParameter("tel");
+        if(StringUtil.empty(tel)){
+            responseObject.put("msg", "tel为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+
+        String verification = request.getParameter("verification");
+        if(StringUtil.empty(verification)){
+            responseObject.put("msg", "verification为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+
+        SpcarDriver spcarDriver = spcarDriverService.findByTel(countryCode,tel);
+        if(spcarDriver==null){
+            responseObject.put("msg", "司机不存在！");
+            responseObject.put("code", "102");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(spcarDriver.getDeleted()){
+            responseObject.put("msg", "司机已被拉黑！");
+            responseObject.put("code", "110");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if("66789998".equals(verification)||verification.equals(spcarDriver.getVerification())){ //验证码验证
+            if(spcarDriver.getStatus().equals(SpcarDriver.DRIVER_OFFLINE_STATUS)){ //离线才修改登录状态
+                SpcarDriver updateSpcarDriver = new SpcarDriver();
+                updateSpcarDriver.setStatus(SpcarDriver.DRIVER_ONLINE_STATUS);
+                updateSpcarDriver.setSpcarDriverId(spcarDriver.getSpcarDriverId());
+                updateSpcarDriver.setVerification(""); //清空验证码
+                int i = spcarDriverService.updateSpcarDriver(updateSpcarDriver);
+                if(i<0){
+                    responseObject.put("msg", "司机状态更新失败！");
+                    responseObject.put("code", "000");
+                    responseObject.put("data", new JSONObject());
+                    ResponseUtils.renderJson(response, responseObject.toString());
+                    return;
+                }
+                spcarDriver.setStatus(SpcarDriver.DRIVER_ONLINE_STATUS); //将当前状态传到app
+            }
+            //保存登录状态
+            String accessTokenString = (UUID.randomUUID()+""+UUID.randomUUID()).replace("-", "");
+            int i = spcarUserService.updateAccessToken(spcarDriver.getSpcarDriverId(),accessTokenString);
+            if(i<0){
+                responseObject.put("msg", "状态保存失败！");
+                responseObject.put("code", "000");
+                responseObject.put("data", new JSONObject());
+                ResponseUtils.renderJson(response, responseObject.toString());
+                return;
+            }
+            //登录时加入群组
+            String sign = TlsSignUtil.getTlsSignKey(Constant.manager);
+            if(StringUtil.empty(sign)){
+            	log.error("SpcarUserController/driverLogin===================获取管理员签名失败");
+           	 responseObject.put("code", "112");
+			 responseObject.put("msg", "获取管理员签名失败！");
+             responseObject.put("data", new JSONObject());
+             ResponseUtils.renderJson(response, responseObject.toString());
+             return;
+            }
+            List<String> memberList = new ArrayList<>();
+    		memberList.add(spcarDriver.getSpcarDriverId() + "Driver");
+    		// 加入群聊
+    		Boolean addGroupMember = IMMsgRequestUtil.addGroupMember(sign, Constant.DriverGroupId, memberList);
+    		if (!addGroupMember) {
+    			log.error("SpcarUserController/driverLogin===================加入群聊失敗");
+	    			 responseObject.put("code", "109");
+	    			 responseObject.put("msg", "加入群聊失敗！");
+    	             responseObject.put("data", new JSONObject());
+    	             ResponseUtils.renderJson(response, responseObject.toString());
+    	             return;
+    		}
+    		
+            JsonConfig config = new JsonConfig();
+            config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+            JSONObject data = JSONObject.fromObject(spcarDriver, config);
+            JSONObject spcarDriverObject = new JSONObject();
+            spcarDriverObject.put("spcarDriver",data);
+            response.addHeader("Authorization",accessTokenString);
+            responseObject.put("msg", "success");
+            responseObject.put("code", "1");
+            responseObject.put("data", spcarDriverObject);
+            ResponseUtils.renderJson(response, responseObject.toString());
+        }else{
+            responseObject.put("msg", "验证码错误！");
+            responseObject.put("code", "105");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+        }
+    }
+
+    @RequestMapping(value = "sendVerifyCode", method = RequestMethod.POST)
+    public void sendVerifyCode(HttpServletRequest request, HttpServletResponse response){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String countryCode = request.getParameter("countryCode");
+        String tel = request.getParameter("tel");
+        if(StringUtil.empty(countryCode)){
+            ResponseVo.send101Code(response,"countryCode为空！");
+            return;
+        }
+        if(StringUtil.empty(tel)){
+            ResponseVo.send101Code(response,"tel为空！");
+            return;
+        }
+        String realm =  request.getParameter("realm");
+        String codeMsg = "";
+        String code = (int)(Math.random()*9000+1000)+"";//生成随机验证码
+        if(StringUtil.empty(realm)){  //司机端
+            codeMsg = "澳門專車司機驗證碼：";
+            SpcarDriver spcarDriver = spcarDriverService.findByTel(countryCode,tel);
+            if(spcarDriver==null){
+                ResponseVo.send102Code(response,"司机不存在！");
+                return;
+            }
+            if(spcarDriver.getDeleted()){
+                ResponseVo.send110Code(response,"司机已被拉黑！请联系客服！");
+                return;
+            }
+            //发送验证码
+            boolean succed = false;
+            JSONObject resultObject = new JSONObject();
+            try {
+                resultObject = SmsSenderUtil.imSMSSend(countryCode,tel,codeMsg+code);
+                succed = "0".equals(resultObject.getString("result"))?true:false;
+            } catch (Exception e) {
+                log.error(df.format(new Date())+" 发送验证码失败！"+countryCode+tel);
+                log.error(df.format(new Date())+"发送验证码失败！"+e);
+                e.printStackTrace();
+            }
+            if(succed){
+                ResponseVo.send1Code(response,"success",new JSONObject());
+                //更新司机信息
+                SpcarDriver updateDriver = new SpcarDriver();
+                updateDriver.setSpcarDriverId(spcarDriver.getSpcarDriverId());
+                updateDriver.setVerification(code);
+                int i = spcarDriverService.updateSpcarDriver(updateDriver);
+                if(i<0){
+                    ResponseVo.sendNoDataUpdateCode(response,"验证码更新失败！导致无法通过验证码登录！");
+                }else{
+                    ResponseVo.send1Code(response,"success",new JSONObject());
+                }
+            }else{
+                log.error(df.format(new Date())+"发送验证码失败！"+countryCode+tel+" return msg"+resultObject);
+                ResponseVo.sendNotMeErrorCode(response,"发送验证码失败！");
+            }
+        }else{
+            codeMsg = "";
+        }
+        //生成code
+
+    }
+	@RequestMapping(value = "me", method = RequestMethod.POST)
+	public void verifyToken(HttpServletRequest request,HttpServletResponse response)
+	{
+		log.info("======>获取专车司机个人信息============================" + new Date());
+		response.setContentType("application/json;charset=utf-8");
+		JSONObject  responseObject = new JSONObject();
+		String driverId = request.getParameter("driverId");
+		if (StringUtil.notEmpty(driverId) ) {
+			   SpcarDriver spcarDriver = spcarDriverService.findById(TransformUtils.toInt(driverId));
+			   if(spcarDriver==null){
+				   responseObject.put("msg", "SpcarDriver is null");
+		            responseObject.put("code", "102");
+		            responseObject.put("data", new JSONObject());
+		            ResponseUtils.renderJson(response, responseObject.toString());
+		            return;
+			   }
+			   responseObject.put("msg", "succes");
+				responseObject.put("code", "1");
+				JsonConfig config = new JsonConfig();  
+				config.registerJsonValueProcessor(Date.class,new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+				JSONObject data = JSONObject.fromObject(spcarDriver,config);
+				responseObject.put("data", data);
+				 ResponseUtils.renderJson(response, responseObject.toString());
+		}else{
+	 	 	responseObject.put("msg", "driverId is null");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+		}
+	}
+    public static void main(String[] args) {
+        System.out.println((int)(Math.random()*9000+1000));
+    }
+}

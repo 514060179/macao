@@ -1,0 +1,114 @@
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.app.controller.WeChatPayAction - 微信回调失败,签名可能被篡改
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.app.controller.WeChatPayAction - 微信回调失败,签名可能被篡改
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.app.controller.WeChatPayAction - ================更新數據庫出錯-------------------
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.app.controller.WeChatPayAction - ================更新數據庫出錯-------------------
+[http-apr-8089-exec-11] ERROR com.yinghai.macao.app.controller.WeChatPayAction - ================更新數據庫出錯-------------------
+[RMI TCP Connection(3)-127.0.0.1] ERROR org.springframework.web.servlet.DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'spcarOrderAction': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.yinghai.macao.common.service.WechatService com.yinghai.macao.app.controller.SpcarOrderAction.wechat; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.yinghai.macao.common.service.WechatService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:667)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:633)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:552)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:493)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1227)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1140)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1027)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5038)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5348)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:753)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:729)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1696)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:484)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:433)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:324)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.yinghai.macao.common.service.WechatService com.yinghai.macao.app.controller.SpcarOrderAction.wechat; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.yinghai.macao.common.service.WechatService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:573)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 65 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.yinghai.macao.common.service.WechatService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1373)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1119)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545)
+	... 67 more
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.common.service.impl.WechatServiceImpl - create meter failorg.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.yinghai.macao.common.dao.MeterMapper.insertSelective
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.WechatServiceImpl - create meter failorg.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.yinghai.macao.common.dao.MeterMapper.insertSelective
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.WechatServiceImpl - create meter failorg.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'meterId' in 'class com.yinghai.macao.common.model.Meter'
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======查找spcarPassenger为空，spcarPassenger:9036======
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.WechatServiceImpl - create meter failorg.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'meterId' in 'class com.yinghai.macao.common.model.Meter'
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.WechatServiceImpl - create meter failorg.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'meterId' in 'class com.yinghai.macao.common.model.Meter'
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.common.service.impl.WechatServiceImpl - create meter failorg.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'meterId' in 'class com.yinghai.macao.common.model.Meter'
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.common.service.impl.WechatServiceImpl - create meter failorg.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'meterId' in 'class com.yinghai.macao.common.model.Meter'
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFLwzAYRd-7K0pfFUmzBRphD*06YaVDZ4cbvpTQJPXLmi5mmZ2T-Xe1Dlbwvp5zuffL830-WOXFHauq3aF1pfs0IvDv-QAFt1doDPCSuXJk*T8ojgasKJl0wvYwJIRghIYOcNE6kHAxGNfQDvCeb8t*468--injiGA6VKDu4WK2nM6TPHkuMj17lHWXIvyy0lbzqT7QTN3UReVOXdy8LooiZ1kM8SatOGzGp1TyN7WFOT0qnDZJw*Wytg9mHakn1ZnmnSfdZDKYdKDF5RAlKKIRjgb0Q9g97NpewCgkIR6h3wTe2fsGu3xexw__
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======该订单spcarDriverId不为空，spcarDriverId:2======
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======该订单spcarDriverId不为空，spcarDriverId:2======
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======查找spcarPassenger为空，spcarPassenger:0======
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:349非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-14] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFLwzAAhe-9FSFn0SRtyirsMNuCWxUtm2x6CdmSalaSljSdrsP-rtaBAd-1*x7vnQIAAFzdLS-5btf0xjF3bCUE1wAiePEH21YJxh0LrfgH5UerrGS8ctKOEFNKCUK*o4Q0TlXqbHChlfFwJ2o2bvz2o*8ymVCS*Ip6HeF9XqbzfJOlacP7*O0x4y-rBzMUWxmJAS26xbZ8bnSe1GJ4CsV7P1M39KjLXhd1vFqauXYHXO7lRK5TXpH6NrtyhcCF3XMabWbTqTfplJbnQwlFCSJx5NGDtJ1qzCgQhCkmIfoJDD6DL4KZXcs_
+[http-apr-8089-exec-4] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FU2fjX6UdVITH8xAR8BFHajbC6m0w7oAtVQCGv*7iksk8b6ec3Pvh4MQwmmyPuZF0bzVNreDlhidIQz46A9qrUTObe4Z8Q-KXisjc76z0ozQpZQSgKmjhKyt2qmDwUWl6gluxT4fN377s*8y8SlhU0WVI7wOs0V0G8xpXBHL2XsydNk*4t7DK5CrpGZi2Kq*z8KT6nkwmzjsyqjM0sDviyWs7hvYFuKlmbub9YK2lxepHh7d4ObuadXrZQyn-vlk0qpKHg4xCgxmHpnQTppWNfUoEHCpSzz4CXY*nS8uQ10T
+[http-apr-8089-exec-14] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FU2fjbZl1WHiA9sIkjkdwsx8IgxK-YJA7QpsGv*7iksk8b6ec3Pvh4UQwvFddJ5mWdPWJjFHJTC6Rpjgsz*oFORJahJb5-*gOCjQIkkLI-QAKeecETJ2IBe1gQJORppXUI-wPi*TYeO3P-kusylnzlgBOcCVt5kH4fyxf1iQTaD8jC3YUURmSSfdmrFpf7ttlivwzC4KfeaqIAxk8dbNyiftq7535cx7LV-oc3tx6Tr24b7axrt36UkgbVxDczOaNFCJ0yGHE4eSKzqindB7aOpBYIRyymzyE2x9Wl8e2V1z
+[http-apr-8089-exec-10] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FQ3XRttCkZp4wTZMcCxm0S2Rm4bBO1b5tC2OafzvKi6RxHP7PCfnfFgIIfspfrxMs6ztGyPMqQMb3SAb2xd-sOtkLlIjHJX-gzB0UoFI9wbUCAljjGI8dWQOjZF7eTbSvJbNBOu8FOPGb9-9LlOfUT5VZDHCVbiZRwvGFh6*m4fH2ctVeV8kQJ5jfgS99H3jcvdEq7UKDjtWJoEMg6GqsgMbruMieq-8Vw8Hul7xbT972Ooi2vTO0mTVLlm3UNxOJo2s4XyIM8wJ8bwJfQOlZduMAsWEEergn9jWp-UF1Otc*g__
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8CtLrjGnLGsHEgw62bNNNrCTohRRaoJktCB0bM-53FZdI4rt*38t7H5Zt2*D5nl6yLKv22iSmrwWwr20AwcUfrGvJE2YSp*H-oDjWshEJy41oBogIIRjCsSO50Ebm8mwwrqQe4ZbvkmHjtz-9LmOXYG*syGKAD0E0W4b*NnpXpfbVBqk74baLLk6r8lataa9d8ZpGNF*tvdkhp5twWcQvjKewm2bHR96Hh8l89bSf*N6CpbRQp3K3nfunIIb5mxvcjCaNVOJ8yCPQQw68GtFONK2s9CBgiAjCDvwJsD6tL5*-XhU_
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======订单状态不一致，操作失败！支付状态：0订单状态：998
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======订单状态不一致，操作失败！支付状态：0订单状态：998
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======退款异常java.io.FileNotFoundException: C:\Users\Administrator\Desktop\apiclient_cert.p12 (系统找不到指定的文件。)
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======退款失败！{return_msg=invalid refund_fee, return_code=FAIL}
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======退款失败！{return_msg=invalid refund_fee, return_code=FAIL}
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======退款失败！{nonce_str=o1E9MLYf0SLe815l, appid=wxd74af2b277375f05, sign=EF4633767BCEB4C273650259ED773158, err_code=ORDERNOTEXIST, return_msg=OK, result_code=FAIL, err_code_des=订单不存在, mch_id=1380512402, return_code=SUCCESS}
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======退款失败！{nonce_str=rYOFJJrf5SujDTbh, appid=wxd74af2b277375f05, sign=F08AE32E5864B96084374B0728A9BC2C, err_code=ORDERNOTEXIST, return_msg=OK, result_code=FAIL, err_code_des=订单不存在, mch_id=1380512402, return_code=SUCCESS}
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======退款失败！{nonce_str=LFbWqOeK1pegj3QH, appid=wxd74af2b277375f05, sign=0E7BC4A3CE69C6B549702294E70AE039, err_code=ORDERNOTEXIST, return_msg=OK, result_code=FAIL, err_code_des=订单不存在, mch_id=1380512402, return_code=SUCCESS}
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======退款失败！{nonce_str=PnE4kw1o6oxINcqG, appid=wxd74af2b277375f05, sign=047AAB1CEBCF53616992EDBD7E4F3D2E, err_code=ORDERNOTEXIST, return_msg=OK, result_code=FAIL, err_code_des=订单不存在, mch_id=1380512402, return_code=SUCCESS}
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/reback======订单状态不一致，操作失败！支付状态：3订单状态：998
+[http-apr-8089-exec-7] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAARd-5FQ2vGtcPumy*bTCzOk2cTBRemgYKNLDSsEKYxv*u4hJJvK-n3Nz74QAA3MNDeCPStOm05fZspAtugQvd6z9ojMq4sJy02T8oB6NayUVuZTtCRCnFEE4dlUltVa4uhsiOSk-wKav4uPHb977LeEHxcqqoYoSPm9hne3*N5lEy1Nvu7nmTBMTX8ZWpuvNePYWseJ2V6zypX4omP8wKVq52ttRkN0Sh8bRIUU0aUb0FPfPeUcSYj6pyK*-7Og5WYjJp1VFeDi0pgmgxxxPay-akGj0KGCKKMIE-cZ1P5wtJtF2T
+[http-apr-8089-exec-2] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8ioazcS3QREx2oDplExXDlgwupKGFFaU0Xecgi-9dZUts4rt*38t7JwcA4K6T7JpWVX*QpjSj4i64BS50r-6gUoKV1JS*Zv8gH5TQvKS14XqCCGPsQWg7gnFpRC0uBmWdkBbes-dy2jj3g5*yd4O90FZEM8HnxdvdMs7v4*ABrp6iRKU92YbLPk0JI3nXvqhxoP6x3aVaHkleRIIgHGXwcTGsGq6LuNbFIRtmVTLucPCBtptg1nGCN0nz2jbzuTVpRMcvh0KMoA*Rb9FPrveil5PgQYSR58PfuM6X8w0AM1zk

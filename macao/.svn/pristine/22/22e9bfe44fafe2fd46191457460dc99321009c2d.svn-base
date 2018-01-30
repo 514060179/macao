@@ -1,0 +1,75 @@
+package com.yinghai.macao.app.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yinghai.macao.app.vo.ResponseVo;
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.alibaba.fastjson.JSONObject;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TlsSignUtil;
+
+@Controller
+@RequestMapping("/spcar/sign")
+public class TlsSignRestController {
+	
+	private Logger log = Logger.getLogger(this.getClass());
+	
+	/**
+	 * 重新获取签名
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping("/rest")
+	public void signAgain(HttpServletRequest request,HttpServletResponse response){
+		String imName = request.getParameter("imName");
+//		String driverId = request.getParameter("driverId");
+		JSONObject responseObject = new JSONObject();
+		if (StringUtil.empty(imName)) {
+			responseObject.put("msg", "imName为空！");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			log.error("==========imName not exist==========");
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+//		if (StringUtil.empty(driverId)) {
+//			responseObject.put("msg", "driverId为空！");
+//			responseObject.put("code", "101");
+//			responseObject.put("data", new JSONObject());
+//			log.error("==========driverId not exist==========");
+//			ResponseUtils.renderJson(response, responseObject.toString());
+//			return;
+//		}
+		String sign = "";
+		try {
+			sign = TlsSignUtil.getTlsSignKey(imName);
+		} catch (Exception e) {
+			log.error("重新获取签名失败！"+e);
+			e.printStackTrace();
+			ResponseVo.sendNotMeErrorCode(response,"重新获取签名失败！");
+			return;
+		}
+		if("".equals(sign)){
+			ResponseVo.sendNotMeErrorCode(response,"重新获取签名失败！");
+		}else{
+			//更新
+//			int i = driverService.updateDriverSign(Integer.parseInt(driverId),sign);
+//			if(i>0){
+//				responseObject.put("msg", "获取签名成功，但更新失败");
+//			}else{
+//				responseObject.put("msg", "success");
+//			}
+			JSONObject object = new JSONObject();
+			object.put("sign", sign);
+			object.put("imName", imName);
+			responseObject.put("code", "1");
+			responseObject.put("data", object);
+		}
+		ResponseUtils.renderJson(response, responseObject.toString());
+	}
+}

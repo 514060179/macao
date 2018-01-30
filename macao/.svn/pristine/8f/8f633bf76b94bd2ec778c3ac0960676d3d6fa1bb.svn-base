@@ -1,0 +1,155 @@
+package com.yinghai.macao.app.vo;
+
+import com.yinghai.macao.common.util.ResponseUtils;
+import net.sf.json.JSONObject;
+
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Created by Administrator on 2017/6/7.
+ */
+public class ResponseVo {
+
+    /**
+     * 缺少参数
+     * @param response
+     * @param msg
+     */
+    public static void send101Code(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "101");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 数据不存在，例如司机用户，订单信息
+     * @param response
+     * @param msg
+     */
+    public static void send102Code(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "102");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 被拉黑单没有删除，deleted=1  如司机、乘客被拉黑返回
+     * @param response
+     * @param msg
+     */
+    public static void send110Code(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "110");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 成功返回
+     * @param response
+     * @param msg
+     * @param data
+     */
+    public static void send1Code(HttpServletResponse response,String msg,JSONObject data){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "1");
+        responseObject.put("msg", msg);
+        responseObject.put("data", data);
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 调用第三方接口失败！
+     * @param response
+     * @param msg
+     */
+    public static void sendNotMeErrorCode(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "-111");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 没有更新到数据错误（数据原因导致）
+     * @param response
+     * @param msg
+     */
+    public static void sendNoDataUpdateCode(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "000");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 单点登录验证失败！
+     * @param response
+     * @param msg
+     */
+    public static void send111Code(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "111");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 操作有异常（当前状态与操作状态不一致，如 司机前往接载（3）状态下，登出（登出，在线状态（1）下才可以登出）。）
+     * @param response
+     * @param msg
+     */
+    public static void send103Code(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "103");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 数据格式异常
+     * @param response
+     * @param msg
+     */
+    public static void send119Code(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "119");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 非本人操作异常 如 不是你的订单，你却做相应操作时
+     * @param response
+     * @param msg
+     */
+    public static void send120Code(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "120");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+    /**
+     * 重复操作
+     * @param response
+     * @param msg
+     */
+    public static void send106Code(HttpServletResponse response,String msg){
+        JSONObject responseObject = new JSONObject();
+        responseObject.put("code", "106");
+        responseObject.put("msg", msg);
+        responseObject.put("data", new JSONObject());
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+}

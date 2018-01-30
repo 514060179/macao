@@ -1,0 +1,589 @@
+package com.yinghai.macao.app.controller;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.model.Meter;
+import com.yinghai.macao.common.model.Parameter;
+import com.yinghai.macao.common.model.SpcarOrder;
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.service.ParameterService;
+import com.yinghai.macao.common.service.SpcarOrderService;
+import com.yinghai.macao.common.service.SpcarPassengerService;
+import com.yinghai.macao.common.service.WechatService;
+import com.yinghai.macao.common.util.*;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+
+@Controller
+@RequestMapping("/spCar")
+public class SpcarOrderAction {
+    @Autowired
+    private SpcarOrderService spcarOrderService;
+
+    @Autowired
+    private WechatService wechat;
+    
+    @Autowired
+    private ParameterService parameterService;
+
+    @Autowired
+    SpcarPassengerService spcarPassengerService;
+
+    private Logger log = Logger.getLogger(this.getClass());
+
+    /**
+     * 提交下单
+     * @throws ParseException 
+     */
+    @RequestMapping(value = "submit", method = RequestMethod.POST)
+    public void submit(HttpServletRequest request, HttpServletResponse response) throws ParseException {
+        response.setContentType("application/json;charset=utf-8");
+        try {
+            request.setCharacterEncoding("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        JSONObject responseObject = new JSONObject();
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String startAddress = request.getParameter("startAddress");
+        String payWay = request.getParameter("payType");
+        if(StringUtil.empty(payWay)){
+        	payWay = "APP";
+        }
+        Integer passengerId = TransformUtils.toInt(request.getParameter("passengerId"));// 乘客ID
+        if(passengerId==0){
+         	 responseObject.put("msg", "passengerId is null");
+             responseObject.put("code", "101");
+             responseObject.put("data", new JSONObject());
+             ResponseUtils.renderJson(response, responseObject.toString());
+             return;
+        }
+        //订单号
+        String out_trade_no = sdf.format(date).toString().replace("-","").replace(":","").replace(" ","")+passengerId;
+        //在时间戳前后添加随机码
+        out_trade_no = out_trade_no+RandomUtil.random10();
+        Integer totalHour = TransformUtils.toInt(request.getParameter("totalHour"));// 约车时长
+        if(totalHour<1){
+        	 responseObject.put("msg", "totalHour is null");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+       }
+        Double startX = TransformUtils.toDouble(request.getParameter("startX"));
+        Double startY = TransformUtils.toDouble(request.getParameter("startY"));
+        Double endX = TransformUtils.toDouble(request.getParameter("endX"));
+        Double endY = TransformUtils.toDouble(request.getParameter("endY"));
+        String endAddress = request.getParameter("endAddress");
+        String startTime = request.getParameter("startTime");
+        if(StringUtil.empty(startTime)){
+          	 responseObject.put("msg", "startTime is null");
+              responseObject.put("code", "101");
+              responseObject.put("data", new JSONObject());
+              ResponseUtils.renderJson(response, responseObject.toString());
+              return;
+         }
+        long to = (new Date()).getTime();  
+        long  from= sdf.parse(startTime).getTime();  
+        int hours = (int) ((from - to)/(1000 * 60 * 60));  
+        if(hours<1){
+        	 responseObject.put("msg", "下單失敗，上車時間要在一個小時后");
+             responseObject.put("code", "104");
+             responseObject.put("data", new JSONObject());
+             ResponseUtils.renderJson(response, responseObject.toString());
+             return;
+        }
+        String openId = request.getParameter("openId");
+        int total_fee = 0;
+        Parameter parameter = parameterService.findByHour(totalHour);
+        if(parameter==null){
+        	 if (totalHour > 0 && totalHour < 4) {
+                 total_fee = 300 * totalHour* 100;
+             } else if (totalHour >= 4 && totalHour < 8) {
+                 total_fee = 250 * totalHour* 100;
+             } else if (totalHour >= 8) {
+                 total_fee = 200 * totalHour* 100;
+             }
+        }else{
+        	if(parameter.getCoefficient()!=0){
+        		total_fee = (int) (parameter.getPrice()*parameter.getCoefficient());
+        	}else{
+        		total_fee = (int) (parameter.getPrice());
+        	}
+        	
+        }
+       
+        // 成功处理完微信返回来的信息，新增订单记录
+        SpcarOrder order = new SpcarOrder();
+        //備註
+        String memo = request.getParameter("memo");
+        if(StringUtil.empty(memo)){
+        	 order.setMemo("");
+        }else{
+        	 order.setMemo(memo);
+        }
+        order.setStatus(SpcarOrder.ORDER_NOPAY_STATUS);
+        order.setPayStatus(SpcarOrder.PAY_PENDING_STATUS);
+        order.setPassengerId(passengerId);
+        order.setOrderNo(out_trade_no);
+        order.setPayWay(payWay);
+        order.setStartX(startX);
+        order.setStartY(startY);
+        order.setStartAddress(startAddress);
+        try {
+            order.setStartTime(sdf.parse(startTime));
+        } catch (ParseException e) {
+            e.printStackTrace();
+            log.error("======提交下单操作失败！startTime时间格式转换异常======"+startTime+e.getMessage());
+        }
+        order.setTotalHour(totalHour);
+        order.setCreateTime(new Date());
+        order.setUpdateTime(new Date());
+        //order.setPayWayCode(0);
+        order.setAmount(total_fee );
+        order.setRejectId(openId);
+        if (StringUtil.notEmpty(endAddress)) {
+            order.setEndX(endX);
+            order.setEndY(endY);
+            order.setEndAddress(endAddress);
+        }
+//        spCarOrderService.insertSelective(order);
+//        order = spCarOrderService.getAppSpcarOrderbyId(order.getSpcarOrderId());
+        order = spcarOrderService.submitOrder(order);
+        JsonConfig config = new JsonConfig();
+        config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+        JSONObject data = JSONObject.fromObject(order, config);
+        JSONObject json = new JSONObject();
+        json.put("spCarOrder", data);
+        responseObject.put("msg", "訂單保存成功");
+        responseObject.put("code", "1");
+        responseObject.put("data", json);
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+
+    /**
+     * 支付，然后将需要给APP的数据传过去
+     */
+    @RequestMapping(value = "connection", method = RequestMethod.POST)
+    public void connection(HttpServletRequest request, HttpServletResponse response) {
+        response.setContentType("application/json;charset=utf-8");
+        String payType = request.getParameter("payType");
+        String openId = request.getParameter("openId");
+        if (StringUtil.empty(payType)) {
+        	payType = Constant.weixinAPPPayType;
+        }
+        String type = request.getParameter("type");
+        if (StringUtil.empty(type)) {
+            type = "weixin";
+        }
+        String spbill_create_ip = request.getParameter("spbillCreateIp"); // 用户端ip
+        Integer total_fee = Integer.parseInt(request.getParameter("totalFee"));// 费用，要整数
+        String out_trade_no = request.getParameter("outTradeNo");// 订单号
+        SpcarOrder spCarOrder = spcarOrderService.getSpcarOrderByOrderNo(out_trade_no);
+        if(spCarOrder==null){
+        	JSONObject responseObject = new JSONObject();
+            responseObject.put("msg", "查找不到相應的訂單");
+            responseObject.put("code", "102");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(spCarOrder.getStatus()!=SpcarOrder.ORDER_NOPAY_STATUS){
+        	 JSONObject responseObject = new JSONObject();
+             responseObject.put("msg", "該訂單不允許支付");
+             responseObject.put("code", "106");
+             responseObject.put("data", new JSONObject());
+             ResponseUtils.renderJson(response, responseObject.toString());
+             return;
+        }
+        if(spCarOrder.getOrderId()==null||spCarOrder.getOrderId()==0){//续单不需要做时间判断，原单才需要
+        	 long to = (new Date()).getTime();  
+             long  from= spCarOrder.getStartTime().getTime();  
+             int hours = (int) ((from - to)/(1000 * 60 * 60));  
+        	 if(hours<1){//当该单不是续单时，并且小时要大于一个小时才能支付，续单不需要判断是否能够支付
+            	 JSONObject responseObject = new JSONObject();
+            	 responseObject.put("msg", "支付失敗，上車時間要在一個小時后");
+                 responseObject.put("code", "104");
+                 responseObject.put("data", new JSONObject());
+                 ResponseUtils.renderJson(response, responseObject.toString());
+                 return;
+            }
+        }
+        if (!total_fee.equals(spCarOrder.getAmount())) {
+            JSONObject responseObject = new JSONObject();
+            responseObject.put("msg", "價格可能被修改，請重新操作");
+            responseObject.put("code", "106");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if ("weixin".equals(type)) {
+            String json = null;
+            try {
+                json = WeChatPayUtils.connection(spbill_create_ip, total_fee + "", out_trade_no,payType,openId);
+            } catch (IOException e) {
+                log.error("======确定支付操作失败！======"+e.getMessage()+"订单号："+out_trade_no);
+                e.printStackTrace();
+            }
+            ResponseUtils.renderJson(response, json);
+            return;
+        }
+    }
+
+    /**
+     * 订单详情
+     *
+     * @param request
+     * @param response
+     * @throws IOException
+     * @throws ParseException
+     */
+    @RequestMapping(value = "orderDetail", method = RequestMethod.POST)
+    public void orderDetail(HttpServletRequest request, HttpServletResponse response) {
+        response.setContentType("application/json;charset=utf-8");
+        JSONObject responseObject = new JSONObject();
+        Integer id = TransformUtils.toInt(request.getParameter("spCarOrderId"));
+        if(id==0){
+            responseObject.put("msg", "spCarOrderId为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        SpcarOrder spCarOrder = spcarOrderService.getAppSpcarOrderbyId(id);
+        JSONObject data = new JSONObject();
+        if (spCarOrder != null) {
+            JsonConfig config = new JsonConfig();
+            config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+            data = JSONObject.fromObject(spCarOrder, config);
+        }
+        JSONObject json = new JSONObject();
+        json.put("spCarOrder", data);
+        responseObject.put("msg", "訂單查詢成功");
+        responseObject.put("code", "1");
+        responseObject.put("data", data);
+        ResponseUtils.renderJson(response, responseObject.toString());
+
+    }
+
+    /**
+     * 取消訂單
+     *
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "cancel", method = RequestMethod.POST)
+    public void cancel(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        JSONObject responseObject = new JSONObject();
+        String payType = request.getParameter("payType");// 分为微信公众号或者微信APP
+        if(StringUtil.empty(payType)){
+        	payType = Constant.weixinAPPPayType;
+        }
+        String out_trade_no = request.getParameter("outTradeNo");// 订单号
+        if(StringUtil.empty(out_trade_no)){
+        	 responseObject.put("msg", "訂單號為空");
+             responseObject.put("code", "101");
+             responseObject.put("data", new JSONObject());
+             ResponseUtils.renderJson(response, responseObject.toString());
+             return;
+        }
+        SpcarOrder spCarOrder = spcarOrderService.getAppSpcarOrderByOrderNo(out_trade_no);
+        if(spCarOrder==null){
+        	 responseObject.put("msg", "該訂單不存在");
+             responseObject.put("code", "110");
+             responseObject.put("data", new JSONObject());
+             ResponseUtils.renderJson(response, responseObject.toString());
+             return;
+        }
+        if(spCarOrder.getPayWayCode()==SpcarOrder.PAY_WAY_PAYPAL){
+        	payType = Constant.PaypalPayType;
+        }
+        // 支付完可取消訂單的狀態，取消訂單，然後退款
+        if (spCarOrder.getStatus() == SpcarOrder.ORDER_PAIRING_STATUS  ) {
+        	//当状态为匹配中时，并且为微信支付或者paypal支付的，退全额
+        	if(spCarOrder.getStatus() == SpcarOrder.ORDER_PAIRING_STATUS&&(spCarOrder.getPayWayCode()==SpcarOrder.PAY_WAY_WEIXINJSAPI||spCarOrder.getPayWayCode()==SpcarOrder.PAY_WAY_WEIXINAPP||spCarOrder.getPayWayCode()==SpcarOrder.PAY_WAY_PAYPAL)&&!spCarOrder.getMonthly()){//0代表微信支付
+        		Boolean boo = spcarOrderService.orderrefund(spCarOrder, payType,null,"APP取消");
+        		if(boo){
+        			  responseObject.put("msg", "訂單取消成功");
+                      responseObject.put("code", "1");
+                      responseObject.put("data", new JSONObject());
+                      ResponseUtils.renderJson(response, responseObject.toString());
+                      return;
+        		}else{
+        			  responseObject.put("msg", "訂單取消失敗");
+                      responseObject.put("code", "-111");
+                      responseObject.put("data", new JSONObject());
+                      ResponseUtils.renderJson(response, responseObject.toString());
+                      return;
+        		}
+        	}
+            SpcarOrder spCarOrder2 = new SpcarOrder();
+            spCarOrder2.setSpcarOrderId(spCarOrder.getSpcarOrderId());
+            spCarOrder2.setStatus(SpcarOrder.ORDER_CANCAL_STATUS);
+            spCarOrder2.setPayStatus(SpcarOrder.PAY_REFUNDING_STATUS);
+            spCarOrder2.setCancelTime(new Date());
+            int i = spcarOrderService.updateByPrimaryKeySelective(spCarOrder2,false);
+            if (i > 0) {
+                responseObject.put("msg", "訂單取消成功");
+                responseObject.put("code", "1");
+                responseObject.put("data", new JSONObject());
+                ResponseUtils.renderJson(response, responseObject.toString());
+                return;
+            } else {
+                responseObject.put("msg", "訂單取消失敗，數據庫操作出錯");
+                responseObject.put("code", "000");
+                responseObject.put("data", new JSONObject());
+                ResponseUtils.renderJson(response, responseObject.toString());
+                return;
+            }
+        } else if (spCarOrder.getStatus() == SpcarOrder.ORDER_NOPAY_STATUS) {// 直接取消訂單，無需退款
+            SpcarOrder spCarOrder2 = new SpcarOrder();
+            spCarOrder2.setSpcarOrderId(spCarOrder.getSpcarOrderId());
+            spCarOrder2.setStatus(SpcarOrder.ORDER_CANCAL_STATUS);
+            spCarOrder2.setCancelTime(new Date());
+            int i = spcarOrderService.updateByPrimaryKeySelective(spCarOrder2,false);
+            if (i > 0) {
+                responseObject.put("msg", "訂單取消成功");
+                responseObject.put("code", "1");
+                responseObject.put("data", new JSONObject());
+                ResponseUtils.renderJson(response, responseObject.toString());
+                return;
+            } else {
+                responseObject.put("msg", "訂單取消失敗，數據庫操作出錯");
+                responseObject.put("code", "000");
+                responseObject.put("data", new JSONObject());
+                ResponseUtils.renderJson(response, responseObject.toString());
+                return;
+            }
+
+        } else if (spCarOrder.getStatus() == 998) {
+            responseObject.put("msg", "該訂單已經被取消，請勿重複操作");
+            responseObject.put("code", "106");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+			  return;
+        }else {
+            responseObject.put("msg", "系统异常！");
+            responseObject.put("code", "-111");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+        }
+    }
+
+
+	/**
+	 *完成订单
+	 */
+	  @RequestMapping(value = "finfishing", method = RequestMethod.POST)
+	    public void finfishing(HttpServletRequest request, HttpServletResponse response) {
+	        response.setContentType("application/json;charset=utf-8");
+			String orderId = request.getParameter("orderId");
+			//String driverId = request.getParameter("driverId");
+			JSONObject responseObject = new JSONObject();
+			JsonConfig config = new JsonConfig();
+			config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+			SpcarOrder spCarOrder = spcarOrderService.getSpcarOrderbyId(TransformUtils.toInt(orderId));
+			if(spCarOrder==null||SpcarPassenger.PASSENGER_GET_ON_STATUS==spCarOrder.getStatus()){
+				log.debug("===================================,订单状态不正确数据错误");
+				responseObject.put("msg", " fail ");
+				responseObject.put("code", "110");
+				responseObject.put("data", new JSONObject());
+				ResponseUtils.renderJson(response, responseObject.toString());
+				return;
+			}
+			else{
+				spCarOrder.setStatus(SpcarOrder.ORDER_FINISH_STATUS);
+				SpcarOrder updateSpcarOrder = new SpcarOrder();
+				updateSpcarOrder.setSpcarOrderId(spCarOrder.getSpcarOrderId());
+				updateSpcarOrder.setStatus(SpcarOrder.ORDER_FINISH_STATUS);
+				SpcarPassenger updateSpcarPassenger = new SpcarPassenger();
+				updateSpcarPassenger.setSpcarId(spCarOrder.getPassengerId());
+				updateSpcarPassenger.setStatus(SpcarPassenger.PASSENGER_CLOSE_STATUS);
+				int i = spcarOrderService.updateOrderandSpcarPassenger(updateSpcarOrder,updateSpcarPassenger);
+				if(i<2){
+					log.debug("===================================更新专车订单或乘客信息失败");
+					responseObject.put("msg", "update  fail ");
+					responseObject.put("code", "000");
+					responseObject.put("data", new JSONObject());
+					ResponseUtils.renderJson(response, responseObject.toString());
+					return;
+				}
+				responseObject.put("msg", " success ");
+				responseObject.put("code", "1");
+				responseObject.put("data", new JSONObject());
+				ResponseUtils.renderJson(response, responseObject.toString());
+				return;
+			}
+	  }
+
+	/**
+	 * 訂單列表
+	 */
+	@RequestMapping(value = "orderList", method = RequestMethod.POST)
+	public void orderList(HttpServletRequest request, HttpServletResponse response) {
+		response.setContentType("application/json;charset=utf-8");
+		String listType = request.getParameter("listType");
+		JSONObject responseObject = new JSONObject();
+		Integer pageNo = TransformUtils.toInt(request.getParameter("page"));
+		Integer pageStartSize = TransformUtils.toInt(request.getParameter("pageStartSize"));
+		pageNo = pageNo == 0 ? 1 : pageNo;
+		pageStartSize = pageStartSize == 0 ? 15 : pageStartSize;
+		SpcarOrder spcarOrder = new SpcarOrder();
+		String spcarPassengerId = TransformUtils.toString(request.getParameter("spcarPassengerId"));
+		if(StringUtil.notEmpty(spcarPassengerId)){
+			spcarOrder.setPassengerId(TransformUtils.toInt(spcarPassengerId));
+		}
+		String status = request.getParameter("status");
+		if(StringUtil.notEmpty(status)){
+			String[] sta = status.split(";");
+			// map.put("status", sta);
+			spcarOrder.setStatusArray(sta);
+		}
+		Page<SpcarOrder> page = new Page<>();
+		if(StringUtil.empty(listType)){
+			 page = spcarOrderService.findList(pageNo, pageStartSize, spcarOrder);
+		}else if(listType.equals("finish")){
+			 page = spcarOrderService.findFinishList(pageNo, pageStartSize, spcarOrder);
+		}
+		JsonConfig config = new JsonConfig();
+		config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+		JSONArray data = JSONArray.fromObject(page.getResult(), config);
+		JSONObject orderList = new JSONObject();
+		orderList.put("orderList", data);
+		orderList.put("pages", page.getPages());
+		responseObject.put("msg", "操作成功");
+		responseObject.put("code", "1");
+		responseObject.put("data", orderList);
+		ResponseUtils.renderJson(response, responseObject.toString());
+
+	}
+    /**
+     * 测试
+     *
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "test", method = RequestMethod.GET)
+    public void test(HttpServletRequest request, HttpServletResponse response) {
+		String orderId = request.getParameter("orderId");
+		//String driverId = request.getParameter("driverId");
+		JSONObject responseObject = new JSONObject();
+		JsonConfig config = new JsonConfig();
+		config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+		SpcarOrder spCarOrder = spcarOrderService.getSpcarOrderbyId(TransformUtils.toInt(orderId));
+        //taxigoUser = taxigoUserService.createIm(taxigoUser);
+    }
+    public static void main(String[] args) throws ParseException {
+    	  SimpleDateFormat simpleFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	long from = simpleFormat.parse("2017-06-07 16:19:41").getTime();  
+    	long to = (new Date()).getTime();  
+    	int hours = (int) ((to - from)/(1000 * 60 * 60));  
+    	System.out.println(hours);
+	}
+    /**
+     * 月结
+     */
+	/**
+	 * 訂單列表
+	 */
+	@RequestMapping(value = "monthly", method = RequestMethod.POST)
+	public void monthly(HttpServletRequest request, HttpServletResponse response) {
+		response.setContentType("application/json;charset=utf-8");
+		JSONObject responseObject = new JSONObject();
+		  Integer id = TransformUtils.toInt(request.getParameter("spCarOrderId"));
+	        if(id==0){
+	            responseObject.put("msg", "spCarOrderId为空！");
+	            responseObject.put("code", "101");
+	            responseObject.put("data", new JSONObject());
+	            ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+	        }
+	        SpcarOrder spcarOrder = spcarOrderService.getAppSpcarOrderbyId(id);
+	        if(spcarOrder==null){
+	            responseObject.put("msg", "spCarOrder为空！");
+	            responseObject.put("code", "102");
+	            responseObject.put("data", new JSONObject());
+	            ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+	        }
+	        if(spcarOrder.getStatus()!=SpcarOrder.ORDER_NOPAY_STATUS){
+	             responseObject.put("msg", "該訂單不允許支付");
+	             responseObject.put("code", "106");
+	             responseObject.put("data", new JSONObject());
+	             ResponseUtils.renderJson(response, responseObject.toString());
+	             return;
+	        }
+	        if(spcarOrder.getOrderId()==null||spcarOrder.getOrderId()==0){//续单不需要做时间判断，原单才需要
+	        	 //判断支付时间是否在上车的前一个小时
+		        long to = (new Date()).getTime();  
+		        long  from= spcarOrder.getStartTime().getTime();  
+		        int hours = (int) ((from - to)/(1000 * 60 * 60));  
+		        if(hours<1){
+		        	 responseObject.put("msg", "支付失敗，上車時間要在一個小時后");
+		             responseObject.put("code", "104");
+		             responseObject.put("data", new JSONObject());
+		             ResponseUtils.renderJson(response, responseObject.toString());
+		             return;
+		        }
+	        }
+	       
+	        if(!spcarOrder.getSpcarPassenger().getVip()){
+	            responseObject.put("msg", "VIP过期！");
+	            responseObject.put("code", "109");
+	            responseObject.put("data", new JSONObject());
+	            ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+	        }
+	        SpcarOrder updateSpcarOrder = new SpcarOrder();
+	        updateSpcarOrder.setSpcarOrderId(id);
+	        updateSpcarOrder.setMonthly(true);
+	        updateSpcarOrder.setPayWayCode(SpcarOrder.PAY_WAY_MONTHLY);
+	        updateSpcarOrder.setStatus(SpcarOrder.ORDER_PAIRING_STATUS);
+	        updateSpcarOrder.setPayStatus(SpcarOrder.PAY_ALEADY_STATUS);
+	        if(spcarOrder.getOrderId()!=null){
+	        	updateSpcarOrder.setStatus(SpcarOrder.ORDER_RENEW_STATUS);
+	        }
+	      
+	        int i = spcarOrderService.uodateMonthlyOrder(updateSpcarOrder);
+	        if(i>0){
+	        	spcarOrder = spcarOrderService.getAppSpcarOrderbyId(id);
+	        	 JsonConfig config = new JsonConfig();
+	             config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+	             JSONObject data = JSONObject.fromObject(spcarOrder, config);
+	             JSONObject json = new JSONObject();
+	             json.put("spCarOrder", data);
+	            responseObject.put("msg", "success");
+	            responseObject.put("code", "1");
+	            responseObject.put("data", json);
+	            ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+	        }else{
+	        	  responseObject.put("msg", "更新数据库失败");
+		            responseObject.put("code", "000");
+		            responseObject.put("data", new JSONObject());
+		            ResponseUtils.renderJson(response, responseObject.toString());
+		            return;
+	        }
+	}
+}

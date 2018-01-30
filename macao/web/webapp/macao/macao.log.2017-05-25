@@ -1,0 +1,664 @@
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderFinished begins with [org.apache.catalina.connector.RequestFacade@1581e025, org.apache.catalina.connector.ResponseFacade@27d4256a]
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.backstage.controller.BackSpcarOrderController - BackSpcarOrderController/orderFinished======orderId为空======
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderFinished end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderFinished begins with [org.apache.catalina.connector.RequestFacade@1581e025, org.apache.catalina.connector.ResponseFacade@27d4256a]
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.backstage.controller.BackSpcarOrderController - BackSpcarOrderController/orderFinished======orderId为空======
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderFinished end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@48797675]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@48797675, org.apache.catalina.connector.ResponseFacade@4542c2c1]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7e6e433a, org.apache.catalina.connector.ResponseFacade@70a9a287]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7e6e433a, org.apache.catalina.connector.ResponseFacade@70a9a287]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@48797675, org.apache.catalina.connector.ResponseFacade@4542c2c1]
+[http-apr-8089-exec-6] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-4] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-7] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7e6e433a, org.apache.catalina.connector.ResponseFacade@70a9a287]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-3] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7e6e433a, org.apache.catalina.connector.ResponseFacade@70a9a287]
+[http-apr-8089-exec-6] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@7e6e433a, org.apache.catalina.connector.ResponseFacade@70a9a287]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-7] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7e6e433a]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7e6e433a]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7e6e433a]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7e6e433a]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7e6e433a]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method test end with massage:null
+[http-apr-8089-exec-3] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-4] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-7] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-3] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-4] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-6] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7f0e8308]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7f0e8308]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7f0e8308]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-6] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7f0e8308]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7f0e8308]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@7f0e8308]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder end with massage:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder end with massage:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FaS3GlOKRWqyCzYX4tyHiAazm6auZb7TQteV4TT*dxWXSOK5fZ6Tcz483-fR-TQ-E6tV3VSOu4NRyL-0EUanf9AYkFw4Hlr5D6o3A1ZxUTplOxhQSgnGfQekqhyUcDSE1FD18E6*8G7jt3-*XSYxJayvwLqDs3E2uk6fbdnQh6dtzKbLAud46fTjIinsOHidGL3fLsJNYq4mwUWbwHDISHHSNvU6xAo2oyyPbUYlE*8yPWRzfSPu0tt5S7SdtYNBb9KBVsdDjEYsigjp0b2yO6irTiA4oAEJ8U*Q9*l9ASA0XTI_
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, org.apache.catalina.connector.ResponseFacade@33b37762]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FYTXGVPadVKTPSAwxbCQObOFvRCkZfkQSoVuYTP*dxWXSLL7es7NvZ*GaZrWa7S*zfK8OUid6pMSlnlvWsi6*YdKAU8znZKWX0HRK2hFmhVatAO0KaUYobEDXEgNBVyMjNcgR7jj7*mw8def-pSxQzEbK7Af4DJYeaGXlJNtsnFxsqp28tmvJ4o89uWx5zrJKvUW3S3Dha9xw5ALD7UI8njbxURBVT6di2bqemQXLrj3EsRreYg8rfz*48SC-Xw*mtRQi8shRmds5hBnRI*i7aCRg4CRTW1M0G8s48v4BlD3Xao_
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7f0e8308, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmArrive begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, org.apache.catalina.connector.ResponseFacade@65eaef0f]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FYRbjZaPojXZBTDdRoaGASO7arq1xW4Baqlui9l-38Qlkviey*c5Oe*3YZqmlc*zO7LZtJ*NxvoomWU*mRawbv*glIJiorGr6D-IDlIohgnXTPXQhhA6AAwdQVmjBRdXg9BaNAPc0R3uN3773qXsPEIHDRVR9TB5TqNZcMOLFSiP2bTwyLzL8lC*TxbbyHvbHYpw0t4vy6Qabz*qFxSIoNw-dC1XSWqnU7Ycs7WPZuua29lruUg8t4rzVRwWcRRE*9FoMKlFza4PIeijS-wB-WKqE23TCw6woe244Ocs42ScAceyXEU_
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmArrive end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6b2d1c1a, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7e6e433a, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@23f3e6b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@23f3e6b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-7] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder end with massage:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljltPgzAAhd-5FaSvGlc6C8XEl11kSwB3Ecn2QggtrBuUWrrNxfjfVVxiE8-r952c82HZtg1ewvVdXhTtUehMXyQD9oMNILj9g1JymuU6Gyr6D7J3yRXL8lIz1UMHY4wgNB1OmdC85Fcjpw0XBu7oIes3fvv332VEMPJNhVc9jKbJeL6cjIvysK9hKlIab17VTfw8kmF98U6OexytF25DyD6p*Ha3rObVtCOzt8nKe4pTdIY42gZBshrULKilDuNBVfrFRs4ivNi1j8ak5g27HvKx6-se8Qx6YqrjregFBB3soCH8CbA*rS8Ptlz2
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-4] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder end with massage:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-4] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-4] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8ioarxhRKcTXZgSwrsjGDwlzChSAtS6N0te1UNP53FZfYxHf9vpf3PjwAgF-l5UXbdYejtI0dFffBFfChf-4HlRKsaW2DNPsH*ZsSmjdtb7meYIAxDiF0HcG4tKIXJ6Nlg5AONuyxmTZ**9F3OZzhkLiK2E9ws7xdZIs7xLMiYWvZ7rhKt0RF8DmKHzaUpuhsXab6vc*eLL0p80Qk6NWUOYVdTbWZjdmqZsV4uUrM8roYKqmrMai3u-ujydP9fO5MWjHw0yGCY0JIjB36wrURBzkJIQxwECL4E9-79L4A3h9c4A__
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder end with massage:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8iqZXjSmFTjDZYRskzsAiyozzQjpaWJ1AV4owjf-diUts4rt*38t7nxYAAKbR4xXN86ardaaPkkNwAyCCl39QSsEyqjNHsX*QD1IontFCczVCmxCCETIdwXitRSHOBmWVqA3csn02bvz23VMZewT7piLKEcZhsliGS*YdItWn-WStN8nTs-wI0MRp2UUc7Ff5Yui2TfVyl24KPhOztyCk913ReYfXuL8dHly6tjuFdmGsPUyiIPJ2820pV8m8nE6NSS0qfj7kk*vTJ9816DtXrWjqUcDIJjZ20E*g9WV9A25yXZs_
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder end with massage:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FQ3PRku7BmqyhwWXsWzIUMf0qWFQ8BujkFInxvjfVbZEEu-rOTf3floIIftp-XidZlnzpowwH6200S2ysX31B9sWcpEaQXX*D8q*BS1FWhipB*gwxgjGYwdyqQwUcDHSvAY1wl1eiWHj3J-8lInHCB8rUA4wnMf*MuBy4-t87Xou90-HpvDoBhhNltHqXR33z4QtSDg-BC86mcHsrn6NqjZZRKube3iookOYEWV0XwSOs4vLHS333VaXXPfxdDqaNFDLyyHOXIwpnozoSeoOGjUIBDvMIRT-xra*rG*mgVyA
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8iqZXjStldcPbsrgGccM5Ge7UMFqg6rpaKmMY-7uKS8T4rt-38t67AwCAD7erizTL9m-KMnvUAoIrABE8-4VaS85SyzzD-0HRaGkES3MrTAddQghGqO9ILpSVuTwZKd9J1cMVf2bdxk9-*FXGY4L9viKLDs6vN9NgOW2Tx-EwJutNs53dtbGKNK-pGba0fg2LxjzRQ3yJKF-420lQTuaLPLOFmK3oUQf3IYr4OrHJzSCMqrJ8aQ984I1UhRVvbG-Syp04HfLJCCHvz6FamEruVSdg5BIXe*g70PlwPgGWZl5T
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmArrive begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8ioYrxpSyTvCGjKU1ug3niPNCGG1HM4GmdG7L4n-X4RKb*K7f9-Le2QEAuK9Py9uyqrp9awpzUtwF98CF7s0fVEqyojRFoNk-yI9Kal6UwnA9QB9jjCC0Hcl4a6SQV6NkjWwt3LNdMWz89kc-ZRRiFNmK3A7wOV0nNEu0CvOTWeyTecZSPqYfuE9FtzNppft4pnPhTSbdYuWN1zGt4-msFg9Zjh8jzSryLnz6NvU3ZnV4IQci6ulxS0aq8QjaUGvSyIZfD0X4DsIAhxb95LqXXTsICPrYRwG8xHW*nG9HPl1Q
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmArrive end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@63166052]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderFinished begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, org.apache.catalina.connector.ResponseFacade@5a7f9bd3]
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/comfirmArrive======數據異常，專車/司機/乘客信息為空！
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderFinished end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1b695592, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1b695592, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1b695592, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1b695592, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1b695592, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-6] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-3] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@1b695592]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-18] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@d4f557]
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@d4f557]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@d4f557]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@d4f557]
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@63166052]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======數據異常，專車/司機/乘客信息為空！
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63166052, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method rebackPage begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method rebackPage end with massage:order/reback
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@d4f557]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@d4f557]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@d4f557]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-16] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method submit end with massage:null
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method connection end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@d4f557]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method weixinOrder end with massage:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@d4f557, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-16] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-16] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FU1fNVLKmm4me8ANIgtgcFOML6SBgl9YGUIh24z-XcUlknhfz7m598NACOFdsL0RWXboa53qUyMxukWY4Os-2DSQp0Kndpv-g-LYQCtTUWjZjtBijFFCpg7kstZQwMUQuYJ6gru8SseN3-7su0znjC6mCpQjDN145XvBOVHyPdwnpLKz*41f88GLy7B7VtbD5u3ouLOiF6tH7*nVAUf7JX-ZXZkeU5GWfjcMvI-Wem3aZegouIu2ibs-dUFlxsvlZFKDkpdDC8YJt*d8QgfZdnCoR4ESi1nUJj-BxqfxBSxuXSk_
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@1a1ea048, org.apache.catalina.connector.ResponseFacade@5a7f9bd3]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@1b695592, org.apache.catalina.connector.ResponseFacade@c44df36]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@63166052, org.apache.catalina.connector.ResponseFacade@441be97e]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@74e4639, org.apache.catalina.connector.ResponseFacade@15271d3a]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FQ3PRj466oZvjKGCLJOhS-Cl6WjRZq400BmY8b*74RJJvK-n3Nz7ZSGE7Oc0v2ZlWR*UoabXwka3yAb76g9qLTllhk4a-g*KTstGUFYZ0QzQJYRggLEjuVBGVvJiML6XaoRbvqPDxm-fO5XxjGB-rMi3AS6jIoyzRbtOQwdEQub3iwe1Os5YHn3AjbM5vGpYh12hSqxxkqd5Fr8Hj-hu520Tvgm2gczmVeS7WVWvln0avxRp4zHh*Kbs4In1o0kj9*JyyCdTmHowPvQpmlbWahAwuMTFEzjHtr6tH3biW-M_
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-18] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-11] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-16] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-18] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-11] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-16] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@d4f557, org.apache.catalina.connector.ResponseFacade@469ebb47]
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljk1Pg0AURff8CsLa2GHKSDFxYUWSWmrFfhjcEMo8mlfDMNJxBIz-XcUmTuLdnnNz74dl27azjlfneVHUb0JlqpPg2Je2Q5yzPygl8ixX2bjh-yC0EhvI8lJBM0CXMUYJMR3kIBSWeDJyXqEw8JG-ZMPGb9-7LtMJo4Gp4H6Ai9vNzSwJ79Jr*S5W0XYUb6J50G71gcrdVHWT1OujWjxXJHKL5QOBZLa-f33yOy9p5*XosEboVdwnyzrVAQ1DvXuckguAMhCLTidXxqTCCk6HAuYT3yPmIQ3NEWsxCJS4zKVj8hPH*rS*AFiVXbk_
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push request is too frequent, current term quota empty, please wait and try again","ErrorCode":90024}======
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FPwjAUhd-3K5a*zmhbqKMkPOiyCEMjMAiyl6bQ0jXKNrcONo3-XR0kNvG*ft-JOffTcV0XLB-ja77b5XVmmGkLCdyhCyC4*oNFoQXjhvVK8Q-KptClZHxvZNlBRAjBENqOFjIzeq8vBhcHnVm4Eq*s6zjn*z9hPCCY2opWHXwK58EkoHSFk1hRT21n3H-ezNT7Yo7a9QdVSUiaKfey4PQg0mR8p*-DyWK8iWU9bbwqui3SZd7mb3SwXsnoJT8ilUYtbMyNqren0ciqNPogL4Mo8aHfR-ZLR1lWOs86AUNEEO7B3wPOl-MNIiRdiQ__
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-12] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-12] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1LwzAYhe-7K0JuFUmzxhrBG9eKox-i7Ga9Kt2SlVdtmqVpcQz-u1oHBjy3z3M45*ghhHCRPl3U2203KFvZg5YYXSNM8Pkf1BpEVdtqZsQ-KD80GFnVOyvNBH3GGCXEdUBIZWEHJ6MWLSgH9*KtmjZ**8F3mV4xyl0Fmglm8Wq*eIxW9J6*piJtJDewlwW0ZXInlknBozGY58kY6*7hNstH1iyabFOWG9WbMNvLPG7fwT6f0YiXEF3C2raiO-B0GTd8GF5unEkLrTwd4iwkYeD7Dh2l6aFTk0CJz3w6Iz-B3qf3BWLNXds_
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-15] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-15] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1vgjAARd-5FYTXLVtbWlCTPZhZHJuaEfyYvpBqqymsiNCJsuy-b0OTNdl9Pefm3k-Ltm1nOorv2Gaz-8h1os*FcOye7QDn9g8WheQJ04lb8n9QnApZioRttShbCAkhCADTkVzkWm7l1WBcydzAFc*SduPSxz9l1CGoaypy18IxnT2G0SB7Oo28WA3ngT9wvYOmnYb4i-o9wEOaBpNX9XKPZ-ODSpf9cMdpRFdvLFrfRMzTayzKc0hrVi-SRqtJtoLT5XO-QeMqxg-GpJZKXA91iQ98DKFBj6Ks5D5vBQQggcgFv3GsL*sb8IZc*Q__
+[http-apr-8089-exec-15] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push request is too frequent, current term quota empty, please wait and try again","ErrorCode":90024}======
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-18] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@77280190, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-12] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-11] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-12] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-3] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@77280190, org.apache.catalina.connector.ResponseFacade@51da0ef]
+[http-apr-8089-exec-11] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack begins with [org.apache.catalina.connector.RequestFacade@77280190]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method paypalCallBack end with massage:null

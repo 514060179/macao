@@ -1,0 +1,323 @@
+package com.yinghai.macao.backstage.controller;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+import java.util.Iterator;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.model.PoiAddress;
+import com.yinghai.macao.common.model.SpcarDriver;
+import com.yinghai.macao.common.service.SpcarPoiService;
+import com.yinghai.macao.common.util.JsonDateValueProcessor;
+import com.yinghai.macao.common.util.Page;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+import jxl.common.Logger;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+
+@Controller
+@RequestMapping("/admin/poi")
+public class BackSpcarPoiController {
+	private Logger log = Logger.getLogger(this.getClass());
+	
+	@Autowired
+	private SpcarPoiService poiService;
+	/**
+	 * 查詢poi列表
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/list")
+	public String getPoiList(HttpServletRequest request,HttpServletResponse response,ModelMap model){
+		log.info("======后台管理Poi列表");
+		String name = request.getParameter("name");
+		String address = request.getParameter("address");
+		String type = request.getParameter("type");
+		PoiAddress p = new PoiAddress();
+		if(StringUtil.notEmpty(name)){
+			p.setName(name);
+		}
+		if(StringUtil.notEmpty(address)){
+			p.setAddress(address);
+		}
+		if(StringUtil.notEmpty(type)){
+			p.setType(type);
+		}
+		Integer pageNo = TransformUtils.toInt(request.getParameter("page"));
+		Integer pageSize = TransformUtils.toInt(request.getParameter("pageSize"));
+		if(pageNo<1){
+			pageNo = 1;
+		}
+		if(pageSize<1){
+			pageSize = 10;
+		}
+		Page<PoiAddress> page = poiService.findListBackByPage(pageNo,pageSize,p);
+		model.put("page", page);
+		model.put("poi", p);
+		model.addAttribute("pageNo", page.getPageNum());
+        model.addAttribute("pageSize", page.getPageSize());
+        model.addAttribute("recordCount", page.getTotal());
+        model.addAttribute("pageCount", page.getPages());
+		return "poi/list";
+	}
+	/**
+	 * 进入编辑或新增页面
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/edit")
+	public String addOredit(HttpServletRequest request,HttpServletResponse response,ModelMap model){
+		log.info("======后台管理进入编辑页面======");
+		String act = request.getParameter("act");
+		if(StringUtil.notEmpty(act)){
+			if("upd".equalsIgnoreCase(act)){//更新
+				Integer id = TransformUtils.toInt(request.getParameter("id"));
+				if(id>0){
+					PoiAddress p =  poiService.findById(id);
+					if(p!=null){
+						model.put("poi", p);
+					}
+				}
+			}
+		}
+		return "poi/edit";
+	}
+	
+	@RequestMapping("/save")
+	public void updateOrCreate(HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
+		log.info("======新增或者更新POI======");
+		String act = "";
+		Integer id = TransformUtils.toInt(request.getParameter("id"));
+		PoiAddress p = new PoiAddress();
+		JSONObject responseObject = new JSONObject();
+		if(id>0){
+			p.setId(id);
+			act = "UPD";
+		}else{
+			act = "ADD";
+			id = poiService.findMaxId();
+		}
+		String name = request.getParameter("name");
+		responseObject.put("code", "101");
+		responseObject.put("data", new JSONObject());
+		if(StringUtil.notEmpty(name)){
+			p.setName(name);
+		}
+		String nameEn = request.getParameter("nameEn");
+		if(StringUtil.notEmpty(nameEn)){
+			p.setNameEn(nameEn);
+		}
+		String address = request.getParameter("address");
+		if(StringUtil.notEmpty(address)){
+			p.setAddress(address);
+		}
+		String addressEn = request.getParameter("addressEn");
+		if(StringUtil.notEmpty(addressEn)){
+			p.setAddressEn(addressEn);
+		}
+		String type = request.getParameter("type");
+		if(StringUtil.notEmpty(type)){
+			p.setType(type);
+		}
+		String endLocation = request.getParameter("endLocation");
+		String reg = "^([\\d]+|([\\d]+[.]?|[\\d]+[.]?[\\d]+)),([\\d]+|([\\d]+[.]?|[\\d]+[.]?[\\d]+))$";
+		if(endLocation!=null&&endLocation.matches(reg)){
+			String[] locs = endLocation.split(",");
+			try {
+				Double x = Double.valueOf(locs[1]);
+				Double y = Double.valueOf(locs[0]);
+				if(y<=113||y>=115){
+					responseObject.put("msg", "坐标不合法！經度必須在113到114之間");
+					ResponseUtils.renderJson(response, responseObject.toString());
+		            return;
+				}
+				if(x<=20||x>=24){
+					responseObject.put("msg", "坐标不合法！緯度必須在20到24之間");
+					ResponseUtils.renderJson(response, responseObject.toString());
+		            return;
+				}
+				p.setLocX(x);
+				p.setLocY(y);
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+				responseObject.put("msg", "經緯度格式錯誤");
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+		}
+    	//判断文件是否有做过修改，如果没有就直接跳过文件上传操作
+    	String boochange = request.getParameter("boochange");
+    	if(StringUtil.notEmpty(boochange)&&"true".equals(boochange)){
+    	  CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+    	  if(multipartResolver.isMultipart(request)){  
+              //转换成多部分request    
+              MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest)request;  
+              //取得request中的所有文件名  
+              Iterator<String> iter = multiRequest.getFileNames();  
+              while(iter.hasNext()){  
+                  //记录上传过程起始时的时间，用来计算上传时间  
+                  int pre = (int) System.currentTimeMillis();  
+                  //取得上传文件  
+                  MultipartFile file = multiRequest.getFile(iter.next());  
+                  if(file != null){  
+                      //取得当前上传文件的文件名称  
+                      String myFileName = file.getOriginalFilename();  
+                      //如果名称不为“”,说明该文件存在，否则说明该文件不存在  
+                      if(myFileName.trim() !=""){  
+                          //System.out.println(myFileName);  
+                          //重命名上传后的文件名  
+                          String fileName = id + "."+file.getOriginalFilename().split("\\.")[1];  
+                          //定义上传路径  
+                          String realPath = Constant.filepath+Constant.poiimage;
+	                      	File fileIo = new File(realPath);
+	        				//创建文件夹
+	        				if (!fileIo.exists()) {
+	        					fileIo.mkdirs();
+	        				}
+                          String path = realPath + fileName;  
+                          File localFile = new File(path);  
+                          file.transferTo(localFile);
+                          p.setImage(Constant.poiimage + fileName);
+                      }  
+                  }  
+                  //记录上传该文件后的时间  
+                  int finaltime = (int) System.currentTimeMillis();  
+                  System.out.println(finaltime - pre);  
+              }  
+                
+          }  
+    	}
+		
+		//新增poi
+		if("ADD".equals(act)){//新增
+			if(p.getImage()==null){
+				responseObject.put("msg", "請上傳圖片");
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+			if(p.getAddress()==null){
+				responseObject.put("msg", "地址爲空");
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+			if(p.getName()==null){
+				responseObject.put("msg", "名稱爲空");
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+			if(p.getAddressEn()==null){
+				responseObject.put("msg", "地址(英文)爲空");
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+			if(p.getNameEn()==null){
+				responseObject.put("msg", "名稱(英文)爲空");
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+			if(p.getLocX()==null||p.getLocY()==null){
+				responseObject.put("msg", "經緯度爲空");
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+			if(p.getType()==null){
+				responseObject.put("msg", "類型爲空");
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+			p.setCreateTime(new Date());
+			int i = poiService.createPoi(p);
+			if(i<1){
+				responseObject.put("code", "106");
+				responseObject.put("msg", "新增數據出錯");
+				responseObject.put("data", new JSONObject());
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}else{
+				responseObject.put("code", "1");
+				responseObject.put("msg", "新增數據成功");
+				responseObject.put("data", new JSONObject());
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+		}else{//更新
+			int j = poiService.updatePoi(p);
+			if(j!=1){
+				responseObject.put("code", "106");
+				responseObject.put("msg", "更新數據出錯");
+				responseObject.put("data", new JSONObject());
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}else{
+				responseObject.put("code", "2");
+				responseObject.put("msg", "更新數據成功");
+				responseObject.put("data", new JSONObject());
+				ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+			}
+		}
+	}
+	/**
+	 * 删除
+	 * @param request
+	 * @param response
+	 */
+
+	@RequestMapping("del")
+	public void deletePoi(HttpServletRequest request,HttpServletResponse response){
+		log.info("======删除POI======");
+		Integer id = TransformUtils.toInt(request.getParameter("id"));
+		JSONObject responseObject = new JSONObject();
+		if(id<1){
+			responseObject.put("code", "101");
+			responseObject.put("msg", "id错误或为空");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+		}
+		//根据id删除poi
+		PoiAddress p = poiService.findById(id);
+		if(p==null){
+			responseObject.put("code", "102");
+			responseObject.put("msg", "对应位置poi不存在");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+		}
+		PoiAddress poi = new PoiAddress();
+		poi.setId(p.getId());
+		int i = poiService.deletePoi(poi);
+		if(i==1){
+			responseObject.put("code", "1");
+			responseObject.put("msg", "删除成功");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+		}else{
+			responseObject.put("code", "106");
+			responseObject.put("msg", "数据出错，删除失败");
+			responseObject.put("data", new JSONObject());
+			ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+		}
+	}
+}

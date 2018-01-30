@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.TaxigoPassengerMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.Passenger" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="family_name" property="familyName" jdbcType="VARCHAR" />
+    <result column="given_name" property="givenName" jdbcType="VARCHAR" />
+    <result column="country_code" property="countryCode" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="loc_x" property="locX" jdbcType="DOUBLE" />
+    <result column="loc_y" property="locY" jdbcType="DOUBLE" />
+    <result column="last_login" property="lastLogin" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="waitting_id" property="waittingId" jdbcType="VARCHAR" />
+    <result column="gift_points" property="giftPoints" jdbcType="DOUBLE" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="order_count" property="orderCount" jdbcType="DOUBLE" />
+    <result column="cancel_count" property="cancelCount" jdbcType="DOUBLE" />
+    <result column="finish_count" property="finishCount" jdbcType="DOUBLE" />
+    <result column="deleted" property="deleted" jdbcType="BIT" />
+    <result column="rating" property="rating" jdbcType="DOUBLE" /> 
+    <result column="device_type" property="deviceType" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yinghai.macao.common.model.PassengerWithBLOBs" extends="BaseResultMap" >
+    <result column="user_agent" property="userAgent" jdbcType="LONGVARCHAR" />
+    <result column="verification" property="verification" jdbcType="LONGVARCHAR" />
+    <result column="device_id" property="deviceId" jdbcType="LONGVARCHAR" />
+    <result column="user_token" property="userToken" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, family_name, given_name, country_code, tel, loc_x, loc_y, last_login, status, 
+    waitting_id, gift_points, userId, title, order_count, cancel_count, finish_count, 
+    deleted,rating,device_type
+  </sql>
+  <sql id="Blob_Column_List" >
+    user_agent, verification, device_id, user_token
+  </sql>
+
+  <update id="updatePassengerWithBLOBsSelective" parameterType="com.yinghai.macao.common.model.PassengerWithBLOBs" >
+    update passenger
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="familyName != null" >
+        family_name = #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="givenName != null" >
+        given_name = #{givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null" >
+        country_code = #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="locX != null" >
+        loc_x = #{locX,jdbcType=DOUBLE},
+      </if>
+      <if test="locY != null" >
+        loc_y = #{locY,jdbcType=DOUBLE},
+      </if>
+      <if test="lastLogin != null" >
+        last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="waittingId != null" >
+        waitting_id = #{waittingId,jdbcType=VARCHAR},
+      </if>
+      <if test="giftPoints != null" >
+        gift_points = #{giftPoints,jdbcType=DOUBLE},
+      </if>
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        device_type = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCount != null" >
+        order_count = #{orderCount,jdbcType=DOUBLE},
+      </if>
+      <if test="cancelCount != null" >
+        cancel_count = #{cancelCount,jdbcType=DOUBLE},
+      </if>
+      <if test="finishCount != null" >
+        finish_count = #{finishCount,jdbcType=DOUBLE},
+      </if>
+      <if test="deleted != null" >
+        deleted = #{deleted,jdbcType=BIT},
+      </if>
+      <if test="userAgent != null" >
+        user_agent = #{userAgent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="verification != null" >
+        verification = #{verification,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceId != null" >
+        device_id = #{deviceId,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="userToken != null" >
+        user_token = #{userToken,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="rating != null" >
+        rating = #{rating,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+</mapper>

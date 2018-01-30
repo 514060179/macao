@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8"/>
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<#include "../common/head.html"/>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+        <!-- Page Sidebar -->
+        <#include "../common/menu.html"/>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="list.html">返回列表</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>訂單</h1>
+                    <small>
+                        <i class="fa fa-angle-right"></i>
+                        訂單取消退款
+                    </small>
+                </div>
+
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#" title="放大">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="" href="" title="刷新">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a id="fullscreen-toggler" href="#" title="全屏">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                    <a href="#" title="新增">
+                        <i class="glyphicon glyphicon-plus"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-2"></div>
+                    <div class="col-sm-8">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header">
+                                <span class="widget-caption">訂單取消退款</span>
+                            </div>
+                            <div class="widget-body">
+                                <form id="registrationForm" method="post" class="form-horizontal bv-form"
+                                      data-bv-message="This value is not valid"
+                                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+                                      novalidate="novalidate">
+                                    <div class="form-title">
+                                        取消退款明細
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">訂單編號</label>
+                                        <div class="col-lg-2">
+                                            <input type="hidden" id="orderId" value="${spcarOrder.spcarOrderId!}">
+                                            <input type="text" class="form-control" name="firstName" placeholder="訂單編號" value="${spcarOrder.spcarOrderId!}" readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">乘客姓名</label>
+                                        <div class="col-lg-2">
+                                            <input type="text" class="form-control" name="firstName" value="${spcarOrder.spcarPassenger.familyName!}" readonly="readonly"
+                                                   placeholder="First name" data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" name="lastName" value="${spcarOrder.spcarPassenger.givenName!}" readonly="readonly"
+                                                   placeholder="Last name" data-bv-notempty="true"
+                                                   data-bv-notempty-message="The last name is required and cannot be empty"
+                                                   data-bv-field="lastName"><i class="form-control-feedback"
+                                                                               data-bv-field="lastName"
+                                                                               style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="lastName"
+                                                   class="help-block" style="display: none;">The last name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">乘客手機</label>
+                                        <div class="col-lg-2">
+                                            <input type="text" class="form-control" name="countryCode" value="${spcarOrder.spcarPassenger.countryCode!}" readonly="readonly"
+                                                   placeholder="countryCode" data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <i class="form-control-feedback" data-bv-field="firstName"
+                                               style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" name="lastName" placeholder="phone" value="${spcarOrder.spcarPassenger.tel!}" readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The last name is required and cannot be empty"
+                                                   data-bv-field="lastName"><i class="form-control-feedback"
+                                                                               data-bv-field="lastName"
+                                                                               style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="lastName"
+                                                   class="help-block" style="display: none;">The last name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">預約時長</label>
+                                        <div class="col-lg-2">
+                                            <input type="text" class="form-control" name="firstName" placeholder="預約時長" value="${spcarOrder.totalHour!}" readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    
+                                          <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">支付金額</label>
+                                        <div class="col-lg-2">
+                                            <input type="text" class="form-control" name="firstName" placeholder="支付金額" value=" <#if spcarOrder.amount??> ${spcarOrder.amount/100!}</#if>" readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">預約時間</label>
+                                        <div class="col-lg-3">
+                                            <input type="text" class="form-control" name="firstName" placeholder="預約時間" value='${(spcarOrder.startTime?string("yyyy-MM-dd HH:mm:ss"))!}'readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">上車地點</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="firstName" placeholder="上車地點" value="${spcarOrder.startAddress!}" readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">訂單狀態</label>
+                                        <div class="col-lg-3">
+                                            <input type="text" class="form-control" name="status" id = 'status'placeholder="訂單狀態" value="<#if spcarOrder.status=0>進行中                                               <#elseif spcarOrder.status=2>待確認
+                                                            <#elseif spcarOrder.status=3>已確認
+                                                                <#elseif spcarOrder.status=4>接載中
+                                                                    <#elseif spcarOrder.status=5>已完成
+                                                                        <#elseif spcarOrder.status=998>已取消
+                                                                         <#elseif spcarOrder.status=999>未支付
+                                                </#if>" readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">支付方式</label>
+                                        <div class="col-lg-3">
+                                            <input type="text" class="form-control" name="firstName" placeholder="支付方式" value="<#if spcarOrder.payWayCode??>   <#if spcarOrder.payWayCode=0>APP微信
+                                                        <#elseif spcarOrder.payWayCode=1>支付寶
+                                                            <#elseif spcarOrder.payWayCode=2>PayPal支付
+                                                            <#elseif spcarOrder.payWayCode=3>微信公眾號
+                                                            <#elseif spcarOrder.payWayCode=4>现金<#elseif spcarOrder.payWayCode=5>月結</#if>
+                                                </#if>" readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">支付狀態</label>
+                                        <div class="col-lg-3">
+                                            <input type="text" class="form-control" name="firstName" placeholder="支付狀態" value="<#if spcarOrder.payStatus=0>待付款
+                                                        <#elseif spcarOrder.payStatus=1>已支付
+                                                            <#elseif spcarOrder.payStatus=2>申請退款
+                                                                <#elseif spcarOrder.payStatus=3>已退款
+                                                </#if>" readonly="readonly"
+                                                   data-bv-notempty="true"
+                                                   data-bv-notempty-message="The first name is required and cannot be empty"
+                                                   data-bv-field="firstName"><i class="form-control-feedback"
+                                                                                data-bv-field="firstName"
+                                                                                style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group has-feedback" <#if spcarOrder.payStatus!=1>style="display:none"</#if>>
+                                        <label class="col-lg-4 control-label" style="color: blue">退款係數</label>
+                                        <div class="col-lg-2">
+                                            <select class="selectpicker" style="color: blue" id="ratio">
+                                                <option value="1">全額退款</option>
+                                                <option value="0.8">扣除20%手續費</option>
+                                                <option value="0.5">扣除50%手續費</option>
+                                            </select>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName"
+                                                   class="help-block" style="display: none;">The first name is required
+                                                and cannot be empty
+                                            </small>
+                                        </div>
+                                        <div class="col-lg-4" style="color: red">
+                                            選擇退款係數（全額退款：訂單取消，後台沒有專車服務或者乘客行程有變且取消時間提前5小時以上；扣除20%手續費：取消時間提前2~5小時；扣除50%手續費：取消時間提前1小時）
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-4"></div>
+                                        <div class="col-xs-4">
+                                            <input class="btn btn-default btn-lg btn-block" id="send"
+                                                   value="確定取消">
+                                        </div>
+                                        <div class="col-xs-4"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+
+</div>
+
+<!--Page Related Scripts-->
+<!--Sparkline Charts Needed Scripts-->
+
+
+<script>
+    $(document).ready(function () {
+        $("#send").click(function(){
+            var ratio = $("#ratio option:selected").val();
+            var status = $("#status option:selected").val();
+            if(status!=999){
+            	 if(ratio==""||ratio===undefined){
+                     alert("請選擇【退款係數】");
+                     $("#ratio").focus();
+                     return;
+                 }
+            }
+            var orderId = $("#orderId").val();
+            $.post("${base}/vip/session", function(data){
+                if (data.code == "1") {
+                    layer.prompt({
+                        formType:1,
+                        title: '輸入操作密碼',
+                        type:'password',
+                        shadeClose :true
+                    },function(val, index){
+                        //验证密码
+                        var json = {
+                            "pwd":val,
+                            "orderId":orderId,
+                            "ratio":ratio
+                        }
+                        $.post("${base}/admin/order/refund",json,function(data){
+                            if (data.code == "1") {
+                                //展开页面形式
+                                alert("退款成功！");
+                                location.reload();
+                            }else {
+                                alert(data.msg);
+                                location.reload();
+                            }
+                        });
+                        layer.close(index);
+                    });
+                }else{
+
+                }
+            });
+
+        });
+    })
+
+</script>
+
+
+</body>
+<!--  /Body -->
+</html>

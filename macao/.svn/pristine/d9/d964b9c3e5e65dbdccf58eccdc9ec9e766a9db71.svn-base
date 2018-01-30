@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.app.dao.TaxigoAccessTokensDao" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.app.model.TaxigoAccessTokens" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="ttl" property="ttl" jdbcType="DOUBLE" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="realm" property="realm" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ttl, created, userId,realm
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from taxigo_access_tokens
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from taxigo_access_tokens
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.yinghai.macao.app.model.TaxigoAccessTokens" >
+    insert into taxigo_access_tokens (id, ttl, created, 
+      userId)
+    values (#{id,jdbcType=VARCHAR}, #{ttl,jdbcType=DOUBLE}, #{created,jdbcType=TIMESTAMP}, 
+      #{userid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yinghai.macao.app.model.TaxigoAccessTokens" >
+    insert into taxigo_access_tokens
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ttl != null" >
+        ttl,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="userid != null" >
+        userId,
+      </if>
+      <if test="realm != null" >
+        realm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="ttl != null" >
+        #{ttl,jdbcType=DOUBLE},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="realm != null" >
+        #{realm,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.app.model.TaxigoAccessTokens" >
+    update taxigo_access_tokens
+    <set >
+      <if test="ttl != null" >
+        ttl = #{ttl,jdbcType=DOUBLE},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yinghai.macao.app.model.TaxigoAccessTokens" >
+    update taxigo_access_tokens
+    set ttl = #{ttl,jdbcType=DOUBLE},
+      created = #{created,jdbcType=TIMESTAMP},
+      userId = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  
+  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from taxigo_access_tokens
+    WHERE userId =#{userId,jdbcType=VARCHAR}
+    <if test="realm != null" >
+      AND realm=#{realm,jdbcType=VARCHAR}
+    </if>
+      ORDER BY created DESC LIMIT 0, 1
+  </select>
+  
+  <select id="selectByRealmId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from taxigo_access_tokens
+    WHERE userId =(select id from taxigouser where realm_id=#{realmId,jdbcType=INTEGER} and realm='passenger')ORDER BY created DESC LIMIT 0, 1
+  </select>
+</mapper>

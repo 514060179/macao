@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarPoiMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.PoiAddress" >
+    <id column="poi_id" property="id" jdbcType="INTEGER" />
+    <result column="poi_name" property="name" jdbcType="VARCHAR" />
+    <result column="poi_address" property="address" jdbcType="VARCHAR" />
+    <result column="poi_name_en" property="nameEn" jdbcType="VARCHAR" />
+    <result column="poi_address_en" property="addressEn" jdbcType="VARCHAR" />
+    <result column="loc_x" property="locX" jdbcType="DOUBLE" />
+    <result column="loc_y" property="locY" jdbcType="DOUBLE" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    poi_id,poi_name,poi_address,poi_name_en,poi_address_en,loc_x,loc_y,create_time,image,type
+  </sql>
+  <select id="findList" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.PoiAddress">
+  	select 
+  	<include refid="Base_Column_List"></include>
+  	from spcar_preset_poi
+  	WHERE 1=1  
+  	<if test="name != null">
+  		AND
+  		(poi_name LIKE CONCAT('%',CONCAT(#{name,jdbcType=VARCHAR},'%'))
+  		OR 
+  		poi_name_en LIKE CONCAT('%',CONCAT(#{name,jdbcType=VARCHAR},'%'))
+  		OR 
+  		poi_address LIKE CONCAT('%',CONCAT(#{name,jdbcType=VARCHAR},'%'))
+  		OR
+  		poi_address_en  LIKE CONCAT('%',CONCAT(#{name,jdbcType=VARCHAR},'%'))
+  		)
+  	</if>
+  	<if test="type != null">
+  		AND 
+  		type = #{type,jdbcType=VARCHAR}
+  	</if>
+  	ORDER BY poi_name 
+  </select>
+  
+  <select id="findListBack" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.PoiAddress">
+  	select 
+  	<include refid="Base_Column_List"></include>
+  	from spcar_preset_poi
+  	WHERE 1=1
+  	<if test="name != null">
+  		AND
+  		(
+  			poi_name LIKE CONCAT('%',CONCAT(#{name,jdbcType=VARCHAR},'%'))
+  			OR
+  			poi_name_en LIKE CONCAT('%',CONCAT(#{name,jdbcType=VARCHAR},'%'))
+  		)
+  	</if>
+  	<if test="address != null">
+  		AND 
+  		(
+  			poi_address LIKE CONCAT('%',CONCAT(#{address,jdbcType=VARCHAR},'%'))
+  			OR
+  			poi_address_en LIKE CONCAT('%',CONCAT(#{address,jdbcType=VARCHAR},'%'))
+  		)
+  	</if>
+  	<if test="type != null">
+  		AND 
+  		type = #{type,jdbcType=VARCHAR}
+  	</if>
+  	
+  </select>
+  <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select
+  	<include refid="Base_Column_List"></include>
+  	from spcar_preset_poi
+  	WHERE poi_id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="findByLoc" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List"></include>
+  	from spcar_preset_poi
+  	WHERE loc_x = #{locX,jdbcType=DOUBLE} AND loc_y = #{locY,jdbcType=DOUBLE}
+  </select>
+  <select id="findMaxId" resultType="java.lang.Integer">
+  	SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES    
+	WHERE TABLE_NAME='spcar_preset_poi'
+  </select>
+  <insert id="insertSelective" parameterType="com.yinghai.macao.common.model.PoiAddress">
+  	insert into spcar_preset_poi
+  	<trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        poi_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="name != null" >
+        poi_name,
+      </if>
+      <if test="address != null" >
+        poi_address,
+      </if>
+      <if test="nameEn != null" >
+        poi_name_en,
+      </if>
+      <if test="addressEn != null" >
+        poi_address_en,
+      </if>
+      <if test="locX != null" >
+        loc_x,
+      </if>
+      <if test="locY != null" >
+        loc_y,
+      </if>
+      <if test="image != null" >
+        image,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="nameEn != null" >
+        #{nameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="addressEn != null" >
+        #{addressEn,jdbcType=VARCHAR},
+      </if>
+      <if test="locX != null" >
+        #{locX,jdbcType=DOUBLE},
+      </if>
+      <if test="locY != null" >
+        #{locY,jdbcType=DOUBLE},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelective" parameterType="com.yinghai.macao.common.model.PoiAddress">
+  	update spcar_preset_poi
+  	<set>
+  	  <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name != null" >
+        poi_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        poi_address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="nameEn != null" >
+        poi_name_en = #{nameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="addressEn != null" >
+        poi_address_en = #{addressEn,jdbcType=VARCHAR},
+      </if>
+      <if test="locX != null" >
+        loc_x = #{locX,jdbcType=DOUBLE},
+      </if>
+      <if test="locY != null" >
+        loc_y = #{locY,jdbcType=DOUBLE},
+      </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+  	</set>
+  	WHERE
+  	poi_id = #{id,jdbcType=INTEGER}
+  </update>
+  <delete id="deleteSelective" parameterType="com.yinghai.macao.common.model.PoiAddress">
+  	DELETE FROM spcar_preset_poi
+  	WHERE
+  	poi_id = #{id,jdbcType=INTEGER}
+  	<if test="createTime != null" >
+        AND create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name != null" >
+        AND poi_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        AND poi_address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="nameEn != null" >
+        AND poi_name_en = #{nameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="addressEn != null" >
+        AND poi_address_en = #{addressEn,jdbcType=VARCHAR},
+      </if>
+      <if test="locX != null" >
+        AND loc_x = #{locX,jdbcType=DOUBLE},
+      </if>
+      <if test="locY != null" >
+        AND loc_y = #{locY,jdbcType=DOUBLE},
+      </if>
+      <if test="image != null" >
+        AND image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        AND type = #{type,jdbcType=VARCHAR},
+      </if>
+  </delete>
+</mapper>

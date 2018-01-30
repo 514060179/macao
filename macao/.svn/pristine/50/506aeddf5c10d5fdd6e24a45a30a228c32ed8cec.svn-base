@@ -1,0 +1,610 @@
+package com.yinghai.macao.common.model;
+
+import java.util.Date;
+import java.util.List;
+
+public class SpcarOrder {
+
+	/**
+	 * 進行中
+	 */
+	public static final int ORDER_WORK_STATUS = 0;
+	/**
+	 * 配對中
+	 */
+	public static final int ORDER_PAIRING_STATUS = 2;
+	/**
+	 * 已配對
+	 */
+	public static final int ORDER_PAIRED_STATUS = 3;
+	/**
+	 * 接载中
+	 */
+	public static final int ORDER_CARRY_STATUS = 4;
+	/**
+	 * 已完成
+	 */
+	public static final int ORDER_FINISH_STATUS = 5;
+	/**
+	 * 未支付
+	 */
+	public static final int ORDER_NOPAY_STATUS = 999;
+	/**
+	 * 訂單狀態取消998
+	 */
+	public static final int ORDER_CANCAL_STATUS = 998;
+	
+	/**
+	 * 续单
+	 */
+	public static final int ORDER_RENEW_STATUS = 997;
+	
+	/**
+	 * 预约订单
+	 */
+	public static final int ORDER_APPOINTMENT_STATUS = 6;
+
+	/**
+	 * 已取消
+	 */
+	public static final int ORDER_CANCEL_STATUS = 999;
+
+	/**
+	 * 0待付款
+	 */
+	public static final int PAY_PENDING_STATUS = 0;
+	/**
+	 * 1已支付
+	 */
+	public static final int PAY_ALEADY_STATUS = 1;
+	/**
+	 * 2申請退款
+	 */
+	public static final int PAY_REFUNDING_STATUS = 2;
+	/**
+	 * 3已退款
+	 */
+	public static final int PAY_REFUNDED_STATUS = 3;
+	
+	/**
+	 * 支付方式 0是微信APP 1是支付宝 2是paypal 3是微信公众号 4是现金
+	 */
+	public static final int PAY_WAY_WEIXINAPP = 0;
+	/**
+	 * 支付方式 1 支付宝 
+	 */
+	public static final int PAY_WAY_ALIPAY  = 1;
+	
+	/**
+	 * 支付方式  2是paypal 
+	 */
+	public static final int PAY_WAY_PAYPAL  = 2;
+	
+	/**
+	 * 支付方式  3是微信公众号 
+	 */
+	public static final int PAY_WAY_WEIXINJSAPI  = 3;
+	
+	/**
+	 * 支付方式  4为现金
+	 */
+	public static final int PAY_WAY_CASH  = 4;
+	
+	/**
+	 * 支付方式  5为月結
+	 */
+	public static final int PAY_WAY_MONTHLY  = 5;
+
+	private Integer spcarOrderId;
+	private Integer orderId;
+	private String orderNo;
+
+	private Integer status;
+
+	private Integer driverId;
+
+	private Integer passengerId;
+	
+	private Integer carId;
+
+	private Integer spcarId;
+
+	private Integer confirmId;
+
+	private String confirmType;
+
+	private String rejectType;
+
+	
+	private String memo;
+
+	private Double startX;
+
+	private Double startY;
+
+	private String startAddress;
+
+	private Date updateTime;
+
+	private Date createTime;
+	/**
+	 * 用於日期篩選
+	 */
+	private Date createTimeS;
+	private Date createTimeE;
+	//司机到达时间
+	private Date driverArriveTime;
+	//司机出发时间
+	private Date driverSetoutTime;
+
+	/**
+	 * 退款金额，默认为0
+	 */
+	private Integer refundMoney;
+	/**
+	 * 司机是否确认该订单
+	 */
+	private Boolean tbc;
+	
+	public Date getDriverSetoutTime() {
+		return driverSetoutTime;
+	}
+
+	public void setDriverSetoutTime(Date driverSetoutTime) {
+		this.driverSetoutTime = driverSetoutTime;
+	}
+
+	public Date getDriverArriveTime() {
+		return driverArriveTime;
+	}
+
+	public void setDriverArriveTime(Date driverArriveTime) {
+		this.driverArriveTime = driverArriveTime;
+	}
+	//司機到達時間
+	private Time driverArriveTimeL;
+	//乘客上車時間
+	private Time passengerArriveTimeL;
+	//司机出发时间
+	private Time driverSetoutTimeL;
+
+	public Time getDriverSetoutTimeL() {
+		Date date = this.driverSetoutTime;
+		if (date==null){
+			return new Time();
+		}
+		return getTime(date);
+	}
+
+	public void setDriverSetoutTimeL(Time driverSetoutTimeL) {
+		Date date = this.driverSetoutTime;
+		if (date==null){
+			this.driverSetoutTimeL = new Time();
+		}
+		this.driverSetoutTimeL = getTime(date);
+	}
+
+	public Time getDriverArriveTimeL() {
+		Date date = this.driverArriveTime;
+		if (date==null){
+			return new Time();
+		}
+		return getTime(date);
+	}
+	public Time getPassengerArriveTimeL() {
+		Date date = this.passengerArriveTime;
+		if (date==null){
+			return new Time();
+		}
+		return  getTime(date);
+	}
+
+	public void setDriverArriveTimeL(Time driverArriveTimeL) {
+		Date date = this.driverArriveTime;
+		if (date==null){
+			this.driverArriveTimeL = new Time();
+		}
+		this.driverArriveTimeL = getTime(date);
+	}
+
+	public void setPassengerArriveTimeL(Time passengerArriveTimeL) {
+		Date date = this.passengerArriveTime;
+		if (date==null){
+			this.passengerArriveTimeL =  new Time();
+		}
+		this.passengerArriveTimeL = getTime(date);
+	}
+	//获取时间差
+	private Time getTime(Date date){
+		Date now = new Date();
+		long temp = now.getTime()-date.getTime();
+		long day = temp / (24 * 60 * 60 * 1000);
+		long hour = (temp / (60 * 60 * 1000) - day * 24);
+		long min = ((temp / (60 * 1000)) - day * 24 * 60 - hour * 60);
+		long s = (temp / 1000 - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60);
+		return new Time(hour+day*24,min,s);
+	}
+	public Date getCompleteTime() {
+		return completeTime;
+	}
+
+	public void setCompleteTime(Date completeTime) {
+		this.completeTime = completeTime;
+	}
+
+	public Date getPassengerArriveTime() {
+		return passengerArriveTime;
+	}
+
+	public void setPassengerArriveTime(Date passengerArriveTime) {
+		this.passengerArriveTime = passengerArriveTime;
+	}
+	//乘客上车时间
+	private Date passengerArriveTime;
+	//完成时间
+	private Date completeTime;
+
+	private Date payTime;
+	
+	private Date cancelTime;
+
+	private Integer amount;
+
+	private Integer payStatus;
+
+	private Integer totalHour;
+
+	private Date startTime;
+
+	private String cancelType;
+
+	private String payWay;
+
+	private Integer payWayCode;//可月结
+
+	private Double endX;
+
+	private Double endY;
+	private List<SpcarOrderSon> list;
+	
+	private Boolean comment;
+	/**
+	 * 是否为月结
+	 */
+	private Boolean monthly;
+	
+	private String endAddress;
+
+	private String rejectId;
+
+	private SpcarPassenger spcarPassenger;
+
+	private  SpcarDriver spcarDriver;
+
+	private Spcar spcar;
+	/**
+	 * 狀態數組，用來做APP多重查詢
+	 */
+	private String[] statusArray;
+	public Spcar getSpcar() {
+		return spcar;
+	}
+
+	public void setSpcar(Spcar spcar) {
+		this.spcar = spcar;
+	}
+
+	public SpcarPassenger getSpcarPassenger() {
+		return spcarPassenger;
+	}
+
+	public void setSpcarPassenger(SpcarPassenger spcarPassenger) {
+		this.spcarPassenger = spcarPassenger;
+	}
+
+	public SpcarDriver getSpcarDriver() {
+		return spcarDriver;
+	}
+
+	public void setSpcarDriver(SpcarDriver spcarDriver) {
+		this.spcarDriver = spcarDriver;
+	}
+
+	public Integer getSpcarOrderId() {
+		return spcarOrderId;
+	}
+
+	public void setSpcarOrderId(Integer spcarOrderId) {
+		this.spcarOrderId = spcarOrderId;
+	}
+
+	public String getOrderNo() {
+		return orderNo;
+	}
+
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo == null ? null : orderNo.trim();
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Integer getDriverId() {
+		return driverId;
+	}
+
+	public void setDriverId(Integer driverId) {
+		this.driverId = driverId;
+	}
+
+	public Integer getPassengerId() {
+		return passengerId;
+	}
+
+	public void setPassengerId(Integer passengerId) {
+		this.passengerId = passengerId;
+	}
+
+	public Integer getSpcarId() {
+		return spcarId;
+	}
+
+	public void setSpcarId(Integer spcarId) {
+		this.spcarId = spcarId;
+	}
+
+	public Date getCreateTimeS() {
+		return createTimeS;
+	}
+
+	public void setCreateTimeS(Date createTimeS) {
+		this.createTimeS = createTimeS;
+	}
+
+	public Date getCreateTimeE() {
+		return createTimeE;
+	}
+
+	public void setCreateTimeE(Date createTimeE) {
+		this.createTimeE = createTimeE;
+	}
+
+	public Integer getConfirmId() {
+		return confirmId;
+	}
+
+	public void setConfirmId(Integer confirmId) {
+		this.confirmId = confirmId;
+	}
+
+	public String getConfirmType() {
+		return confirmType;
+	}
+
+	public void setConfirmType(String confirmType) {
+		this.confirmType = confirmType == null ? null : confirmType.trim();
+	}
+
+	public String getRejectType() {
+		return rejectType;
+	}
+
+	public void setRejectType(String rejectType) {
+		this.rejectType = rejectType == null ? null : rejectType.trim();
+	}
+
+	public String getMemo() {
+		return memo;
+	}
+
+	public void setMemo(String memo) {
+		this.memo = memo == null ? null : memo.trim();
+	}
+
+	public Double getStartX() {
+		return startX;
+	}
+
+	public void setStartX(Double startX) {
+		this.startX = startX;
+	}
+
+	public Double getStartY() {
+		return startY;
+	}
+
+	public void setStartY(Double startY) {
+		this.startY = startY;
+	}
+
+	public String getStartAddress() {
+		return startAddress;
+	}
+
+	public void setStartAddress(String startAddress) {
+		this.startAddress = startAddress == null ? null : startAddress.trim();
+	}
+
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Date getPayTime() {
+		return payTime;
+	}
+
+	public void setPayTime(Date payTime) {
+		this.payTime = payTime;
+	}
+
+	public Integer getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
+
+	public Integer getPayStatus() {
+		return payStatus;
+	}
+
+	public void setPayStatus(Integer payStatus) {
+		this.payStatus = payStatus;
+	}
+
+	public Integer getTotalHour() {
+		return totalHour;
+	}
+
+	public void setTotalHour(Integer totalHour) {
+		this.totalHour = totalHour;
+	}
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getCancelType() {
+		return cancelType;
+	}
+
+	public void setCancelType(String cancelType) {
+		this.cancelType = cancelType == null ? null : cancelType.trim();
+	}
+
+	public String getPayWay() {
+		return payWay;
+	}
+
+	public void setPayWay(String payWay) {
+		this.payWay = payWay == null ? null : payWay.trim();
+	}
+
+	public Integer getPayWayCode() {
+		return payWayCode;
+	}
+
+	public void setPayWayCode(Integer payWayCode) {
+		this.payWayCode = payWayCode;
+	}
+
+	public Double getEndX() {
+		return endX;
+	}
+
+	public void setEndX(Double endX) {
+		this.endX = endX;
+	}
+
+	public Double getEndY() {
+		return endY;
+	}
+
+	public void setEndY(Double endY) {
+		this.endY = endY;
+	}
+
+	public String getEndAddress() {
+		return endAddress;
+	}
+
+	public void setEndAddress(String endAddress) {
+		this.endAddress = endAddress == null ? null : endAddress.trim();
+	}
+
+	public String getRejectId() {
+		return rejectId;
+	}
+
+	public void setRejectId(String rejectId) {
+		this.rejectId = rejectId == null ? null : rejectId.trim();
+	}
+
+	public Integer getCarId() {
+		return carId;
+	}
+
+	public void setCarId(Integer carId) {
+		this.carId = carId;
+	}
+
+	public void setStatusArray(String[] statusArray) {
+		this.statusArray = statusArray;
+	}
+
+	public Date getCancelTime() {
+		return cancelTime;
+	}
+
+	public void setCancelTime(Date cancelTime) {
+		this.cancelTime = cancelTime;
+	}
+
+	public Integer getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+
+	public Boolean getMonthly() {
+		return monthly;
+	}
+
+	public void setMonthly(Boolean monthly) {
+		this.monthly = monthly;
+	}
+
+	public List<SpcarOrderSon> getList() {
+		return list;
+	}
+
+	public void setList(List<SpcarOrderSon> list) {
+		this.list = list;
+	}
+	public Boolean getComment() {
+		return comment;
+	}
+
+	public void setComment(Boolean comment) {
+		this.comment = comment;
+	}
+	public Integer getRefundMoney() {
+		return refundMoney;
+	}
+
+	public void setRefundMoney(Integer refundMoney) {
+		this.refundMoney = refundMoney;
+	}
+
+	public Boolean getTbc() {
+		return tbc;
+	}
+
+	public void setTbc(Boolean tbc) {
+		this.tbc = tbc;
+	}
+}

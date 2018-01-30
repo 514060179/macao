@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.3&key=b07ac42e2bb481a4a5d4a62e71fd75c6&plugin=AMap.Geolocation,AMap.ToolBar,AMap.Geocoder,AMap.PlaceSearch,AMap.Autocomplete,AMap.Driving"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+<style type="text/css">
+
+#map-div{
+display: none;
+position : absolute;
+top : 10px;
+z-index:1000;
+}
+.map{
+  height: auto;
+  width: 100%;
+  top: 41px;
+  position: absolute;
+  bottom: 45px;
+
+}
+
+.title{
+ 
+  height: 41px;
+  background-color: white;
+
+}
+
+#conformLocationBtn{
+  width: 10%;
+  border: 0;
+  padding: 0;
+  margin:0;
+  height: 40px;
+  background: #09a4eb;
+  color: white;
+  position: relative;
+  top: 2px;
+}
+
+.top{
+  color:black;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  border-bottom: solid 1px silver;
+}
+.bottom {
+
+  height: 45px;
+  line-height: 45px;
+  width: 100%;
+  position: absolute;
+  background: white;
+  
+}
+  #panel {
+           position: absolute;
+            background-color: white;
+            max-height: 90%;
+            overflow-y: auto;
+            top: 10%;
+            right: 10px;
+            width: 300px;
+        }
+.end{
+  bottom: 0px;
+}
+
+.bottomend{
+  text-align: center;
+}
+.mapinput{
+	position:relative;
+	top :5px;
+  margin-left: 30px;
+  font-size: 15px;
+  width: 20%;
+  height: 25px;
+
+}
+#searchButton{
+	position:relative;
+	top :5px;
+	height: 25px;
+}
+
+.amap-sug-result{
+  z-index: 10000;
+}
+.amap_lib_placeSearch_page{
+  padding: 0;
+  margin: 3px;
+  background-color: #fafafa
+}
+#mask{
+	margin:0;padding:0;border:none;width:100%;height:100%;background:black;opacity:0.6;filter:alpha(opacity=60);z-index:2;position:fixed;top:0;left:0;display:none;
+	}
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<#include "../common/head.html"/>
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+						<li><a href="list.html">返回列表</a></li>
+
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title">
+						<h1>訂單</h1>
+						<small> <i class="fa fa-angle-right"></i> 訂單詳情
+						</small>
+					</div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="#" title="新增"> <i class="glyphicon glyphicon-plus"></i>
+						</a>
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body">
+					<div class="row">
+						<div class="col-xs-2"></div>
+						<div class="col-sm-8">
+							<div class="widget radius-bordered">
+								<div class="widget-header">
+									<span class="widget-caption">訂單詳情</span>
+								</div>
+								 <input type="hidden" class="form-control" id="id" name="id" value="<#if order??>${order.spcarOrderId!}</#if>" <#if order??>disabled="disabled"</#if>>
+								<div class="widget-body">
+									<form id="registrationForm" method="post"
+										class="form-horizontal bv-form"
+										data-bv-message="This value is not valid"
+										data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+										data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+										data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+										novalidate="novalidate">
+										<!-- 乘客的信息-->	
+										<div class="form-group has-feedback" >
+											<label class="col-lg-3 control-label">乘客编号</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control"
+													placeholder="tel" data-bv-notempty="true" value='<#if order??><#if order.spcarPassenger??>${order.spcarPassenger.spcarId!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">乘客姓名</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control"
+													placeholder="tel" data-bv-notempty="true" value='<#if order??><#if order.spcarPassenger??>${order.spcarPassenger.name!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback" id = "phone">
+											<label class="col-lg-3 control-label">乘客手機</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control" 
+													placeholder="tel" data-bv-notempty="true" value='<#if order??><#if order.spcarPassenger??>${order.spcarPassenger.countryCode!} ${order.spcarPassenger.tel!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											
+											
+											</div>
+											<label class="col-lg-1 control-label">乘客狀態</label>
+											<div class="col-lg-3">
+													<input type="text" class="form-control" 
+													placeholder="tel" data-bv-notempty="true" value='<#if order??><#if order.spcarPassenger??><#if order.spcarPassenger.status=0>乘客已上車<#elseif order.spcarPassenger.status=1>待機<#elseif order.spcarPassenger.status=2>等待中<#elseif order.spcarPassenger.status=3>進行中</#if></#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+												
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">乘客性别</label>
+											<div class="col-lg-3">
+											<input type="text" class="form-control" 
+													placeholder="tel" data-bv-notempty="true" value='<#if order??><#if order.spcarPassenger??>${order.spcarPassenger.sex?string("男","女")!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">是否VIP</label>
+											<div class="col-lg-3">
+											<input type="text" class="form-control" 
+													placeholder="tel" data-bv-notempty="true" value='<#if order??><#if order.spcarPassenger??>${order.spcarPassenger.vip?string("是","否")!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+									<!-- 司机的信息-->	
+									<#if order??><#if order.spcarDriver??>				
+										<div class="form-group has-feedback" >
+											<label class="col-lg-3 control-label">司機编号</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control"
+													data-bv-notempty="true" value='<#if order??><#if order.spcarDriver??>${order.spcarDriver.spcarDriverId!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" 
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">司機姓名</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control"
+													 data-bv-notempty="true" value='<#if order??><#if order.spcarDriver??>${order.spcarDriver.name!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback" id = "phone">
+											<label class="col-lg-3 control-label">司機手機</label>
+											<div class="col-lg-3">
+											
+											<input type="text" class="form-control" 
+													 data-bv-notempty="true" value='<#if order??><#if order.spcarDriver??>${order.spcarDriver.countryCode!} ${order.spcarDriver.tel!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+													
+											</div>
+											<label class="col-lg-1 control-label">司機狀態</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control" 
+													placeholder="tel" data-bv-notempty="true" value='<#if order??><#if order.spcarDriver??><#if order.spcarDriver.status="0">載客中<#elseif order.spcarDriver.status="1">上線中<#elseif order.spcarDriver.status="2">已指派訂單<#elseif order.spcarDriver.status="3">前往載客<#elseif order.spcarDriver.status="4">到達目的地等待
+													<#elseif order.spcarDriver.status="999">離線</#if></#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+													
+											
+											</div>
+										</div>
+										</#if></#if>
+										<!-- 汽车的信息 -->
+										<#if order??><#if order.spcar??>
+											<div class="form-group has-feedback" >
+											<label class="col-lg-3 control-label">汽车编号</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control"
+													data-bv-notempty="true" value='<#if order??><#if order.spcar??>${order.spcar.spcarId!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" 
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">车牌</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control"
+													 data-bv-notempty="true" value='<#if order??><#if order.spcar??>${order.spcar.spcarNo!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback" id = "phone">
+											<label class="col-lg-3 control-label">车型 车色</label>
+											<div class="col-lg-3">
+											<input type="text" class="form-control"
+													 data-bv-notempty="true" value='<#if order??><#if order.spcar??>${order.spcar.spcarType!} ${order.spcar.spcarColor!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">限坐</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control" 
+													 data-bv-notempty="true" value='<#if order??><#if order.spcar??>${order.spcar.spcarSit!}</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+										</#if></#if>
+										<!-- 订单的信息-->	
+										<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">預約時長（小時）</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control" value='<#if order??>${order.totalHour!}</#if>'
+													 data-bv-notempty="true" <#if order??>disabled="disabled"</#if>
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The amount is required and
+													cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">總金額(元)</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control" 
+													 data-bv-notempty="true" value='<#if order??>${order.amount/100.00!}</#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">訂單狀態</label>
+											<div class="col-lg-3">
+											<input type="text" class="form-control" 
+													placeholder="tel" data-bv-notempty="true" value='<#if order??><#if order.status=0>進行中<#elseif order.status=2>匹配中<#elseif order.status=3>已匹配<#elseif order.status=4>接載中<#elseif order.status=5>已完成<#elseif order.status=6>司機已確認<#elseif order.status=997>續單<#elseif order.status=998>已取消<#elseif order.status=999>未支付</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+													
+												
+											</div>
+											<label class="col-lg-1 control-label">支付狀態</label>
+											<div class="col-lg-3">
+											<input type="text" class="form-control" 
+													data-bv-notempty="true" value='<#if order??><#if order.payStatus=0>待付款<#elseif order.payStatus=1>已支付<#elseif order.payStatus=2>申請退款<#elseif order.payStatus=3>已退款</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											
+											</div>
+										</div>
+										
+									<#if order??><#if order.payWayCode??>
+									<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">支付時間</label>
+											<div class="col-lg-3">
+												<input type="text" 
+                                         		value='<#if order??><#if order.payPime??>${order.payPime?string("yyyy-MM-dd HH:mm")!}</#if></#if>'
+                                          data-date-format="yyyy-MM-ddThh:mm" class="form-control" <#if order??>disabled="disabled"</#if>
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The amount is required and
+													cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">支付方式</label>
+											<div class="col-lg-3">
+													<input type="text" class="form-control" 
+													 data-bv-notempty="true" value='<#if order??><#if order.payWayCode=0>微信支付(APP)<#elseif order.payWayCode=1>支付寶<#elseif order.payWayCode=2>PayPal支付<#elseif order.payWayCode=3>微信支付(公眾號)<#elseif order.payWayCode=4>現金支付<#elseif order.payWayCode=5>月结</#if></#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													data-bv-field="tel" <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+												
+											</div>
+										</div>	
+										</#if></#if>
+										<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">下單時間</label>
+											<div class="col-lg-3">
+								
+													
+													<input type="text" 
+                                        		 value='<#if order??>${order.createTime?string("yyyy-MM-dd HH:mm")!}</#if>'
+                                          data-date-format="yyyy-MM-ddThh:mm" class="form-control" <#if order??>disabled="disabled"</#if>
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The amount is required and
+													cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">完成時間</label>
+											<div class="col-lg-3">
+												<input type="text" 
+                                         		value='<#if order??><#if order.completeTime??>${order.completeTime?string("yyyy-MM-dd HH:mm")!}</#if></#if>'
+                                          	data-date-format="yyyy-MM-ddThh:mm" class="form-control" <#if order??>disabled="disabled"</#if>
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+													
+														
+											</div>
+										</div>	
+
+								
+										<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">上車時間</label>
+											<div class="col-lg-3">
+												<input type="text" 
+                                         value='<#if order??>${order.startTime?string("yyyy-MM-dd HH:mm")!}</#if>'
+                                          data-date-format="yyyy-MM-ddThh:mm" class="form-control" <#if order??>disabled="disabled"</#if>
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The amount is required and
+													cannot be empty</small>
+											</div>
+											<label class="col-lg-1 control-label">原訂單號</label>
+											<div class="col-lg-3">
+												<input type="text" class="form-control" 
+													 data-bv-notempty="true" value='<#if order??>${order.orderId!}</#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>	
+										
+										<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">上車地點</label>
+											<div class="col-lg-8">
+												<input type="text" class="form-control" value='<#if order??>${order.startAddress!}</#if>'
+													 data-bv-notempty="true" <#if order??>disabled="disabled"</#if>
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The amount is required and
+													cannot be empty</small>
+											</div>
+										</div>
+										
+										<div class="form-group has-feedback">
+											
+											<label class="col-lg-3 control-label">下車地點</label>
+											<div class="col-lg-8">
+												<input type="text" class="form-control" 
+													 data-bv-notempty="true" value='<#if order??>${order.endAddress!}</#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">備註</label>
+											<div class="col-lg-8">
+												<input type="text" class="form-control" value='<#if order??>${order.memo!}</#if>'
+													 data-bv-notempty="true" <#if order??>disabled="disabled"</#if>
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The amount is required and
+													cannot be empty</small>
+											</div>
+										</div>
+									<div class="form-group has-feedback">
+											<label class="col-lg-3 control-label">取消原因</label>
+											<div class="col-lg-8">
+												<input type="text" class="form-control" 
+													 data-bv-notempty="true" value='<#if order??>${order.cancelMemo!}</#if>'
+													data-bv-notempty-message="The tel is required and cannot be empty"
+													 <#if order??>disabled="disabled"</#if>><i
+													class="form-control-feedback" data-bv-field="tel"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty" data-bv-validator-for="tel"
+													class="help-block" style="display: none;">The last
+													name is required and cannot be empty</small>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2"></div>
+					</div>
+				</div>
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+	<!--Page Related Scripts-->
+	<!--Sparkline Charts Needed Scripts-->
+
+
+<div id="map-div"  style="width:100%;height:100%;position:absolute;overflow:hidden">
+      <div class='wrap' id='wrap' style="width:80%;height:80%;position:absolute;top: 5%;left: 15%; display:block;">
+          <div class ='title top' ><input type="text" id="placename" class="mapinput" placeholder="請輸入關鍵字"><button id="searchButton">搜索</button> <input id="locationXY" type="text" class="mapinput" placeholder="目標點經緯度" readOnly="true"></div>
+          <div id="container" class="map" tabindex="0"></div>
+          
+          <div id="panel"></div>
+      
+         <div class='bottom end'>
+          
+              <div class='bottomend'>
+                  <input type="button" id="conformLocationBtn" value="確認" onclick="confirmPoint()">
+              </div>
+          </div>
+</div>
+</div>
+<div id="mask" class="mask">
+	
+</div>
+
+
+
+
+
+
+	<script>
+	
+	</script>
+
+
+</body>
+<!--  /Body -->
+</html>

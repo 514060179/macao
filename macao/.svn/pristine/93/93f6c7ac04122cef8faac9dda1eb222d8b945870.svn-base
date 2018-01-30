@@ -1,0 +1,183 @@
+package com.yinghai.macao.backstage.controller;
+
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.alibaba.fastjson.JSON;
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.util.*;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.alibaba.fastjson.JSONObject;
+import com.yinghai.macao.backstage.model.SpcarManager;
+import com.yinghai.macao.backstage.model.SpcarMenu;
+import com.yinghai.macao.backstage.service.impl.MenuService;
+import com.yinghai.macao.backstage.service.impl.SpcarManagerService;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+@RequestMapping("/managerLogin")
+public class LoginController {
+	
+	private Logger log = Logger.getLogger(this.getClass());
+	@Autowired
+	private SpcarManagerService spcarManagerService;
+	
+	@RequestMapping("/tologin")
+	public String tologin(HttpServletRequest request,ModelMap model){
+		return "login";
+	}
+	@Autowired
+	private MenuService menuService;
+	@RequestMapping("/login")
+	public void login(HttpServletRequest request,ModelMap model,HttpServletResponse response){
+		log.debug("======进入后台登录管理=====");
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JSONObject  responseObject = new JSONObject();
+		response.setContentType("application/json;charset=utf-8");
+		String username = TransformUtils.toString(request.getParameter("username"));
+		if( StringUtils.isEmpty(username) || "".equals(username.trim()) ){
+			responseObject.put("msg", "username not exist");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			log.debug("==========username not exist=======");
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		String password = TransformUtils.toString(request.getParameter("password"));
+		if( StringUtils.isEmpty(password) || "".equals(password.trim()) ){
+			responseObject.put("msg", "password not exist");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			log.debug("==========password not exist=======");
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		SpcarManager user = null;
+		if(StringUtil.checkEmail(username)){
+			user = spcarManagerService.findOneByEmail(username);
+		}else{
+			user = spcarManagerService.findOneByUserName(username);
+		}
+		if (user != null) {
+				if(user.getPassword().equalsIgnoreCase(EncryptUtil.MD5(EncryptUtil.MD5(password)))){
+					// 保存登录状态信息
+					HttpSession session = request.getSession();
+					session.setAttribute("spcarManager", user);
+					List<SpcarMenu> menu = menuService.findMenuList(new HashMap<String,Object>());
+					session.setAttribute("menu", menu);
+					responseObject.put("msg", "success");
+					responseObject.put("code", "1");
+					responseObject.put("data", new JSONObject());
+					ResponseUtils.renderJson(response, responseObject.toString());
+				}else{// 密码错误
+					responseObject.put("msg", "Password error");
+					responseObject.put("code", "105");
+					responseObject.put("data",  new JSONObject());
+					log.debug("=======Password error========");
+					ResponseUtils.renderJson(response, responseObject.toString());
+				}
+			}else{// 无效
+				responseObject.put("code", "102");
+				responseObject.put("msg", "user is not exist");
+				responseObject.put("data", new JSONObject());
+				log.debug("=======user invalid========");
+				ResponseUtils.renderJson(response, responseObject.toString());
+			}
+	}
+	
+	
+	@RequestMapping("/logout")
+	public void loginOut(HttpServletRequest request,ModelMap model,HttpServletResponse response){
+		JSONObject responseObject = new JSONObject();
+		log.info("======进入后台管理登出功能======");
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		HttpSession session = request.getSession();
+		SpcarManager user = (SpcarManager)session.getAttribute("spcarManager");
+		if(user!=null){
+			session.removeAttribute("spcarManager");
+			session.removeAttribute("menu");
+		}
+		responseObject.put("msg", "success");
+		responseObject.put("code", "1");
+		responseObject.put("data", new JSONObject());
+		ResponseUtils.renderJson(response, responseObject.toString());
+	}
+
+	/**
+	 *
+	 * @param request
+	 * @param response
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "onlineManager", method = RequestMethod.GET)
+	public void onlineManager(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		List<SpcarManager> list = spcarManagerService.findAllList(new SpcarManager());
+		String sign = TlsSignUtil.getTlsSignKey(Constant.manager);
+		List<String> onlineList = new ArrayList<String>();
+		JSONObject responseObject = new JSONObject();
+		List<String> toCountList = new ArrayList<String>();
+		String str = "";
+		// 取出IM用户账号
+		if(list!=null&&list.size()>0){
+			for (int i = 0; i < list.size(); i++) {
+				toCountList.add(list.get(i).getImName());
+
+			}
+			String[] count = (String[]) toCountList.toArray(new String[toCountList.size()]);
+			// 腾讯云接口，获取IM在线的账号
+			com.alibaba.fastjson.JSONObject resultObj = IMMsgRequestUtil.queryState(sign, count);
+			if (resultObj == null) {
+				responseObject.put("msg", "resultObj为空，获取到的IM在线账号为空");
+				responseObject.put("code", "102");
+				responseObject.put("data", new JSONObject());
+				return;
+			}
+
+			// 取出所有人員的狀態
+			com.alibaba.fastjson.JSONArray array = (com.alibaba.fastjson.JSONArray) JSON
+					.parse(resultObj.get("QueryResult").toString());
+
+			// 循環，判斷是否在線，在線就將賬號放到list裡面
+			for (int i = 0; i < array.size(); i++) {
+				com.alibaba.fastjson.JSONObject json = array.getJSONObject(i);
+				if ("Online".equals(json.getString("State"))) {
+					onlineList.add(json.getString("To_Account"));
+				}
+			}
+			Random rand = new Random();
+			str = onlineList.get(rand.nextInt(onlineList.size())).toString();
+		}else{
+			responseObject.put("msg", "管理员列表为空");
+			responseObject.put("code", "102");
+			responseObject.put("data", new JSONObject());
+			return;
+		}
+		responseObject.put("msg", "操作成功");
+		responseObject.put("code", "1");
+		responseObject.put("data", str);
+		ResponseUtils.renderJson(response, responseObject.toString());
+	}
+}

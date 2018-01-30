@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<!-- Loading Container -->
+<#include "../common/head.html"/>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+        <!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+       					<li>
+                        <a href="list.html">返回列表</a>
+                    </li>
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title">
+      <h1>訂單記錄</h1>
+                    <small>
+                        <i class="fa fa-angle-right"></i>
+                        訂單詳情
+                    </small>
+
+					</div>
+
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#"title="放大">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="" href=""title="刷新">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a  id="fullscreen-toggler" href="#" title="全屏">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                    <a  href="#" title="新增">
+                        <i class="glyphicon glyphicon-plus"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-2"></div>
+                    <div class="col-sm-8">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header">
+                                <span class="widget-caption">詳情#01</span>
+                            </div>
+                            <div class="widget-body">
+                                <form id="registrationForm" method="post" class="form-horizontal bv-form" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" novalidate="novalidate">
+                                    <div class="form-title">
+                                    </div>
+                                  
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">訂單號</label>
+                                        <div class="col-lg-4">
+                                            <input type="text" readonly="readonly" value="a26963663aw36"class="form-control" name="firstName" placeholder="First name" data-bv-notempty="true" data-bv-notempty-message="The first name is required and cannot be empty" data-bv-field="firstName" >
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">
+                                                The first name is required and cannot be empty
+                                            </small>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">訂單狀態</label>
+                                        <div class="col-lg-4">
+                                            <select class="selectpicker" disabled="disabled">
+                                                <option value="2">配對中</option>
+                                                <option value="3">已配對</option>
+                                                <option value="999" selected>未支付</option>
+                                            </select>
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">The first name is required and cannot be empty</small></div>
+                       
+                                    </div>
+								<div class="form-group has-feedback">
+									<label class="col-lg-4 control-label">預約時長（時）</label>
+                                        <div class="col-lg-4">
+                                           <input type="text" readonly="readonly" value="4"class="form-control" name="firstName" placeholder="First name" data-bv-notempty="true" data-bv-notempty-message="The first name is required and cannot be empty" data-bv-field="firstName" >
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">The first name is required and cannot be empty</small></div>
+                                 
+									</div>
+                                    <div class="form-group has-feedback">
+									
+                                        <label class="col-lg-4 control-label">金額（元）</label>
+                                        <div class="col-lg-8">
+                                           <input type="text" readonly="readonly" value="a26963663aw36"class="form-control" name="firstName" placeholder="First name" data-bv-notempty="true" data-bv-notempty-message="The first name is required and cannot be empty" data-bv-field="firstName" >
+                                            <i class="form-control-feedback" data-bv-field="username" style="display: none;"></i>
+                                           
+                                            <small data-bv-validator="stringLength" data-bv-validator-for="username" class="help-block" style="display: none;">
+                                                The username must be more than 6 and less than 30 characters long
+                                            </small>
+                                        </div>
+                                    </div>
+									<div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">乘客姓名</label>
+                                        <div class="col-lg-4">
+                                            <input type="text" readonly="readonly" value="simon"class="form-control" name="firstName" placeholder="First name" data-bv-notempty="true" data-bv-notempty-message="The first name is required and cannot be empty" data-bv-field="firstName" >
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">
+                                                The first name is required and cannot be empty
+                                            </small>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <input type="text" readonly="readonly" value="feng"class="form-control" name="lastName" placeholder="Last name" data-bv-notempty="true" data-bv-notempty-message="The last name is required and cannot be empty" data-bv-field="lastName">
+                                            <i class="form-control-feedback" data-bv-field="lastName" style="display: none;">
+
+                                            </i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="lastName" class="help-block" style="display: none;">
+                                                The last name is required and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">乘客手機</label>
+                                        <div class="col-lg-4">
+                                            <select class="selectpicker" disabled="disabled">
+                                                <option value="853">Macaw 853</option>
+                                                <option value="852">HK 852</option>
+                                                <option value="86" selected>P.R.C 86</option>
+                                            </select>
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">The first name is required and cannot be empty</small></div>
+                                        <div class="col-lg-4">
+                                            <input type="text" readonly="readonly" value="15919161025" class="form-control" name="lastName" placeholder="phone" data-bv-notempty="true" data-bv-notempty-message="The last name is required and cannot be empty" data-bv-field="lastName"><i class="form-control-feedback" data-bv-field="lastName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="lastName" class="help-block" style="display: none;">The last name is required and cannot be empty</small></div>
+                                    </div>
+
+									  <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">司機姓名</label>
+                                        <div class="col-lg-4">
+                                            <input type="text" readonly="readonly" value="xuesong"class="form-control" name="firstName" placeholder="First name" data-bv-notempty="true" data-bv-notempty-message="The first name is required and cannot be empty" data-bv-field="firstName" >
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">
+                                                The first name is required and cannot be empty
+                                            </small>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <input type="text" readonly="readonly" value="zeng"class="form-control" name="lastName" placeholder="Last name" data-bv-notempty="true" data-bv-notempty-message="The last name is required and cannot be empty" data-bv-field="lastName">
+                                            <i class="form-control-feedback" data-bv-field="lastName" style="display: none;">
+
+                                            </i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="lastName" class="help-block" style="display: none;">
+                                                The last name is required and cannot be empty
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">司機手機</label>
+                                        <div class="col-lg-4">
+                                            <select class="selectpicker" disabled="disabled">
+                                                <option value="853">Macaw 853</option>
+                                                <option value="852">HK 852</option>
+                                                <option value="86" selected>P.R.C 86</option>
+                                            </select>
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">The first name is required and cannot be empty</small></div>
+                                        <div class="col-lg-4">
+                                            <input type="text" readonly="readonly" value="15773159604" class="form-control" name="lastName" placeholder="phone" data-bv-notempty="true" data-bv-notempty-message="The last name is required and cannot be empty" data-bv-field="lastName"><i class="form-control-feedback" data-bv-field="lastName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="lastName" class="help-block" style="display: none;">The last name is required and cannot be empty</small></div>
+                                    </div>
+									 <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">司機車牌</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" readonly="readonly" value="MC48725" class="form-control" name="username" data-bv-message="The username is not valid" data-bv-notempty="true" data-bv-notempty-message="The username is required and cannot be empty" data-bv-regexp="true" data-bv-regexp-regexp="[a-zA-Z0-9_\.]+" data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore" data-bv-stringlength="true" data-bv-stringlength-min="6" data-bv-stringlength-max="30" data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long" data-bv-different="true" data-bv-different-field="password" data-bv-different-message="The username and password cannot be the same as each other" data-bv-field="username" >
+                                            <i class="form-control-feedback" data-bv-field="username" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="username" class="help-block" style="display: none;">
+                                                The username and password cannot be the same as each other</small>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="username" class="help-block" style="display: none;">
+                                                The username is required and cannot be empty
+                                            </small>
+                                            <small data-bv-validator="regexp" data-bv-validator-for="username" class="help-block" style="display: none;">
+                                                The username can only consist of alphabetical, number, dot and underscore
+                                            </small>
+                                            <small data-bv-validator="stringLength" data-bv-validator-for="username" class="help-block" style="display: none;">
+                                                The username must be more than 6 and less than 30 characters long
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">起始時間</label>
+                                        <div class="col-lg-8">
+                                            <input class="form-control" readonly="readonly" value="2017-04-27 16:30:00" name="email" data-bv-emailaddress="true" data-bv-emailaddress-message="The input is not a valid email address" data-bv-field="email">
+                                            <i class="form-control-feedback" data-bv-field="email" style="display: none;">
+
+                                            </i>
+                                            <small data-bv-validator="emailAddress" data-bv-validator-for="email" class="help-block"  style="display: none;">
+                                                The input is not a valid email address
+                                            </small></div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">生成訂單時間</label>
+                                        <div class="col-lg-8">
+                                            <input class="form-control" value="2017-04-17 12:25:42" readonly="readonly" value="519624" name="email" data-bv-emailaddress="true" data-bv-emailaddress-message="The input is not a valid email address" data-bv-field="email">
+                                            <i class="form-control-feedback" data-bv-field="email" style="display: none;">
+
+                                            </i>
+                                            <small data-bv-validator="emailAddress" data-bv-validator-for="email" class="help-block"  style="display: none;">
+                                                The input is not a valid email address
+                                            </small></div>
+                                    </div>
+                                   
+
+                                   <!-- <div class="form-group">
+                                        <div class="col-xs-4"></div>
+                                        <div class="col-xs-4">
+                                            <input class="btn btn-default btn-lg btn-block" type="submit" value="Validate">
+                                        </div>
+                                        <div class="col-xs-4"></div>
+                                    </div>-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+
+</div>
+
+<!--Page Related Scripts-->
+<!--Sparkline Charts Needed Scripts-->
+
+
+<script>
+    $('#date-picker').datepicker();
+
+</script>
+
+
+</body>
+<!--  /Body -->
+</html>

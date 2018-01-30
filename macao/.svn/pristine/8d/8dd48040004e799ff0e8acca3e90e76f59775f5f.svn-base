@@ -1,0 +1,37 @@
+package com.yinghai.macao.common.service;
+
+import com.yinghai.macao.common.model.Parameter;
+import com.yinghai.macao.common.model.SpcarComment;
+import com.yinghai.macao.common.model.SpcarDriver;
+import com.yinghai.macao.common.util.Page;
+
+import java.util.List;
+
+/**
+ * Created by Administrator on 2017/5/16.
+ */
+public interface SpcarCommentService {
+	/**
+	 * 查找列表
+	 * @param pageNum 第几页
+	 * @param pageSize 每页条数
+	 * @param spcarDriver
+	 * @return
+	 */
+	Page<SpcarComment> findList(int pageNum,int pageSize,SpcarComment spcarComment);
+	int delete(Integer id);
+	SpcarComment findById(Integer id);
+	/**
+	 * 新增评论切修改订单评论状态
+	 * @param spcarComment
+	 * @return
+	 */
+	int createSpcarComment(SpcarComment spcarComment);
+	//Parameter findByTel(String countryCode,String tel);
+	/**
+	 * 查询评论数量
+	 * @param spcarComment
+	 * @return
+	 */
+	int findCount(SpcarComment spcarComment);
+}

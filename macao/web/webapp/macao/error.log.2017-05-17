@@ -1,0 +1,35 @@
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=10861Passenger======
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=10861Passenger======
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:A JSONObject text must begin with '{' at character 1 of fail======
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:A JSONObject text must begin with '{' at character 1 of fail======
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:A JSONObject text must begin with '{' at character 1 of fail======
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:A JSONObject text must begin with '{' at character 1 of fail======
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:A JSONObject text must begin with '{' at character 1 of fail======
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-14] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:A JSONObject text must begin with '{' at character 1 of fail======
+[http-apr-8089-exec-14] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:JSONObject["ActionStatus"] not found.======
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:JSONObject["ActionStatus"] not found.======
+[http-apr-8089-exec-12] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:JSONObject["ActionStatus"] not found.======
+[http-apr-8089-exec-15] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======通知乘客异常:JSONObject["ActionStatus"] not found.======
+[http-apr-8089-exec-12] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push function is not enabled, please submit the application to enable this function","ErrorCode":90045}======
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push function is not enabled, please submit the application to enable this function","ErrorCode":90045}======
+[http-apr-8089-exec-12] ERROR com.yinghai.macao.backstage.controller.BackSpcarOrderController - BackSpcarOrderController/verifyPwd======orderId为空======
+[http-apr-8089-exec-33] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:4非法操作,當前狀態為:999當前操作匹配訂單狀態：2
+[http-apr-8089-exec-31] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======该订单spcarDriverId不为空，spcarDriverId:1======
+[http-apr-8089-exec-33] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======该订单spcarDriverId不为空，spcarDriverId:1======
+[http-apr-8089-exec-26] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======查找spcarPassenger为空，spcarPassenger:10185======
+[http-apr-8089-exec-31] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push function is not enabled, please submit the application to enable this function","ErrorCode":90045}======
+[http-apr-8089-exec-35] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push function is not enabled, please submit the application to enable this function","ErrorCode":90045}======
+[http-apr-8089-exec-36] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push function is not enabled, please submit the application to enable this function","ErrorCode":90045}======
+[http-apr-8089-exec-13] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push function is not enabled, please submit the application to enable this function","ErrorCode":90045}======
+[http-apr-8089-exec-29] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push function is not enabled, please submit the application to enable this function","ErrorCode":90045}======
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======查找spcarPassenger为空，spcarPassenger:10861======
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push function is not enabled, please submit the application to enable this function","ErrorCode":90045}======

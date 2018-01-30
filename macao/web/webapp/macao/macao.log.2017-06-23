@@ -1,0 +1,20 @@
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion begins with [org.apache.catalina.connector.RequestFacade@2cff1b24, org.apache.catalina.connector.ResponseFacade@6ee43b04]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method spcarVersion end with massage:null

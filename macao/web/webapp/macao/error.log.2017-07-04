@@ -1,0 +1,21 @@
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-07-04 10:11:42 Exception:LoginController/login msg:
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/backstage-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarManagerMapper.xml]
+### The error may involve com.yinghai.macao.backstage.dao.SpcarManagerMapper.selectByName
+### The error occurred while executing a query
+### SQL: select            id, username, password, email, email_verified, create_time, last_updated, role_id,      remark,im_name,sign         from spcar_manager     where username = ?     order by id asc limit 1
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+; SQL []; No operations allowed after connection closed.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-07-04 01:09:54 Exception:SpcarDriverController/list msg:
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'passenger_getin_time' in 'field list'
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/common-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarDriverMapper.xml]
+### The error may involve com.yinghai.macao.common.dao.SpcarDriverMapper.findList-Inline
+### The error occurred while setting parameters
+### SQL: select count(0) from (select           spcar_driver_id, name, loc_x, loc_y, status, license, image, driver_type, spcar_type,      create_time, last_update, device_id, verification, country_code, tel, given_name,      family_name, userId, rating, english_capability, profile_image, order_count, cancel_count,      finish_count, deleted, license_true, license_till,driver_arrive_time,driver_setout_time,passenger_getin_time, shift, device_type,sign,im_name         from spcar_driver     where 1=1) tmp_count
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'passenger_getin_time' in 'field list'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'passenger_getin_time' in 'field list'
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:679非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:679非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:671非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:671非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:679非法操作,當前狀態為:3當前操作匹配訂單狀態：3

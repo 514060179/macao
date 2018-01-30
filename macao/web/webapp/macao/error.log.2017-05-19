@@ -1,0 +1,2 @@
+[http-apr-8089-exec-21] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======查找spcarPassenger为空，spcarPassenger:10867======
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push request is too frequent, current term quota empty, please wait and try again","ErrorCode":90024}======

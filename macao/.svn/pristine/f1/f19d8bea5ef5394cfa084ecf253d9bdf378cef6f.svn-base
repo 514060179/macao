@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.MeterMapper">
+	<resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.Meter">
+		<id column="meter_id" property="meterId" jdbcType="INTEGER" />
+		<result column="pay_no" property="payNo" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="pay_code" property="payCode" jdbcType="VARCHAR" />
+		<result column="pay_intro" property="payIntro" jdbcType="VARCHAR" />
+		<result column="order_no" property="orderNo" jdbcType="VARCHAR" />
+		<result column="pay_money" property="payMoney" jdbcType="INTEGER" />
+		<result column="bank_type" property="bankType" jdbcType="VARCHAR" />
+		<result column="fee_type" property="feeType" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		meter_id, pay_no, create_time, pay_code, pay_intro, order_no,pay_money,bank_type,fee_type
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from meter
+		where meter_id = #{meterId,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from meter
+		where meter_id = #{meterId,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="insertSelective" parameterType="com.yinghai.macao.common.model.Meter" useGeneratedKeys="true" keyProperty="meterId" >
+		insert into meter
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="meterId != null">
+				meterId,
+			</if>
+			<if test="payNo != null">
+				pay_no,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="payCode != null">
+				pay_code,
+			</if>
+			<if test="payIntro != null">
+				pay_intro,
+			</if>
+			<if test="orderNo != null">
+				order_no,
+			</if>
+			<if test="payMoney != null">
+					pay_money,
+				</if>
+				<if test="bankType != null">
+					bank_type,
+				</if>
+				<if test="feeType != null">
+					fee_type,
+				</if>
+
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="meterId != null">
+				#{meterId,jdbcType=INTEGER},
+			</if>
+			<if test="payNo != null">
+				#{payNo,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="payCode != null">
+				#{payCode,jdbcType=VARCHAR},
+			</if>
+			<if test="payIntro != null">
+				#{payIntro,jdbcType=VARCHAR},
+			</if>
+			<if test="orderNo != null">
+				#{orderNo,jdbcType=VARCHAR},
+			</if>
+				<if test="payMoney != null">
+				#{payMoney,jdbcType=INTEGER},
+			</if>
+			<if test="bankType != null">
+				#{bankType,jdbcType=VARCHAR},
+			</if>
+			<if test="feeType != null">
+				#{feeType,jdbcType=VARCHAR},
+			</if>
+			
+				
+		</trim>
+	</insert>
+</mapper>

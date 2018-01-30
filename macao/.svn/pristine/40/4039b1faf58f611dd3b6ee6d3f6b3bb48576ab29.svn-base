@@ -1,0 +1,96 @@
+package com.yinghai.macao.common.service.impl;
+
+import com.yinghai.macao.common.dao.SpcarPassengerMapper;
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.service.SpcarPassengerService;
+import com.yinghai.macao.common.util.Page;
+import com.yinghai.macao.common.util.PageHelper;
+
+import javax.transaction.Transactional;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+import java.util.Map;
+
+
+public class SpcarPassengerServiceImpl implements SpcarPassengerService {
+	private Logger log = Logger.getLogger(this.getClass());
+	@Autowired
+	private SpcarPassengerMapper spcarPassengerMapper;
+	public int addSpcarPassenger(String sign, String imClient, Integer id) {
+		// TODO Auto-generated method stub
+		return spcarPassengerMapper.insertByTaxigoUser(sign,imClient,id);
+	}
+	public int addSpcarPassenger(SpcarPassenger spcarPassenger) {
+		return spcarPassengerMapper.insertSelective(spcarPassenger);
+	}
+
+	public int updateSpcarPaaengerStatus(Integer spcarId, Integer status) {
+		SpcarPassenger spcarPassenger = new SpcarPassenger();
+		spcarPassenger.setSpcarId(spcarId);
+		spcarPassenger.setStatus(status);
+		return spcarPassengerMapper.updateByPrimaryKeySelective(spcarPassenger);
+	}
+	@Override
+	public SpcarPassenger findById(Integer spcarPassengerId) {
+		// TODO Auto-generated method stub
+		return spcarPassengerMapper.selectByPrimaryKey(spcarPassengerId);
+	}
+	@Override
+	public Page<SpcarPassenger> findList(int pageNum, int pageSize, SpcarPassenger spcarPassenger) {
+		// TODO Auto-generated method stub
+		PageHelper.startPage(pageNum,pageSize);
+		return spcarPassengerMapper.findList(spcarPassenger);
+	}
+	@Override
+	public SpcarPassenger findByTel(String countryCode, String tel) {
+		// TODO Auto-generated method stub
+		return spcarPassengerMapper.findByTel(countryCode, tel);
+	}
+	@Transactional
+	@Override
+	public int updateSpcarPaaenger(SpcarPassenger spcarPassenger) {
+		// TODO Auto-generated method stub
+		SpcarPassenger updateSpcarPassenger = new SpcarPassenger();
+		if(spcarPassenger.getVip()){
+			updateSpcarPassenger.setVip(false);
+		}else{
+			updateSpcarPassenger.setVip(true);
+		}
+		updateSpcarPassenger.setSpcarId(spcarPassenger.getSpcarId());
+		int i = 0;
+		try {
+			spcarPassengerMapper.updateTaxigoUser(updateSpcarPassenger.getSpcarId()+"", updateSpcarPassenger.getVip());
+			i++;
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error("更新taxigoUser失败"+e);
+			e.printStackTrace();
+			throw  new RuntimeException("更新taxigoUser失败");
+			
+		}
+		try {
+			spcarPassengerMapper.updateByPrimaryKeySelective(updateSpcarPassenger);
+			i++;
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error("更新专车乘客信息失败"+e);
+			e.printStackTrace();
+			throw  new RuntimeException("更新专车乘客信息失败");
+		}
+		return i;
+	}
+	@Override
+	public int updateTaxigoUser(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return spcarPassengerMapper.updateUserByMap(map);
+	}
+	@Override
+	public List<SpcarPassenger> findAllList(SpcarPassenger spcarPassenger) {
+		// TODO Auto-generated method stub
+		 return spcarPassengerMapper.findList(spcarPassenger);
+	}
+
+}

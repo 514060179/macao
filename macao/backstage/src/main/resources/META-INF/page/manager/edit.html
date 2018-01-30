@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<!-- Loading Container -->
+<#include "../common/head.html"/>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="list.html">返回列表</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>管理員</h1>
+                    <small>
+                        <i class="fa fa-angle-right"></i>
+                       <#if admin??>编辑管理员#${admin.id}<#else>新增管理員</#if>
+                    </small>
+                </div>
+
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#"title="放大">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="" href=""title="刷新">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a  id="fullscreen-toggler" href="#" title="全屏">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-2"></div>
+                    <div class="col-sm-8">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header">
+                                <span class="widget-caption">新增</span>
+                            </div>
+                            <div class="widget-body">
+                                <form id="registrationForm" method="post" class="form-horizontal bv-form" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" novalidate="novalidate">
+                                    <div class="form-title">
+                                        根據提示填寫以下內容
+                                         <input type="hidden" class="form-control" id="id" name="id" value="<#if admin??>${admin.id!}</#if>" <#if admin??>disabled="disabled"</#if>>
+                                           
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">用戶名</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" id="username" name="username" data-bv-message="The username is not valid" data-bv-notempty="true" data-bv-notempty-message="The username is required and cannot be empty" data-bv-regexp="true" data-bv-regexp-regexp="[a-zA-Z0-9_\.]+" data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore" data-bv-stringlength="true" data-bv-stringlength-min="6" data-bv-stringlength-max="30" data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long" data-bv-different="true" data-bv-different-field="password" data-bv-different-message="The username and password cannot be the same as each other" data-bv-field="username"value="<#if admin??>${admin.username!}</#if>" <#if admin??>disabled="disabled"</#if>>
+                                           <p class="help-block" style="color:red;font-size:10px;"></p>
+                                            <i class="form-control-feedback" data-bv-field="username" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="username" class="help-block" style="display: none;">The username and password cannot be the same as each other</small>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">郵件地址</label>
+                                        <div class="col-lg-8">
+                                            <input class="form-control" value="<#if admin??>${admin.email!}</#if>"id="email" name="email" type="email" data-bv-emailaddress="true" data-bv-emailaddress-message="The input is not a valid email address" data-bv-field="email">
+                                              <p class="help-block" style="color:red;font-size:10px;"></p>
+                                            <i class="form-control-feedback" data-bv-field="email" style="display: none;"></i>
+                                            <small data-bv-validator="emailAddress" data-bv-validator-for="email" class="help-block" style="display: none;">The input is not a valid email address</small></div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">密碼</label>
+                                        <div class="col-lg-8">
+                                            <input type="password" class="form-control" id="password" name="password" data-bv-notempty="true" data-bv-notempty-message="The password is required and cannot be empty" data-bv-identical="true" data-bv-identical-field="confirmPassword" data-bv-identical-message="The password and its confirm are not the same" data-bv-different="true" data-bv-different-field="username" data-bv-different-message="The password cannot be the same as username" data-bv-field="password">
+                                             <p class="help-block" style="color:red;font-size:10px;"></p>
+                                            <i class="form-control-feedback" data-bv-field="password" style="display: none;"></i>
+                                           
+                                            <small data-bv-validator="different" data-bv-validator-for="password" class="help-block" style="display: none;">The password cannot be the same as username</small><small data-bv-validator="identical" data-bv-validator-for="password" class="help-block" style="display: none;">The password and its confirm are not the same</small><small data-bv-validator="notEmpty" data-bv-validator-for="password" class="help-block" style="display: none;">The password is required and cannot be empty</small></div>
+                                    
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">確定密碼</label>
+                                        <div class="col-lg-8">
+                                            <input type="password" class="form-control"id="confirmPassword" name="confirmPassword" data-bv-notempty="true" data-bv-notempty-message="The confirm password is required and cannot be empty" data-bv-identical="true" data-bv-identical-field="password" data-bv-identical-message="The password and its confirm are not the same" data-bv-different="true" data-bv-different-field="username" data-bv-different-message="The password cannot be the same as username" data-bv-field="confirmPassword">
+                                             <p class="help-block" style="color:red;font-size:10px;"></p>
+                                            <i class="form-control-feedback" data-bv-field="confirmPassword" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The password cannot be the same as username</small><small data-bv-validator="identical" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The password and its confirm are not the same</small><small data-bv-validator="notEmpty" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The confirm password is required and cannot be empty</small></div>
+                                  
+                                    </div>
+
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">權限</label>
+                                        <div class="col-lg-8">
+                                            <select class="selectpicker" id="roleId">
+                                                <option value="0">無限制</option>
+                                                <option value="1">普通</option>
+
+                                            </select>                                            <i class="form-control-feedback" data-bv-field="username" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="username" class="help-block" style="display: none;">The username and password cannot be the same as each other</small>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-xs-4"></div>
+                                        <div class="col-xs-4">
+                                            <input class="btn btn-default btn-lg btn-block" type="button" id = 'submit'value="Validate">
+                                        </div>
+                                        <div class="col-xs-4"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+
+</div>
+
+<!--Page Related Scripts-->
+<!--Sparkline Charts Needed Scripts-->
+
+
+	<script type="text/javascript">
+			$("#submit").click(
+				function() {
+					 $("#username").next().text("");
+					  $("#email").next().text("");
+					  $("#password").next().text("");
+					  $("#confirmPassword").next().text("");
+					  $("#roleId").next().text("");
+                    var username = document.getElementById("username").value;
+                    var password = document.getElementById('password').value;
+                    var confirmPassword = document.getElementById('confirmPassword').value;
+                    var email = document.getElementById('email').value;
+                    var roleId = $('#roleId option:selected').val();
+                    if(password==""){
+                        $("#password").next().text("請輸入密碼！");
+                        $("#password").focus();
+                        return false;
+                    }
+                    if(confirmPassword==""){
+                        $("#confirmPassword").next().text("請再一次確認密碼！");
+                        $("#confirmPassword").focus();
+                        return false;
+                    }
+                    if(password!=confirmPassword){
+                        $("#confirmPassword").next().text("兩次密碼不一致！");
+                        $("#confirmPassword").focus();
+                        return false;
+                    }
+					if(!checkEmail()||email==""){
+                        $("#email").next().text("請正確填寫郵箱地址！");
+                        $("#email").focus();
+                        return false;
+					}
+					if (username.trim() == "") {
+                        $("#username").focus();
+                        $("#username").next().text("請輸入用戶名！");
+                        return false;;
+					}
+					if (password.trim() == "") {
+                        $("#password").focus();
+                        $("#password").next().text("請輸入密碼！");
+                        return false;;
+					}
+					if (confirmPassword.trim() == "") {
+                        $("#confirmPassword").focus();
+                        $("#confirmPassword").next().text("請再確認一次密碼！");
+                        return false;;
+                    }
+					var jsonUser = {};
+					var id = $("#id").val();
+                    jsonUser["username"]=username;
+                    jsonUser["password"]=confirmPassword;
+                    jsonUser["roleId"] = roleId;
+                    var act = "add";
+                    if(id.trim()!=""){
+                        jsonUser["id"] = id;
+                        act = "upd";
+                    }
+                    if(email.trim()!=""){
+                        jsonUser["email"] = email;
+					}
+						$.post("${base}/admin/manager/save?act="+act, jsonUser,
+							function(date) {
+								if(date.code == "999"){
+                                    $("#username").next().text("該用户名已被註冊!！");
+                                    $("#username").focus();
+								}else if(date.code == "998"){
+	                                    $("#email").next().text("該邮箱已被註冊!！");
+	                                    $("#email").focus();
+	                                    $("#username").next().text("");
+									}else{
+									if (date.code =="1") {
+										alert("create success");
+										resetFormInput();
+									} else if(date.code == "2") {
+										alert("update success");
+									}else{
+                                        alert("fail");
+									}
+								}
+							})
+				});
+		function resetFormInput() { //清空表单
+			$("form input").each(function() {
+				$(this).val("");
+			});
+		}
+	</script>
+
+<script>
+	function resetFormInput(){
+	    $("input").each(function () {
+			$(this).val("");
+        })
+	}
+	function checkPassword(obj){
+	    var pwd1 = $("#password").val();
+        var pwd2 = $("#confirmPassword").val();
+        if(pwd1==""||pwd2==""){
+            return;
+		}
+		if(pwd1!=pwd2){
+            $(obj).next().text("兩次密碼不一致！");
+            $(obj).focus();
+		}else{
+            $("#password").next().text("");
+            $("#confirmPassword").next().text("");
+		}
+	}
+	function checkEmail(){
+        var email = document.getElementById('email').value;
+        if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)){
+            $("#email").next().text("請正確填寫郵箱地址！");
+            $("#email").focus();
+            return false;
+        }else{
+            $("#email").next().text("");
+            return true;
+		}
+	}
+	function checkUsername(){
+	    var username =  $("#username").val().trim();
+	    var json = {
+	        "username":username
+		}
+        $.post("${base}/admin/manager/checkUser?act=add", json,function (date) {
+            if(date.code == "1"){
+                $("#username").next().text("");
+			}else {
+                $("#username").focus();
+                $("#username").next().text("该用户已存在！");
+			}
+        });
+	}
+</script>
+
+
+</body>
+<!--  /Body -->
+</html>

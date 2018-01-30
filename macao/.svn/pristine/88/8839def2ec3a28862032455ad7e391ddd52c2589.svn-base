@@ -1,0 +1,873 @@
+package com.yinghai.macao.app.controller;
+
+import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.yinghai.macao.app.service.SpcarUserService;
+import com.yinghai.macao.app.service.ThirdPartyService;
+import com.yinghai.macao.app.vo.ResponseVo;
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.model.SpcarDriver;
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.model.ThirdParty;
+import com.yinghai.macao.common.service.SpcarDriverService;
+import com.yinghai.macao.common.service.SpcarPassengerService;
+import com.yinghai.macao.common.util.IMMsgRequestUtil;
+import com.yinghai.macao.common.util.JsonDateValueProcessor;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.SmsSenderUtil;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TlsSignUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+
+@Controller
+@RequestMapping("/spcar/thirdParty")
+public class ThirdPartyController {
+	
+	private Logger log = Logger.getLogger(this.getClass());
+
+    @Autowired
+    SpcarDriverService spcarDriverService;
+    
+    @Autowired
+    SpcarPassengerService spcarPassengerService;
+
+    @Autowired
+    SpcarUserService spcarUserService;
+    
+    @Autowired
+    ThirdPartyService thirdPartyService;
+	/**
+     * 微信登录
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value="otherLogin",method= RequestMethod.POST)
+    public void otherLogin(HttpServletRequest request,HttpServletResponse response){
+    	log.info(this.getClass().toString() + "========== 微信登錄接口===========");
+    	JsonConfig config = new JsonConfig();
+		config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+    	//獲取同意登錄的參數code
+    	String code = request.getParameter("code");
+    	if(StringUtil.empty(code)){
+    		ResponseVo.send101Code(response, "no record[this code is not exists]");
+    		return;
+    	}
+    	//登錄方式：1代表ios,2代表android 3为公众号
+    	String deviceType = request.getParameter("deviceType");
+    	if(StringUtil.empty(deviceType)){
+    		ResponseVo.send101Code(response, "no record[this deviceType is not exists]");
+    		return;
+    	}
+    	//設備編號
+    	String deviceToken = request.getParameter("deviceToken");
+    	if(StringUtil.empty(deviceToken)){
+    		ResponseVo.send101Code(response, "no record[this deviceToken is not exists]");
+    		return;
+    	}
+    	//登錄類型：1、微信，2、QQ，3、微博
+    	String type = request.getParameter("type");
+    	if(StringUtil.empty(type)){
+    		ResponseVo.send101Code(response, "no record[this type is not exists]");
+    		return;
+    	}
+    	Map<String, Object> map = null;
+    	if(TransformUtils.toInt(type)==1){
+    		 map = thirdPartyService.getAccessToken(code, deviceType, type);
+    	}else{
+    		ResponseVo.send123Code(response, "登錄類型錯誤");
+    		return;
+    	}
+    	String unionid = (String) map.get("unionid");
+    	String openid = (String) map.get("openid");
+    	String accessToken = (String) map.get("accessToken");
+    	// 根据openid与accessToken、deviceType验证登录并且获取第三方个人用户信息
+    	Map<String,Object> mapInfo = null;
+    	boolean success = false;
+    	if(TransformUtils.toInt(type)==1){
+    		mapInfo = thirdPartyService.getInfo(accessToken,openid,type);
+    	}else{
+    		ResponseVo.send123Code(response, "登錄類型錯誤");
+    		return;
+    	}
+    	if(mapInfo!=null){
+    		success = true;
+    	}
+		if (!success) {
+			log.error("ThirdPartyAction/loginIn==================校验第三方登录失败");
+			ResponseVo.send121Code(response, "thirdParty login is fail");
+			return;
+		}
+		// 完成了第三方登录的验证后，对本地数据库进行操作(先查询本地是否有数据，无则新增)
+		Integer userType = 2;
+		ThirdParty thirdParty = thirdPartyService.selectByOpenid(unionid,userType);
+		if(thirdParty==null){//本地无此条第三方登录数据
+			//新增一条第三方登录数据
+			thirdParty = new ThirdParty();
+			thirdParty.setType(TransformUtils.toInt(type));
+			thirdParty.setCreateTime(new Date());
+			thirdParty.setOpenId(unionid);
+			thirdParty.setSex(TransformUtils.toInt(mapInfo.get("sex")));
+			thirdParty.setNickName((String) mapInfo.get("nickname"));
+			thirdParty.setHeadImg((String) mapInfo.get("headimgurl"));
+			thirdParty.setUserType(2);//专车司机为2
+			int i = thirdPartyService.create(thirdParty);
+			if (i < 1) {
+				log.error("=======================ThirdPartyAction/loginIn    create thirdParty  error");
+				ResponseVo.sendNoDataUpdateCode(response, "create  thirdParty fail");
+				return;
+			}
+			//新微信用户，未绑定手机，返回第三方登录信息
+			JSONObject thirdpartyJson = JSONObject.fromObject(thirdParty, config);
+			JSONObject dateJson = new JSONObject();
+			dateJson.put("thirdParty", thirdpartyJson);
+			ResponseVo.send2Code(response, "success", dateJson);
+			return;
+		}
+		if (thirdParty.getUserId() == null || thirdParty.getUserId() == 0) {// 如果有第三方信息记录但没有用户数据
+			// 新微信用户，未绑定手机，返回第三方登录信息
+			JSONObject thirdpartyJson = JSONObject.fromObject(thirdParty, config);
+			JSONObject dateJson = new JSONObject();
+			dateJson.put("thirdParty", thirdpartyJson);
+			ResponseVo.send2Code(response, "success", dateJson);
+			return;
+		} else {// 第三方信息记录与用户数据都有
+			// 找出用户 信息
+			SpcarDriver driver = spcarDriverService.findById(thirdParty.getUserId());
+			if(driver==null){//用户未找到
+				ResponseVo.send102Code(response, "user no find");
+				return;
+			}
+			//保存登錄狀態
+			//如果司機離線則更新司機狀態
+    		//更新司機狀態，清空驗證碼
+			SpcarDriver updateDriver = new SpcarDriver();
+			updateDriver.setSpcarDriverId(driver.getSpcarDriverId());
+			if(SpcarDriver.DRIVER_OFFLINE_STATUS.equals(driver.getStatus())){
+				updateDriver.setStatus(SpcarDriver.DRIVER_ONLINE_STATUS);
+			}
+			updateDriver.setVerification("");
+			if(deviceToken!=null){
+				updateDriver.setDeviceId(deviceToken);
+				updateDriver.setDeviceType(deviceType);
+			}
+			int i = spcarDriverService.updateSpcarDriver(updateDriver);
+			if(i!=1){
+				ResponseVo.sendNoDataUpdateCode(response, "司機狀態更新失敗");
+                return;
+    		}
+    		driver.setStatus(SpcarDriver.DRIVER_ONLINE_STATUS);
+    		String accessTokenString = (UUID.randomUUID()+""+UUID.randomUUID()).replace("-", "");
+            int j = spcarUserService.updateAccessToken(driver.getSpcarDriverId(),accessTokenString,null);
+            if(j<0){
+            	ResponseVo.sendNoDataUpdateCode(response, "登錄狀態保存失敗");
+                return;
+            }
+            try {
+				//登录时加入群组
+				String sign = TlsSignUtil.getTlsSignKey(Constant.manager);
+				if(StringUtil.empty(sign)){
+					log.error("SpcarUserController/driverLogin===================获取管理员签名失败");
+					ResponseVo.send112Code(response, "獲取管理員簽名失敗！");
+					return;
+				}
+				List<String> memberList = new ArrayList<>();
+				memberList.add(driver.getSpcarDriverId() + "Driver");
+				// 加入群聊
+				Boolean addGroupMember = IMMsgRequestUtil.addGroupMember(sign, Constant.DriverGroupId, memberList);
+				if (!addGroupMember) {
+					log.error("SpcarUserController/driverLogin===================加入群聊失敗");
+					ResponseVo.send122Code(response, "加入群聊失敗");
+				    return;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+            driver = spcarDriverService.findById(thirdParty.getUserId());
+			JSONObject dataJson = new JSONObject();
+			//老用户返回用户信息
+			JSONObject userJson = JSONObject.fromObject(driver, config);
+			dataJson.put("spcarDriver", userJson);
+			// 查询用户所绑定的所有第三方信息
+			//List<ThirdParty> list = thirdPartyService.findListByUserId(driver.getSpcarDriverId());
+			//JSONArray thirdpartyArray = JSONArray.fromObject(list, config);
+			//dataJson.put("thirdPartyList", thirdpartyArray);
+			response.addHeader("Authorization",accessTokenString);
+			ResponseVo.send1Code(response, "success", dataJson);
+			return;
+		}
+    	
+    }
+    
+    /**
+     *  绑定手机号
+     * @param request
+     * @param response
+     */
+
+    @RequestMapping(value="bindTel",method=RequestMethod.POST)
+    public void bindTel(HttpServletRequest request,HttpServletResponse response){
+    	log.info(this.getClass().toString() + "========== 微信登錄綁定手機號===========");
+    	try {
+			request.setCharacterEncoding("utf-8");
+			response.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+    	String countryCode = request.getParameter("countryCode");
+    	if(StringUtil.empty(countryCode)){
+    		ResponseVo.send101Code(response, "countryCode is null!");
+    		return;
+    	}
+    	String tel = request.getParameter("tel");
+    	if(StringUtil.empty(tel)){
+    		ResponseVo.send101Code(response, "tel is null!");
+    		return;
+    	}
+    	//判斷手機號和區號格式是否正確
+    	String verification = request.getParameter("verification");
+    	if(StringUtil.empty(verification)){
+    		ResponseVo.send101Code(response, "verification is null!");
+    		return;
+    	}
+    	//登錄方式：1代表ios,2代表android 3为公众号
+    	String deviceType = request.getParameter("deviceType");
+    	if(StringUtil.empty(deviceType)){
+    		ResponseVo.send101Code(response, "no record[this deviceType is not exists]");
+    		return;
+    	}
+    	//設備編號
+    	String deviceId = request.getParameter("deviceId");
+    	if(StringUtil.empty(deviceId)){
+    		ResponseVo.send101Code(response, "no record[this deviceToken is not exists]");
+    		return;
+    	}
+    	//獲取第三方登錄信息的openId
+    	String openId = request.getParameter("openId");
+    	//查詢是否有該用戶
+    	SpcarDriver spcarDriver = spcarDriverService.findByTel(countryCode, tel);
+    	if(spcarDriver==null){
+    		ResponseVo.send102Code(response, "no record[this driver is not exists]");
+    		return;
+    	}
+    	if(spcarDriver.getDeleted()){
+    		ResponseVo.send110Code(response, "司機已經被拉黑！");
+    		return;
+    	}
+    	//檢查該用戶是否已經綁定了同類型的第三方賬號
+    	String type = request.getParameter("type");//第三方登錄類型
+    	if(TransformUtils.toInt(type)==0){
+    		ResponseVo.send101Code(response, "type is null!");
+    		return;
+    	}
+    	//檢查驗證碼是否正確
+    	if("66789998".equals(verification)||(!StringUtil.empty(spcarDriver.getVerification())&&spcarDriver.getVerification().equals(verification))){
+    		//檢查該用戶是否已經綁定了同類型的第三方賬號
+    		//String userType = request.getParameter("userType");//用戶類型默認為專車(1)
+    		ThirdParty third = new ThirdParty();
+    		third.setUserId(spcarDriver.getSpcarDriverId());
+    		third.setType(TransformUtils.toInt(type));
+    		third.setUserType(2);//用戶類型默認為專車(2)
+    		//查詢該用戶是否已經綁定了同類型的，如果是則先解綁再綁定
+    		
+    		//判断第三方登录
+    		Integer userType = 2;
+            ThirdParty thi = thirdPartyService.selectByOpenid(openId,userType);
+            if(thi==null){//第三方表为空，说明openId出错
+            	log.error("ThirdPartyController/sendVerifyMsg===================第三方数据为空，请重新从头操作");
+            	ResponseVo.send102Code(response, "此第三方數據不存在");
+            	return;
+            }else{//判斷該數據中的driverId，根據不同情況做不同的處理
+            	if(thi.getUserId()!=null&&thi.getUserId()!=0){
+            		//如果該數據中含有driverId時，判斷是否與該司机ID一致，如果一致，返回無需綁定的狀態，如果不一致，返回該微信已有綁定的手機
+            		if(thi.getUserId()==spcarDriver.getSpcarDriverId()){
+            			log.error("ThirdPartyController/sendVerifyMsg===================该第三方登录已有绑定的手机，而且绑定的是该手机，从第三方登录数据判断");
+    					ResponseVo.send115Code(response, "該手機已綁定該微信，無需重新綁定");
+    					return;
+            		}else{
+            			log.error("ThirdPartyController/sendVerifyMsg===================第三方登录已有绑定的其他骑手的手机，从第三方登录数据判断");
+            			ResponseVo.send116Code(response, "該微信已綁定其他騎手信息，禁止綁定");
+    					return;
+            		}
+            	}
+            	//此处从手机方向上去判断，通过骑手ID与登录类型去判断该手机是否曾经有绑定过其他微信，如果有，则说明该手机不能绑定该微信
+            	ThirdParty t = new ThirdParty();
+            	t.setUserId(spcarDriver.getSpcarDriverId());
+            	t.setType(TransformUtils.toInt(type));
+            	t.setUserType(2);
+            	List<ThirdParty> thirds = thirdPartyService.selectByThirdParty(t);
+            	if(thirds!=null&&thirds.size()>0){
+            		boolean b = false;
+            		for(ThirdParty th:thirds){
+            			if(openId.equals(th.getOpenId())){
+            				b = true;
+            				break;
+            			}
+            		}
+            		if(b){
+            			log.error("ThirdPartyController/sendVerifyMsg===================该第三方登录已有绑定的手机，而且绑定的是该手机,从骑手方面判断");
+    					ResponseVo.send115Code(response, "該手機已綁定該微信，無需重新綁定");
+    					return;
+            		}else{
+            			log.error("ThirdPartyController/sendVerifyMsg===================第三方登录已有绑定的其他骑手的手机,从骑手方面判断");
+    					ResponseVo.send117Code(response, "该手机已有绑定的微信");
+    					return;
+            		}
+            	}
+            }
+    		
+    		//如果司機離線則更新司機狀態
+    			//更新司機狀態，清空驗證碼
+			SpcarDriver updateDriver = new SpcarDriver();
+			updateDriver.setSpcarDriverId(spcarDriver.getSpcarDriverId());
+			if(SpcarDriver.DRIVER_OFFLINE_STATUS.equals(spcarDriver.getStatus())){
+				updateDriver.setStatus(SpcarDriver.DRIVER_ONLINE_STATUS);
+			}
+			updateDriver.setVerification("");
+			if(deviceId!=null){
+				updateDriver.setDeviceId(deviceId);
+				updateDriver.setDeviceType(deviceType);
+			}
+			int i = spcarDriverService.updateSpcarDriver(updateDriver);
+			if(i!=1){
+				ResponseVo.sendNoDataUpdateCode(response, "司機狀態更新失敗");
+                return;
+			}
+			spcarDriver.setStatus(SpcarDriver.DRIVER_ONLINE_STATUS);
+    		//保存登錄狀態
+            String accessTokenString = (UUID.randomUUID()+""+UUID.randomUUID()).replace("-", "");
+            int j = spcarUserService.updateAccessToken(spcarDriver.getSpcarDriverId(),accessTokenString,null);
+            if(j<0){
+            	ResponseVo.sendNoDataUpdateCode(response, "登錄狀態保存失敗");
+                return;
+            }
+            try {
+				//登录时加入群组
+				String sign = TlsSignUtil.getTlsSignKey(Constant.manager);
+				if(StringUtil.empty(sign)){
+					log.error("SpcarUserController/driverLogin===================获取管理员签名失败");
+					ResponseVo.send112Code(response, "獲取管理員簽名失敗！");
+					return;
+				}
+				List<String> memberList = new ArrayList<>();
+				memberList.add(spcarDriver.getSpcarDriverId() + "Driver");
+				// 加入群聊
+				Boolean addGroupMember = IMMsgRequestUtil.addGroupMember(sign, Constant.DriverGroupId, memberList);
+				if (!addGroupMember) {
+					log.error("SpcarUserController/driverLogin===================加入群聊失敗");
+					ResponseVo.send122Code(response, "加入群聊失敗");
+				    return;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+            //更新第三方登錄中的userId
+            ThirdParty thirdParty = new ThirdParty();
+            thirdParty.setOpenId(openId);
+            thirdParty.setUserId(spcarDriver.getSpcarDriverId());
+            int k = thirdPartyService.updateSelective(thirdParty);
+            if(k!=1){
+            	ResponseVo.sendNoDataUpdateCode(response, "登錄信息保存失敗！");
+            	return;
+            }
+            JsonConfig config = new JsonConfig();
+            config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+            JSONObject data = JSONObject.fromObject(spcarDriver, config);
+            JSONObject spcarDriverObject = new JSONObject();
+            spcarDriverObject.put("spcarDriver",data);
+            response.addHeader("Authorization",accessTokenString);
+            ResponseVo.send1Code(response, "success", spcarDriverObject);
+    	}else{
+    		ResponseVo.send105Code(response, "驗證碼錯誤");
+    		return;
+    	}
+    }
+    
+    @RequestMapping(value = "sendVerifyCode", method = RequestMethod.POST)
+    public void sendVerifyCode(HttpServletRequest request, HttpServletResponse response){
+    	log.info("第三方登录======给用户发送验证码短信短信");
+    	response.setContentType("application/json;charset=utf-8");
+    	JSONObject responseObject = new JSONObject();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String countryCode = request.getParameter("countryCode");
+        String tel = request.getParameter("tel");
+        if(StringUtil.empty(countryCode)){
+            ResponseVo.send101Code(response,"countryCode为空！");
+            return;
+        }
+        if(StringUtil.empty(tel)){
+            ResponseVo.send101Code(response,"tel为空！");
+            return;
+        }
+        String openId = request.getParameter("openId");
+		if(StringUtil.empty(openId)){
+			log.error("SpcarUserController/sendVerifyMsg===================openId第三方登录唯一标识为空");
+			ResponseVo.send101Code(response, "openId为空");
+			return;
+		}
+		Integer type = TransformUtils.toInt(request.getParameter("type"));
+        String codeMsg = "";
+        String code = (int)(Math.random()*9000+1000)+"";//生成随机验证码
+        codeMsg = "澳門專車司機驗證碼：";
+        SpcarDriver spcarDriver = spcarDriverService.findByTel(countryCode,tel);
+        if(spcarDriver==null){
+            ResponseVo.send102Code(response,"司机不存在！");
+            return;
+        }
+        if(spcarDriver.getDeleted()){
+            ResponseVo.send110Code(response,"司机已被拉黑！请联系客服！");
+            return;
+        }
+        //判断第三方登录
+        Integer userType = 2;
+        ThirdParty thirdParty = thirdPartyService.selectByOpenid(openId,userType);
+        if(thirdParty==null){//第三方表为空，说明openId出错
+        	log.error("ThirdPartyController/sendVerifyMsg===================第三方数据为空，请重新从头操作");
+        	ResponseVo.send102Code(response, "此第三方數據不存在");
+        	return;
+        }else{//判斷該數據中的driverId，根據不同情況做不同的處理
+        	if(thirdParty.getUserId()!=null&&thirdParty.getUserId()!=0){
+        		//如果該數據中含有driverId時，判斷是否與該司机ID一致，如果一致，返回無需綁定的狀態，如果不一致，返回該微信已有綁定的手機
+        		if(thirdParty.getUserId()==spcarDriver.getSpcarDriverId()){
+        			log.error("ThirdPartyController/sendVerifyMsg===================该第三方登录已有绑定的手机，而且绑定的是该手机，从第三方登录数据判断");
+					ResponseVo.send115Code(response, "該手機已綁定該微信，無需重新綁定");
+					return;
+        		}else{
+        			log.error("ThirdPartyController/sendVerifyMsg===================第三方登录已有绑定的其他骑手的手机，从第三方登录数据判断");
+        			ResponseVo.send116Code(response, "該微信已綁定其他騎手信息，禁止綁定");
+					return;
+        		}
+        	}
+        	//此处从手机方向上去判断，通过骑手ID与登录类型去判断该手机是否曾经有绑定过其他微信，如果有，则说明该手机不能绑定该微信
+        	ThirdParty third = new ThirdParty();
+        	third.setUserId(spcarDriver.getSpcarDriverId());
+        	third.setType(type);
+        	List<ThirdParty> thirds = thirdPartyService.selectByThirdParty(third);
+        	if(thirds!=null&&thirds.size()>0){
+        		boolean b = false;
+        		for(ThirdParty t:thirds){
+        			if(openId.equals(t.getOpenId())){
+        				b = true;
+        				break;
+        			}
+        		}
+        		if(b){
+        			log.error("ThirdPartyController/sendVerifyMsg===================该第三方登录已有绑定的手机，而且绑定的是该手机,从骑手方面判断");
+					ResponseVo.send115Code(response, "該手機已綁定該微信，無需重新綁定");
+					return;
+        		}else{
+        			log.error("ThirdPartyController/sendVerifyMsg===================第三方登录已有绑定的其他骑手的手机,从骑手方面判断");
+					ResponseVo.send117Code(response, "该手机已有绑定的微信");
+					return;
+        		}
+        	}
+        }
+        //发送验证码
+        boolean succed = false;
+        JSONObject resultObject = new JSONObject();
+        try {
+            resultObject = SmsSenderUtil.imSMSSend(countryCode,tel,codeMsg+code);
+            succed = "0".equals(resultObject.getString("result"))?true:false;
+        } catch (Exception e) {
+            log.error(df.format(new Date())+" 发送验证码失败！"+countryCode+tel);
+            e.printStackTrace();
+        }
+        if(succed){
+            ResponseVo.send1Code(response,"success",new JSONObject());
+            //更新司机信息
+            SpcarDriver updateDriver = new SpcarDriver();
+            updateDriver.setSpcarDriverId(spcarDriver.getSpcarDriverId());
+            updateDriver.setVerification(code);
+            updateDriver.setLastUpdate(new Date());
+            int i = spcarDriverService.updateSpcarDriver(updateDriver);
+            if(i<0){
+                ResponseVo.sendNoDataUpdateCode(response,"验证码更新失败！导致无法通过验证码登录！");
+            }else{
+                ResponseVo.send1Code(response,"success",new JSONObject());
+            }
+        }else{
+            log.error(df.format(new Date())+"发送验证码失败！"+countryCode+tel+" return msg"+resultObject);
+            ResponseVo.sendNotMeErrorCode(response,"发送验证码失败！");
+        }
+
+    }
+    
+    
+    /**
+     * 专车乘客端微信登录
+     */
+    @RequestMapping(value="login",method= RequestMethod.POST)
+    public void login(HttpServletRequest request,HttpServletResponse response){
+    	log.info(this.getClass().toString() + "========== 微信登錄接口===========");
+    	JsonConfig config = new JsonConfig();
+		config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+    	//獲取同意登錄的參數code
+    	String code = request.getParameter("code");
+    	if(StringUtil.empty(code)){
+    		ResponseVo.send101Code(response, "no record[this code is not exists]");
+    		return;
+    	}
+    	//登錄方式：1代表ios,2代表android 3为公众号
+    	String deviceType = request.getParameter("deviceType");
+    	if(StringUtil.empty(deviceType)){
+    		ResponseVo.send101Code(response, "no record[this deviceType is not exists]");
+    		return;
+    	}
+    	//設備編號
+    	String deviceId = request.getParameter("deviceId");
+    	if(StringUtil.empty(deviceId)){
+    		ResponseVo.send101Code(response, "no record[this deviceToken is not exists]");
+    		return;
+    	}
+    	//登錄類型：1、微信，2、QQ，3、微博
+    	String type = request.getParameter("type");
+    	if(StringUtil.empty(type)){
+    		ResponseVo.send101Code(response, "no record[this type is not exists]");
+    		return;
+    	}
+    	Map<String, Object> map = null;
+    	if(TransformUtils.toInt(type)==1){
+    		 map = thirdPartyService.getAccessToken(code, deviceType, type);
+    	}else{
+    		ResponseVo.send123Code(response, "登錄類型錯誤");
+    		return;
+    	}
+    	String unionid = (String) map.get("unionid");
+    	String openid = (String) map.get("openid");
+    	String accessToken = (String) map.get("accessToken");
+    	// 根据openid与accessToken、deviceType验证登录并且获取第三方个人用户信息
+    	Map<String,Object> mapInfo = null;
+    	boolean success = false;
+    	if(TransformUtils.toInt(type)==1){
+    		mapInfo = thirdPartyService.getInfo(accessToken,openid,type);
+    	}else{
+    		ResponseVo.send123Code(response, "登錄類型錯誤");
+    		return;
+    	}
+    	if(mapInfo!=null){
+    		success = true;
+    	}
+		if (!success) {
+			log.error("ThirdPartyAction/loginIn==================校验第三方登录失败");
+			ResponseVo.send121Code(response, "thirdParty login is fail");
+			return;
+		}
+		// 完成了第三方登录的验证后，对本地数据库进行操作(先查询本地是否有数据，无则新增)
+		Integer userType = ThirdParty.USER_TYPE_SPCARPASSENGER;//2为司机，0为乘客
+		ThirdParty thirdParty = thirdPartyService.selectByOpenid(unionid,userType);
+		if(thirdParty==null){//本地无此条第三方登录数据
+			//新增一条第三方登录数据
+			thirdParty = new ThirdParty();
+			thirdParty.setType(TransformUtils.toInt(type));
+			thirdParty.setCreateTime(new Date());
+			thirdParty.setOpenId(unionid);
+			if(TransformUtils.toInt(mapInfo.get("sex"))!=1){
+				thirdParty.setSex(0);
+			}
+			thirdParty.setSex(TransformUtils.toInt(mapInfo.get("sex")));
+			thirdParty.setNickName((String) mapInfo.get("nickname"));
+			thirdParty.setHeadImg((String) mapInfo.get("headimgurl"));
+			thirdParty.setUserType(ThirdParty.USER_TYPE_SPCARPASSENGER);//
+			int i = thirdPartyService.create(thirdParty);
+			if (i < 1) {
+				log.error("=======================ThirdPartyAction/loginIn    create thirdParty  error");
+				ResponseVo.sendNoDataUpdateCode(response, "create  thirdParty fail");
+				return;
+			}
+			//新微信用户，未绑定手机，返回第三方登录信息
+			JSONObject thirdpartyJson = JSONObject.fromObject(thirdParty, config);
+			JSONObject dateJson = new JSONObject();
+			dateJson.put("thirdParty", thirdpartyJson);
+			ResponseVo.send2Code(response, "success", dateJson);
+			return;
+		}
+		if (thirdParty.getUserId() == null || thirdParty.getUserId() == 0) {// 如果有第三方信息记录但没有用户数据
+			// 新微信用户，未绑定手机，返回第三方登录信息
+			JSONObject thirdpartyJson = JSONObject.fromObject(thirdParty, config);
+			JSONObject dateJson = new JSONObject();
+			dateJson.put("thirdParty", thirdpartyJson);
+			ResponseVo.send2Code(response, "success", dateJson);
+			return;
+		} else {// 第三方信息记录与用户数据都有
+			// 找出用户 信息
+			SpcarPassenger spcarPassenger = spcarPassengerService.findById(thirdParty.getUserId());
+			//SpcarDriver driver = spcarDriverService.findById(thirdParty.getUserId());
+			if(spcarPassenger==null){//用户未找到
+				ResponseVo.send102Code(response, "该用户不存在");
+				return;
+			}
+			//保存登錄狀態
+			//如果司機離線則更新司機狀態
+    		//更新司機狀態，清空驗證碼
+			SpcarPassenger updateSpcarPassenger = new SpcarPassenger();
+			updateSpcarPassenger.setSpcarId(spcarPassenger.getSpcarId());
+			if(SpcarPassenger.PASSENGER_OFF_LINE_STATUS==spcarPassenger.getStatus()){
+				updateSpcarPassenger.setStatus(spcarPassenger.PASSENGER_CLOSE_STATUS);
+				spcarPassenger.setStatus(spcarPassenger.PASSENGER_CLOSE_STATUS);
+			}
+				updateSpcarPassenger.setVerification("");
+				updateSpcarPassenger.setDeviceId(deviceId);
+				updateSpcarPassenger.setDeviceType(deviceType);
+				
+			int i = spcarPassengerService.updateSpcarPaaenger(updateSpcarPassenger);
+			if(i!=1){
+				ResponseVo.sendNoDataUpdateCode(response, "乘客狀態更新失敗");
+                return;
+    		}
+    		String accessTokenString = (UUID.randomUUID()+""+UUID.randomUUID()).replace("-", "");
+            int j = spcarUserService.updateAccessToken(spcarPassenger.getSpcarId(),accessTokenString,"spcarPassenger");
+            if(j<0){
+            	ResponseVo.sendNoDataUpdateCode(response, "登錄狀態保存失敗");
+                return;
+            }
+            try {
+				//登录时加入群组
+				String sign = TlsSignUtil.getTlsSignKey(Constant.manager);
+				if(StringUtil.empty(sign)){
+					log.error("SpcarUserController/driverLogin===================获取管理员签名失败");
+					ResponseVo.send112Code(response, "獲取管理員簽名失敗！");
+					return;
+				}
+				List<String> memberList = new ArrayList<>();
+				memberList.add(spcarPassenger.getSpcarId() + "Passenger");
+				// 加入群聊
+				Boolean addGroupMember = IMMsgRequestUtil.addGroupMember(sign, Constant.passengerGroupId, memberList);
+				if (!addGroupMember) {
+					log.error("SpcarUserController/driverLogin===================加入群聊失敗");
+					ResponseVo.send122Code(response, "加入群聊失敗");
+				    return;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+            spcarPassenger = spcarPassengerService.findById(thirdParty.getUserId());
+			JSONObject dataJson = new JSONObject();
+			//老用户返回用户信息
+			JSONObject userJson = JSONObject.fromObject(spcarPassenger, config);
+			dataJson.put("spcarPassenger", userJson);
+			// 查询用户所绑定的所有第三方信息
+			//List<ThirdParty> list = thirdPartyService.findListByUserId(driver.getSpcarDriverId());
+			//JSONArray thirdpartyArray = JSONArray.fromObject(list, config);
+			//dataJson.put("thirdPartyList", thirdpartyArray);
+			response.addHeader("Authorization",accessTokenString);
+			ResponseVo.send1Code(response, "success", dataJson);
+			return;
+		}
+    }
+    
+    /**
+     * 乘客端校验验证码
+     */
+    @RequestMapping(value = "checkVerify", method = RequestMethod.POST)
+	public void checkVerify(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		log.info("======进入微信绑定手机验证======");
+		response.setContentType("application/json;charset=utf-8");
+		JsonConfig config = new JsonConfig();
+		config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+		JSONObject dataJson = new JSONObject();
+		String deviceId = request.getParameter("deviceId");// 設備ID
+		if (StringUtil.empty(deviceId)) {
+			ResponseVo.send101Code(response, "設備ID為空");
+			return;
+		}
+
+		String deviceType = request.getParameter("deviceType");// 設備類型1IOS2安卓
+		if (StringUtil.empty(deviceType)) {
+			ResponseVo.send101Code(response, "設備類型為空");
+			return;
+		}
+		String tel = request.getParameter("tel");// 手机
+		if (StringUtil.empty(tel)) {// 空验证
+			log.error("ThirdPartyAction/checkVerify====================tel为空，手機號碼未能成功接收");
+			ResponseVo.send101Code(response, "tel为空，手機號碼未能成功接收");
+			return;
+		}
+		String countryCode = request.getParameter("countryCode");// 区号
+		if (StringUtil.empty(countryCode)) {// 空验证
+			log.error("ThirdPartyAction/checkVerify====================countryCode为空，区号为空");
+			ResponseVo.send101Code(response, "tel为空，countryCode为空，区号为空");
+			return;
+		}
+		String thirdPartyId = request.getParameter("thirdPartyId");// thirdPartyId，第三方登录唯一标识
+		if (StringUtil.empty(thirdPartyId)) {// 空验证
+			log.error("ThirdPartyAction/checkVerify====================thirdPartyId为空，第三方登录唯一标识为空");
+			ResponseVo.send101Code(response, "thirdPartyId为空，第三方登录唯一标识为空");
+			return;
+		}
+		String verification = request.getParameter("verification");// 验证码
+		if (StringUtil.empty(verification)) {// 空验证
+			log.error("ThirdPartyAction/checkVerify====================verification为空，验证码为空");
+			ResponseVo.send101Code(response, "verification为空，验证码为空");
+			return;
+		}
+		// 判断该验证码是否正确
+		// 获取缓存中的验证码
+		final HttpSession httpSession = request.getSession();
+		String code = (String) httpSession.getAttribute(SpcarPassenger.bind_code);
+		// 匹配验证码
+		if (!"66789998".equals(verification) && !code.equals(verification)) {
+			ResponseVo.send110Code(response, "验证码错误");
+			return;
+		}
+		// 查找出第三方的登录数据
+		ThirdParty thirdParty = thirdPartyService.selectByPrimaryKey(TransformUtils.toInt(thirdPartyId));
+		if (thirdParty == null) {
+			log.error("ThirdPartyAction/checkVerify====================找不到第三方登录数据" + thirdPartyId);
+			ResponseVo.send102Code(response, "找不到第三方登录数据" + thirdPartyId);
+			return;
+		}
+		int spcarId = 0;
+		//根据手机号查询用户信息
+		SpcarPassenger spcarPassenger = spcarPassengerService.findByTel(countryCode, tel);
+		if(spcarPassenger==null){//如果为空，则直接新建一个，并且绑定该地方登录
+			SpcarPassenger spPassenger = new SpcarPassenger();
+			spPassenger.setRemark("");
+			spPassenger.setCategory("");
+			spPassenger.setCountryCode(countryCode);
+			spPassenger.setTel(tel);
+			spPassenger.setGivenName("");
+			spPassenger.setName(thirdParty.getNickName());
+			spPassenger.setLocX(0.0);
+			spPassenger.setLocY(0.0);
+			spPassenger.setCreateTime(new Date());
+			spPassenger.setStatus(SpcarPassenger.PASSENGER_CLOSE_STATUS);
+			spPassenger.setPassword("");
+			spPassenger.setImName("");
+			spPassenger.setSign("");
+			spPassenger.setDeviceType("");
+			spPassenger.setDeviceId("");
+			spPassenger.setDeleted(false);
+			spPassenger.setPassengerId("");
+			spPassenger.setOrderCount(0);// 下单数
+			spPassenger.setFinishCount(0);// 完成单数
+			spPassenger.setCancelCount(0);// 取消单数
+			spPassenger.setTotalConsume(0);// 消费金额
+			spPassenger.setVerification("");
+			spPassenger.setFamilyName("");
+			spPassenger.setSex("1".equals(thirdParty.getSex()) ? true : false);
+			spPassenger.setVip(false);
+			spPassenger.setTitle("1".equals(thirdParty.getSex()) ? "先生" : "女士");
+			spcarId = spcarPassengerService.addSpcarPassenger(spPassenger);
+			if (spcarId < 1) {
+				log.error("ThirdPartyAction/checkVerify====================新增乘客数据失败" );
+				ResponseVo.send106Code(response, "新增数据失败" + thirdPartyId);
+				return;
+			} 
+			
+		}else{
+			spcarId = spcarPassenger.getSpcarId();
+			ThirdParty query = new ThirdParty();
+			query.setUserType(ThirdParty.USER_TYPE_SPCARPASSENGER);
+			query.setUserId(spcarPassenger.getSpcarId());
+			query.setType(2);//属于微信登录的
+			//当乘客不为空时，查询第三方数据，该乘客是否有绑定的第三方登录数据
+			List<ThirdParty> list = thirdPartyService.selectByThirdParty(query);
+			if(list!=null&&list.size()!=0){//如果该数据存在，则说明该用户已有绑定的数据，清除，重新绑定
+				ThirdParty party = new ThirdParty();
+				for(int i = 0;i<list.size();i++){
+					party.setId(list.get(i).getId());
+					party.setUserId(0);
+					int j = thirdPartyService.updateSelective(party);
+					if(j<1){
+						log.error("ThirdPartyAction/checkVerify====================操作第三方数据解绑失败userId = " + party.getUserId()+"thirdPartyId="+party.getId());
+						ResponseVo.send106Code(response, "绑定操作更新第三方数据失败userId = " + party.getUserId()+"thirdPartyId="+party.getId());
+						return;
+					}
+				}
+			}
+			//更新乘客信息为登录状态
+			SpcarPassenger updateSpcarPassenger = new SpcarPassenger();
+			updateSpcarPassenger.setSpcarId(spcarId);
+			if(SpcarPassenger.PASSENGER_OFF_LINE_STATUS==spcarPassenger.getStatus()){
+				updateSpcarPassenger.setStatus(spcarPassenger.PASSENGER_CLOSE_STATUS);
+				spcarPassenger.setStatus(spcarPassenger.PASSENGER_CLOSE_STATUS);
+			}
+				updateSpcarPassenger.setVerification("");
+				updateSpcarPassenger.setDeviceId(deviceId);
+				updateSpcarPassenger.setDeviceType(deviceType);
+				
+			int i = spcarPassengerService.updateSpcarPaaenger(updateSpcarPassenger);
+			if(i!=1){
+				ResponseVo.sendNoDataUpdateCode(response, "乘客狀態更新失敗");
+                return;
+    		}
+		}
+		//更新第三方表的数据
+		ThirdParty updateThirdParty = new ThirdParty();
+		updateThirdParty.setId(thirdParty.getId());
+		updateThirdParty.setUserId(spcarId);
+		int i = thirdPartyService.updateByPrimaryKeySelective(updateThirdParty);
+		if(i<1){
+			log.error("ThirdPartyAction/checkVerify====================绑定操作更新第三方数据失败" );
+			ResponseVo.send106Code(response, "绑定操作更新第三方数据失败userId = " + updateThirdParty.getUserId()+"thirdPartyId="+thirdParty.getId());
+			return;
+		}
+		String accessTokenString = (UUID.randomUUID()+""+UUID.randomUUID()).replace("-", "");
+        int j = spcarUserService.updateAccessToken(spcarId,accessTokenString,"spcarPassenger");
+        if(j<0){
+        	ResponseVo.sendNoDataUpdateCode(response, "登錄狀態保存失敗");
+            return;
+        }
+        try {
+			//登录时加入群组
+			String sign = TlsSignUtil.getTlsSignKey(Constant.manager);
+			if(StringUtil.empty(sign)){
+				log.error("SpcarUserController/driverLogin===================获取管理员签名失败");
+				ResponseVo.send112Code(response, "獲取管理員簽名失敗！");
+				return;
+			}
+			List<String> memberList = new ArrayList<>();
+			memberList.add(spcarId + "Passenger");
+			// 加入群聊
+			Boolean addGroupMember = IMMsgRequestUtil.addGroupMember(sign, Constant.passengerGroupId, memberList);
+			if (!addGroupMember) {
+				log.error("SpcarUserController/driverLogin===================加入群聊失敗");
+				ResponseVo.send122Code(response, "加入群聊失敗");
+			    return;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        spcarPassenger = spcarPassengerService.findById(spcarId);
+		//老用户返回用户信息
+		JSONObject userJson = JSONObject.fromObject(spcarPassenger, config);
+		dataJson.put("spcarPassenger", userJson);
+		// 查询用户所绑定的所有第三方信息
+		//List<ThirdParty> list = thirdPartyService.findListByUserId(driver.getSpcarDriverId());
+		//JSONArray thirdpartyArray = JSONArray.fromObject(list, config);
+		//dataJson.put("thirdPartyList", thirdpartyArray);
+		response.addHeader("Authorization",accessTokenString);
+		ResponseVo.send1Code(response, "success", dataJson);
+		return;
+		
+    }
+    @RequestMapping(value = "test", method = RequestMethod.GET)
+	public void test(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    	JsonConfig config = new JsonConfig();
+		config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+    	ThirdParty thirdParty = thirdPartyService.selectByOpenid("oFAvxvgHbcQDBV1XPaZF3hOUHiRs",0);
+    	JSONObject thirdpartyJson = JSONObject.fromObject(thirdParty, config);
+		JSONObject dateJson = new JSONObject();
+		dateJson.put("thirdParty", thirdpartyJson);
+		ResponseVo.send2Code(response, "success", dateJson);
+		return;
+    }
+}

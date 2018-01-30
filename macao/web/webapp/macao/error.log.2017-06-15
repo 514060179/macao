@@ -1,0 +1,8 @@
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=null======
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push task exists, please check it again.","ErrorCode":90025,"TaskId":"144115200357200181_2017061532_2017061532"}======
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/comfirmCarry======訂單:837非法操作,當前狀態為:0當前操作匹配訂單狀態：4
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push task exists, please check it again.","ErrorCode":90025,"TaskId":"144115200357200181_2017061558_2017061558"}======
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======通知乘客失敗！======
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-15 06:14:39 Exception:SpcarDriverController/checkTel msg:nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 2
+[http-apr-8089-exec-15] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-15 06:15:18 Exception:SpcarDriverController/checkTel msg:nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 2

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.TaxigoUserMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.TaxigoUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="realm" property="realm" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="emailVerified" property="emailverified" jdbcType="TINYINT" />
+    <result column="verificationToken" property="verificationtoken" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="lastUpdated" property="lastupdated" jdbcType="TIMESTAMP" />
+    <result column="country_code" property="countryCode" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="realm_id" property="realmId" jdbcType="INTEGER" />
+    <result column="gift_points" property="giftPoints" jdbcType="INTEGER" />
+    <result column="family_name" property="familyName" jdbcType="VARCHAR" />
+    <result column="given_name" property="givenName" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="cache" property="cache" jdbcType="VARCHAR" />
+    <result column="english_capability" property="englishCapability" jdbcType="BIT" />
+    <result column="limitAccess" property="limitaccess" jdbcType="VARCHAR" />
+    <result column="deleted" property="deleted" jdbcType="BIT" />
+    <result column="vip" property="vip" jdbcType="BIT" />
+     <result column="sex" property="sex" jdbcType="BIT" />
+    <result column="loc_x" property="locX" jdbcType="DOUBLE" />
+    <result column="loc_y" property="locY" jdbcType="DOUBLE" />
+    <result column="device_id" property="deviceId" jdbcType="VARCHAR" />
+    <result column="license" property="license" jdbcType="VARCHAR" />
+    <result column="order_count" property="orderCount" jdbcType="DOUBLE" />
+    <result column="cancel_count" property="cancelCount" jdbcType="DOUBLE" />
+    <result column="finish_count" property="finishCount" jdbcType="DOUBLE" />
+    <result column="rating" property="rating" jdbcType="DOUBLE" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="user_wechat" property="userWechat" jdbcType="VARCHAR" />
+     <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="im_name" property="imName" jdbcType="VARCHAR" />
+    <result column="sign" property="sign" jdbcType="VARCHAR" />
+    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, realm, username, password, email, emailVerified, verificationToken, status, created, 
+    lastUpdated, country_code, tel, realm_id, gift_points, family_name, given_name, name, 
+    title, cache, english_capability, limitAccess, deleted,role_id,user_wechat,type,im_name,
+    sign,vip,sex
+  </sql>
+  
+  <select id="findTaxigoUser" parameterType="java.lang.Integer" resultType="com.yinghai.macao.common.model.TaxigoUser">
+ 	select 
+ 	<include refid="Base_Column_List" />
+ 	from taxigouser
+    where realm_id = #{passengerId,jdbcType=INTEGER} and realm='passenger'
+  </select>
+  <update id="updateTaxigoUserSelective" parameterType="com.yinghai.macao.common.model.TaxigoUser" >
+    update taxigouser
+    <set >
+      <if test="realm != null" >
+        realm = #{realm,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="emailverified != null" >
+        emailVerified = #{emailverified,jdbcType=TINYINT},
+      </if>
+      <if test="verificationtoken != null" >
+        verificationToken = #{verificationtoken,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdated != null" >
+        lastUpdated = #{lastupdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="countryCode != null" >
+        country_code = #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="realmId != null" >
+        realm_id = #{realmId,jdbcType=INTEGER},
+      </if>
+      <if test="giftPoints != null" >
+        gift_points = #{giftPoints,jdbcType=INTEGER},
+      </if>
+      <if test="familyName != null" >
+        family_name = #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="givenName != null" >
+        given_name = #{givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="cache != null" >
+        cache = #{cache,jdbcType=VARCHAR},
+      </if>
+      <if test="englishCapability != null" >
+        english_capability = #{englishCapability,jdbcType=BIT},
+      </if>
+      <if test="limitaccess != null" >
+        limitAccess = #{limitaccess,jdbcType=VARCHAR},
+      </if>
+      <if test="deleted != null" >
+        deleted = #{deleted,jdbcType=BIT},
+      </if>
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+        <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="imName != null" >
+        im_name = #{imName,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null" >
+        sign = #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="vip != null" >
+        vip = #{vip,jdbcType=BIT},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

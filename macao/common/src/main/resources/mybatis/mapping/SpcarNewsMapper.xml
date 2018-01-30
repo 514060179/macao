@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarNewsMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.SpcarNews" >
+    <id column="news_id" property="newsId" jdbcType="INTEGER" />
+    <result column="news_title" property="newsTitle" jdbcType="VARCHAR" />
+    <result column="push_msg" property="pushMsg" jdbcType="VARCHAR" />
+    <result column="publish_since" property="publishSince" jdbcType="TIMESTAMP" />
+    <result column="publish_till" property="publishTill" jdbcType="TIMESTAMP" />
+    <result column="realm" property="realm" jdbcType="VARCHAR" />
+    <result column="push_total_times" property="pushTotalTimes" jdbcType="INTEGER" />
+    <result column="push_latest_time" property="pushLatestTime" jdbcType="TIMESTAMP" />
+    
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yinghai.macao.common.model.SpcarNews" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    news_id, news_title, push_msg, publish_since, publish_till, realm,push_total_times,push_latest_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from spcar_news
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </select>
+  <select id="findListSelective" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.SpcarNews">
+  	select
+  	<include refid="Base_Column_List"></include>
+  	from spcar_news
+  	where 1=1
+  	<if test="newsId !=null">
+  		and news_id = #{newsId,jdbcType=INTEGER}
+  	</if>
+  	<if test="newsTitle !=null">
+  		and news_title like  CONCAT(CONCAT('%',#{newsTitle,jdbcType=VARCHAR}),'%')
+  	</if>
+  	<if test="pushMsg !=null">
+  		and push_msg like CONCAT(CONCAT('%',#{pushMsg,jdbcType=VARCHAR}),'%')
+  	</if>
+  	<if test="publishSince !=null">
+  		and publish_since <![CDATA[ <= ]]> #{publishSince,jdbcType=TIMESTAMP}
+  	</if>
+  	<if test="publishTill !=null">
+  		and publish_till <![CDATA[ >= ]]> #{publishTill,jdbcType=TIMESTAMP}
+  	</if>
+  	<if test="realm !=null">
+  		and realm = #{realm,jdbcType=VARCHAR}
+  	</if>
+  	<if test="pushTotalTimes !=null">
+  		and push_total_times = #{pushTotalTimes,jdbcType=INTEGER}
+  	</if>
+  	<if test="pushLatestTime !=null">
+  		and push_latest_time <![CDATA[ <= ]]> #{pushLatestTime,jdbcType=TIMESTAMP}
+  	</if>
+  </select>
+  <select id="findListSelectiveApp" resultMap="ResultMapWithBLOBs" parameterType="com.yinghai.macao.common.model.SpcarNews">
+  	select
+  	<include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+  	from spcar_news
+  	where 1=1
+  	<if test="newsId !=null">
+  		and news_id = #{newsId,jdbcType=INTEGER}
+  	</if>
+  	<if test="newsTitle !=null">
+  		and news_title like  CONCAT(CONCAT('%',#{newsTitle,jdbcType=VARCHAR}),'%')
+  	</if>
+  	<if test="pushMsg !=null">
+  		and push_msg like CONCAT(CONCAT('%',#{pushMsg,jdbcType=VARCHAR}),'%')
+  	</if>
+  	<if test="publishSince !=null">
+  		and publish_since <![CDATA[ <= ]]> #{publishSince,jdbcType=TIMESTAMP}
+  	</if>
+  	<if test="publishTill !=null">
+  		and publish_till <![CDATA[ >= ]]> #{publishTill,jdbcType=TIMESTAMP}
+  	</if>
+  	<if test="realm !=null">
+  		and realm = #{realm,jdbcType=VARCHAR}
+  	</if>
+  	<if test="pushTotalTimes !=null">
+  		and push_total_times = #{pushTotalTimes,jdbcType=INTEGER}
+  	</if>
+  	<if test="pushLatestTime !=null">
+  		and push_latest_time <![CDATA[ <= ]]> #{pushLatestTime,jdbcType=TIMESTAMP}
+  	</if>
+  	order by push_latest_time desc
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from spcar_news
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yinghai.macao.common.model.SpcarNews" >
+    insert into spcar_news (news_id, news_title, push_msg, 
+      publish_since, publish_till, realm, 
+      content,push_total_times,push_latest_time)
+    values (#{newsId,jdbcType=INTEGER}, #{newsTitle,jdbcType=VARCHAR}, #{pushMsg,jdbcType=VARCHAR}, 
+      #{publishSince,jdbcType=TIMESTAMP}, #{publishTill,jdbcType=TIMESTAMP}, #{realm,jdbcType=VARCHAR}, 
+      #{content,jdbcType=LONGVARCHAR},#{pushTotalTimes,jdbcType=INTEGER},#{pushLatestTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yinghai.macao.common.model.SpcarNews" useGeneratedKeys="true" keyProperty="newsId">
+    insert into spcar_news
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="newsId != null" >
+        news_id,
+      </if>
+      <if test="newsTitle != null" >
+        news_title,
+      </if>
+      <if test="pushMsg != null" >
+        push_msg,
+      </if>
+      <if test="publishSince != null" >
+        publish_since,
+      </if>
+      <if test="publishTill != null" >
+        publish_till,
+      </if>
+      <if test="realm != null" >
+        realm,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="pushTotalTimes != null" >
+        push_total_times,
+      </if>
+      <if test="pushLatestTime != null" >
+        push_latest_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="newsId != null" >
+        #{newsId,jdbcType=INTEGER},
+      </if>
+      <if test="newsTitle != null" >
+        #{newsTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="pushMsg != null" >
+        #{pushMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="publishSince != null" >
+        #{publishSince,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publishTill != null" >
+        #{publishTill,jdbcType=TIMESTAMP},
+      </if>
+      <if test="realm != null" >
+        #{realm,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="pushTotalTimes != null" >
+        #{pushTotalTimes,jdbcType=INTEGER},
+      </if>
+      <if test="pushLatestTime != null" >
+        #{pushLatestTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.common.model.SpcarNews" >
+    update spcar_news
+    <set >
+      <if test="newsTitle != null" >
+        news_title = #{newsTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="pushMsg != null" >
+        push_msg = #{pushMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="publishSince != null" >
+        publish_since = #{publishSince,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publishTill != null" >
+        publish_till = #{publishTill,jdbcType=TIMESTAMP},
+      </if>
+      <if test="realm != null" >
+        realm = #{realm,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="pushTotalTimes != null" >
+        push_total_times = #{pushTotalTimes,jdbcType=INTEGER},
+      </if>
+      <if test="pushLatestTime != null" >
+        push_latest_time = #{pushLatestTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yinghai.macao.common.model.SpcarNews" >
+    update spcar_news
+    set news_title = #{newsTitle,jdbcType=VARCHAR},
+      push_msg = #{pushMsg,jdbcType=VARCHAR},
+      publish_since = #{publishSince,jdbcType=TIMESTAMP},
+      publish_till = #{publishTill,jdbcType=TIMESTAMP},
+      realm = #{realm,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR},
+      push_total_times = #{pushTotalTimes,jdbcType=INTEGER},
+      push_latest_time = #{pushLatestTime,jdbcType=TIMESTAMP}
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yinghai.macao.common.model.SpcarNews" >
+    update spcar_news
+    set news_title = #{newsTitle,jdbcType=VARCHAR},
+      push_msg = #{pushMsg,jdbcType=VARCHAR},
+      publish_since = #{publishSince,jdbcType=TIMESTAMP},
+      publish_till = #{publishTill,jdbcType=TIMESTAMP},
+      realm = #{realm,jdbcType=VARCHAR},
+      push_total_times = #{pushTotalTimes,jdbcType=INTEGER},
+      push_latest_time = #{pushLatestTime,jdbcType=TIMESTAMP}
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </update>
+</mapper>

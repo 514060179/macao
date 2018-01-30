@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="${base!}/assets/admin/css/jquery.pagination.css" />
+<style type="text/css">
+body, html {
+	height: 820px;
+	margin: 0px;
+	font: 12px Arial;
+}
+
+#container {
+	height: 820px;
+	margin: 0px;
+	font: 12px Arial;
+	width: 80%;
+	float: left;
+}
+
+.taiwan {
+	border: solid 1px red;
+	color: red;
+	float: left;
+	width: 50px;
+	background-color: rgba(255, 0, 0, 0.1)
+}
+
+.amap-marker-label {
+	background: rgba(240, 252, 255, 0.91);
+	color: rgba(23, 20, 20, 0.96);
+	/*border: solid 1px red;*/
+	border-style: none;
+}
+
+#rightBar {
+	width: 20%;
+	float: left;
+	display: block;
+}
+
+#driverlist_table {
+	height: 90%;
+}
+
+.pages {
+	position: absolute;
+	align-self: center;
+	text-align: center;
+	top:810px;
+	width: 18%;
+
+}
+
+#driver_orders {
+	width: 20%;
+	float: left;
+	display: none;
+}
+#order_pages{
+position: absolute;
+
+right : 0;
+
+display: none;
+
+}
+#order_detail{
+	width: 20%;
+	float: left;
+	display: none;
+}
+.tables {
+	position: relative;
+	margin-top: 5%;
+	width: 100%;
+	left: 2%;
+	background: white;
+	height: 50px;
+}
+
+.back {
+	position: relative;
+	top: 10px;
+}
+/*.amap-markers:hover .amap-marker-label{*/
+/*display:none;*/
+/*}*/
+td {
+	/*border: 1px solid red; 用於調整table內td的長度*/
+	
+}
+
+hr {
+	margin: 0;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0;
+	height: 1px;
+	border: none;
+	border-top: 1px solid #555555;
+}
+
+
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<script src="http://webapi.amap.com/js/marker.js"></script>
+	<script
+		src="http://webapi.amap.com/maps?v=1.3&key=0e9b6dcfb377605405574d67bc184aed"></script>
+	<!--<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>-->
+	<!-- Loading Container -->
+	<!--  /Loading Container -->
+	<!-- Navbar -->
+	<#include "../common/head.html"/>
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+			<#include "../common/menu.html"/>
+			<!-- /Page Sidebar -->
+			<!-- Page Content -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title"></div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a>
+
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body" id="container"></div>
+				<div id="rightBar">
+					<div id="driverlist_table">
+					
+						<!---->
+					</div>
+					<div id="pages" class="pages"></div>
+					
+			
+						
+				</div>
+				<div id="driver_orders"> </div>
+						
+            	<div id="order_pages" class="pages"></div>
+            	
+            	<div id="order_detail"></div>
+           
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+
+	<script>
+		$('#date-picker').datepicker();
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(window).unload( $.cookie('redMarker',null));
+			window.setInterval(showalert, 60000);
+			showalert();
+		});
+		var map = new AMap.Map('container', {
+			resizeEnable : true,
+			zoom : 9,
+			center : [ 113.548604, 22.189792 ]
+		});
+		//    var provinces = [{
+		//        "name": "聖家學院",
+		//        "center": "113.549331,22.200161",
+		//        "type": 0,
+		//        "subDistricts": []
+		//    }, {
+		//        "name": "信志大廈",
+		//        "center": "113.545898,22.199128",
+		//        "type": 0,
+		//        "subDistricts": []
+		//    }, {
+		//        "name": "利安大廈",
+		//        "center": "113.549294,22.198001",
+		//        "type": 0,
+		//        "subDistricts": []
+		//    }, {
+		//        "name": "澳門國父紀念館",
+		//        "center": "113.553997,22.196919",
+		//        "type": 0,
+		//        "subDistricts": []
+		//    }];
+		var icon = new AMap.Icon({
+			image : '${base!}/assets/img/driver_point_green.png',
+			size : new AMap.Size(30, 30),
+			imageSize : new AMap.Size(30, 30)
+
+		});
+		var icon2 = new AMap.Icon({
+			image : '${base!}/assets/img/driver_point_red.png',//24px*24px
+			//icon可缺省，缺省时为默认的蓝色水滴图标，
+			size : new AMap.Size(30, 30),
+			imageSize : new AMap.Size(30, 30)
+		});
+		//    var markers = []; //province见Demo引用的JS文件
+		//    for (var i = 0; i < provinces.length; i += 1) {
+		//        var marker;
+		//        if (provinces[i].type === 0) {
+		//
+		//            marker = new AMap.Marker({
+		//                icon: icon,
+		//                position: provinces[i].center.split(','),
+		//                offset: new AMap.Pixel(-12, -12),
+		//                zIndex: 101,
+		//                title: provinces[i].name,
+		//                src: provinces[i].name,
+		//                map: map
+		//            });
+		//        } else {
+		//            marker = new AMap.Marker({
+		//                position: provinces[i].center.split(','),
+		//                title: provinces[i].name,
+		//                src: provinces[i].name,
+		//                map: map
+		//            });
+		//
+		//        }
+		//        markers.push(marker);
+		//    }
+		var redMarker = "";
+		var nowPage = 1;
+		var orderPage = 1;
+		var markerList = new Array(); //司机标注数组
+		function showalert() {
+			//移除所有标注
+			for (var i = 0; i < markerList.length; i++) {
+				markerList[i].setMap();
+			}
+			$.post("${base}/admin/driver/findDriverOnLineList", function(data) {
+				if (data.code == "1") {
+		//			alert(data.data.length)
+					$(data.data).each(
+							function() {
+								var locX = parseFloat(this.locX);
+								var locY = parseFloat(this.locY);
+								var temp = [ locY, locX ];
+
+								marker = new AMap.Marker({
+									title : this.spcarDriverId,
+									icon : icon,
+									position : temp,
+									map : map
+								});
+								if ($.cookie('redMarker') != undefined
+										&& $.cookie('redMarker') != null
+										&& $.cookie('redMarker') != '') {
+									if ($.cookie('redMarker') == marker
+											.getTitle()) {
+										marker.setIcon(icon2);
+										redMarker = marker;
+									}
+								}
+								//                 var status = this.status;
+								//                  var statusMsg = "";
+								//                  var span = '';
+								//                  var h = -20;
+								//                  if(status=="0"){
+								//                      statusMsg = "/载客中"
+								//                      if(this.passengerGetinTimeL!=null){
+								//                          h = -35;
+								//                          span = '<div class="timer" title="'+this.spcarDriverId+'"><span id="hour'+this.spcarDriverId+'">'+this.passengerGetinTimeL.hour+'</span>小时<span id="minute'+this.spcarDriverId+'">'+this.passengerGetinTimeL.minute+'</span>分<span id="seconds'+this.spcarDriverId+'">'+this.passengerGetinTimeL.seconds+'</span>秒</div>';
+								//                      }
+								//                  }
+								//                   if(status=="3"){
+								//                       statusMsg = "/司機出發接載客人"
+								//                        if(this.driverSetoutTimeL!=null){
+								//                            h = -35;
+								//                            span = '<div class="timer" title="'+this.spcarDriverId+'"><span id="hour'+this.spcarDriverId+'">'+this.driverSetoutTimeL.hour+'</span>小时<span id="minute'+this.spcarDriverId+'">'+this.driverSetoutTimeL.minute+'</span>分<span id="seconds'+this.spcarDriverId+'">'+this.driverSetoutTimeL.seconds+'</span>秒</div>';
+								//                        }
+								//                    }
+								//                    if(status=="4"){
+								//                         statusMsg = "/司機到達接載地"
+								//                        if(this.driverArriveTimeL!=null){
+								//                            h = -35;
+								//                             span = '<div class="timer" title="'+this.spcarDriverId+'"><span id="hour'+this.spcarDriverId+'">'+this.driverArriveTimeL.hour+'</span>小时<span id="minute'+this.spcarDriverId+'">'+this.driverArriveTimeL.minute+'</span>分<span id="seconds'+this.spcarDriverId+'">'+this.driverArriveTimeL.seconds+'</span>秒</div>';
+								//                         }
+								//                     }
+								//                     marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+								//                         className:"",
+								//                         offset: new AMap.Pixel(10, h),//修改label相对于maker的位置
+								//                         content: this.name+"/"+this.tel+statusMsg+span
+								//                     });
+								//                      marker.on('mouseover', function () {
+								//                          var t = this.getTitle();
+								//                          $("div[title="+t+"]").next().hide();
+								//                     });
+								//                      marker.on('mouseout', function () {
+								//                          var t = this.getTitle();
+								//                          $("div[title="+t+"]").next().show();
+								//                      });
+
+								marker.on('click',
+										function() {
+											if (redMarker != "") {
+												redMarker.setIcon(icon);
+
+											}
+
+											//   alert(this.getTitle());
+											this.setIcon(icon2);
+											redMarker = this;
+											$.cookie('redMarker', redMarker
+													.getTitle());
+											driverOrderInfo(this.getTitle())
+											map.setCenter(redMarker.getPosition())
+										});
+								markerList.push(marker);
+
+							});
+					if ($.cookie('nowPage') != undefined
+							&& $.cookie('nowPage') != null
+							&& $.cookie('nowPage') != '') {
+						nowPage = $.cookie('nowPage')
+					}
+					getDriverList(nowPage);
+					//将地图调整到合适的范围来显示我们需要展示的markers
+					if (firstLoad) {
+						map.setFitView();
+					}
+					test();
+					firstLoad = false;
+				}
+			});
+		}
+		var firstLoad = true; //初次地图加载
+		function test() {
+			//定时刷新页面
+			setInterval('t()', 150);
+		}
+		function t() {
+			//        var load = true;
+			$(".timer").each(
+					function(index, element) {
+						var t = $(element).attr("title");
+						var timeCount0 = new msTimeCount();
+						var hour = parseInt($("#hour" + t).text());
+						var minute = parseInt($("#minute" + t).text());
+						var seconds = parseInt($("#seconds" + t).text());
+						timeCount0.init([ hour, minute, seconds ], [
+								"hour" + t, "minute" + t, "seconds" + t ]);
+						//            load = false;
+					})
+			//        if(true){
+			//            t();
+			//        }
+		}
+		//计时器：
+		function msTimeCount() {
+			this._hour = 0; //“小时”数
+			this._minute = 0; //“分”数
+			this._seconds = 0; //“秒”数
+			//
+			this._hourHtmlObj = {};//“小时”html对象
+			this._minuteHtmlObj = {};//“分”html对象
+			this._secondsHtmlObj = {};//“秒”html对象
+			//
+			this._totalSeconds = 0;//总秒数
+		};
+		msTimeCount.prototype = {
+			//1.获取对象
+			$ : function(ID) {
+				return document.getElementById(ID);
+			},
+			//2.初始化：
+			/*
+			 * arrTime:  传入时间数组，格式为[1,30,30]，代表 1小时30分30秒;
+			 * arrHtmlObj: 更新时间数据的Html对象数组，格式为["hour","minute","seconds"];
+			 */
+			init : function(arrTime, arrHtmlObj) {
+				var _this = this;
+				_this._hour = parseInt(arrTime[0]);
+				_this._minute = parseInt(arrTime[1]);
+				_this._seconds = parseInt(arrTime[2]);
+				_this._hourHtmlObj = _this.$(arrHtmlObj[0]);
+				_this._minuteHtmlObj = _this.$(arrHtmlObj[1]);
+				_this._secondsHtmlObj = _this.$(arrHtmlObj[2]);
+				_this._totalSeconds = parseInt(_this._hour * 60 * 60
+						+ _this._minute * 60 + _this._seconds);
+				//开始计时：
+				_this.timeCount();
+			},
+			//3.计时器：
+			timeCount : function() {
+				var _this = this;
+				var tmpTimeCount = setInterval(function() {
+					_this._totalSeconds++;
+					//alert(_this._totalSeconds);
+					_this.refreshTime();
+					if (_this._totalSeconds < 1) {
+						clearInterval(tmpTimeCount);
+						return;
+					}
+				}, 1000);
+			},
+			//4.刷新页面时间:
+			refreshTime : function() {
+				var _this = this;
+				if (_this._totalSeconds > 0) {
+					_this._hour = parseInt(_this._totalSeconds / 3600);
+					_this._minute = parseInt((_this._totalSeconds - _this._hour * 3600) / 60);
+					_this._seconds = _this._totalSeconds - _this._hour * 3600
+							- _this._minute * 60;
+				} else {
+					_this._hour = _this._minute = _this._seconds = 0;
+				}
+				_this._hourHtmlObj.innerHTML = _this._hour;
+				_this._minuteHtmlObj.innerHTML = _this._minute;
+				_this._secondsHtmlObj.innerHTML = _this._seconds;
+			}
+		}
+		
+		 function getDriverList(page){
+	    	nowPage=page;
+	    	 $('#driverlist_table').text("");
+	    	 var json ={
+	    	    		"page" : nowPage
+	    	    	}
+	    	 $.post("${base}/admin/driver/pageOnlineDriverList",json,
+	                 function(data) {
+	    		 		if (data.code == "1") {
+	    		 			 $('#driverlist_table').text("");
+	    		 //			 alert(data.data.driverList.length)
+	    		 			$(data.data.driverList).each(function(){
+
+	    	                        createDriverTable(this);
+	    		 			})
+	    		 			$('#pages').text("");
+	    		 			createPages(data.data)
+	                      
+	    		 		}
+	    		 
+	    	 });
+	    }	
+		
+				 function createPages(data){
+					 $("#pages").pagination({
+							currentPage: nowPage,
+							totalPage: data.pages,
+							isShow: false,
+							count: 5,
+							prevPageText: "< 上一页",
+							nextPageText: "下一页 >",
+							callback: function(current) {
+							
+								nowPage=current
+								getDriverList(nowPage)
+							}
+						});
+	
+		    }
+		    function createDriverTable(data){
+		    	var driverDiv = document.getElementById("driverlist_table");
+		    	var tab = document.createElement("table");
+		    	tab.setAttribute("id","table"+data.spcarDriverId);
+		    	tab.setAttribute("class","tables");
+		    	tab.setAttribute("onclick","getTargetMarker("+data.spcarDriverId+")")
+		    	var tr1 = document.createElement("tr"); 
+		    	var td1 = document.createElement("td");
+		    	td1.setAttribute("width","25%");
+		    
+		    	td1.innerHTML="<img src='${base!}/assets/img/dimg.png' width='50%' height='25%'>"
+		    
+		    	var td2 = document.createElement("td");
+		    	td2.innerHTML=data.name;
+		    	var tr2 = document.createElement("tr");
+		    	var td3 = document.createElement("td");
+		    	td3.innerHTML = "電話:";
+		    	var td4 = document.createElement("td");
+		    	td4.innerHTML = "+"+data.countryCode+"-"+data.tel;
+		    	driverDiv.appendChild(tab);
+		    	tab.appendChild(tr1);
+		    	tab.appendChild(tr2);
+		    	tr1.appendChild(td1);
+		    	tr1.appendChild(td2);
+		    	tr2.appendChild(td3);
+		    	tr2.appendChild(td4);
+		    	
+		    }
+		    function createDriverOrder(driver,data,nowTime){
+		    	var date = nowTime;
+		    	var ordersDiv = document.getElementById("driver_orders");
+		    	var backBtn = document.createElement("a");
+		    	backBtn.setAttribute("class","back");
+		    	backBtn.setAttribute("onclick","back()");
+		    	backBtn.setAttribute("href","javascript:void(0)")
+		    	backBtn.innerHTML="返回";
+		    	var br = document.createElement("br");
+		    	var br2 = document.createElement("br");
+		    	ordersDiv.appendChild(backBtn);
+		    	ordersDiv.appendChild(br);
+		    	ordersDiv.appendChild(br2);
+		    	var tab = document.createElement("table");
+		    	tab.setAttribute("id","orderTable"+driver.id);
+		    	tab.setAttribute("class","tables");
+		    	var tr1 = document.createElement("tr"); 
+		    	var td1 = document.createElement("td");
+		    	td1.setAttribute("width","25%");
+		    	
+		    	td1.innerHTML="<img src='${base!}/assets/img/dimg.png' width='50%' height='25%'>"
+		    	
+		    	var td2 = document.createElement("td");
+		    	td2.setAttribute("colspan","2");
+		    	td2.innerHTML=driver.name;
+		    	
+		    	var tr2 = document.createElement("tr");
+		    	var td3 = document.createElement("td");
+		    	td3.innerHTML = "電話:";
+		    	var td4 = document.createElement("td");
+		    	td4.innerHTML = "+"+driver.countryCode+"-"+driver.tel;
+		    	
+		    	var tr3 = document.createElement("tr");
+		    	var td5 = document.createElement("td");
+		    	td5.setAttribute("colspan","3");
+		    	var hr = document.createElement("hr");
+		    	var tr4 = document.createElement("tr");
+		    	var td6 = document.createElement("td");
+		    	td6.setAttribute("colspan","3");
+		    	td6.innerHTML="訂單列表";
+		    	ordersDiv.appendChild(tab);
+		    	tab.appendChild(tr1);
+		    	tab.appendChild(tr2);
+		    	tab.appendChild(tr3);
+		    	tab.appendChild(tr4);
+		    	tr1.appendChild(td1);
+		    	tr1.appendChild(td2);
+		    	tr2.appendChild(td3);
+		    	tr2.appendChild(td4);
+		    	td5.appendChild(hr);
+		    	tr3.appendChild(td5);
+		    	tr4.appendChild(td6);
+		    	if(data.length==0){
+		    		var tr5 = document.createElement("tr");
+		    		var td7 = document.createElement("td");
+		    		td7.setAttribute("colspan","3");
+		    		td7.innerHTML = "暫無訂單信息";
+		    		tab.appendChild(tr5);
+		    		tr5.appendChild(td7);
+		    	}
+		    	else{
+		    		for(i=0;i<data.length;i++){
+		    			var br = document.createElement("br");
+				    	tab.appendChild(br);
+		    			var tr1 = document.createElement("tr");
+		    			var td1 = document.createElement("td");
+		    			td1.innerHTML = "<a href='javascript:void(0)' onclick=createOrderDetails("+data[i].spcarOrderId+','+JSON.stringify(data[i].list)+")>"+"訂單"+(i+1)+"</a>"
+		    			var td2 = document.createElement("td");
+		    			td2.innerHTML="訂單編號";
+		    			var td3 = document.createElement("td");
+		    			td3.innerHTML = data[i].spcarOrderId;
+		    			var tr2 = document.createElement("tr");
+		    			var td4 = document.createElement("td");
+		    			var td5 = document.createElement("td");
+		    			td5.innerHTML = "訂單狀態";
+		    			var td6 = document.createElement("td");
+		    			var tr3 = document.createElement("tr");
+		    			var td7 = document.createElement("td");
+		    			var td8 = document.createElement("td");
+		    			td8.innerHTML = "開始時間";
+		    			var td9 = document.createElement("td");
+		    			td9.innerHTML = data[i].startTime;
+		    			var tr4 = document.createElement("tr");
+		    			var td10 = document.createElement("td");
+		    			var td11 = document.createElement("td");
+		    			td11.innerHTML = "預約時長";
+		    			var td12 = document.createElement("td");
+		    			td12.innerHTML = data[i].totalHour+"小時";
+		    			if(data[i].status=='0' || data[i].status==0){
+		    				td6.innerHTML = "進行中";
+		    			}
+		    		
+		    			else if(data[i].status=='3' || data[i].status==3){
+		    				td6.innerHTML = "已配對";
+		    			}
+		    			else if(data[i].status=='4' || data[i].status==4){
+		    				td6.innerHTML = "接載中";
+		    			}
+		    			else if(data[i].status=='997' || data[i].status==997){
+		    				td6.innerHTML = "續單";
+		
+		    			}
+		    			
+		    			
+		    				tab.appendChild(tr1);
+		    				tab.appendChild(tr2);
+		    				tab.appendChild(tr3);
+		    				tab.appendChild(tr4);
+		    				tr1.appendChild(td1);
+		    				tr1.appendChild(td2);
+		    				tr1.appendChild(td3);
+		    				tr2.appendChild(td4);
+		    				tr2.appendChild(td5);
+		    				tr2.appendChild(td6);
+		    				tr3.appendChild(td7);
+		    				tr3.appendChild(td8);
+		    				tr3.appendChild(td9);
+		    				tr4.appendChild(td10);
+		    				tr4.appendChild(td11);
+		    				tr4.appendChild(td12);
+		    			
+		    		}
+		    	}
+		    	
+		    }
+		    function driverOrderInfo(driverId,page){
+		    	$("#rightBar").css({ display: 'none' });
+		    	$("#driver_orders").css({ display: 'block' });
+		    	$("#order_pages").css({ display: 'block' });
+		    	$("#driver_orders").text("");
+		    	orderPage=page;
+		    	var json ={
+		    		"driverId" : driverId,
+		    		"page" : orderPage
+		    	}
+		    	$.post("${base}/admin/order/pageGetOnGoingOrder",json,
+		                function(data) {
+		                    if (data.code == "1") {
+		                    	createDriverOrder(data.driver,data.data,data.nowTime);
+		                    } else {
+		                        alert("error")
+		                    }
+		                    $('#order_pages').text("");
+		                    createOrderPages(driverId,data.pages)
+		                })
+		    	
+		    	
+		    	
+		    	 
+		    }
+			 function createOrderPages(driverId,data){
+				 
+				 $("#order_pages").pagination({
+						currentPage: orderPage,
+						totalPage: data,
+						isShow: false,
+						count: 5,
+						prevPageText: "< 上一页",
+						nextPageText: "下一页 >",
+						callback: function(current) {
+						
+							orderPage=current
+							driverOrderInfo(driverId,orderPage)
+						}
+					});
+			
+			    }
+			 
+			 
+			 function createOrderDetails(orderId,data){
+				 $("#driver_orders").css({ display: 'none' });
+			    $("#order_pages").css({ display: 'none' });
+			    $("#order_detail").css({ display: 'block' });
+				 $('#order_detail').text("")
+				 var detailDiv = document.getElementById("order_detail");
+				 var backBtn = document.createElement("a");
+					 backBtn.setAttribute("class","back");
+			    	backBtn.setAttribute("onclick","backOrder()");
+			    	backBtn.setAttribute("href","javascript:void(0)")
+			    	backBtn.innerHTML="返回";
+			    	var br = document.createElement("br");
+			    	var br2 = document.createElement("br");
+			    	detailDiv.appendChild(backBtn);
+			    	detailDiv.appendChild(br);
+			    	detailDiv.appendChild(br2);
+			    	
+			    	var tab = document.createElement("table");
+			    	tab.setAttribute("id","orderDetail");
+			    	tab.setAttribute("class","tables");
+			    	var tr1 = document.createElement("tr"); 
+			    	var td1 = document.createElement("td");
+			    	td1.setAttribute("width","25%");
+			    	
+			    	td1.innerHTML="主單編號"
+			    	
+			    	var td2 = document.createElement("td");
+			    	td2.setAttribute("colspan","2");
+			    	td2.innerHTML=orderId;
+			    	
+			    	var tr2 = document.createElement("tr");
+			    	var td3 = document.createElement("td");
+			    	td3.setAttribute("colspan","3");
+			    	var hr = document.createElement("hr");
+			    	var tr3 = document.createElement("tr");
+			    	var td4 = document.createElement("td");
+			    	td4.setAttribute("colspan","3");
+			    	td4.innerHTML="續單列表";
+			    	detailDiv.appendChild(tab);
+			    	tab.appendChild(tr1);
+			    	
+			    	tab.appendChild(tr2);
+			    	tab.appendChild(tr3);
+			    	tr1.appendChild(td1);
+			    	tr1.appendChild(td2);
+			    	
+			    	td3.appendChild(hr);
+			    	tr2.appendChild(td3);
+			    	tr3.appendChild(td4);
+			    	
+			    	for(i=0;i<data.length;i++){
+			    		
+			    		var br = document.createElement("br");
+				    	tab.appendChild(br);
+		    			var tr1 = document.createElement("tr");
+		    			var td1 = document.createElement("td");
+		    			td1.innerHTML = "續單"+(i+1)
+		    			var td2 = document.createElement("td");
+		    			td2.innerHTML="續單編號";
+		    			var td3 = document.createElement("td");
+		    			td3.innerHTML = data[i].spcarOrderIdSon;
+		    			var tr2 = document.createElement("tr");
+		    			var td4 = document.createElement("td");
+		    			var td5 = document.createElement("td");
+		    			td5.innerHTML = "續單狀態";
+		    			var td6 = document.createElement("td");
+		    			var tr3 = document.createElement("tr");
+		    			var td7 = document.createElement("td");
+		    			var td8 = document.createElement("td");
+		    			td8.innerHTML = "續單時長";
+		    			var td9 = document.createElement("td");
+		    			td9.innerHTML = data[i].totalHourSon+"小時";
+		    			
+		    			if(data[i].statusSon=='0' || data[i].statusSon==0){
+		    				td6.innerHTML = "進行中";
+		    			}
+		    		
+		    			else if(data[i].statusSon=='3' || data[i].statusSon==3){
+		    				td6.innerHTML = "已配對";
+		    			}
+		    			else if(data[i].statusSon=='4' || data[i].statusSon==4){
+		    				td6.innerHTML = "接載中";
+		    			}
+		    			else if(data[i].statusSon=='998' || data[i].statusSon==998){
+		    				td6.innerHTML = "已取消";
+		
+		    			}
+		    			else if(data[i].statusSon=="999" || data[i].statusSon==999){
+		    				td6.innerHTML = "未支付";
+		    			}
+		    			
+		    			
+		    			
+		    				tab.appendChild(tr1);
+		    				tab.appendChild(tr2);
+		    				tab.appendChild(tr3);
+		    				tr1.appendChild(td1);
+		    				tr1.appendChild(td2);
+		    				tr1.appendChild(td3);
+		    				tr2.appendChild(td4);
+		    				tr2.appendChild(td5);
+		    				tr2.appendChild(td6);
+		    				tr3.appendChild(td7);
+		    				tr3.appendChild(td8);
+		    				tr3.appendChild(td9);
+		    				
+			    	}
+			
+			 }
+		    
+		    function getTargetMarker(driverId){
+		    	if(redMarker!=""){
+		    		redMarker.setIcon(icon);
+		    	}
+		    	for(var i=0; i<markerList.length; i++) {
+		        	
+		            if(markerList[i].getTitle() == driverId){
+		            	redMarker = markerList[i];
+		            	markerList[i].setIcon(icon2);
+		            	$.cookie('redMarker',redMarker.getTitle());
+		            }
+		    }
+		    	map.setCenter(redMarker.getPosition())
+		    	driverOrderInfo(driverId,orderPage)
+		    	
+		    	
+		    }
+		    function backOrder(){
+		    	 $("#order_detail").css({ display: 'none' });
+		    	$("#driver_orders").css({ display: 'block' });
+		    	$("#order_pages").css({ display: 'block' });
+		    	
+		    }
+		    function back(){
+		    	
+		    	$("#rightBar").css({ display: 'block' });
+		    	$("#driver_orders").css({ display: 'none' });
+		    	$("#order_pages").css({ display: 'none' });
+		    	orderPages = 1;
+		    	redMarker.setIcon(icon);
+		    	redMarker = "";
+		    }
+		    
+		    function timeStamp( second_time ){  
+		    	  
+		    	var time = parseInt(second_time) + "秒";  
+		    	if( parseInt(second_time )> 60){  
+		    	  
+		    	    var second = parseInt(second_time) % 60;  
+		    	    var min = parseInt(second_time / 60);  
+		    	    time = min + "分" + second + "秒";  
+		    	      
+		    	    if( min > 60 ){  
+		    	        min = parseInt(second_time / 60) % 60;  
+		    	        var hour = parseInt( parseInt(second_time / 60) /60 );  
+		    	        time = hour + "小时" + min + "分" + second + "秒";  
+		    	  
+		    	        if( hour > 24 ){  
+		    	            hour = parseInt( parseInt(second_time / 60) /60 ) % 24;  
+		    	            var day = parseInt( parseInt( parseInt(second_time / 60) /60 ) / 24 );  
+		    	            time = day + "天" + hour + "小时" + min + "分" + second + "秒";  
+		    	        }  
+		    	    }  
+		    	      
+		    	  
+		    	}  
+		    	  
+		    	return time;          
+		    	}  
+		
+		
+		    
+	</script>
+
+	<script type="text/javascript"
+		src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+
+<script type="text/javascript" src="${base!}/assets/admin/js/jquery.pagination.min.js"></script>
+</body>
+<!--  /Body -->
+</html>

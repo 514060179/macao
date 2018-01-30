@@ -1,0 +1,73 @@
+package com.yinghai.macao.common.service.impl;
+
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.dao.ParameterMapper;
+import com.yinghai.macao.common.dao.SpcarDriverMapper;
+import com.yinghai.macao.common.model.Parameter;
+import com.yinghai.macao.common.model.SpcarDriver;
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.service.ParameterService;
+import com.yinghai.macao.common.service.SpcarDriverService;
+import com.yinghai.macao.common.util.IMMsgRequestUtil;
+import com.yinghai.macao.common.util.Page;
+import com.yinghai.macao.common.util.PageHelper;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TecentImUtils;
+import com.yinghai.macao.common.util.TlsSignUtil;
+
+import net.sf.json.JSONObject;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+/**
+ * Created by Administrator on 2017/5/16.
+ */
+public class ParameterServiceImpl implements ParameterService {
+    @Autowired
+    private ParameterMapper parameterMapper;
+	private Logger log = Logger.getLogger(this.getClass());
+
+    
+	@Override
+	public Page<Parameter> findList(int pageNum, int pageSize, Parameter parameter) {
+		// TODO Auto-generated method stub
+		PageHelper.startPage(pageNum,pageSize);
+		return parameterMapper.findList(parameter);
+	}
+
+	@Override
+	public int delete(Integer id) {
+		// TODO Auto-generated method stub
+		return parameterMapper.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public Parameter findById(Integer id) {
+		// TODO Auto-generated method stub
+		return parameterMapper.selectByPrimaryKey(id);
+	}
+	@Override
+	public int createParameter(Parameter parameter) throws Exception {
+	
+			 return  parameterMapper.insertSelective(parameter);
+			
+	}
+
+	@Override
+	public int updateParameter(Parameter parameter) {
+		// TODO Auto-generated method stub
+		return parameterMapper.updateByPrimaryKeySelective(parameter);
+	}
+
+	@Override
+	public Parameter findByHour(Integer hour) {
+		// TODO Auto-generated method stub
+		return parameterMapper.findByHour(hour);
+	}
+}

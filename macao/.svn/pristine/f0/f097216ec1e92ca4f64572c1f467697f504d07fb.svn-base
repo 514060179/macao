@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Loading Container -->
+    <#include "../common/head.html"/>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title"></div>
+
+					<!--Header Buttons-->
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#"title="放大">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="" href=""title="刷新">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a  id="fullscreen-toggler" href="#" title="全屏">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                        <a  title="推送廣告" onclick="pushInfo()"> <i
+							class="glyphicon glyphicon-export"></i>
+						</a>
+						 <a href="${base!}/admin/passenger/edit" title="新增"> <i
+							class="glyphicon glyphicon-plus"></i>
+						</a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+  <div class="widget">
+							<form action='${base!}/admin/passenger/list' id='searchs' method="POST">
+								<div class="widget-header ">
+									<span class="widget-caption">乘客列表</span> 狀態： 
+									<select class="selectpicker" id="query.status" name='query.status' onchange="runQuery();">
+									<option value=""></option>
+										<option value="0" <#if spcarPassenger.status??><#if
+											spcarPassenger.status=0>selected</#if></#if> >乘客已上車</option>
+										<option value="1" <#if spcarPassenger.status??><#if
+											spcarPassenger.status=1>selected</#if></#if> >上線中</option>
+										<option value="2" <#if spcarPassenger.status??><#if
+											spcarPassenger.status=2>selected</#if></#if>>等待中</option>
+										<option value="999" <#if spcarPassenger.status??><#if
+											spcarPassenger.status=999>selected</#if></#if> >離線</option>
+									</select> 手機號： <select id="query.countryCode" name='query.countryCode'
+										class="selectpicker">
+										<option value=""></option>
+										<option value="853" <#if spcarPassenger.countryCode??><#if
+											spcarPassenger.countryCode='853'>selected</#if></#if> >Macaw 853</option>
+										<option value="852" <#if spcarPassenger.countryCode??><#if
+											spcarPassenger.countryCode='852'>selected</#if></#if> >HK 852</option>
+										<option value="86" <#if spcarPassenger.countryCode??><#if
+											spcarPassenger.countryCode='86'>selected</#if></#if>>P.R.C 86</option>
+									</select> -  <input
+										class="searchinput" type="text"
+										value='<#if spcarPassenger??> ${spcarPassenger.tel!}</#if>' id='query.tel'
+										name='query.tel' onkeyup="searchenter(event);"> 姓名： <input type="text"
+										class="searchinput"value='<#if spcarPassenger??>${spcarPassenger.name!}</#if>' id='query.name'
+										name='query.name' onkeyup="searchenter(event);">性別 <select id="query.sex" name='query.sex'
+										class="selectpicker" onchange="runQuery();">
+										<option value=""></option>
+										<option value='false' <#if spcarPassenger.sex??><#if
+											spcarPassenger.sex?string("男","女")='女'>selected</#if></#if> >女</option>
+										<option value='true' <#if spcarPassenger.sex??><#if
+											spcarPassenger.sex?string("男","女")='男'>selected</#if></#if> >男</option>
+									</select>
+										</form>
+										<i onclick='search()'
+										class="searchicon fa fa-search"></i>
+									<div class="widget-buttons">
+										<a href="#" data-toggle="maximize"> <i
+											class="fa fa-expand"></i>
+										</a>
+									</div>
+								</div>
+                                <div class="widget-body">
+                                    <table class="table table-striped table-bordered table-hover" id="simpledatatable">
+                                        <thead>
+                                        <tr>
+                                            <th>
+                                                編號
+                                            </th>
+                                            <th>
+                                                區號
+                                            </th>
+                                            <th>
+                                                手機號
+                                            </th>
+                   							<th>
+                                               姓名
+                                            </th>
+                   							<th>
+                                               性別
+                                            </th>
+                   							<th>
+                                              創建時間
+                                            </th>
+                   							<th>
+                                              最近登錄時間
+                                            </th>
+                                            <th>
+                                           加入/取消VIP
+                                            </th>
+                                            <th>更多操作</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <#if page??>
+                                         <#list page as item>
+                                        <tr id="${item.spcarId!}Tr">
+                                            <td>
+                                                <div class="checker"><span class=""><input type="checkbox" class="checkboxes" value="${item.spcarId!}"></span>${item.spcarId!}</div>
+                                            </td>
+                                             <td>
+                                                  ${item.countryCode!}
+                                            </td>
+                                             <td>${item.tel!}</td>
+                                                     <td>
+                                                ${item.name!}
+                                            </td>
+                                            <td>
+                                            ${item.sex?string("男","女")}
+                                            </td>
+                                                   <td class="center ">
+                                                <ma-column> <ma-string-column>
+															<span class="ng-binding">${(item.createTime?string("yyyy-MM-dd HH:mm:ss"))!}</span></ma-string-column></ma-column>
+                                            	</td>
+                                            <td class="center ">
+                                                <ma-column> <ma-string-column>
+															<span class="ng-binding">${(item.lastLogin?string("yyyy-MM-dd HH:mm:ss"))!}</span></ma-string-column></ma-column>
+                                            </td>
+											<td><ma-column> <ma-string-column>
+												<span class="ng-binding"> <a href="javascript:void(0)"
+													onclick="addorDelVip('${item.spcarId!}')">
+												 <#if item.vip??><#if item.vip?string("1","0")='0'>加入</#if></#if>
+												 <#if item.vip??><#if item.vip?string("1","0")='1'>取消</#if></#if>
+												 </a>
+												</span></ma-string-column></ma-column></td>
+												
+													<td><ma-column> <ma-string-column>
+													<span class="ng-binding"> <a
+														href="${base!}/admin/passenger/edit?id=${item.spcarId!}&act=upd">編輯</a>
+														
+													</span></ma-string-column></ma-column></td>
+													
+                                        </tr> 
+                                        </#list> 
+										</#if>
+                                        </tbody>
+                                    </table>
+                                <div class="row DTTTFooter">
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_info" id="simpledatatable_info" role="alert" aria-live="polite" aria-relevant="all">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <#import "/ftl/pager.ftl" as p/>
+                                        <#if page??>
+                                            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount pageCount=pageCount toURL="${base!}/admin/passenger/list" method="post"/>
+                                        </#if>
+                                    </div>
+                                </div>
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    </div>
+
+    <!--Page Related Scripts-->
+    <!--Sparkline Charts Needed Scripts-->
+
+
+<script>
+function search(){
+	 document.getElementById("searchs").submit();
+}
+	function addorDelVip(id){
+		$.post("${base}/admin/passenger/addorDelVip", {
+			"id" : id
+		}, function(data) {
+			if (data.code == "1") {
+				window.location.reload();
+			} else {
+				alert("操作失敗!");
+			}
+		});
+		
+	}
+	
+	function pushInfo(){
+    	layer.open({
+         	  title: '推送消息',
+    //     	  area: ['350px', '350px'],
+         	  content: '<textarea style="width:250px;height:100px;" id="pushInfos" placeholder="推送內容" ></textarea>',
+         	  yes : function(index){
+         		 var pushInfos = $('#pushInfos').val()
+         	//	alert(score)
+         	//	alert(comments)
+         	 var json = {
+         			  "msg" : pushInfos
+         	  }
+         		$.post("${base}/admin/driver/pushMsgToDriver",json,function(data){
+         	          		if (data.code == "1") {
+         	           			alert("success");
+         	                    layer.close(index);
+         	                    window.location.reload();
+         	                }else{
+         	           			alert("推送失敗！稍後重試"+data.code);
+         	                    layer.close(index);
+         	           		}
+
+         							});
+         		var json2 = {
+         				"broadcastContent" : pushInfos,
+         				"broadcastType" :1
+         		}
+         		
+         		$.post("${base}/admin/broadcast/save",json2,function(data){
+ 	          		if (data.code == "1") {
+ 	                  
+ 	                }else{
+ 	                    
+ 	           		}
+
+ 							});
+         	  }
+         	});    
+	}
+	
+	 function delManager(id) {
+	        var sure = confirm("確定刪除?");
+	        if(sure) {
+	            $.post("${base}/admin/passenger/del", {
+	                    "id" : id
+	                },
+	                function(data) {
+	                    if (data.code == "1") {
+	                        alert("刪除成功!");
+	                        $("#" + id + "Tr").remove();
+	                    } else {
+	                        alert("刪除失敗!");
+	                    }
+	                });
+	        }
+		}
+	 function runQuery(){
+			search();
+		}
+	function searchenter(event) {
+        event = event || window.event;
+        if (event.keyCode == 13) {
+            search();
+        }
+    }
+</script>
+
+
+</body>
+<!--  /Body -->
+</html>

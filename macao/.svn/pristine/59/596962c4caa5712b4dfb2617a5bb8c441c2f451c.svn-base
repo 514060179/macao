@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.Spcar" >
+    <id column="spcar_id" property="spcarId" jdbcType="INTEGER" />
+    <result column="spcar_type" property="spcarType" jdbcType="VARCHAR" />
+    <result column="spcar_color" property="spcarColor" jdbcType="VARCHAR" />
+    <result column="spcar_no" property="spcarNo" jdbcType="VARCHAR" />
+    <result column="spcar_sit" property="spcarSit" jdbcType="INTEGER" />
+    <result column="spcar_used" property="spcarUsed" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+     <result column="image" property="image" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    spcar_id, spcar_type, spcar_color, spcar_no, spcar_sit, spcar_used, create_time, 
+    update_time,image
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from spcar
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from spcar
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yinghai.macao.common.model.Spcar" >
+    insert into spcar (spcar_id, spcar_type, spcar_color, 
+      spcar_no, spcar_sit, spcar_used, 
+      create_time, update_time)
+    values (#{spcarId,jdbcType=INTEGER}, #{spcarType,jdbcType=VARCHAR}, #{spcarColor,jdbcType=VARCHAR}, 
+      #{spcarNo,jdbcType=VARCHAR}, #{spcarSit,jdbcType=INTEGER}, #{spcarUsed,jdbcType=BIT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yinghai.macao.common.model.Spcar" useGeneratedKeys="true" keyProperty="spcarId">
+    insert into spcar
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="spcarId != null" >
+        spcar_id,
+      </if>
+      <if test="spcarType != null" >
+        spcar_type,
+      </if>
+      <if test="spcarColor != null" >
+        spcar_color,
+      </if>
+      <if test="spcarNo != null" >
+        spcar_no,
+      </if>
+      <if test="spcarSit != null" >
+        spcar_sit,
+      </if>
+      <if test="spcarUsed != null" >
+        spcar_used,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+       <if test="image != null" >
+        image,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="spcarId != null" >
+        #{spcarId,jdbcType=INTEGER},
+      </if>
+      <if test="spcarType != null" >
+        #{spcarType,jdbcType=VARCHAR},
+      </if>
+      <if test="spcarColor != null" >
+        #{spcarColor,jdbcType=VARCHAR},
+      </if>
+      <if test="spcarNo != null" >
+        #{spcarNo,jdbcType=VARCHAR},
+      </if>
+      <if test="spcarSit != null" >
+        #{spcarSit,jdbcType=INTEGER},
+      </if>
+      <if test="spcarUsed != null" >
+        #{spcarUsed,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+       <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.common.model.Spcar" >
+    update spcar
+    <set >
+      <if test="spcarType != null" >
+        spcar_type = #{spcarType,jdbcType=VARCHAR},
+      </if>
+      <if test="spcarColor != null" >
+        spcar_color = #{spcarColor,jdbcType=VARCHAR},
+      </if>
+      <if test="spcarNo != null" >
+        spcar_no = #{spcarNo,jdbcType=VARCHAR},
+      </if>
+      <if test="spcarSit != null" >
+        spcar_sit = #{spcarSit,jdbcType=INTEGER},
+      </if>
+      <if test="spcarUsed != null" >
+        spcar_used = #{spcarUsed,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+       <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yinghai.macao.common.model.Spcar" >
+    update spcar
+    set spcar_type = #{spcarType,jdbcType=VARCHAR},
+      spcar_color = #{spcarColor,jdbcType=VARCHAR},
+      spcar_no = #{spcarNo,jdbcType=VARCHAR},
+      spcar_sit = #{spcarSit,jdbcType=INTEGER},
+      spcar_used = #{spcarUsed,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </update>
+  <select id="findListByCondition" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.Spcar">
+    select
+    <include refid="Base_Column_List" />
+    from spcar
+    where 1=1
+    <if test="spcarSit != null" >
+     and spcar_sit = #{spcarSit,jdbcType=INTEGER}
+    </if>
+    <if test="spcarUsed != null" >
+     and spcar_used = #{spcarUsed,jdbcType=BIT}
+    </if>
+  </select>
+      <select id="findList" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.Spcar" >
+    select
+    <include refid="Base_Column_List" />
+    from spcar
+    where 1=1
+  
+    <if test="createTime != null" >
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+     <if test="spcarNo != null" >
+      and spcar_no like #{spcarNo,jdbcType=VARCHAR}
+    </if>
+     <if test="spcarSit != null" >
+     and spcar_sit = #{spcarSit,jdbcType=INTEGER}
+    </if>
+  	<if test="spcarUsed != null" >
+     and spcar_used = #{spcarUsed,jdbcType=BIT}
+    </if>
+  </select>
+  
+  <select id="findBySpcarNo" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from spcar
+    where spcar_no = #{spcarNo,jdbcType=VARCHAR}
+    limit 0,1
+  </select>
+  
+</mapper>

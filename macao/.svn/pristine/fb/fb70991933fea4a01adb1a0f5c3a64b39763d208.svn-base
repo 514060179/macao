@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <!--Basic Styles-->
+    <link href="${base!}/assets/admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="${base!}/assets/admin/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="${base!}/assets/admin/css/weather-icons.min.css" rel="stylesheet" />
+
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="${base!}/assets/admin/css/beyond.min.css" rel="stylesheet" type="text/css" />
+    <link href="${base!}/assets/admin/css/demo.min.css" rel="stylesheet" />
+    <link href="${base!}/assets/admin/css/typicons.min.css" rel="stylesheet" />
+    <link href="${base!}/assets/admin/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="${base!}/assets/admin/css/jquery-ui.css" />
+
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="${base!}/assets/js/skins.min.js"></script>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<!-- Loading Container -->
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+        <!-- Page Sidebar -->
+        <div class="page-sidebar" id="sidebar">
+            <!-- Page Sidebar Header-->
+            <div class="sidebar-header-wrapper">
+                <input type="text" class="searchinput" />
+                <i class="searchicon fa fa-search"></i>
+                <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+            </div>
+            <!-- /Page Sidebar Header -->
+            <!-- Sidebar Menu -->
+            <!-- /Sidebar Menu -->
+        </div>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <!-- /Page Header -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-2"></div>
+                    <div class="col-sm-8">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header">
+                                <span class="widget-caption">訂單詳情</span>
+                            </div>
+                            <div class="widget-body">
+                                <form id="registrationForm" class="form-horizontal bv-form" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" novalidate="novalidate">
+                                    <input type="hidden" id="orderId" value="${spcarOrder.spcarOrderId!}">
+                                    <div class="form-title">
+                                        <strong>訂單號：</strong>#${spcarOrder.spcarOrderId!} 	 <strong>金額（元）：</strong> <#if spcarOrder.amount??> ￥${spcarOrder.amount/100!}</#if>  <strong> 時長：</strong>${spcarOrder.totalHour!}小時
+                                    </div>
+                                    <div class="form-title">
+                                        <strong>乘客姓名：</strong><#if spcarOrder.spcarPassenger??>${spcarOrder.spcarPassenger.name!}</#if> 	           <strong>乘客手機：</strong><#if spcarOrder.spcarPassenger??>${spcarOrder.spcarPassenger.countryCode!}-${spcarOrder.spcarPassenger.tel!}</#if>
+                                    </div>
+                                    
+                                    <div class="form-title">
+                                        <strong>上車地點：</strong>${spcarOrder.startAddress!}	          <strong> 上車時間：</strong>${(spcarOrder.startTime?string("yyyy-MM-dd HH:mm:ss"))!}
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label"><strong>選擇司機</strong><span id="tip1"></span><span id="tip2"></span></label>
+                                        <div class="col-lg-4">
+                                          	<input id="spcarChoose" name="maktMaktx" list="spcarList" value="" style="width:240px;" onchange="dataChange();"/>
+                                        	   <datalist id="spcarList">
+										          <select name="maktMaktx"> 
+					                            <#if spcarList??> <#list spcarList as item>
+												<option data-x="${item.rating!}" data-y="${item.status!}" data-xyz = "${item.spcarDriverId!}" value='${item.name!}   ${item.countryCode!}  ${item.tel!}'></option> </#list> </#if>
+												</select> 
+					                        </datalist>
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">The first name is required and cannot be empty</small></div>
+                                           </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label"><strong>選擇專車</strong></label>
+                                        <div class="col-lg-4">
+                                        	<input id="spcar" name="maktMaktx" list="carList" value=""  style="width:240px;" />
+                                        	   <datalist id="carList">
+										          <select name="maktMaktx"> 
+					                            <#if carList??> <#list carList as item>
+												<option data-xyz = "${item.spcarId!}" value='${item.spcarType!}   ${item.spcarColor!}  ${item.spcarNo!}'></option> </#list> </#if>
+												</select> 
+					                        </datalist>
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">The first name is required and cannot be empty</small></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-4"></div>
+                                        <div class="col-xs-4">
+                                            <input class="btn btn-default btn-lg btn-block"  value="確定" onclick="submitChoose(this)">
+                                        </div>
+                                        <div class="col-xs-4"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+
+</div>
+
+<!--Basic Scripts-->
+<script src="${base!}/assets/admin/js/skins.min.js"></script>`
+<script src="${base!}/assets/admin/js/jquery-2.0.3.min.js"></script>
+<script src="${base!}/assets/admin/js/bootstrap.min.js"></script>
+
+<!--Beyond Scripts-->
+
+<!--Bootstrap Date Picker-->
+<script src="${base!}/assets/admin/js/datetime/bootstrap-datepicker.js"></script>
+<script src="${base!}/assets/admin/js/layer/layer.js"></script>
+<!--Page Related Scripts-->
+<!--Sparkline Charts Needed Scripts-->
+
+<script>
+	function dataChange(){
+		$("#tip1").text("");
+		$("#tip2").text("");
+		
+		var val1 = $('#spcarChoose').val();
+		var rating = $('#spcarList option').filter(function() {  
+	        return this.value == val1;  
+	    }).data('x');
+		if(typeof(rating)!="undefined"&&rating!=null){
+			$("#tip1").text("  司机评分："+rating);
+		}
+		var status = $('#spcarList option').filter(function() {  
+	        return this.value == val1;  
+	    }).data('y');
+		if(typeof(status)!="undefined"&&status!=null){
+			var s;
+			switch(status){
+			case 0:
+				s="载客中";
+				break;
+			case 1:
+				s="上线中";
+				break;
+			case 2:
+				s="已指派訂單";
+				break;
+			case 3:
+				s="前往载客";
+				break;
+			case 4:
+				s="到达目的地等待";
+				break;
+			case 999:
+				s="离线";
+				break;
+			}
+			$("#tip2").text("  司机状态："+s);
+		}
+	}
+</script>
+<script>
+    function submitChoose(obj) {
+        $(obj).attr("disabled",true);
+      	 var val1 = $('#spcarChoose').val();  
+    	 var spcar = $('#spcarList option').filter(function() {  
+    	        return this.value == val1;  
+    	    }).data('xyz');  
+    	 
+	   	 var val = $('#spcar').val();  
+		 var carId = $('#carList option').filter(function() {  
+		        return this.value == val;  
+		    }).data('xyz');  
+	
+        var orderId = $("#orderId").val();
+        if (typeof(spcar)=="undefined") {
+			$("#spcar").focus();
+			alert("請選擇正确的司機！");
+			$(obj).attr("disabled",false);
+			return false;
+		} 
+        if (typeof(carId)=="undefined") {
+			$("#carId").focus();
+			alert("請選擇正确的專車！");
+			$(obj).attr("disabled",false);
+			return false;
+		} 
+        if(spcar==""){
+            alert("請選擇司機！");
+            $('#spcarChoose').focus();
+            $(obj).attr("disabled",false);
+            return;
+        }
+        if(carId==""){
+            alert("請選擇專車！");
+            $('#spcar').focus();
+            $(obj).attr("disabled",false);
+            return;
+        }
+        var json ={
+            "spcarDriverId":spcar,
+            "orderId":orderId,
+            "carId":carId
+        };
+        $.post("${base}/admin/order/chooseSpcarSure",json,function(data){
+            if(data.code=="1"){
+                alert('success');
+                var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                parent.layer.close(index);
+                //刷新頁面
+                window.parent.exportData($('#shownum').val(),$('#splitstr').val());
+            }else{
+                alert(data.msg);
+            }
+        });
+    }
+    $(document).ready(function () {
+        /* document.getElementById('images').onchange = function(evt) {
+         // 如果浏览器不支持FileReader，则不处理
+         if (!window.FileReader) return;
+         var files = evt.target.files;
+         for (var i = 0, f; f = files[i]; i++) {
+         if (!f.type.match('image.*')) {
+         continue;
+         }
+         var reader = new FileReader();
+         reader.onload = (function(theFile) {
+
+         return function(e) {
+         // img 元素
+         document.getElementById('previewImage').style.display='block';
+         document.getElementById('previewImage').src = e.target.result;
+         };
+         })(f);
+         reader.readAsDataURL(f);
+         }
+         }*/
+//        document.getElementById('file').onchange = function(evt) {
+//            // 如果浏览器不支持FileReader，则不处理
+//            if (!window.FileReader) return;
+//            var files = evt.target.files;
+//            for (var i = 0, f; f = files[i]; i++) {
+//                if (!f.type.match('image.*')) {
+//                    continue;
+//                }
+//                var reader = new FileReader();
+//                reader.onload = (function(theFile) {
+//
+//                    return function(e) {
+//                        // img 元素
+//                        document.getElementById('previewFile').style.display='block';
+//                        document.getElementById('previewFile').src = e.target.result;
+//                    };
+//                })(f);
+//                reader.readAsDataURL(f);
+//            }
+//        }
+    })
+</script>
+
+
+</body>
+<!--  /Body -->
+</html>

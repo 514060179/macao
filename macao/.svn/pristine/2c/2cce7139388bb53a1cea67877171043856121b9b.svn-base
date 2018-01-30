@@ -1,0 +1,125 @@
+package com.yinghai.macao.backstage.controller;
+
+
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.alibaba.fastjson.JSONObject;
+import com.yinghai.macao.backstage.model.SpcarManager;
+import com.yinghai.macao.backstage.model.SpcarMenu;
+import com.yinghai.macao.backstage.service.impl.MenuService;
+import com.yinghai.macao.backstage.service.impl.SpcarManagerService;
+import com.yinghai.macao.common.util.EncryptUtil;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+@Controller
+@RequestMapping("/managerLogin")
+public class LoginController {
+	
+	private Logger log = Logger.getLogger(this.getClass());
+	@Autowired
+	private SpcarManagerService spcarManagerService;
+	
+	@RequestMapping("/tologin")
+	public String tologin(HttpServletRequest request,ModelMap model){
+		return "login";
+	}
+	@Autowired
+	private MenuService menuService;
+	@RequestMapping("/login")
+	public void login(HttpServletRequest request,ModelMap model,HttpServletResponse response){
+		log.debug("======进入后台登录管理=====");
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JSONObject  responseObject = new JSONObject();
+		response.setContentType("application/json;charset=utf-8");
+		String username = TransformUtils.toString(request.getParameter("username"));
+		if( StringUtils.isEmpty(username) || "".equals(username.trim()) ){
+			responseObject.put("msg", "username not exist");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			log.debug("==========username not exist=======");
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		String password = TransformUtils.toString(request.getParameter("password"));
+		if( StringUtils.isEmpty(password) || "".equals(password.trim()) ){
+			responseObject.put("msg", "password not exist");
+			responseObject.put("code", "101");
+			responseObject.put("data", new JSONObject());
+			log.debug("==========password not exist=======");
+			ResponseUtils.renderJson(response, responseObject.toString());
+			return;
+		}
+		SpcarManager user = null;
+		if(StringUtil.checkEmail(username)){
+			user = spcarManagerService.findOneByEmail(username);
+		}else{
+			user = spcarManagerService.findOneByUserName(username);
+		}
+		if (user != null) {
+				if(user.getPassword().equalsIgnoreCase(EncryptUtil.MD5(EncryptUtil.MD5(password)))){
+					// 保存登录状态信息
+					HttpSession session = request.getSession();
+					session.setAttribute("spcarManager", user);
+					List<SpcarMenu> menu = menuService.findMenuList(new HashMap<String,Object>());
+					session.setAttribute("menu", menu);
+					responseObject.put("msg", "success");
+					responseObject.put("code", "1");
+					responseObject.put("data", new JSONObject());
+					ResponseUtils.renderJson(response, responseObject.toString());
+				}else{// 密码错误
+					responseObject.put("msg", "Password error");
+					responseObject.put("code", "105");
+					responseObject.put("data",  new JSONObject());
+					log.debug("=======Password error========");
+					ResponseUtils.renderJson(response, responseObject.toString());
+				}
+			}else{// 无效
+				responseObject.put("code", "102");
+				responseObject.put("msg", "user is not exist");
+				responseObject.put("data", new JSONObject());
+				log.debug("=======user invalid========");
+				ResponseUtils.renderJson(response, responseObject.toString());
+			}
+	}
+	
+	
+	@RequestMapping("/logout")
+	public void loginOut(HttpServletRequest request,ModelMap model,HttpServletResponse response){
+		JSONObject responseObject = new JSONObject();
+		log.info("======进入后台管理登出功能======");
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		HttpSession session = request.getSession();
+		SpcarManager user = (SpcarManager)session.getAttribute("spcarManager");
+		if(user!=null){
+			session.removeAttribute("spcarManager");
+			session.removeAttribute("menu");
+		}
+		responseObject.put("msg", "success");
+		responseObject.put("code", "1");
+		responseObject.put("data", new JSONObject());
+		ResponseUtils.renderJson(response, responseObject.toString());
+	}
+}

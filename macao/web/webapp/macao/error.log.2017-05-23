@@ -1,0 +1,10 @@
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=10867Passenger======
+[http-apr-8089-exec-11] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======查找spcarPassenger为空，spcarPassenger:0======
+[http-apr-8089-exec-13] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:521非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:521非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======查找spcarPassenger为空，spcarPassenger:0======
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=10867Passenger======
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=10867Passenger======
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=10867Passenger======
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=10867Passenger======
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=10867Passenger======

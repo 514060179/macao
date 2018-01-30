@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Loading Container -->
+	<!--  /Loading Container -->
+	<!-- Navbar -->
+	<#include "../common/head.html"/>
+	<!-- /Navbar -->
+	<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+        <!-- Page Sidebar -->
+
+        <#include "../common/menu.html"/>
+            <!-- /Sidebar Menu -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                </div>
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="${base!}/admin/spcar/edit" title="新增"> <i
+							class="glyphicon glyphicon-plus"></i>
+						</a>
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body">
+					<div class="row">
+						<div class="col-xs-12 col-md-12">
+							<div class="widget">
+							<form action='${base!}/admin/spcar/list' id='searchs' method="POST">
+								<div class="widget-header ">
+									<span class="widget-caption">專車列表</span> 狀態： 
+									<select class="selectpicker" id="query.spcarUsed" name='query.spcarUsed' onchange="runQuery();">
+									<option value=""></option>
+										<option value="false" <#if spcar.spcarUsed??><#if
+											spcar.spcarUsed?string("1","0")='0'>selected</#if></#if> >未使用</option>
+										<option value="true" <#if spcar.spcarUsed??><#if
+											spcar.spcarUsed?string("1","0")='1'>selected</#if></#if> >已使用</option>
+									</select> 車牌號碼：<input
+										class="searchinput" type="text"
+										value='<#if spcar??> ${spcar.spcarNo!}</#if>' id='query.spcarNo'
+										name='query.spcarNo' onkeyup="searchenter(event);"> 限坐： <input type="text"
+										class="searchinput"value='<#if spcar??>${spcar.spcarSit!}</#if>' id='query.spcarSit'
+										name='query.spcarSit' onkeyup="searchenter(event);">
+										</form>
+										<i onclick='search()'
+										class="searchicon fa fa-search"></i>
+									<div class="widget-buttons">
+										<a href="#" data-toggle="maximize"> <i
+											class="fa fa-expand"></i>
+										</a>
+									</div>
+								</div>
+								
+								<div class="widget-body">
+									<table class="table table-striped table-bordered table-hover"
+										id="simpledatatable">
+										<thead>
+											<tr>
+												<th>編號</th>
+												<th>車型</th>
+												<th>車色</th>
+												<th>車牌號碼</th>
+												<th>限坐</th>
+												<th>使用狀態</th>
+												<th>創建時間</th>
+												<th>更多操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<#if page??> <#list page as item>
+											<tr id="${item.spcarId!}Tr">
+												<td>
+													<div class="checker">
+														<span class=""><input type="checkbox"
+															class="checkboxes" value="${item.spcarId!}"></span>${item.spcarId!}
+													</div>
+												</td>
+												<td>${item.spcarType!}</td>
+												<td>${item.spcarColor!}</td>
+												<td>${item.spcarNo!}</td>
+												<td>${item.spcarSit!}</td>
+												
+												<td>
+												${item.spcarUsed?string("使用中","未使用")}
+												</td>
+													<td class="center "><ma-column> <ma-string-column>
+												<span class="ng-binding">${(item.createTime?string("yyyy-MM-dd
+													HH:mm:ss"))!}</span></ma-string-column></ma-column></td>
+												<td><ma-column> <ma-string-column>
+													<span class="ng-binding"> <a
+														href="${base!}/admin/spcar/edit?id=${item.spcarId!}&act=upd">编辑</a>
+														&nbsp <a href="javascript:void(0)"
+														onclick="delManager('${item.spcarId!}')">删除</a>
+													</span></ma-string-column></ma-column></td>
+											</tr>
+  										</#list> 
+										</#if>
+										</tbody>
+									</table>
+									<div class="row DTTTFooter">
+										<div class="col-sm-6">
+											<div class="dataTables_info" id="simpledatatable_info"
+												role="alert" aria-live="polite" aria-relevant="all"></div>
+										</div>
+										<div class="col-sm-6"><#import "/ftl/pager.ftl" as p/>
+											<#if page??> <@p.pager pageNo=pageNo pageSize=pageSize
+											recordCount=recordCount pageCount=pageCount
+											toURL="${base!}/admin/spcar/list" method="post"/> </#if></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+
+	<!--Page Related Scripts-->
+	<!--Sparkline Charts Needed Scripts-->
+
+
+	<script>
+		$('#date-picker').datepicker();
+		var h = parseFloat(screen.height) / 5 * 3;
+		var w = parseFloat(screen.width) / 7 * 3;
+		$("#message").click(function() {
+			/* layer.open({
+			     type: 2,
+			     area: ['750px', '718px'],
+			     offset: 'auto',
+			     content: ['../index.html', 'yes'],
+			     shadeClose :true,
+			     scrollbar: false,
+			     shadowOpacity:0.1
+			 });*/
+			//        layer.open({
+			//            title:false,
+			//            shift:6,
+			//            type: 2,
+			//            area: ['750px', '718px'],
+			//            shadeClose :true,
+			//            shade: false,
+			//            content: ['../index.html', 'yes']
+			//        });
+			//        layer.open({
+			//            type: 1,
+			//            title: false,
+			//            closeBtn: 0,
+			//            shadeClose: true,
+			//            skin: 'yourclass',
+			//            content: '../index.html'
+			//        });
+		})
+		
+		 function delManager(id) {
+        var sure = confirm("確定刪除?");
+        if(sure) {
+            $.post("${base}/admin/spcar/del", {
+                    "id" : id
+                },
+                function(data) {
+                    if (data.code == "1") {
+                        alert("刪除成功!");
+                        $("#" + id + "Tr").remove();
+                    } else {
+                        alert("刪除失敗!");
+                    }
+                });
+        }
+	}
+		function search(){
+			 document.getElementById("searchs").submit();
+		}
+		 function runQuery(){
+				search();
+			}
+		function searchenter(event) {
+	        event = event || window.event;
+	        if (event.keyCode == 13) {
+	            search();
+	        }
+	    }
+	</script>
+
+
+</body>
+<!--  /Body -->
+</html>

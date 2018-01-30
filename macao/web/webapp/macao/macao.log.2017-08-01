@@ -1,0 +1,1196 @@
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:car/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:parameter/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:parameter/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@492a196b, org.apache.catalina.connector.ResponseFacade@621ba9f4]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:parameter/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:car/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave begins with [org.apache.catalina.connector.RequestFacade@492a196b, org.apache.catalina.connector.ResponseFacade@621ba9f4, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave end with massage:driver/edit
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@ded6a92, org.apache.catalina.connector.ResponseFacade@5994facf]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@492a196b, org.apache.catalina.connector.ResponseFacade@621ba9f4]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@492a196b, org.apache.catalina.connector.ResponseFacade@621ba9f4]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, org.apache.catalina.connector.ResponseFacade@4e83627]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@ded6a92, org.apache.catalina.connector.ResponseFacade@5994facf]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, org.apache.catalina.connector.ResponseFacade@4e83627, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave end with massage:driver/edit
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:passenger/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:car/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:parameter/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:car/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:passenger/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:passenger/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@65308ac3, org.apache.catalina.connector.ResponseFacade@5a124d46]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, org.apache.catalina.connector.ResponseFacade@4e83627]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, org.apache.catalina.connector.ResponseFacade@4e83627]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@20584a65, org.apache.catalina.connector.ResponseFacade@2bef5d6a]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, org.apache.catalina.connector.ResponseFacade@4e83627]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@20584a65, org.apache.catalina.connector.ResponseFacade@2bef5d6a]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@65308ac3, org.apache.catalina.connector.ResponseFacade@5a124d46]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@65308ac3, org.apache.catalina.connector.ResponseFacade@5a124d46]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:passenger/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}, org.apache.catalina.connector.ResponseFacade@5a124d46]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@492a196b, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0bd30, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@ded6a92, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-15] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-11] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-13] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-17] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-16] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6f9ae2f5, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-14] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@65308ac3, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6fb71141, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@63e56a3e, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@20584a65, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list

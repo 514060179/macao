@@ -1,0 +1,722 @@
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@3ee4945c, {}, org.apache.catalina.connector.ResponseFacade@173a931]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@3ee4945c, {}, org.apache.catalina.connector.ResponseFacade@173a931]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@3ee4945c, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@5f1daae9, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method edit begins with [org.apache.catalina.connector.RequestFacade@5f1daae9, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method edit end with massage:order/edit
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@5f1daae9, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@5f1daae9, {}, org.apache.catalina.connector.ResponseFacade@392a5a0d]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@5f1daae9, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@5f1daae9, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method edit begins with [org.apache.catalina.connector.RequestFacade@5f1daae9, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method edit end with massage:order/edit
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}, org.apache.catalina.connector.ResponseFacade@199f7b24]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method edit begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method edit end with massage:order/edit
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:passenger/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@22d06d7e, {}, org.apache.catalina.connector.ResponseFacade@3ae98c6f]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@22d06d7e, {}, org.apache.catalina.connector.ResponseFacade@3ae98c6f]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@22d06d7e, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@22d06d7e, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@22d06d7e, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@625354cc, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d3d5e82, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d3d5e82, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@d3d5e82, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@21a7b56f, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@51c82dfb, {}]
+[http-apr-8089-exec-12] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@51c82dfb, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@51c82dfb, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@21a7b56f, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@51c82dfb, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@21a7b56f, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list
+[RMI TCP Connection(3)-127.0.0.1] ERROR org.springframework.web.servlet.DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.scheduling.config.CronTask#0': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.scheduling.config.CronTask]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Range exceeds maximum (60): '0-60' in expression "0-60/10 * * * * ?"
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:275)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1143)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1046)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:667)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:633)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:552)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:493)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1227)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1140)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1027)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5038)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5348)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:753)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:729)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1696)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:484)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:433)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:324)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.scheduling.config.CronTask]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Range exceeds maximum (60): '0-60' in expression "0-60/10 * * * * ?"
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:267)
+	... 66 more
+Caused by: java.lang.IllegalArgumentException: Range exceeds maximum (60): '0-60' in expression "0-60/10 * * * * ?"
+	at org.springframework.scheduling.support.CronSequenceGenerator.getRange(CronSequenceGenerator.java:375)
+	at org.springframework.scheduling.support.CronSequenceGenerator.setNumberHits(CronSequenceGenerator.java:339)
+	at org.springframework.scheduling.support.CronSequenceGenerator.parse(CronSequenceGenerator.java:269)
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:95)
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:82)
+	at org.springframework.scheduling.support.CronTrigger.<init>(CronTrigger.java:44)
+	at org.springframework.scheduling.config.CronTask.<init>(CronTask.java:43)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
+	... 68 more
+[RMI TCP Connection(3)-127.0.0.1] ERROR org.springframework.web.servlet.DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.scheduling.config.CronTask#0': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.scheduling.config.CronTask]: Constructor threw exception; nested exception is java.lang.NumberFormatException: For input string: "(0"
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:275)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1143)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1046)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:667)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:633)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:552)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:493)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1227)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1140)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1027)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5038)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5348)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:753)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:729)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1696)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:484)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:433)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:324)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.scheduling.config.CronTask]: Constructor threw exception; nested exception is java.lang.NumberFormatException: For input string: "(0"
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:267)
+	... 66 more
+Caused by: java.lang.NumberFormatException: For input string: "(0"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:569)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.scheduling.support.CronSequenceGenerator.getRange(CronSequenceGenerator.java:371)
+	at org.springframework.scheduling.support.CronSequenceGenerator.setNumberHits(CronSequenceGenerator.java:339)
+	at org.springframework.scheduling.support.CronSequenceGenerator.parse(CronSequenceGenerator.java:269)
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:95)
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:82)
+	at org.springframework.scheduling.support.CronTrigger.<init>(CronTrigger.java:44)
+	at org.springframework.scheduling.config.CronTask.<init>(CronTask.java:43)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
+	... 68 more
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob begins with []
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob begins with []
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob begins with []
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob begins with []
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob begins with []
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob begins with []
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob begins with []
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob begins with []
+[pool-1-thread-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method testJob end with massage:null
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[pool-1-thread-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.lang.NullPointerException
+	at com.yinghai.macao.common.job.SpcarOrderTask.sendMsgToSpcarPassenger(SpcarOrderTask.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[Thread-12] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FPgzAYRd-5FaSvGNMWisNkD5PgMjOiCxoTXwjSUr45SseKQxb-u4pLbOJ9Pefm5p4c13XR4zq7LMqy7ZXJzYcWyL12EUYXf1Br4Hlhcr-j-6AYNHQiLyojugkSxhjF2HaAC2WggrNR8AaUhQ-8LZ82fvvBd5nOGI1sBeQE02QTr5btCC3U*NZ78NKF-1xHpt*zJ6VEJLfVXUJgzIIGd8lmWMCNVJFXxmQZS-ai5DaB*71Z850KhyTqZZu96prvVmk6Ho-zuTVpoBHnQ5iE7CoMZhZ9F90BWjUJFBNGqI9-gpxP5wt9b141
+[Thread-13] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FPgzAYRd-5FYRXjWuLZWCyh7mRMHUoE2J4ImUt85vS1dItiPG-u*ESSbyv59zc3C-Ltm0nfXi*Yuv1bi9NYT6VcOwb20HO5R9UCnjBTOFq-g*KVoEWBauM0D3ElFKC0NABLqSBCs4G4zXIAW74W9Fv-Pavj2XiUxIMFdj0cBkms8UMbx8zKpokNZ4e7eNue0g-3muc*20KGxr6EY9WXaluMZvCNAtxSVcv3Tx3Qc6jziT38SId6zJvg*XTXVXHr0GeXYyiNplMBpMGanE*hLBHxx71BvQgdAM72QsEYYqJi05xrG-rByblXQM_
+[Thread-14] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj8FOg0AURfd8BWGr0RlgptTERSUkYlCbllZYEWQe*IIMEzpF0PjvKjaRxLs95*bmfhimaVpxtL3Ii6I9Sp3pUYFlXpkWsc7-oFIoslxnTif*QRgUdpDlpYZugpQxZhMyd1CA1FjiychFg3KGD6LOpo3fvvtdtj1mL*cKVhO8D3Z*GLzk5cPzcOeqvnli6SUDsR6LLjxLOBVJ75bh2j*O78pPNisMVvUmIhVEenT3wy6K*ngr4TaBmwW26avgXtB4iHX1mMZv17NJjQ2cDhHK2YJzZ0Z76A7YykmwCWXUdshPLOPT*AKML14h
+[Thread-12] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj11PwjAARd-3K5q*aqQtdAzfJh9mOtRlIuBLU9ZuVNzajDIB438XJ4lNvK-n3NzcTw8AAJ-j9Ipnmd5VltmDkRBcA4jg5R80RgnGLevW4h*Ue6NqyXhuZd1CTCklCLmOErKyKldng4tSVQ7eig1rN377vVOZBJQMXEUVLZyOl8MoGfV9MupFzebu47ZcdehYh-Gs2b-lNzx7Oob6Badp9DonaE3DaB3GJtbFw2TR2U2L8sLOA75YTbKAHhOTF8a8x4-36WEpSTKcOZNWlfJ8CGGf9gOfOLSR9VbpqhUIwhSTLvoJ9L68b-ClXPw_
+[Thread-13] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj11PgzAARd-5FU1fNdoWCszEhw0nsihINkLkhRDabR3jw1Jxw-jfN3GJJN7Xc25u7pcGAICr5*VNluf1R6VSdWw4BHcAInj9B5tGsDRTqS7ZP8gPjZA8zdaKywFiSilBaOwIxisl1uJiZKwU1Qi3rEiHjd**cS4Tm5LJWBGbAb7MI8cLnVnbu***brqTfSaD5MleOUFh9h62FsZbt2XmUp8*JHUuw9Db*HNyO3uMd6qwyuYV9YsjdWU0zbcdPjhluI*vAn9HkijuPu9Hk0qU-HIIYZNatm2MaMdlK*pqEAjCFBMd-QRq39oJ1mdcug__
+[Thread-14] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj0FPgzAAhe-8CsLZaFtWRr0hwVhlss2hyKVB2kkhZdjVZWD87youkcR3-b6Xl-dh2bbtbOKH86Isd**tYabvhGNf2g5wzv5g10nOCsNczf9BceykFqzYGqFHCDHGCICpI7lojdzKk1FwJdsJ3vOGjRu--dl3GfkYkakiX0e4iJ5Dugr5zIWUxDd*vKaqMmm2LMsc39H5MlE1espyVLbe7XEgeEWrgPovQx6EV3WFDgO51m8bmdw3SdCkkcGPi7q-UH2moyBI15NJI5U4HQLQw3PioQk9CL2Xu3YUEIAYIhf8xLE*rS*72lyd
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[Thread-15] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FPgzAYRd-5FQ2vGtMWOoeJD4YhbsPoHDrGS4O0Yx*T0rCCW4z-XcUlknhfz7m5uR8WQsiOo*VFlud1qww3Ry1tdIVsbJ--Qa1B8MxwpxH-oDxoaCTPNkY2PSSMMYrx0AEhlYENnIxMVKAGeC92vN-47bvfZTpm1BsqUPTwPnj2pwu-alLD0lm*Dm8S*Za*PrRrGiV4V7RhVbpu6ybe7bZTZUzfp0VQODo*C8qD50bq2L2I*WqyUDB5vPTAH3Xb*d1TWSxXIczq68GkgUqeDmEyYmNC2IB2stlDrXqBYsIIdfBPbOvT*gJdk12Y
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！

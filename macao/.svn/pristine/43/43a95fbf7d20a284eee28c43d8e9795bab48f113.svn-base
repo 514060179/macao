@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.OrderDirectionMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.OrderDirection" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="locX" property="locx" jdbcType="DOUBLE" />
+    <result column="locY" property="locy" jdbcType="DOUBLE" />
+    <result column="descript" property="descript" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, order_id, locX, locY, descript, create_time, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_direction
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from order_direction
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yinghai.macao.common.model.OrderDirection" >
+    insert into order_direction (id, order_id, locX, 
+      locY, descript, create_time, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{locx,jdbcType=DOUBLE}, 
+      #{locy,jdbcType=DOUBLE}, #{descript,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yinghai.macao.common.model.OrderDirection" >
+    insert into order_direction
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="locx != null" >
+        locX,
+      </if>
+      <if test="locy != null" >
+        locY,
+      </if>
+      <if test="descript != null" >
+        descript,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="locx != null" >
+        #{locx,jdbcType=DOUBLE},
+      </if>
+      <if test="locy != null" >
+        #{locy,jdbcType=DOUBLE},
+      </if>
+      <if test="descript != null" >
+        #{descript,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.common.model.OrderDirection" >
+    update order_direction
+    <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="locx != null" >
+        locX = #{locx,jdbcType=DOUBLE},
+      </if>
+      <if test="locy != null" >
+        locY = #{locy,jdbcType=DOUBLE},
+      </if>
+      <if test="descript != null" >
+        descript = #{descript,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yinghai.macao.common.model.OrderDirection" >
+    update order_direction
+    set order_id = #{orderId,jdbcType=INTEGER},
+      locX = #{locx,jdbcType=DOUBLE},
+      locY = #{locy,jdbcType=DOUBLE},
+      descript = #{descript,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="findListByCondition" resultMap="BaseResultMap" parameterType="com.yinghai.macao.common.model.OrderDirection" >
+    select
+    <include refid="Base_Column_List" />
+    from order_direction
+    where 1=1
+    <if test="orderId != null" >
+      and order_id = #{orderId,jdbcType=INTEGER}
+    </if>
+    <if test="locx != null" >
+      and locX = #{locx,jdbcType=DOUBLE}
+    </if>
+    <if test="locy != null" >
+      and locY = #{locy,jdbcType=DOUBLE}
+    </if>
+    <if test="descript != null" >
+      and descript = #{descript,jdbcType=VARCHAR}
+    </if>
+    <if test="createTime != null" >
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="remark != null" >
+      and remark = #{remark,jdbcType=VARCHAR}
+    </if>
+  </select>
+</mapper>

@@ -1,0 +1,373 @@
+<!--<div class="loading-container">
+    <div class="loading-progress">
+        <div class="rotator">
+            <div class="rotator">
+                <div class="rotator colored">
+                    <div class="rotator">
+                        <div class="rotator colored">
+                            <div class="rotator colored"></div>
+                            <div class="rotator"></div>
+                        </div>
+                        <div class="rotator colored"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+        <div class="rotator"></div>
+    </div>
+</div>-->
+<div id="newMessage" style="display:none"></div>
+</div>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="navbar-container">
+            <!-- Navbar Barnd -->
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <img src="${base!}/assets/admin/img/logo.png" alt="" />
+                    </small>
+                </a>
+            </div>
+            <!-- /Navbar Barnd -->
+
+            <!-- Sidebar Collapse -->
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="collapse-icon fa fa-bars"></i>
+            </div>
+            <!-- /Sidebar Collapse -->
+            <!-- Account Area and Settings --->
+            <div class="navbar-header pull-right">
+                <div class="navbar-account">
+                    <ul class="account-area">
+
+
+
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown" title="Tasks" href="#" id="message">
+                                <i class="icon fa fa-envelope-o"></i>
+                                <span class="badge" style="color: white"></span>
+                            </a>
+                            <!--Tasks Dropdown-->
+                        </li>
+                        <li>
+                            <a id="showOut" class="login-area dropdown-toggle" data-toggle="dropdown">
+                                <div class="avatar" title="View your public profile">
+                                    <img src="${base!}/assets/admin/img/avatars/adam-jansen.jpg">
+                                </div>
+                                <section>
+                                    <h2><span class="profile"><span>${Session.spcarManager.username!}</span></span></h2>
+                                </section>
+                            </a>
+                            <!--Login Area Dropdown-->
+                            <ul id="logout" class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                <li class="username"><a>${Session.spcarManager.username!}</a></li>
+
+                                <!--/Theme Selector Area-->
+                                <li class="dropdown-footer">
+                                    <a href="#" id="out">
+                                        Sign out
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--/Login Area Dropdown-->
+                        </li>
+                        <!-- /Account Area -->
+                        <!--Note: notice that setting div must start right after account area list.
+                        no space must be between these elements-->
+                        <!-- Settings -->
+                    </ul>
+                    <!-- Settings -->
+                </div>
+            </div>
+            <!-- /Account Area and Settings -->
+        </div>
+    </div>
+</div>
+<input type="hidden" id="sign" value="${Session.spcarManager.sign!}">
+<input type="hidden" id="imName" value="${Session.spcarManager.imName!}">
+<#include "/ftl/javascript.ftl"/>
+<script type="text/javascript" src="${base!}/assets/admin/js/jquery.js"></script>
+<script type="text/javascript" src="${base!}/assets/admin/js/jquery.cookie.js"></script>
+<script>
+    //IM登出
+    function quitClick() {
+        if (loginInfo.identifier) {
+            //sdk登出
+            webim.logout(
+                function (resp) {
+                    loginInfo.identifier = null;
+                    loginInfo.userSig = null;
+//                    document.getElementById("webim_demo").style.display = "none";
+//                    var indexUrl = window.location.href;
+//                    var pos = indexUrl.indexOf('?');
+//                    if (pos >= 0) {
+//                        indexUrl = indexUrl.substring(0, pos);
+//                    }
+//                    var ad = loginInfo.identifier;
+//                    window.location.href = indexUrl;
+                    window.location.reload();
+                });
+        } else {
+            alert('未登录');
+        }
+    }
+    //窗口關閉事件
+    $(window).unload(function(){
+        //响应事件
+
+    });
+    $(document).ready(function(){
+        //登出
+        $("#out").click(function(){
+            $.post("${base!}/managerLogin/logout",function (data) {
+                if(data.code=="1"){
+                    quitClick();
+                }else{
+                    alert("登出失敗！")
+                }
+            })
+        });
+        $('#showOut').click(function () {
+            $('#logout').toggle();
+        });
+        //放大
+        $(".sidebar-toggler").on("click", function () {
+            return $("#sidebar").toggleClass("hide"), $(".sidebar-toggler").toggleClass("active"), !1
+        });
+        //全屏
+        $("#fullscreen-toggler").on("click", function () {
+            var n = document.documentElement;
+            $("body").hasClass("full-screen") ? ($("body").removeClass("full-screen"), $("#fullscreen-toggler").removeClass("active"), document.exitFullscreen ? document.exitFullscreen() : document.mozCancelFullScreen ? document.mozCancelFullScreen() : document.webkitExitFullscreen && document.webkitExitFullscreen()) : ($("body").addClass("full-screen"), $("#fullscreen-toggler").addClass("active"), n.requestFullscreen ? n.requestFullscreen() : n.mozRequestFullScreen ? n.mozRequestFullScreen() : n.webkitRequestFullscreen ? n.webkitRequestFullscreen() : n.msRequestFullscreen && n.msRequestFullscreen())
+        });
+        //表格放大
+        $('.widget-buttons *[data-toggle="maximize"]').on("click", function (n) {
+            n.preventDefault();
+            var t = $(this).parents(".widget").eq(0), i = $(this).find("i").eq(0), r = "fa-compress", u = "fa-expand";
+            t.hasClass("maximized") ? (i && i.addClass(u).removeClass(r), t.removeClass("maximized"), t.find(".widget-body").css("height", "auto")) : (i && i.addClass(r).removeClass(u), t.addClass("maximized"), maximize(t))
+        });
+        //菜单栏
+        $("#sidebar-collapse").on("click", function () {
+            $("#sidebar").is(":visible") || $("#sidebar").toggleClass("hide");
+            $("#sidebar").toggleClass("menu-compact");
+            $(".sidebar-collapse").toggleClass("active");
+            n = $("#sidebar").hasClass("menu-compact");
+            n && $(".open > .submenu").removeClass("open")
+        });
+        //登录
+        webimLogins();
+    });
+    var username = $(".username a").text();
+    //sdk登录
+    function webimLogins() {
+        webim.login(
+            loginInfo, listeners, options,
+            function (resp) {
+            	var nick = resp.identifierNick;
+            	//if(typeof(nick)=="undefined"||nick==null){
+	          		var profile_item = [
+	    	            {
+	    	                "Tag": "Tag_Profile_IM_Nick",
+	    	                "Value":username+"(service"+loginInfo.identifier.replace("service","")+")"
+	    	            }
+	    	            
+	    	        ];
+	    	        var options = {
+	    	            'ProfileItem': profile_item
+	    	        };
+	    	
+	    	        webim.setProfilePortrait(
+	    	                options,
+	    	                function (resp) {
+	    	                	console.log("昵称设置成功");
+	    	                },
+	    	                function (err) {
+	    	                    console.log("昵称设置失败");
+	    	                }
+	    	        );
+            	//}
+            	var tag_list = [
+                                "Tag_Profile_IM_Nick"//昵称
+                            ];
+                var options = {
+                        'To_Account': [loginInfo.identifier],
+                        'TagList': tag_list
+                    };
+                webim.getProfilePortrait(
+                        options,
+                        function (resp) {
+                        	if (resp.UserProfileItem && resp.UserProfileItem.length > 0) {
+                        		nick = resp.UserProfileItem[0].ProfileItem[0].Value;
+                        		localStorage.nickName = nick;
+                        	}
+                        },function (err) {console.log("获取昵称失败")});
+                //loginInfo.identifierNick = resp.identifierNick;//设置当前用户昵称
+                loginInfo.identifierNick = localStorage.nickName;
+                webim.syncMsgs(function(){
+                	var sessMap = webim.MsgStore.sessMap();
+                	var sess;
+                	var num = 0;
+                	for(var i in sessMap){
+                		sess = sessMap[i];
+                		num += sess.unread();
+                	}
+                	if(num==0){
+                		$("#message .badge").text("");
+                	}else{
+	                	$("#message .badge").text(num);
+                	}
+                	//console.log(num);
+                });
+            },
+            function (err) {
+                alert(err.ErrorInfo);
+            }
+        );
+        
+    }
+    //当前用户身份
+    var loginInfo = {
+        'sdkAppID': "1400028529", //用户所属应用id,必填
+        'accountType': "11902", //用户所属应用帐号类型，必填
+        'identifier': "${Session.spcarManager.imName!}", //当前用户ID,必须是否字符串类型，必填
+        'userSig': "${Session.spcarManager.sign!}", //当前用户身份凭证，必须是字符串类型，必填
+        'identifierNick': "客服", //当前用户昵称，不用填写，登录接口会返回用户的昵称，如果没有设置，则返回用户的id
+        'headurl': 'img/me.jpg' //当前用户默认头像，选填，如果设置过头像，则可以通过拉取个人资料接口来得到头像信息
+    };
+    //登录用户
+    var loginName="";
+    //监听事件
+    var listeners = {
+        "onMsgNotify": onMsgNotify //监听新消息(私聊，普通群(非直播聊天室)消息，全员推送消息)事件，必填
+    };
+    //初始化时，其他对象，选填
+    var options = {
+        'isAccessFormalEnv': true, //是否访问正式环境，默认访问正式，选填
+        'isLogOn': false //是否开启控制台打印日志,默认开启，选填
+    }
+    var messageNoRead = 0;
+    //监听新消息事件
+    //newMsgList 为新消息数组，结构为[Msg]
+    function onMsgNotify(newMsgList) {
+        //console.warn(newMsgList);
+        var sess, newMsg;
+        //获取所有聊天会话
+        var sessMap = webim.MsgStore.sessMap();
+        var sess;
+    	var num = 0;
+    	for(var i in sessMap){
+    		sess = sessMap[i];
+    		num += sess.unread();
+    	}
+        for (var j in newMsgList) {//遍历新消息
+            ++messageNoRead;
+        }
+        play();
+        $("#message .badge").text(num);
+    }
+
+    var chectWithUrl = "${base!}/assets/admin/index.htm";
+    $("#message").click(function(){
+        $("#message .badge").text("");
+        layer.open({
+            title:"客服",
+            shift:6,
+            type: 2,
+            area: ['750px', '718px'],
+            shadeClose :true,
+   			shade: false,
+            content: [chectWithUrl+"?imName=${Session.spcarManager.imName!}", 'yes'],
+            success: function(layero, index){
+                var body = layer.getChildFrame('body',index);//建立父子联系
+                var iframeWin = window[layero.find('iframe')[0]['name']];
+                // console.log(arr); //得到iframe页的body内容
+                // console.log(body.find('input'));
+                var inputList = body.find('input');
+                for(var j = 0; j< inputList.length; j++){
+//                    alert(inputList[j].type);
+                }
+            },
+            close:function(){
+            	if($(document).data("hastimer")){
+	            	var timerId = window.setInterval(refresh,20000);
+	                $(document).data("timer",timerId);
+            	}
+            },
+            end:function(){
+            	location.reload();
+            	if($(document).data("hastimer")){
+	            	var timerId = window.setInterval(refresh,20000);
+	                $(document).data("timer",timerId);
+            	}
+            }
+        
+        });
+        if($(document).data("timer")){
+	        window.clearInterval($(document).data("timer"));
+	        $(document).data("hastimer",true);
+        }
+
+    })
+
+    function play() {
+        $('#newMessage').html('<audio autoplay="autoplay"><source src="/images/voice/service.mp3"'
+                    + 'type="audio/wav"/><source src="/images/voice/service.mp3" type="audio/mpeg"/></audio>');
+    }
+
+</script>
+
+<!-- <script type="text/javascript" src="${base!}/assets/admin/js/jquery.js"></script>
+<script type="text/javascript" src="${base!}/assets/admin/js/jquery.cookie.js"></script> -->
+<script type="text/javascript" src="${base!}/assets/admin/js/jquery-ui.js"></script>
+<script type="text/javascript" src="${base!}/assets/admin/js/bootstrap/bootstrap.js"></script>
+<script type="text/javascript" src="${base!}/assets/admin/js/bootstrap/bootstrap-table.js"></script>
+<script type="text/javascript" src="${base!}/assets/admin/js/bootstrap/bootstrap-collapse.js"></script>
+
+
+<!--web im sdk 发送普通消息(文本和表情) api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/msg/send_common_msg.js"></script>
+
+<!--web im sdk-->
+<script type="text/javascript" src="${base!}/assets/admin/js/sdk/webim.js"></script>
+<!--<script type="text/javascript" src="sdk/webim.min.js"></script>-->
+<script type="text/javascript" src="${base!}/assets/admin/js/sdk/json2.js"></script>
+
+<!--web im sdk 上传和发送图片消息 api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/msg/upload_and_send_pic_msg.js"></script>
+<!--web im sdk 上传和发送文件消息 api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/msg/upload_and_send_file_msg.js"></script>
+<!--web im sdk 上传和发送图片消息 api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/msg/upload_and_send_pic_msg.js"></script>
+
+<!--web im sdk-->
+<script type="text/javascript" src="${base!}/assets/admin/js/sdk/webim.js"></script>
+<script type="text/javascript" src="${base!}/assets/admin/js/base.js"></script>
+<script type="text/javascript" src="${base!}/assets/admin/js/sdk/json2.js"></script>
+<!--web im sdk 登录 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/login/login.js"></script>
+<!--web im sdk 好友管理 api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/friend/friend_manager.js"></script>
+<!--web im sdk 群组管理 api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/group/group_manager.js"></script>
+<!--web im sdk 群成员管理 api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/group/group_member_manager.js"></script>
+<!--web im sdk 加群申请管理 api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/group/group_pendency_manager.js"></script>
+<!--web im 监听群系统通知消息 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/msg/receive_group_system_msg.js"></script>
+<!--web im 监听好友系统通知消息 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/msg/receive_friend_system_msg.js"></script>
+<!--web im 监听资料系统通知消息 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/msg/receive_profile_system_msg.js"></script>
+<!--web im sdk 最近联系人 api 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/recentcontact/recent_contact_list_manager.js"></script>
+<!--web im 切换聊天好友或群组 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/switch_chat_obj.js"></script>
+<!--web im 解析一条消息 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/common/show_one_msg.js"></script>
+<!--web im sdk 获取c2c获取群组历史消息 示例代码-->
+<script type="text/javascript" src="${base!}/assets/admin/js/msg/get_history_msg.js"></script>

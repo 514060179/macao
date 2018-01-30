@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.3&key=b07ac42e2bb481a4a5d4a62e71fd75c6&plugin=AMap.Geolocation,AMap.ToolBar,AMap.Geocoder,AMap.PlaceSearch,AMap.Autocomplete,AMap.Driving">
+</script>
+<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+<style type="text/css">
+#map-div{
+display: none;
+position : absolute;
+top : 10px;
+z-index:1000;
+}
+.map{
+  height: auto;
+  width: 100%;
+  top: 41px;
+  position: absolute;
+  bottom: 45px;
+
+}
+
+.title{
+ 
+  height: 41px;
+  background-color: white;
+
+}
+
+#conformLocationBtn{
+  width: 10%;
+  border: 0;
+  padding: 0;
+  margin:0;
+  height: 40px;
+  background: #09a4eb;
+  color: white;
+  position: relative;
+  top: 2px;
+}
+
+.top{
+  color:black;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  border-bottom: solid 1px silver;
+}
+.bottom {
+
+  height: 45px;
+  line-height: 45px;
+  width: 100%;
+  position: absolute;
+  background: white;
+  
+}
+  #panel {
+           position: absolute;
+            background-color: white;
+            max-height: 90%;
+            overflow-y: auto;
+            top: 10%;
+            right: 10px;
+            width: 300px;
+        }
+.end{
+  bottom: 0px;
+}
+
+.bottomend{
+  text-align: center;
+}
+.mapinput{
+	position:relative;
+	top :5px;
+  margin-left: 30px;
+  font-size: 15px;
+  width: 20%;
+  height: 25px;
+
+}
+#searchButton{
+	position:relative;
+	top :5px;
+	height: 25px;
+}
+
+.amap-sug-result{
+  z-index: 10000;
+}
+.amap_lib_placeSearch_page{
+  padding: 0;
+  margin: 3px;
+  background-color: #fafafa
+}
+#mask{
+	margin:0;padding:0;border:none;width:100%;height:100%;background:black;opacity:0.6;filter:alpha(opacity=60);z-index:2;position:fixed;top:0;left:0;display:none;
+	}
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Loading Container -->
+	<#include "../common/head.html"/>
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+						<li><a href="${base!}/admin/poi/list">返回列表</a></li>
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title">
+						<h1>poi</h1>
+						<small> <i class="fa fa-angle-right"></i> <#if
+							poi??>编辑poi#${poi.id}<#else>新增poi </#if>
+						</small>
+					</div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="${base!}/admin/poi/edit" title="新增"> <i
+							class="glyphicon glyphicon-plus"></i>
+						</a>
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body">
+					<div class="row">
+						<div class="col-xs-2"></div>
+						<div class="col-xs-8">
+							<div class="widget radius-bordered">
+								<div class="widget-header">
+									<span class="widget-caption"><#if poi??>编辑<#else>新增</#if></span>
+								</div>
+								<div class="widget-body">
+									<form enctype="multipart/form-data" name='registrationForm'
+										id="registrationForm" method="post"
+										class="form-horizontal bv-form"
+										data-bv-message="This value is not valid"
+										data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+										data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+										data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+										novalidate="novalidate">
+										<div class="form-title">
+											根據提示填寫以下內容 <input type="hidden" class="form-control" id="id"
+												name="id"
+												value="<#if poi??>${poi.id!}</#if>">
+										</div>
+										<br />
+										<div class="control-group row">
+											<!-- Text input-->
+											<label class="col-xs-2 control-label" for="input01">名稱</label>
+											<div class="col-xs-4 controls">
+												<input type="text"  placeholder="name" class="input-xlarge form-control" id="name" name="name" value="<#if poi??>${poi.name!}</#if>">
+												<p class="help-block" style="color:red;font-size:10px;"></p>
+											</div>
+											<div class="col-xs-4 controls"></div>
+										</div>
+										<br />
+										<div class="control-group row">
+											<!-- Text input-->
+											<label class="col-sm-2 control-label" for="input01">名稱(英文)</label>
+											<div class="col-sm-8 controls">
+												<input type="text"  placeholder="nameEn" class="input-xlarge form-control" id="nameEn" name="nameEn" value="<#if poi??>${poi.nameEn!}</#if>">
+												<p class="help-block" style="color:red;font-size:10px;"></p>
+											</div>
+										</div>
+										<br />
+										<div class="control-group row">
+											<!-- Text input-->
+											<label class="col-sm-2 control-label" for="input01">地址</label>
+											<div class="col-sm-8 controls">
+												<input type="text"  placeholder="address" class="input-xlarge form-control" name="address" id="address" value="<#if poi??>${poi.address!}</#if>">
+												<p class="help-block" style="color:red;font-size:10px;"></p>
+											</div>
+										</div>
+										<br />
+										<div class="control-group row">
+											<!-- Text input-->
+											<label class="col-sm-2 control-label" for="input01">地址(英文)</label>
+											<div class="col-sm-8 controls">
+												<input type="text"  placeholder="addressEn" class="input-xlarge form-control" name="addressEn" id="addressEn" value="<#if poi??>${poi.addressEn!}</#if>">
+												<p class="help-block" style="color:red;font-size:10px;"></p>
+											</div>
+										</div>
+										<br />
+										<div class="control-group row">
+											<!-- Text input-->
+											<label class="col-sm-2 control-label" for="input01">類型</label>
+											<div class="col-sm-8 controls">
+												<select id="type" name="type" class="input-xlarge">
+													<option value="IG" <#if poi??><#if poi.type='IG'>selected</#if></#if>>出入境</option>
+													<option value="HT" <#if poi??><#if poi.type='HT'>selected</#if></#if>>酒店</option>
+													<option value="SP" <#if poi??><#if poi.type='SP'>selected</#if></#if>>購物</option>
+													<option value="ET" <#if poi??><#if poi.type='ET'>selected</#if></#if>>娛樂</option>
+													<option value="SS" <#if poi??><#if poi.type='SS'>selected</#if></#if>>景點</option>
+												</select>
+												<p class="help-block" style="color:red;font-size:10px;"></p>
+											</div>
+										</div>
+										<br />
+										<div class="control-group row">
+											<label class="col-sm-2 control-label" for="input01">圖片</label>
+											<div class="col-lg-8">
+												<img src="<#if poi??>/images/${poi.image!}</#if>"
+												id="previewFile" style="height: 150px; width: 150px;
+												border: 1px solid #ddd;"/>
+												<a href="javascript:;" class="a-upload"> 
+													<input type="file" id="file" name="file"/> 
+													<input type="hidden" id="boochange" name="boochange" value='false'/>
+												</a>
+											</div>
+										</div>
+										<div class="control-group row">
+											<label class="col-sm-2 control-label" for="input01">經緯度</label>
+											<div class="col-lg-4">
+												<input type="text" id="endLocation" name="endLocation" placeholder="格式如: 113.561534,22.158866"
+												class="form-control" required="required" onchange=checklocation();
+												value="<#if poi??>${poi.locY!},${poi.locX!}</#if>"/>
+												<p class="help-block" style="color: red; font-size: 10px;"></p>
+											</div>
+											<div class="col-lg-2">
+												<i class="searchicon fa fa-search" onclick="showMap()" title="地圖"></i>
+											</div>
+										</div>
+										<div class="control-group row">
+											<div class="col-xs-4"></div>
+											<div class="col-xs-4">
+												<input class="btn btn-default btn-lg btn-block"
+													type="button" id='submits' value="保存">
+											</div>
+											<div class="col-xs-4"></div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2"></div>
+					</div>
+				</div>
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+		<div id="map-div"  style="width:100%;height:100%;position:absolute;overflow:hidden">
+		      <div class='wrap' id='wrap' style="width:80%;height:80%;position:absolute;top: 5%;left: 5%; display:block;">
+		          <div class ='title top' ><input type="text" id="placename" class="mapinput" placeholder="請輸入關鍵字"><button id="searchButton">搜索</button> <input id="locationXY" type="text" class="mapinput" placeholder="目標點經緯度" readOnly="true"></div>
+		          <div id="container" class="map" tabindex="0"></div>
+		          
+		          <div id="panel"></div>
+		      
+		         <div class='bottom end'>
+		          
+		              <div class='bottomend'>
+		                  <input type="button" id="conformLocationBtn" value="確認" onclick="confirmPoint()">
+		              </div>
+		          </div>
+		</div>
+		</div>
+		<div id="mask" class="mask">
+	</div>
+
+	<!--Page Related Scripts-->
+	<!--Sparkline Charts Needed Scripts-->
+
+<script type="text/javascript" src="${base!}/assets/admin/js/ckeditor/ckeditor.js"></script>
+<script src="${base!}/assets/admin/js/laydate/laydate.js"></script>
+<script>
+$(document).ready(
+function() {
+	document.getElementById('file').onchange = function(
+			evt) {
+		// 如果浏览器不支持FileReader，则不处理
+		if (!window.FileReader)
+			return;
+		document.getElementById("boochange").value = 'true';
+		var files = evt.target.files;
+		for (var i = 0, f; f = files[i]; i++) {
+			if (!f.type.match('image.*')) {
+				continue;
+			}
+			var reader = new FileReader();
+			reader.onload = (function(theFile) {
+				return function(e) {
+					// img 元素
+					document.getElementById('previewFile').style.display = 'block';
+					document.getElementById('previewFile').src = e.target.result;
+				};
+			})(f);
+			reader.readAsDataURL(f);
+		}
+	}
+
+});
+
+function getFileType(filePath) {
+	var startIndex = filePath.lastIndexOf(".");
+	if (startIndex != -1)
+		return filePath.substring(startIndex + 1, filePath.length)
+				.toLowerCase();
+	else
+		return "";
+}
+
+
+$("#submits").click(function() {
+	//獲取參數，并判斷非空及格式
+	var name = $('#name').val();
+	var nameEn = $('#nameEn').val();
+	var address = $('#address').val();
+	var addressEn = $('#addressEn').val();
+	var type = $('#type option:selected').val();
+	if(name==''){
+		$('#name').focus();
+		alert("請輸入名稱");
+		return false;
+	}
+	if(name==''){
+		$('#nameEn').focus();
+		alert("請輸入名稱(英文)");
+		return false;
+	}
+	if(name==''){
+		$('#address').focus();
+		alert("請輸入地址");
+		return false;
+	}
+	if(name==''){
+		$('#addressEn').focus();
+		alert("請輸入地址(英文)");
+		return false;
+	}
+	//判斷文件是否屬於圖片類型
+	var filePath = $("#file").val();
+	if ("" != filePath) {
+		var fileType = getFileType(filePath);
+		//判断上传的附件是否为图片  
+		if ("jpg" != fileType
+				&& "jpeg" != fileType
+				&& "bmp" != fileType
+				&& "png" != fileType
+				&& "gif" != fileType) {
+			alert("请上传JPG,JPEG,BMP,PNG,GIF格式的图片");
+			return false;
+		} else {
+			//获取附件大小（单位：KB）  
+			var fileSize = document
+					.getElementById("file").files[0].size / 1024;
+			if (fileSize > 2048) {
+				alert("图片大小不能超过2MB");
+				return false;
+			}
+	    }
+	}
+			
+	var formData = new FormData($("#registrationForm")[0]);
+	$.ajax({
+		url : '${base}/admin/poi/save',
+		type : 'POST',
+		data : formData,
+		async : false,
+		cache : false,
+		contentType : false,
+		processData : false,
+		success : function(returndata) {
+			if (returndata.code == "1"||returndata.code == "2") {
+				alert(returndata.msg);
+				window.location.href = '${base}/admin/poi/list';
+			}else{
+				alert(returndata.msg);
+			}
+		},
+		error : function(returndata) {
+			alert(returndata);
+		}
+	});
+	
+});
+
+function checklocation(){
+	var endLocation = document
+	.getElementById("endLocation").value;
+	var reg = 	'/^([\d]+|([\d]+[.]?|[\d]+[.]?[\d]+))$/';
+	var location = new Array(); //定义一数组 
+	 location = endLocation.split(",");
+	if(location.length!=2){
+		$("#endLocation").focus();
+		$("#endLocation").next().text(
+				"坐标不合法！");
+		return false;
+	}
+	for(var i=0;i<2;i++){
+		var loc = location[i];
+		if (!reg.test(loc)) {
+			$("#endLocation").focus();
+			$("#endLocation").next().text(
+					"坐标不合法！");
+			return false;
+		}
+	}
+	if(location[0]<113||location[0]>=115){
+		$("#endLocation").focus();
+		$("#endLocation").next().text(
+				"坐标不合法！經度必須在113到114之間");
+		return false;
+	}
+	
+	if(location[1]<20||location[1]>=24){
+		$("#endLocation").focus();
+		$("#endLocation").next().text(
+				"坐标不合法！維度必須在20到23之間");
+		return false;
+	}
+	$("#endLocation").next().text("");
+}
+
+
+function showMap(){
+	onLoadLocate();
+	$('#map-div').fadeIn("slow");
+	$("#mask").fadeIn("slow");
+}
+
+
+</script>
+
+<script>
+//進入頁面時開啟定位
+function onLoadLocate(){
+  map.addControl(geolocation);
+
+  geolocation.getCurrentPosition(function(status, result) {
+    
+      onLocation(result);
+  });
+
+
+};
+
+function onPointSelect(poi){
+  loc = poi.entr_location || poi.location;
+  pointMarker.setPosition(loc);
+  pointMarker.setMap(map);
+  map.setZoom(nowZoom);
+  startPoint.position = loc;
+  startPoint.longtitude = loc.getLng();
+  startPoint.latitude = loc.getLat();
+  map.setCenter(startPoint.position);
+  $('#locationXY').val(startPoint.longtitude+','+startPoint.latitude)
+}	  
+function confirmPoint() {
+  placeSearch.clear();
+  $('#map-div').fadeOut("slow");
+		$('#mask').fadeOut("slow");
+		var addressPoint = $('#placename').val()
+		var endLocation = startPoint.longtitude+","+startPoint.latitude;
+			$('#endLocation').val(endLocation)
+			$('#endAddress').val(addressPoint)
+		
+}
+
+function geocoder_CallBack(data){
+  var address = data.regeocode.formattedAddress;
+  $('#placename').val(address)
+}
+
+
+function onLocation(data){
+	geolocation.getCityInfo(function(status, result){
+	if (status =='complete') {
+	  map.setZoom(14);
+	 
+	}
+	else{
+	  alert('定位城市失敗 , 請檢查您的網絡');
+	}
+	
+	});
+
+}
+
+// 起點坐標
+var startPoint={longtitude : 0.0,latitude : 0.0,position : []};
+
+
+var map = new AMap.Map("container", {
+	resizeEnable: true
+});
+var nowZoom = 14;
+AMap.event.addListener(map,'zoomend',function(){
+nowZoom = map.getZoom();
+
+});
+var toolBar = new AMap.ToolBar();
+map.addControl(toolBar);
+var pointMarker = new AMap.Marker({
+     position: []
+ });
+
+
+
+
+var geolocation = new AMap.Geolocation({
+	enableHighAccuracy : true,
+	timeout : 5000,
+	showButton :false,
+	showCircle: false, //不显示定位结果的圆
+	showMarker: false, //不现实定位结果的标记
+	buttonOffset : new AMap.Pixel(10,20),
+});
+
+var geocoder = new AMap.Geocoder({
+    radius: 1000,
+    extensions: "all"
+});   
+
+
+var searchInput = document.getElementById('placename');
+
+var autoComplete = new AMap.Autocomplete({
+	input : searchInput,
+	citylimit : false,
+	noshowDistrict : false
+});
+
+var placeSearch = new AMap.PlaceSearch({
+	panel: 'panel',
+	pageIndex: 1,
+	pageSize: 5,
+	radius: 10000,
+	citylimit: false
+});
+
+
+autoComplete.selectHandler = AMap.event.addListener(autoComplete, 'select', function(e) {placeSearch.search(e.poi.name) });
+
+AMap.event.addDomListener(document.getElementById('searchButton'), 'click', function() {
+	placeSearch.search(searchInput.value);
+});
+
+placeSearch.listElementClickHandler = AMap.event.addListener(placeSearch, 'listElementClick', function(e) {
+ 	onPointSelect(e.data);
+ 
+});
+
+//为地图注册click事件获取鼠标点击出的经纬度坐标
+var clickEventListener = map.on('click', function(e) {
+  
+      lnglatXY=[e.lnglat.getLng(),e.lnglat.getLat()];
+      pointMarker.setPosition(lnglatXY);
+      pointMarker.setMap(map);
+      map.setZoom(nowZoom);
+      startPoint.longtitude = e.lnglat.getLng();
+      startPoint.latitude = e.lnglat.getLat();
+      startPoint.position = lnglatXY;
+
+      geocoder.getAddress(lnglatXY, function(status, result) {
+          if (status == 'complete' && result.info == 'OK') {
+              geocoder_CallBack(result);
+          }
+      });     
+      $('#locationXY').val(startPoint.longtitude+','+startPoint.latitude)
+        placeSearch.clear();
+   
+  });
+
+</script>
+
+
+</body>
+<!--  /Body -->
+</html>

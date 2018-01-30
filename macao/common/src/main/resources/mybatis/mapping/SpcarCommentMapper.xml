@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarCommentMapper">
+	<resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.SpcarComment">
+		<id column="spcar_comment_id" property="spcarCommentId" jdbcType="INTEGER" />
+		<result column="spcar_passenger_id" property="spcarPassengerId" jdbcType="INTEGER" />
+		<result column="spcar_driver_id" property="spcarDriverId" jdbcType="INTEGER" />
+		<result column="comments" property="comments" jdbcType="LONGVARCHAR" />
+		<result column="score" property="score" jdbcType="DOUBLE" />
+		<result column="order_id" property="orderId" jdbcType="INTEGER" />
+		<result column="order_status" property="orderStatus" jdbcType="INTEGER" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="spcar_passenger_name" property="spcarPassengerName" jdbcType="VARCHAR" />
+		<result column="spcar_passenger_tel" property="spcarPassengerTel" jdbcType="VARCHAR" />
+
+	</resultMap>
+	<resultMap id="ResultMapWithBLOBs" type="com.yinghai.macao.common.model.SpcarComment"
+		extends="BaseResultMap">
+		<result column="loc_str" property="locStr" jdbcType="LONGVARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		spcar_comment_id, spcar_passenger_id,spcar_driver_id, comments, score,order_id,order_status,
+		create_time,spcar_passenger_name,spcar_passenger_tel
+	</sql>
+
+	<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from spcar_comment
+		where spcar_comment_id = #{spcarCommentId,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from spcar_comment
+		where spcar_comment_id = #{spcarCommentId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.yinghai.macao.common.model.SpcarComment">
+		insert into spcar_comment (spcar_comment_id, spcar_passenger_id,spcar_driver_id, comments,
+		score,order_id,order_status,create_time,spcar_passenger_name,spcar_passenger_tel
+		)
+		values (#{spcarCommentId,jdbcType=INTEGER}, #{spcarPassengerId,jdbcType=INTEGER},#{spcarDriverId,jdbcType=INTEGER},
+		#{comments,jdbcType=VARCHAR},#{score,jdbcType=DOUBLE},#{orderId,jdbcType=INTEGER},
+		#{orderStatus,jdbcType=INTEGER},
+		#{createTime,jdbcType=TIMESTAMP},#{spcarPassengerName,jdbcType=VARCHAR},
+		#{spcarPassengerTel,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.yinghai.macao.common.model.SpcarComment"
+		useGeneratedKeys="true" keyProperty="spcarCommentId">
+		insert into spcar_comment
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="spcarCommentId != null">
+				spcar_comment_id,
+			</if>
+			<if test="spcarPassengerId != null">
+				spcar_passenger_id,
+			</if>
+			<if test="spcarDriverId != null">
+				spcar_driver_id,
+			</if>
+			<if test="comments != null">
+				comments,
+			</if>
+			<if test="score != null">
+				score,
+			</if>
+				<if test="orderId != null">
+				order_id,
+			</if>
+			<if test="orderStatus != null">
+				order_status,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="spcarPassengerName != null">
+				spcar_passenger_name,
+			</if>
+			<if test="spcarPassengerTel != null">
+				spcar_passenger_tel,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="spcarCommentId != null">
+				#{spcarCommentId,jdbcType=INTEGER},
+			</if>
+			<if test="spcarPassengerId != null">
+				#{spcarPassengerId,jdbcType=INTEGER},
+			</if>
+			<if test="spcarDriverId != null">
+				#{spcarDriverId,jdbcType=INTEGER},
+			</if>
+			<if test="comments != null">
+				#{comments,jdbcType=VARCHAR},
+			</if>
+			<if test="score != null">
+				#{score,jdbcType=DOUBLE},
+			</if>
+			<if test="orderId != null">
+				#{orderId,jdbcType=INTEGER},
+			</if>
+			<if test="orderStatus != null">
+				#{orderStatus,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=DOUBLE},
+			</if>
+				<if test="spcarPassengerName != null">
+				#{spcarPassengerName,jdbcType=VARCHAR},
+			</if>
+			<if test="spcarPassengerTel != null">
+				#{spcarPassengerTel,jdbcType=VARCHAR},
+			</if>
+
+		
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.common.model.SpcarComment">
+		update spcar_comment
+		<set>
+	
+			<if test="spcarPassengerId != null">
+			spcar_passenger_id =	#{spcarPassengerId,jdbcType=INTEGER},
+			</if>
+			<if test="spcarDriverId != null">
+			spcar_driver_id =	#{spcarDriverId,jdbcType=INTEGER},
+			</if>
+			<if test="comments != null">
+			comments=	#{comments,jdbcType=VARCHAR},
+			</if>
+			<if test="score != null">
+				score=#{score,jdbcType=DOUBLE},
+			</if>
+			<if test="orderId != null">
+				order_id = #{orderId,jdbcType=INTEGER},
+			</if>
+			<if test="orderStatus != null">
+				order_status=#{orderStatus,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				create_time=#{createTime,jdbcType=DOUBLE},
+			</if>
+				<if test="spcarPassengerName != null">
+				spcar_passenger_name=#{spcarPassengerName,jdbcType=VARCHAR},
+			</if>
+			<if test="spcarPassengerTel != null">
+				spcar_passenger_tel=#{spcarPassengerTel,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where spcar_comment_id = #{spcarCommentId,jdbcType=INTEGER}
+	</update>
+
+	<select id="findList" resultMap="BaseResultMap"
+		parameterType="com.yinghai.macao.common.model.SpcarComment">
+		select
+		<include refid="Base_Column_List" />
+		from spcar_comment where 1=1
+		  <if test="spcarCommentId != null" >
+     and spcar_comment_id = #{spcarCommentId,jdbcType=INTEGER}
+    </if>
+     <if test="orderId != null" >
+     and order_id = #{orderId,jdbcType=INTEGER}
+    </if>
+    <if test="spcarDriverId != null">
+	 and spcar_driver_id = #{spcarDriverId,jdbcType=INTEGER}
+    </if>
+    <if test="score != null" >
+      and  score <![CDATA[ < ]]> #{score,jdbcType=DOUBLE}
+    </if>
+     <if test="spcarPassengerTel != null" >
+     and spcar_passenger_tel like #{spcarPassengerTel,jdbcType=VARCHAR}
+    </if>
+    order by create_time desc
+	</select>
+	
+	
+	<select id="findCount" resultMap="BaseResultMap"
+		parameterType="com.yinghai.macao.common.model.SpcarComment">
+		select
+		count(spcar_comment_id)
+		from spcar_comment where 1=1
+		  <if test="spcarCommentId != null" >
+	     and spcar_comment_id = #{spcarCommentId,jdbcType=INTEGER}
+	    </if>
+	     <if test="orderId != null" >
+	     and order_id = #{orderId,jdbcType=INTEGER}
+	    </if>
+	    <if test="score != null" >
+	      and  score = #{score,jdbcType=DOUBLE}
+	    </if>
+	     <if test="spcarPassengerTel != null" >
+	     and spcar_passenger_tel like #{spcarPassengerTel,jdbcType=VARCHAR}
+	    </if>
+	</select>
+</mapper>

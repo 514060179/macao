@@ -1,0 +1,719 @@
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@57a88524, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@7d702d14, {}, org.apache.catalina.connector.ResponseFacade@52ac63fb]
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-07-04 10:11:42 Exception:LoginController/login msg:
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/backstage-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarManagerMapper.xml]
+### The error may involve com.yinghai.macao.backstage.dao.SpcarManagerMapper.selectByName
+### The error occurred while executing a query
+### SQL: select            id, username, password, email, email_verified, create_time, last_updated, role_id,      remark,im_name,sign         from spcar_manager     where username = ?     order by id asc limit 1
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+; SQL []; No operations allowed after connection closed.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@7a0a2183, {}, org.apache.catalina.connector.ResponseFacade@47cb0a35]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a0a2183, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@30360663, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@30360663, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@30360663, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@30360663, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@30360663, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@30360663, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@30360663, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@30360663, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@30360663, org.apache.catalina.connector.ResponseFacade@b05ac4b]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@16088426, {}, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-07-04 01:09:54 Exception:SpcarDriverController/list msg:
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'passenger_getin_time' in 'field list'
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/common-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarDriverMapper.xml]
+### The error may involve com.yinghai.macao.common.dao.SpcarDriverMapper.findList-Inline
+### The error occurred while setting parameters
+### SQL: select count(0) from (select           spcar_driver_id, name, loc_x, loc_y, status, license, image, driver_type, spcar_type,      create_time, last_update, device_id, verification, country_code, tel, given_name,      family_name, userId, rating, english_capability, profile_image, order_count, cancel_count,      finish_count, deleted, license_true, license_till,driver_arrive_time,driver_setout_time,passenger_getin_time, shift, device_type,sign,im_name         from spcar_driver     where 1=1) tmp_count
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'passenger_getin_time' in 'field list'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'passenger_getin_time' in 'field list'
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:passenger/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-7] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FaTPxtBu1dVkDxMmLBYVBDN5IRXK8skGlRXnYvbfN3GJTbyv59zc*23Zto0S-nwpiqLtG53rvZLIvrGRgy7*oFJQ5kLno678B*WXgk7motKyGyCmlBLHMR0oZaOhgrMhyg00Bt6WdT5s-PbHpzKZUMJMBVYDDOeRu3DDTPe1emLg78heVuyKzYugzvgyDAJVvFyTBt-36R3-iGcw00T4uz65Xfhtu-YmD8ljSl-5WxouY3cVrWMi3rOY154XRdOpMalhI8*HGMPj0x9i0E-ZbaFtBoE4mGIycn6CrIN1BA6vXNc_
+[http-apr-8089-exec-7] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FaS3M1pKq7LEC-chYmCZbmjmTcNoIe8c5asMjPG-O9kSSTy3z3NyzpdhmiZa*6vLKI7zRmmuPwuJzLGJMLr4g0UBgkea25X4B2VXQCV5lGhZ9dBijBGMhw4IqTQkcDYikYEa4Fp88H7j1KfHMrllxBkqkPYwmIdT73kK2wTrXaeFv2xae5feeMHKlfYDc5*yQ7j33oINKam4iu9bL313r*VclHk3G6nFGorJy2jpd7O6eq33E2i2uH0MkzwuO7q5G0xqyOT5kONY9PiHDuhBVjXkqhcItphFbPwbZHwbP5MwXkQ_
+[http-apr-8089-exec-7] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljktPg0AYRff8CjJr4zxgjJh0QSk*EjRSDFo3k5EZ4KsWyDCVtsb-rmITSbzbc27u-XBc10UPSXYqi6LdNlbYfaeRe*Eigk7*YNeBEtIKz6h-UO86MFrI0mozQso5Z4RMHVC6sVDC0ZBqA80E9*pVjBu-ff*7zM45C6YKVCO8jdPoJtZ5Au2qzoe4j9Ribd8qexgiSPD6DtcZWUF5*RwaPMc4hNBi2UItK5app-trtQuCYrvMMR0WVxzCtNq-KLqcn*nHKp3NJpMWNvp4KAiozz3fn9B3bXpom1FghHLKPPIT5Hw6X11oXVk_
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmArrive begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1vgjAYhe-5FU2vlwVKu8CSXRh1BtENBZnZTYO0QEdAPqqIy-77FE3WZO-t85xz3m8NAACDhf8YxfH*UEoq*4pD8AygDh-*YFUJRiNJzYb9g-xUiYbTKJG8GaBBCEG6rjqC8VKKRNyNiBWiVHDLcjps3PL4EkYWQbaqiHSAy*lm7Kwmk42PV-j9yzrHHpuW7s76TDk51O76OMZd4QR1GBavS28xHzlpUuWzj4z5eVdnvZu-nbZdu52PbNLvzpduFvShNwszNyHpizIpRcHvD9m2gYn5hBR65E0r9uUgIN0gBjL160HtR-sFnUZecw__
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmArrive end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmCarry begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljktPg0AYRff8iglbjTIzDC0mLoA0WsUq9qGyIQgD*doyncDwqvG-q9hEEu-2nJt7PzSEkL7ylxdxkhxqoSLVS66jK6Qb*vkflBLSKFYRLdN-kHcSSh7FmeLlADFjjBjG2IGUCwUZnIw4LUCMcJXuomHjt29*l8mUEXusQD7Ah9nam9-El9Z9tTgu3bvubWuKuf9UtP2zs2hl51s0mLy2fp83dQOhAzMHv5Cj9ELPymEfbOqwOdsEjPDd*7ZfrW*rrHr0aKKm7t5tr0eTCgp*OmTb2GR0Qka04WUFBzEIxMAME2r8RNc*tS*Ww14z
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmCarry end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderFinished begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljktPg0AYRff8CsLa6DDMCJi4wLZRHrWJQjXdkBGG9uM5mY5Y2vjfVWwiiXd7zs29J03XdSOOni9ZlnXvrUrVILih3*gGMi7*oBCQp0yllsz-QX4QIHnKCsXlCE1KKUZo6kDOWwUFnA2WN9BO8D6v0nHjt0**y9ih2J0qsB3hcpHM-PlQ48e7YGfvvCjsk0SE17W9rrOi9l*qg7Vk5fHqFcXz2GEeLDyHPOHG*-Dlpro-lquIREEYdasy2T7UMzkwFNhv-WYN3EW3k0kFDT8fcl2TUIKsCe253EPXjgJGJjWxhX5iaJ-aFwhSXO8_
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderFinished end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@16088426, {}, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFvgjAYRd-5FaSvLBu0lMHeBA0jSJTIYvSFMFvcFxRL7RSy7L9vYyZrsvt6zs29H4ZpmqiYr*6r3e703qpSDYIj88lENrr7g0IAKytVEsn*Qd4LkLysasXlCB1KKbZt3QHGWwU13IyKHaHV8Jk15bjx23e-y9inONAV2I8wm22iJI-qfO5e5ZVsZyRZrq1p0S*8Lm0IDGoSPdYvoXSbPn6g1iFP3iYL0WTrLvO9gkwHp*PkFcdeGl-2zxZbLbMwpbglweYQ5lttUsGR3w4FgeNS38MavXB5hlM7Cth2qIOJ-RNkfBpfe45bjg__
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FYRbjWkL5cM7sk3dJiZg3dSbptJO3jgKQicbi-9dxSWSeG6f5*Sco2XbtsNu7y9Enlc7bbg51MqxL20HOed-sK5BcmG428h-UO1raBQXG6OaAWJKKUFo7IBU2sAGToaQJegRbuUbHzZ**953mYSURGMFXgeYzJ4m83S6xOtHluTdrtfpIS2WIrju*tXWKx6AsSkJCZllZflu-LybF-FiVaAsZmSfxi0C--nqLp5EAYpeAnSzUFnV9irR67Om22ajSQOlOh2KIuzR0HdH9EM1LVR6EAjCFBMX-cSxPq0vGdZc-Q__
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8CsJVY9pCN2riYRloFnHLBri5S4O0kK6hYFcn2*J-V3GJTXzX73t57*y4rutlSXpTlGX7rgw1x4577q3rAe-6D3adYLQw1NfsH*R9JzSnRWW4HiDEGCMAbEcwroyoxMUoWCOUhfdM0mHjtx98l1GIEbEVUQ-wKc6ns2UUxps8EdvFy8e0OtWq0tE9aOePRa9KGO7ksU3zZrSSzdVqOavXZIP7cvfGVTx*PZDthBH5kJ4CX0dZHMvsOUp6M1*Uazi5syaNaPjlECEwwOF4ZNED13vRqkFAAGKIfPATz-l0vgBzBF24
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:passenger/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:679非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:679非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:671非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:671非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:679非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverSetOut end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmArrive begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FQ2vGtMWuoCJD0gQiVswYbj41FRa8MOtw1I2FuN-V3GJJN7Xc27u-XAQQu56WVyJqtoP2nJ76pSLrpGL3cs-2HUgubDcM-IfVGMHRnFRW2UmSBhjFOO5A1JpCzWcDSF3oGe4l2982vjt*99lGjAazhVoJrhKyjiL8gftpxdx*kTL27HdHjfgR7S2eRDclcVi2KTsMV*27-UxiyCJ*vD0OloPsziTxDRtu96SQhyEX8k*lS-GYDw8x81K3Cc3s0kLO3U*FIbEX7CAzOhBmR72ehIoJoxQD--EdT6dL*NqXOM_
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmArrive end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmCarry begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8iobrjJZCQbwZ7BJI2STDGbwQbAtUHWu6qjSL-13FJWJ81*97ee-oAADckm7OG8b2r4OpjVXCBVfAhe7ZL1RK8roxta-5PyhGJbWom9YIPUEPY4wgnDuSi8HIVp6Mhu-kMMMH-lxPGz-94KuMLjGK54rsJpiTKkmL5LYqzRhgSmN*Hy0YsYxmEUvIOqouUJCMC-VkISOqQ13aX1PDQ*W3vb-MvJu77n1VrNJlsX6xQf7QVyN5zHXWl3orrZ1NGrkTp0Nx7AVh*OfQm9AHuR8mAUEPe8iH33GdD*cTwM1czA__
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method comfirmCarry end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method showOrderDirection begins with [org.apache.catalina.connector.RequestFacade@16088426, {}, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method showOrderDirection end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method showOrderDirection begins with [org.apache.catalina.connector.RequestFacade@16088426, {}, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method showOrderDirection end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:parameter/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:monitor/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method findOnLineDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method logout begins with [org.apache.catalina.connector.RequestFacade@16088426, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method logout end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@16088426, {}, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@16088426, {}, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@16088426, {}, org.apache.catalina.connector.ResponseFacade@2cff1b24]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@16088426, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@cfeafcf, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@477d2768, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@477d2768, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@477d2768, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@477d2768, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:spcarcomment/list

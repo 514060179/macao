@@ -1,0 +1,17 @@
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.backstage.controller.BackSpcarOrderController - BackSpcarOrderController/orderFinished======orderId为空======
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.backstage.controller.BackSpcarOrderController - BackSpcarOrderController/orderFinished======orderId为空======
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/comfirmArrive======數據異常，專車/司機/乘客信息為空！
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======數據異常，專車/司機/乘客信息為空！
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-18] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-11] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-16] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-18] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-11] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-16] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======訂單:655非法操作,當前狀態為:3當前操作匹配訂單狀態：2
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push request is too frequent, current term quota empty, please wait and try again","ErrorCode":90024}======
+[http-apr-8089-exec-15] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"push request is too frequent, current term quota empty, please wait and try again","ErrorCode":90024}======

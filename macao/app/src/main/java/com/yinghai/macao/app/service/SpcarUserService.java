@@ -1,0 +1,9 @@
+package com.yinghai.macao.app.service;
+
+/**
+ * Created by Administrator on 2017/6/6.
+ */
+public interface SpcarUserService {
+
+    int updateAccessToken(Integer spcarPassengerId,String accessToken,String type);
+}

@@ -1,0 +1,91 @@
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-12 09:37:57 Exception:LoginController/login msg:org.springframework.dao.DataAccessResourceFailureException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/backstage-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarManagerMapper.xml]
+### The error may involve com.yinghai.macao.backstage.dao.SpcarManagerMapper.selectByName
+### The error occurred while executing a query
+### SQL: select            id, username, password, email, email_verified, create_time, last_updated, role_id,      remark,im_name,sign         from spcar_manager     where username = ?     order by id asc limit 1
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+; SQL []; No operations allowed after connection closed.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-12 11:39:16 Exception:SpcarCommentController/list msg:org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'spcar_comment_id' in 'field list'
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/common-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarCommentMapper.xml]
+### The error may involve com.yinghai.macao.common.dao.SpcarCommentMapper.findList-Inline
+### The error occurred while setting parameters
+### SQL: select count(0) from (select       spcar_comment_id, spcar_passenger_id, comments, score,order_id,order_status,   create_time,spcar_passenger_name,spcar_passenger_tel      from spcar_comment) tmp_count
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'spcar_comment_id' in 'field list'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'spcar_comment_id' in 'field list'
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-12 11:41:56 Exception:SpcarCommentController/list msg:org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'spcar_comment_id' in 'field list'
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/common-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarCommentMapper.xml]
+### The error may involve com.yinghai.macao.common.dao.SpcarCommentMapper.findList-Inline
+### The error occurred while setting parameters
+### SQL: select count(0) from (select       spcar_comment_id, spcar_passenger_id, comments, score,order_id,order_status,   create_time,spcar_passenger_name,spcar_passenger_tel      from spcar_comment) tmp_count
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'spcar_comment_id' in 'field list'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'spcar_comment_id' in 'field list'
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:772非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:772非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-1] ERROR freemarker.runtime - Template processing error: "Expression Session.spcarManager is undefined on line 62, column 71 in page/common/head.html."
+
+Expression Session.spcarManager is undefined on line 62, column 71 in page/common/head.html.
+The problematic instruction:
+----------
+==> ${Session.spcarManager.username!} [on line 62, column 69 in page/common/head.html]
+ in include "../common/head.html" [on line 80, column 6 in page/monitor/list.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression Session.spcarManager is undefined on line 62, column 71 in page/common/head.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.TemplateObject.invalidTypeException(TemplateObject.java:135)
+	at freemarker.core.Dot._getAsTemplateModel(Dot.java:78)
+	at freemarker.core.Expression.getAsTemplateModel(Expression.java:89)
+	at freemarker.core.DefaultToExpression._getAsTemplateModel(DefaultToExpression.java:100)
+	at freemarker.core.Expression.getAsTemplateModel(Expression.java:89)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.include(Environment.java:1508)
+	at freemarker.core.Include.accept(Include.java:169)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:237)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1243)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2521)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2510)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)

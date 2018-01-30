@@ -1,0 +1,194 @@
+package com.yinghai.macao.common.service;
+
+import com.paypal.api.payments.Payment;
+import com.yinghai.macao.common.model.Meter;
+import com.yinghai.macao.common.model.SpcarOrder;
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.util.Page;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
+
+
+public interface SpcarOrderService {
+	/**
+	 * 插入数据库
+	 * 
+	 * @param order
+	 */
+	void insertSelective(SpcarOrder order);
+
+	/**
+	 * 根据ID 查询专车订单
+	 * 
+	 * @param id
+	 * @return
+	 */
+	SpcarOrder getSpcarOrderbyId(Integer id);
+
+	/**
+	 * 根据ID 查询专车订单,APP
+	 * 
+	 * @param id
+	 * @return
+	 */
+	SpcarOrder getAppSpcarOrderbyId(Integer id);
+	
+	/**
+	 * 根据订单号查询订单
+	 * 
+	 * @param orderNo
+	 * @return
+	 */
+	SpcarOrder getSpcarOrderByOrderNo(String orderNo);
+	
+	
+	/**
+	 * 根据订单号查询订单APP
+	 * 
+	 * @param orderNo
+	 * @return
+	 */
+	SpcarOrder getAppSpcarOrderByOrderNo(String orderNo);
+
+	/**
+	 * 更新订单信息
+	 * 
+	 * @return
+	 */
+	Integer updateByPrimaryKeySelective(SpcarOrder spCarOrder);
+	
+	/**
+	 * 退款更新订单信息并生成订单退款流水记录
+	 */
+	Integer updateOrderAndCreateMeter(SpcarOrder spCarOrder, Meter meter,boolean pushOrNo)throws Exception;
+
+	/**
+	 * 提交订单
+	 * @param spCarOrder
+	 * @return
+	 */
+	SpcarOrder submitOrder(SpcarOrder spCarOrder);
+	
+	/**
+	 * 确认订单并推送给专车乘客
+	 */
+	Integer updateOrderAndPush(SpcarOrder spcarOrder) throws Exception ;
+	
+	
+	/**
+	 * 接到乘客，修改乘客和订单状态
+	 */
+	Integer updateOrderandSpcarPassenger(SpcarOrder spcarOrder,SpcarPassenger spcarPassenger);
+
+	/**
+	 * 查询订单列表分页
+	 * @param pageNumber
+	 * @param pageStartSize
+	 * @param spcarOrder
+	 * @return
+	 */
+	Page<SpcarOrder> findList(Integer pageNumber, Integer pageStartSize,SpcarOrder spcarOrder);
+	/**
+	 * 根据条件查询list 不分页
+	 * @param spcarOrder
+	 * @return
+	 */
+	List<SpcarOrder> findList(SpcarOrder spcarOrder);
+	/**
+	 * id查询
+	 * @param id
+	 * @return
+	 */
+	SpcarOrder findOneBykey(Integer id);
+
+	/**
+	 * 选择订单专车，并通知乘客匹配成功
+	 * @param spcarOrderId
+	 * @param spcarDriverId
+	 * @param carId
+	 * @return
+	 */
+	int chooseSpcar(String spcarOrderId,String spcarDriverId,String carId);
+	/**
+	 * 更改订单的司机、专车，并通知乘客、司机
+	 * @param order
+	 * @return
+	 */
+	int changeSpcar(SpcarOrder order,SpcarOrder o);
+	/**
+	 * 司机出发接载乘客
+	 * @param spcarOrderid
+	 * @return
+	 */
+	int driverSetOut(String spcarOrderid);
+
+	/**
+	 * 確定到達并接載到乘客
+	 * @param spcarOrderid
+	 * @return
+	 */
+	int comfirmArrive(String spcarOrderid);
+
+	/**
+	 * 確定接到乘客
+	 * @param spcarOrderid
+	 * @return
+	 */
+	int comfirmCarry(String spcarOrderid);
+
+	/**
+	 * 完成订单
+	 * @param spcarOrderid
+	 * @return
+	 */
+	int orderFinished(String spcarOrderid,Double locX,Double locY,String endAddress);
+
+	/**
+	 * 退款
+	 * @return
+	 */
+	String reback(String spcarOrderid,BigDecimal bigDecimal);
+
+
+	/**
+	 *
+	 */
+	int paypalCommit(String spcarOrderid,Meter meter);
+	/**
+	 * 新增訂單并推送給APP
+	 */
+	int addSpcarOrderAndPush(SpcarOrder spcarOrder,String imName,String sign);
+	/**
+	 * paypal支付新增流水并更新状态
+	 * @param spcarOrderid
+	 * @param payment
+	 * @return
+	 */
+	int createMeter(String spcarOrderid, Payment payment);
+
+	List<SpcarOrder> findByDriverId(Integer driverId,String status);
+	/**
+	 * 查询订单列表分页一对多
+	 * @param pageNumber
+	 * @param pageStartSize
+	 * @param spcarOrder
+	 * @return
+	 */
+	Page<SpcarOrder> findFinishList(Integer pageNumber, Integer pageStartSize,SpcarOrder spcarOrder);
+	/**
+	 * 匹配中订单全额退款，仅限微信支付
+	 */
+	Boolean orderrefund(SpcarOrder spcarOrder,String payType,Double  ratio)throws Exception;
+	/**
+	 * 计时器处理匹配中订单的退款
+	 * @param spCarOrder
+	 */
+	void timer(SpcarOrder spCarOrder);
+	/**
+	 * 月结支付操作
+	 */
+	int uodateMonthlyOrder(SpcarOrder spcarOrder);
+}

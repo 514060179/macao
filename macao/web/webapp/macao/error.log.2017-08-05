@@ -1,0 +1,2 @@
+[pool-1-thread-1] ERROR com.yinghai.macao.common.controller.TaskCool - ======================操作的数据进程失败，失败记录的编号为4442/2java.lang.NullPointerException
+[pool-1-thread-1] ERROR com.yinghai.macao.common.controller.TaskCool - ======================操作的数据进程失败，失败记录的编号为1794/2java.lang.NullPointerException

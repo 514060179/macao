@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Loading Container -->
+	<#include "../common/head.html"/>
+
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+                    <li>
+                        <a href="${base!}/admin/passenger/list">返回列表</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>乘客</h1>
+                    <small>
+                        <i class="fa fa-angle-right"></i>
+                        <#if
+							passenger??>编辑乘客#${passenger.spcarId}<#else>新增乘客</#if>
+                    </small>
+                </div>
+
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#"title="放大">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="" href=""title="刷新">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a  id="fullscreen-toggler" href="#" title="全屏">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-2"></div>
+                    <div class="col-sm-8">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header">
+                                <span class="widget-caption">  <#if
+							passenger??>编辑#${passenger.spcarId}<#else>新增</#if></span>
+                            </div>
+                            <div class="widget-body">
+                                <form id="registrationForm" method="post" class="form-horizontal bv-form" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" novalidate="novalidate">
+                                    <div class="form-title">
+                                        根據提示填寫以下內容<input type="hidden" class="form-control" id="id"
+												name="id"
+												value="<#if passenger??>${passenger.spcarId!}</#if>">
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">姓名</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if passenger??>${passenger.familyName!}</#if>'
+													id="familyName" name="familyName" placeholder="姓"
+													data-bv-notempty="true"
+													data-bv-notempty-message="The first name is required and cannot be empty"
+													data-bv-field="firstName"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The first name is required
+													and cannot be empty</small>
+											</div>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if passenger??>${passenger.givenName!}</#if>'
+													id="givenName" name="givenName" placeholder="名"
+													data-bv-notempty="true"
+													data-bv-notempty-message="The last name is required and cannot be empty"
+													data-bv-field="givenName"><i
+													class="form-control-feedback" data-bv-field="lastName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="lastName" class="help-block"
+													style="display: none;">The last name is required
+													and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">手機</label>
+											<div class="col-lg-4">
+												<select class="selectpicker" id='countryCode'
+													name='countryCode' onchange='checkTel()'<#if
+													passenger??>disabled="disabled"</#if>>
+													<option value="853"<#if passenger??><#if
+														passenger.countryCode='853'>selected</#if></#if> >Macaw
+														853</option>
+													<option value="852"<#if passenger??><#if
+														passenger.countryCode='852'>selected</#if></#if> >HK 852</option>
+													<option value="86"<#if passenger??><#if
+														passenger.countryCode='86'>selected</#if></#if> >P.R.C
+														86</option>
+												</select> <i class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The first name is required
+													and cannot be empty</small>
+											</div>
+											<div class="col-lg-4">
+												<input type="text"
+													value='<#if passenger??>${passenger.tel!}</#if>'
+													onchange='checkTel()' class="form-control" id="tel"
+													name="tel" placeholder="phone" data-bv-notempty="true"
+													data-bv-notempty-message="The last name is required and cannot be empty"
+													data-bv-field="lastName"<#if
+												passenger??>disabled="disabled"</#if> ><i
+													class="form-control-feedback" data-bv-field="lastName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="lastName" class="help-block"
+													style="display: none;">The last name is required
+													and cannot be empty</small>
+											</div>
+											<p class="help-block" style="color: red; font-size: 10px;"></p>
+										</div>
+										
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">性別</label>
+											<div class="col-lg-8">
+												<select class="selectpicker" id="sex" name='sex'>
+													<option value="false"<#if passenger??><#if
+														passenger.sex?string("1","0")='0'>selected</#if></#if>
+														>女</option>
+													<option value="true"<#if passenger??><#if
+														passenger.sex?string("1","0")='1'>selected</#if></#if>
+														>男</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">VIP</label>
+											<div class="col-lg-8">
+												<select class="selectpicker" id="vip" name='vip' <#if
+													passenger??>disabled="disabled"</#if>>
+													<option value="false"<#if passenger??><#if
+														passenger.vip?string("1","0")='0'>selected</#if></#if>
+														>否</option>
+													<option value="true"<#if passenger??><#if
+														passenger.vip?string("1","0")='1'>selected</#if></#if>
+														>是</option>
+												</select>
+											</div>
+										</div>
+									
+									<div class="form-group has-feedback">
+										<label class="col-lg-4 control-label">是否屬於公司</label>
+										<div class="col-lg-2">
+											<select class="selectpicker" id="isTitle" name='isTitle'>
+												<option value="false"<#if passenger??><#if passenger.title??><#if
+													passenger.title!='公司'>selected</#if></#if></#if>
+													>否</option>
+												<option value="true"<#if passenger??><#if passenger.title??><#if
+													passenger.title='公司'>selected</#if></#if></#if>
+													>是</option>
+											</select>
+										</div>
+									</div>
+									<#if passenger??>
+										<div class="form-group has-feedback">
+												<label class="col-lg-4 control-label">消费总额</label>
+												<div class="col-lg-2">
+													<input type="text" class="form-control" style="border:0px;" disabled="disabled"
+														value='<#if passenger??>${passenger.totalConsume!}</#if>'
+														id="totalConsume" name="totalConsume">
+												</div>
+										</div>
+										<div class="form-group has-feedback">
+												<label class="col-lg-4 control-label">类别</label>
+												<div class="col-lg-8">
+													<input type="text" class="form-control" 
+														value='<#if passenger??>${passenger.category!}</#if>'
+														id="category" name="category">
+												</div>
+										</div>
+										<div class="form-group has-feedback">
+												<label class="col-lg-4 control-label">备注</label>
+												<div class="col-lg-8">
+													<input type="text" class="form-control"  
+														value='<#if passenger??>${passenger.remark!}</#if>'
+														id="remark" name="remark">
+												</div>
+										</div>
+									</#if>
+									
+                                    <div class="form-group">
+                                        <div class="col-xs-4"></div>
+                                        <div class="col-xs-4">
+                                            <input class="btn btn-default btn-lg btn-block" id = 'submits' type="submit" value="Validate">
+                                        </div>
+                                        <div class="col-xs-4"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+                <#if passenger??>
+						<div class="row">
+							<div class="col-xs-2"></div>
+							<div class="col-sm-8">
+								<div class="widget radius-bordered">
+									<div class="widget-header">
+										<span class="widget-caption">最近订单记录</span>
+									</div>
+									<div class="widget-body">
+										<#if passengerOrderList??>
+											<table class="table table-bordered table-hover" frame="void">
+												<thead align="center">
+													<tr>
+														<th>编号</th>
+														<th>司机姓名</th>
+														<th>金額（元）</th>
+														<th>起始时间</th>
+														<th>完成时间</th>
+													</tr> 
+												</thead>
+												<tbody>
+													<#list passengerOrderList as item>
+														<tr>
+															<td>${item.spcarOrderId!}</td>
+															<td><#if item.spcarDriver??>${item.spcarDriver.name!}</#if></td>
+															<td><#if item.amount??>   ￥ ${item.amount/100.00!}</#if></td>
+															<td>${(item.startTime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
+															<td>${(item.completeTime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
+                                            			<tr>
+													</#list>
+												</tbody>
+												<#if size??>
+													<#if size gt 10>
+														<tfoot align="center">
+															<tr>
+																<td colspan="5">
+																	<a href="${base!}/admin/order/list?status=5&passengerId=${passenger.spcarId!}">查看更多</a>
+																</td>
+															</tr>
+														</tfoot>
+													</#if>
+												</#if>
+											</table>
+										</#if>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-2"></div>
+						</div>
+					</#if>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+
+</div>
+
+<!--Page Related Scripts-->
+<!--Sparkline Charts Needed Scripts-->
+
+
+<script>
+function checkTel() {
+	var tel = document.getElementById("tel").value;
+	var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+	var countryCode = $('#countryCode option:selected').val();
+	if (tel != null && tel != '') {
+		if (countryCode == 853 || countryCode == 852) {
+			reg = /^0?[2|6|8]\d{7}$/;
+			if (!reg.test(tel)) {
+				// alert("");
+				$("#tel").focus();
+				$("#tel").next().text("該手機號不合法！");
+				alert("該手機號不合法！");
+				return false;
+			} else {
+				$("#tel").next().text("");
+			}
+		} else {
+			if (!reg.test(tel)) {
+				$("#tel").focus();
+				$("#tel").next().text("該手機號不合法！");
+				alert("該手機號不合法！");
+				return false;
+			} else {
+				$("#tel").next().text("");
+			}
+		}
+	}
+}
+
+$("#submits").click(
+		function() {
+
+            var givenName = document.getElementById("givenName").value;
+            var familyName = document.getElementById('familyName').value;
+            var tel = document.getElementById('tel').value;
+            var countryCode = $('#countryCode option:selected').val();
+            var vip = $('#vip option:selected').val();
+            var sex = $('#sex option:selected').val();
+            var isTitle = $('#isTitle option:selected').val();
+            var remark = $('#remark').val();
+            var category = $('#category').val();
+            if(familyName==""){
+                $("#familyName").next().text("請輸入姓！");
+                $("#familyName").focus();
+                return false;
+            }
+            if(givenName==""){
+                $("#givenName").next().text("請輸入名！");
+                $("#givenName").focus();
+                return false;
+            }
+			if(tel==""){
+                $("#tel").next().text("請輸入手機號！");
+                $("#tel").focus();
+                return false;
+			}
+			var jsonUser = {};
+			var id = $("#id").val();
+            jsonUser["familyName"]=familyName;
+            jsonUser["givenName"]=givenName;
+            jsonUser["tel"] = tel;
+            jsonUser["countryCode"]=countryCode;
+            jsonUser["vip"] = vip;
+            jsonUser["sex"] = sex;
+            jsonUser["isTitle"] = isTitle;
+            jsonUser["remark"] = remark;
+            jsonUser["category"] = category;
+            var act = "add";
+            if(id.trim()!=""){
+                jsonUser["id"] = id;
+                act = "upd";
+            }
+				$.post("${base}/admin/passenger/save?act="+act, jsonUser,
+					function(date) {
+							if (date.code =="1") {
+								alert("create success");
+								//resetFormInput();
+							} else if(date.code == "2") {
+								alert("update success");
+								window.location.href='${base}/admin/passenger/list'; 
+							}else{
+                                alert(date.msg+date.code);
+							}
+					})
+					return false;
+		});
+function resetFormInput() { //清空表单
+	$("form input").each(function() {
+		$(this).val("");
+	});
+}
+</script>
+
+
+</body>
+<!--  /Body -->
+</html>

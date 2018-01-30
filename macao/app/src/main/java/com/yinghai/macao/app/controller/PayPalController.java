@@ -1,0 +1,451 @@
+package com.yinghai.macao.app.controller;
+
+import com.paypal.api.payments.*;
+import com.paypal.base.Constants;
+import com.paypal.base.rest.APIContext;
+import com.paypal.base.rest.PayPalRESTException;
+import com.yinghai.macao.common.constant.Constant;
+import com.yinghai.macao.common.model.Meter;
+import com.yinghai.macao.common.model.Spcar;
+import com.yinghai.macao.common.model.SpcarOrder;
+import com.yinghai.macao.common.service.SpcarOrderService;
+import com.yinghai.macao.common.util.*;
+import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import com.paypal.api.payments.Links;
+
+import javax.print.DocFlavor;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.math.BigDecimal;
+import java.net.*;
+import java.util.*;
+
+/**
+ * Created by Administrator on 2017/5/25.
+ */
+@Controller
+@RequestMapping("order")
+public class PayPalController {
+
+    @Autowired
+    private SpcarOrderService spcarOrderService;
+    //sandbox
+//    static String clientId = "AUmf6cX5ji-r-4Pq_Bgks-ZSClNmiM3_OEDdyCO0CFwGagI8_LprG40jQQbHNp5sUAlKQv9u2Aakg8vm";
+//    static String clientSecret = "EFFKGwJGLndP6Eko5WzYquqF5HvSvZ2VVxVC_WU-VJeW2ZV0ZkX3Dt3ZIRMsu39PWRdwwzfhqsj2o-_l";
+    //live
+//    static String clientId = "AT9gngpwXO9Mb-veRLqtxFxJTK7AKMYxoWgq52z9iJdKScS_5wt6fzpI6FIyVtBnUlJvSuwvvHq6qqWv";
+//    static String clientSecret = "EE9-4oLoPw0ln5kz8p0GY-gyNnY0tFquY0u3UZyqy5UbYBom_D4Hku7FcDXREopWInoIMKlPlP4q7J_j";
+    @RequestMapping(value = "paypal", method = RequestMethod.POST)
+    public void paypalCallBack(HttpServletRequest request){
+        try {
+            request.setCharacterEncoding("Big5");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        String params = request.getQueryString();
+        Map<String,String[]> map = request.getParameterMap();
+        Map<String,String> sendMap = new HashMap<String,String>();
+        for (String in : map.keySet()) {
+            //map.keySet()返回的是所有key的值
+            String[] str = map.get(in);//得到每个key多对用value的值
+            sendMap.put(in,str[0]);
+            try {
+                System.out.println(in + "     " + new String(str[0].getBytes("Big5"),"UTF-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            sendMap.put("cmd","_notify-validate");
+            System.out.println(new HttpRequester().send("https://www.paypal.com/cgi-bin/webscr","GET",sendMap).getContent());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(params);
+
+
+
+
+        Enumeration en = request.getParameterNames();
+        String str = "cmd=_notify-validate";
+        while (en.hasMoreElements()) {
+            String paramName = (String) en.nextElement();
+            String paramValue = request.getParameter(paramName);
+            try {
+                str = str + "&" + paramName + "="
+                        + URLEncoder.encode(paramValue, "utf-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            //此处的编码一定要和自己的网站编码一致，不然会出现乱码，paypal回复的通知为‘INVALID’
+        }
+        System.out.println("paypal传递过来的交易信息:" + str);
+        //建议在此将接受到的信息 str 记录到日志文件中以确认是否收到 IPN 信息
+        //将信息 POST 回给 PayPal 进行验证
+        //设置 HTTP 的头信息
+        //在 Sandbox 情况下，设置：
+//        DocFlavor.URL u = new URL("https://www.sandbox.paypal.com/cgi-bin/webscr");
+//        //正式环境
+        URL u = null;
+        String res = null;
+        try {
+            u = new URL("https://www.paypal.com/cgi-bin/webscr");
+            URLConnection  uc = u.openConnection();
+            uc.setDoOutput(true);
+            uc.setRequestProperty("Content-Type",
+                    "application/x-www-form-urlencoded");
+            PrintWriter pw = new PrintWriter(uc.getOutputStream());
+            pw.println(str);
+            pw.close();
+            //接受 PayPal 对 IPN 回发的回复信息
+            BufferedReader in = new BufferedReader(new InputStreamReader(
+                    uc.getInputStream()));
+            res = in.readLine();
+            in.close();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        //将 POST 信息分配给本地变量，可以根据您的需要添加
+        //该付款明细所有变量可参考：
+        //https://www.paypal.com/IntegrationCenter/ic_ipn-pdt-variable-reference.html
+        String itemName = request.getParameter("item_name");//商品名
+        String itemNumber = request.getParameter("item_number");//购买数量
+        String paymentStatus = request.getParameter("payment_status");//交易状态
+        String paymentDate = request.getParameter("payment_date");//交易时间
+        String paymentAmount = request.getParameter("mc_gross");//交易钱数
+        String paymentCurrency = request.getParameter("mc_currency");//货币种类
+        String txnId = request.getParameter("txn_id");//交易id
+        String receiverEmail = request.getParameter("receiver_email");//收款人email
+        String payerEmail = request.getParameter("payer_email");//付款人email
+
+        if (res == null || res == "")
+            res = "0";
+        //…
+        //获取 PayPal 对回发信息的回复信息，判断刚才的通知是否为 PayPal 发出的
+        if (res.equals("VERIFIED")) {
+            //检查付款状态
+            //检查 txn_id 是否已经处理过
+            //检查 receiver_email 是否是您的 PayPal 账户中的 EMAIL 地址
+            //检查付款金额和货币单位是否正确
+            //处理其他数据，包括写数据库
+            System.out.println(res);
+        } else if (res.equals("INVALID")) {
+            //非法信息，可以将此记录到您的日志文件中以备调查
+            System.out.println(res);
+        } else {
+            //处理其他错误
+
+        }
+    }
+
+    /**
+     *
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "/pay", method = RequestMethod.POST)
+    public void handlePaypal(HttpServletRequest request, HttpServletResponse response){
+
+        String orderId = request.getParameter("orderId");
+        String openId = request.getParameter("openId");
+        String userId = request.getParameter("userId");
+        String taxigoId = request.getParameter("taxigoId");
+        JSONObject responseObject = new JSONObject();
+        if(StringUtil.empty(orderId)){
+            responseObject.put("msg", "orderId不能为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        String param = "?openId="+openId+"&userId="+userId+"&taxigoId="+taxigoId+"&orderId="+orderId;
+        SpcarOrder spcarOrder = spcarOrderService.findOneBykey(Integer.parseInt(orderId));
+        if(spcarOrder==null){
+            responseObject.put("msg", "该订单id:"+orderId+" 不存在！");
+            responseObject.put("code", "102");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(SpcarOrder.ORDER_NOPAY_STATUS!=spcarOrder.getStatus()||SpcarOrder.PAY_PENDING_STATUS!=spcarOrder.getPayStatus()){
+            responseObject.put("msg", "该订单id:"+orderId+" 已支付！");
+            responseObject.put("code", "0");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+//        String totalMoney = spcarOrder.getAmount()/100+""; //人民币
+        String totalMoney = "0.01";
+        Payer payer = new Payer();
+        payer.setPaymentMethod("paypal");
+// Set redirect URLs
+        RedirectUrls redirectUrls = new RedirectUrls();
+        redirectUrls.setCancelUrl(Constant.paypalCancelUrl+param);
+        redirectUrls.setReturnUrl(Constant.paypalReturnUrl+param);
+
+// Set payment details
+        Details details = new Details();
+        details.setShipping(totalMoney);
+        details.setSubtotal("0");
+        details.setTax("0");
+
+// Payment amount
+        Amount amount = new Amount();
+        amount.setCurrency("HKD");
+// Total must be equal to sum of shipping, tax and subtotal.
+        amount.setTotal(totalMoney);
+        amount.setDetails(details);
+
+// Transaction information
+        Transaction transaction = new Transaction();
+        transaction.setAmount(amount);
+        transaction
+                .setDescription("專車下單預約"+spcarOrder.getTotalHour()+"小時，時間："+spcarOrder.getStartTime()+"花費："+totalMoney);
+// Add transaction to a list
+        List<Transaction> transactions = new ArrayList<Transaction>();
+        transactions.add(transaction);
+
+// Add payment details
+        Payment payment = new Payment();
+        payment.setIntent("sale");
+        payment.setPayer(payer);
+        payment.setRedirectUrls(redirectUrls);
+        payment.setTransactions(transactions);
+
+        APIContext context = new APIContext(Constant.clientId, Constant.clientSecret, Constant.mode);
+        // Create payment
+        Payment createdPayment = null;
+        try {
+            createdPayment = payment.create(context);
+            System.out.println(createdPayment);
+            Iterator links = createdPayment.getLinks().iterator();
+            while (links.hasNext()) {
+                Links link = (Links)links.next();
+                if (link.getRel().equalsIgnoreCase("approval_url")) {
+                    // REDIRECT USER TO link.getHref()
+                    try {
+                        String url = link.getHref();
+                        System.out.println("response url:"+url);
+                        response.sendRedirect(url);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        } catch (PayPalRESTException e) {
+            e.printStackTrace();
+            System.err.println(e.getDetails());
+        }
+    }
+    @RequestMapping(value = "/makeSure", method = RequestMethod.GET)
+    public String makeSure(HttpServletRequest request, HttpServletResponse response, ModelMap model){
+        APIContext context = new APIContext(Constant.clientId, Constant.clientSecret, Constant.mode);
+        Payment payment = new Payment();
+        payment.setId(request.getParameter("paymentId"));
+        String orderId = request.getParameter("orderId");
+        String openId = request.getParameter("openId");
+        String userId = request.getParameter("userId");
+        String taxigoId = request.getParameter("taxigoId");
+        JSONObject responseObject = new JSONObject();
+        String param = "?openId="+openId+"&userId="+userId+"&taxigoId="+taxigoId+"&orderId="+orderId;
+        PaymentExecution paymentExecution = new PaymentExecution();
+        paymentExecution.setPayerId(request.getParameter("PayerID"));
+        try {
+            Payment createdPayment = payment.execute(context, paymentExecution);
+//            String orderId = createdPayment.getTransactions().get(0).getRelatedResources().get(0).getOrder().getId();
+            System.out.println(createdPayment);
+            String state = createdPayment.getState();
+            if("approved".equals(state)){
+                //支付成功
+                int i = spcarOrderService.createMeter(orderId,createdPayment);
+                if(i>0){
+                    model.addAttribute("payment",createdPayment.getTransactions().get(0).getAmount().getTotal());
+                    model.addAttribute("cancelUrl",Constant.paypalCancelUrl+param+"&payType=1");
+                    return "success";
+                }else{
+                    return "404";
+                }
+            }else{
+                model.addAttribute("cancelUrl",Constant.paypalCancelUrl+param+"&payType=0");
+                return "500";
+            }
+        } catch (PayPalRESTException e) {
+            System.err.println(e.getDetails());
+            e.printStackTrace();
+            model.addAttribute("cancelUrl",Constant.paypalCancelUrl+param+"&payType=0");
+            return "500";
+        }
+    }
+    @RequestMapping(value = "/reback", method = RequestMethod.GET)
+    public void  remackMoney(HttpServletRequest request, HttpServletResponse response){
+//        APIContext context = new APIContext(clientId, clientSecret, Constants.LIVE);
+//        Refund refund = new Refund();
+//         Amount amount = new Amount();
+//         amount.setTotal("");
+//         amount.setCurrency("USD");
+//         refund.setAmount(amount);
+//        Sale sale = new Sale();
+//        sale.setId("PAY-4VA38136914566251LEUQX4Q");
+//
+//        try {
+//            // Refund sale
+//            sale.refund(context, refund);
+//        } catch (PayPalRESTException e) {
+//            System.err.println(e.getDetails());
+//        }
+        APIContext context = new APIContext(Constant.clientId, Constant.clientSecret, Constant.mode);
+        Payment respone = null;
+        try {
+            respone = Payment.get(context,
+                    "PAY-1M5843044B076723LLEXYAFA");
+        } catch (PayPalRESTException e) {
+            e.printStackTrace();
+        }
+//        ResultPrinter.addResult(request, response, "Payment with Credit Card",
+//                respone.getLastRequest(), respone.getLastResponse(), null);
+        System.out.println(respone.getRedirectUrls());
+        try {
+            request.getServletContext().getRequestDispatcher("/assets/order/response.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @RequestMapping(value = "paypalCommit", method = RequestMethod.POST)
+    public void paypalCommit(HttpServletRequest request, HttpServletResponse response){
+        String orderNo = request.getParameter("orderNo");
+        JSONObject responseObject = new JSONObject();
+        if(StringUtil.empty(orderNo)){
+            responseObject.put("msg", "orderNo不能为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        String responseId = request.getParameter("responseId");
+        if(StringUtil.empty(responseId)){
+            responseObject.put("msg", "responseId不能为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        //查询是否完成支付
+        SpcarOrder spcarOrder = spcarOrderService.findOneBykey(Integer.parseInt(orderNo));
+        if(spcarOrder==null){
+            responseObject.put("msg", "该订单id:"+orderNo+" 不存在！");
+            responseObject.put("code", "102");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(SpcarOrder.ORDER_NOPAY_STATUS!=spcarOrder.getStatus()||SpcarOrder.PAY_PENDING_STATUS!=spcarOrder.getPayStatus()){
+            responseObject.put("msg", "该订单id:"+orderNo+" 已支付！");
+            responseObject.put("code", "0");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(spcarOrder.getOrderId()==null||spcarOrder.getOrderId()==0){//续单不需要做时间判断，原单才需要
+        	 //判断支付时间是否在上车的前一个小时
+            long to = (new Date()).getTime();  
+            long  from= spcarOrder.getStartTime().getTime();  
+            int hours = (int) ((from - to)/(1000 * 60 * 60));  
+            if(hours<1){
+            	 responseObject.put("msg", "支付失敗，上車時間要在一個小時后");
+                 responseObject.put("code", "104");
+                 responseObject.put("data", new JSONObject());
+                 ResponseUtils.renderJson(response, responseObject.toString());
+                 return;
+            }
+        }
+       
+        APIContext context = new APIContext(Constant.clientId, Constant.clientSecret, Constant.mode);
+        Payment respone = null;
+        try {
+            respone = Payment.get(context,
+                    responseId);
+            String state = respone.getState();
+            if("approved".equals(state)){
+                //支付成功
+                int i = spcarOrderService.createMeter(orderNo,respone);
+                if(i>1){
+                    responseObject.put("msg", "success");
+                    responseObject.put("code", "1");
+                    responseObject.put("data", new JSONObject());
+                    ResponseUtils.renderJson(response, responseObject.toString());
+                }else{
+                    responseObject.put("msg", "更新失败！稍后重新！");
+                    responseObject.put("code", "0");
+                    responseObject.put("data", new JSONObject());
+                    ResponseUtils.renderJson(response, responseObject.toString());
+                }
+            }else{
+                responseObject.put("msg", "该订单未支付！请重新支付！");
+                responseObject.put("code", "100");
+                responseObject.put("data", new JSONObject());
+                ResponseUtils.renderJson(response, responseObject.toString());
+            }
+        } catch (PayPalRESTException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public static void showDetail(){
+        APIContext apiContext = new APIContext(Constant.clientId, Constant.clientSecret, Constant.mode);
+
+        // Retrieve the payment object by calling the
+        // static `get` method
+        // on the Payment class by passing a valid
+        // AccessToken and Payment ID
+        Payment payment = null;
+        try {
+            payment = Payment.get(apiContext,"PAY-6GE29111AC434044FLFEKHAY");
+            System.out.println(payment);
+        } catch (PayPalRESTException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Payment retrieved ID = " + payment.getId()
+                + ", status = " + payment.getState());
+    }
+    public static void remack(){
+        APIContext context = new APIContext(Constant.clientId, Constant.clientSecret, Constant.mode);
+        RefundRequest refund = new RefundRequest();
+        Amount amount = new Amount();
+        amount.setTotal("1500");
+        amount.setCurrency("HKD");
+        refund.setAmount(amount);
+        Sale sale = new Sale();
+        sale.setId("PAY-6PB61710WA409825FLE2PGLY");
+
+        try {
+            // Refund sale
+            sale.refund(context, refund);
+        } catch (PayPalRESTException e) {
+            e.printStackTrace();
+            System.err.println(e.getDetails());
+        }
+    }
+
+    public static void main(String[] args) {
+//        showDetail();
+//        remack();
+//        String resultUrl = "1231?dasd&gdfs9";
+//        String sendUrl = resultUrl.substring(resultUrl.indexOf("?")+1,resultUrl.length());
+//        System.out.println(sendUrl);
+        BigDecimal b   =   new   BigDecimal(1/100.00*1);
+        System.out.println(1/100.00);
+    }
+}

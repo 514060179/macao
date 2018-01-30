@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Loading Container -->
+	<#include "../common/head.html"/>
+
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+						<li><a href="${base!}/admin/parameter/list">返回列表</a></li>
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title">
+						<h1>專車</h1>
+						<small> <i class="fa fa-angle-right"></i> <#if
+							parameter??>编辑价格#${parameter.id}<#else>新增价格</#if>
+						</small>
+					</div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="${base!}/admin/parameter/edit" title="新增"> <i
+							class="glyphicon glyphicon-plus"></i>
+						</a>
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body">
+					<div class="row">
+						<div class="col-xs-2"></div>
+						<div class="col-sm-8">
+							<div class="widget radius-bordered">
+								<div class="widget-header">
+									<span class="widget-caption"> <#if
+										parameter??>编辑<#else>新增</#if> </span>
+								</div>
+								<div class="widget-body">
+									<form 
+										enctype="multipart/form-data" 
+										method="post" class="form-horizontal bv-form"
+										data-bv-message="This value is not valid"
+										data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+										data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+										data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+										novalidate="novalidate">
+										<div class="form-title">根據提示填寫以下內容</div>
+										 <input type="hidden" class="form-control" id="id" name="id" value="<#if parameter??>${parameter.id!}</#if>" >
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">小时</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if parameter??>${parameter.hour!}</#if>'
+													id="hour" name="hour" placeholder="hour"
+													data-bv-notempty="true"
+													data-bv-notempty-message="The hour is required and cannot be empty"
+													data-bv-field="hour"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The spcarType is required
+													and cannot be empty</small>
+											</div>
+
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">价格</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if parameter??>${parameter.price/100.00!}</#if>'
+													id="price" name="price" placeholder="price"
+													data-bv-notempty="true"
+													data-bv-notempty-message="The spcarColor is required and cannot be empty"
+													data-bv-field="lastName"><i
+													class="form-control-feedback" data-bv-field="lastName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="lastName" class="help-block"
+													style="display: none;">The last name is required
+													and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">系数</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if parameter??>${parameter.coefficient!}</#if>' id="coefficient"
+													name="coefficient" placeholder="coefficient"
+													data-bv-notempty="true"
+													data-bv-notempty-message="The coefficient is required and cannot be empty"
+													data-bv-field="spcarType"><i
+													class="form-control-feedback" data-bv-field="firstName"
+													style="display: none;"></i> <small
+													data-bv-validator="notEmpty"
+													data-bv-validator-for="firstName" class="help-block"
+													style="display: none;">The spcarType is required
+													and cannot be empty</small>
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">项目</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if parameter??>${parameter.item!}</#if>' id="item"
+													name="item" placeholder="item">
+											</div>
+										</div>
+										<div class="form-group has-feedback">
+											<label class="col-lg-4 control-label">备注</label>
+											<div class="col-lg-4">
+												<input type="text" class="form-control"
+													value='<#if parameter??>${parameter.remark!}</#if>' id="remark"
+													name="remark" placeholder="remark">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-xs-4"></div>
+											<div class="col-xs-4">
+												<input class="btn btn-default btn-lg btn-block"
+													type="button" id='submit' value="Validate">
+											</div>
+											<div class="col-xs-4"></div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2"></div>
+					</div>
+				</div>
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+	<!--Page Related Scripts-->
+	<!--Sparkline Charts Needed Scripts-->
+
+
+	<script>
+		function getFileType(filePath) {
+			var startIndex = filePath.lastIndexOf(".");
+			if (startIndex != -1)
+				return filePath.substring(startIndex + 1, filePath.length)
+						.toLowerCase();
+			else
+				return "";
+		}
+		$("#submit")
+				.click(
+						function() {
+							var hour = document
+									.getElementById("hour").value;
+							var price = document.getElementById('price').value;
+							var coefficient = document.getElementById('coefficient').value;
+							var remark = document.getElementById('remark').value;
+							var item = document.getElementById('item').value;
+							if (hour == "") {
+								$("#hour").focus();
+								alert("请輸入小时 ！");
+								return false;
+							}
+							if (price == "") {
+								$("#price").focus();
+								alert("请输入价格!");
+								return false;
+							}
+							if (coefficient == "") {
+								$("#coefficient").focus();
+								alert("請輸入系数!");
+								return false;
+							}
+							var jsonUser = {};
+							var id = $("#id").val();
+		                    jsonUser["hour"]=hour;
+		                    jsonUser["price"]=price;
+		                    jsonUser["coefficient"] = coefficient;
+		                    jsonUser["remark"] = remark;
+		                    jsonUser["item"] = item;
+		                    var act = "add";
+		                    if(id.trim()!=""){
+		                        jsonUser["id"] = id;
+		                        act = "upd";
+		                    }
+								$.post("${base}/admin/parameter/save?act="+act, jsonUser,
+									function(date) {
+											if (date.code =="1") {
+												alert("create success");
+												window.location.href='${base}/admin/parameter/list'; 
+											} else if(date.code == "2") {
+												alert("update success");
+												window.location.href='${base}/admin/parameter/list'; 
+											}else{
+		                                        alert("fail");
+											}
+									})
+						});
+		$('#date-picker').datepicker();
+		
+	</script>
+
+
+</body>
+<!--  /Body -->
+</html>

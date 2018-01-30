@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/webim_demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-table.css" />
+    <title>webim</title>
+</head>
+<body style="background-color: rgba(119, 115, 48, 0.18);width: 696px;height: 589px">
+
+<div class="modal fade" id="upload_file_dialog" tabindex="-1" role="dialog" aria-labelledby="upload_file_dialog_label" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="upload_file_dialog_label">
+                    发送文件
+                </h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form" onkeydown="if(event.keyCode==13)return false;" id="upd_file_form" name="upd_file_form">
+                    <div class="form-group">
+                        <label for="File" class="col-sm-2 control-label">选择</label>
+
+                        <div class="col-sm-10">
+                            <input type="file" id="upd_file" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="upd_file_progress" class="col-sm-2 control-label">进度</label>
+
+                        <div class="col-sm-10">
+
+                            <progress id="upd_file_progress" value="0" max="100"></progress>
+                            <!--<input type="text" id="upd_progress" value="0" name="upd_progress" />-->
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick="uploadFile()">
+                    发送
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="upload_pic_dialog" tabindex="-1" role="dialog" aria-labelledby="upload_pic_dialog_label" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="upload_pic_dialog_label">
+                    发送图片
+                </h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form" onkeydown="if(event.keyCode==13)return false;" id="upd_form" name="upd_form">
+                    <div class="form-group">
+                        <label for="File" class="col-sm-2 control-label">选择</label>
+
+                        <div class="col-sm-10">
+                            <input type="file" id="upd_pic" onchange="fileOnChange(this)" />
+                            <!--<input type="button" value="停止" id="upd_abort" />-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="File" class="col-sm-2 control-label">预览</label>
+
+                        <div class="col-sm-10">
+                            <div id="previewPicDiv"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="upd_progress" class="col-sm-2 control-label">进度</label>
+
+                        <div class="col-sm-10">
+
+                            <progress id="upd_progress" value="0" max="100"></progress>
+                            <!--<input type="text" id="upd_progress" value="0" name="upd_progress" />-->
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick="uploadPic()">
+                    发送
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="aio" id="webim_demo">
+    <div class="titlebar">
+        <img id="p_my_face" />
+
+        <p id="t_my_name"></p>
+
+    </div>
+    <div class="sesspart">
+        <div class="accordion" id="accordionContact">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionContact" href="#collapseRecentSession">
+                        會話列表
+                    </a>
+                </div>
+                <div id="collapseRecentSession" class="accordion-body collapse in">
+                    <div class="sesslist">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionContact" href="#collapseFriend">
+                    我的好友
+                </a>
+            </div>
+            <div id="collapseFriend" class="accordion-body collapse">
+                <div class="sesslist">
+                </div>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionContact" href="#collapseGroup">
+                    我的群组
+                </a>
+            </div>
+            <div id="collapseGroup" class="accordion-body collapse">
+                <div class="sesslist-group">
+                </div>
+            </div>
+        </div> -->
+        </div>
+    </div>
+
+    <div class="chatpart">
+        <div class="msgflow">
+        </div>
+
+        <span id="msg_end" style="overflow:hidden"></span>
+
+        <div class="editbar">
+            <a class="chat02_title_btn ctb01" title="选择表情" onclick="showEmotionDialog()"></a>
+            <a class="chat02_title_btn ctb03" title="选择图片" onclick="selectPicClick()" href="#"> </a>
+            <a class="chat02_title_btn ctb05" title="选择文件" onclick="selectFileClick()" href="#"> </a>
+
+            <div id="wl_faces_box" class="wl_faces_box">
+                <div class="wl_faces_content">
+                    <div class="title">
+                        <ul>
+                            <li class="title_name">常用表情</li>
+                            <li class="wl_faces_close"><span onclick='turnoffFaces_box()'>&nbsp;</span></li>
+                        </ul>
+                    </div>
+                    <div id="wl_faces_main" class="wl_faces_main">
+                        <ul id="emotionUL">
+                        </ul>
+                    </div>
+                </div>
+                <div class="wlf_icon"></div>
+            </div>
+        </div>
+        <textarea class="msgedit" id="send_msg_text" onkeydown="onTextareaKeyDown()" cols="82" rows="5"></textarea>
+
+        <div class="sendbar">
+            <button type="button" class="sendbtn" onclick="onSendMsg()">发送</button>
+        </div>
+    </div>
+    <div class="bottom"></div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/bootstrap/bootstrap-collapse.js"></script>
+
+
+<!--web im sdk 发送普通消息(文本和表情) api 示例代码-->
+<script type="text/javascript" src="js/msg/send_common_msg.js"></script>
+
+<!--web im sdk-->
+<script type="text/javascript" src="js/sdk/webim.js"></script>
+<!--<script type="text/javascript" src="sdk/webim.min.js"></script>-->
+<script type="text/javascript" src="js/sdk/json2.js"></script>
+
+<!--web im sdk 上传和发送图片消息 api 示例代码-->
+<script type="text/javascript" src="js/msg/upload_and_send_pic_msg.js"></script>
+<!--web im sdk 上传和发送文件消息 api 示例代码-->
+<script type="text/javascript" src="js/msg/upload_and_send_file_msg.js"></script>
+<!--web im sdk 上传和发送图片消息 api 示例代码-->
+<script type="text/javascript" src="js/msg/upload_and_send_pic_msg.js"></script>
+
+<!--web im sdk-->
+<script type="text/javascript" src="js/sdk/webim.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/sdk/json2.js"></script>
+<!--web im sdk 登录 示例代码-->
+<script type="text/javascript" src="js/login/login.js"></script>
+<!--web im sdk 好友管理 api 示例代码-->
+<script type="text/javascript" src="js/friend/friend_manager.js"></script>
+<!--web im sdk 群组管理 api 示例代码-->
+<script type="text/javascript" src="js/group/group_manager.js"></script>
+<!--web im sdk 群成员管理 api 示例代码-->
+<script type="text/javascript" src="js/group/group_member_manager.js"></script>
+<!--web im sdk 加群申请管理 api 示例代码-->
+<script type="text/javascript" src="js/group/group_pendency_manager.js"></script>
+<!--web im 监听群系统通知消息 示例代码-->
+<script type="text/javascript" src="js/msg/receive_group_system_msg.js"></script>
+<!--web im 监听好友系统通知消息 示例代码-->
+<script type="text/javascript" src="js/msg/receive_friend_system_msg.js"></script>
+<!--web im 监听资料系统通知消息 示例代码-->
+<script type="text/javascript" src="js/msg/receive_profile_system_msg.js"></script>
+<!--web im sdk 最近联系人 api 示例代码-->
+<script type="text/javascript" src="js/recentcontact/recent_contact_list_manager.js"></script>
+<!--web im 切换聊天好友或群组 示例代码-->
+<script type="text/javascript" src="js/switch_chat_obj.js"></script>
+<!--web im 解析一条消息 示例代码-->
+<script type="text/javascript" src="js/common/show_one_msg.js"></script>
+<!--web im sdk 获取c2c获取群组历史消息 示例代码-->
+<script type="text/javascript" src="js/msg/get_history_msg.js"></script>
+
+<script type="text/javascript" src="js/lib/md5/spark-md5.js"></script>
+
+<script>
+
+    var emotionFlag = false; //是否打开过表情选择框
+    var selType = webim.SESSION_TYPE.C2C; //当前聊天类型
+
+    $(document).ready(function(){
+        document.getElementById("webim_demo").style.display = "block";//展开聊天界面
+        document.getElementById("p_my_face").src = 'img/me.jpg';
+        $("#t_my_menu").menu();
+
+        //登录
+        webimLogin();
+    })
+    var sign = parent.$("#sign").val();
+    var imName = parent.$("#imName").val();
+    //官方 demo appid,需要开发者自己修改（托管模式）
+    var sdkAppID = 1400028529;
+    var accountType = 11902;
+    var AdminAcount = 'admin';
+    //帐号模式，0-表示独立模式，1-表示托管模式
+    var totalCount = 200; //每次接口请求的条数，bootstrap table 分页时用到
+    var pageSize = 15; //表格的每页条数，bootstrap table 分页时用到
+    var accountMode = 1;
+    //存放c2c或者群信息（c2c用户：c2c用户id，昵称，头像；群：群id，群名称，群头像）
+    var infoMap = {}; //初始化时，可以先拉取我的好友和我的群组信息
+    var reqRecentSessCount = 50; //每次请求的最近会话条数，业务可以自定义
+    //默认好友头像
+    var friendHeadUrl = 'img/friend.jpg'; //仅demo使用，用于没有设置过头像的好友
+    //默认群头像
+    var groupHeadUrl = 'img/group.jpg'; //仅demo使用，用于没有设置过群头像的情况
+
+    var isAccessFormalEnv = true; //是否访问正式环境
+    var selToID = null; //当前选中聊天id（当聊天类型为私聊时，该值为好友帐号，否则为群号）
+    var isLogOn = false; //是否开启sdk在控制台打印日志
+    var getPrePageC2CHistroyMsgInfoMap = {}; //保留下一次拉取好友历史消息的信息
+    var getPrePageGroupHistroyMsgInfoMap = {}; //保留下一次拉取群历史消息的信息
+
+    //初始化时，其他对象，选填
+    var options = {
+        'isAccessFormalEnv': isAccessFormalEnv, //是否访问正式环境，默认访问正式，选填
+        'isLogOn': isLogOn //是否开启控制台打印日志,默认开启，选填
+    }
+    var maxNameLen = 8; //我的好友或群组列表中名称显示最大长度，仅demo用得到
+    var reqMsgCount = 15; //每次请求的历史消息(c2c获取群)条数，仅demo用得到
+    var recentSessMap = {}; //保存最近会话列表
+
+    //当前用户身份
+    var loginInfo = {
+        'sdkAppID': sdkAppID, //用户所属应用id,必填
+        'accountType': accountType, //用户所属应用帐号类型，必填
+        'identifier': imName, //当前用户ID,必须是否字符串类型，必填
+        'userSig': sign, //当前用户身份凭证，必须是字符串类型，必填
+        'identifierNick': localStorage.nickName,//+imName.replace("service",""), //当前用户昵称，不用填写，登录接口会返回用户的昵称，如果没有设置，则返回用户的id
+        'headurl': 'img/me.jpg' //当前用户默认头像，选填，如果设置过头像，则可以通过拉取个人资料接口来得到头像信息
+    };
+    //监听事件
+    var listeners = {
+        "onConnNotify": onConnNotify //监听连接状态回调变化事件,必填
+        ,
+        "jsonpCallback": jsonpCallback //IE9(含)以下浏览器用到的jsonp回调函数，
+        ,
+        "onMsgNotify": onMsgNotify //监听新消息(私聊，普通群(非直播聊天室)消息，全员推送消息)事件，必填
+        ,
+        "onKickedEventCall": onKickedEventCall //被其他登录实例踢下线
+        ,
+        "onC2cEventNotifys": onC2cEventNotifys //监听C2C系统消息通道
+        ,
+        "onAppliedDownloadUrl": onAppliedDownloadUrl //申请文件/音频下载地址的回调
+    };
+    var onC2cEventNotifys = {
+        "92": onMsgReadedNotify, //消息已读通知
+    };
+    //消息已读通知
+    function onMsgReadedNotify(notify) {
+        _.each(notify.ReadC2cMsgNotify.UinPairReadArray,function(item){
+            handleC2cMsgReadedNotify(item);
+        });
+    }
+
+
+    //监听连接状态回调变化事件
+    var onConnNotify = function(resp) {
+        var info;
+        switch (resp.ErrorCode) {
+            case webim.CONNECTION_STATUS.ON:
+                webim.Log.warn('建立连接成功: ' + resp.ErrorInfo);
+                break;
+            case webim.CONNECTION_STATUS.OFF:
+                info = '连接已断开，无法收到新消息，请检查下你的网络是否正常: ' + resp.ErrorInfo;
+                // alert(info);
+                webim.Log.warn(info);
+                break;
+            case webim.CONNECTION_STATUS.RECONNECT:
+                info = '连接状态恢复正常: ' + resp.ErrorInfo;
+                // alert(info);
+                webim.Log.warn(info);
+                break;
+            default:
+                webim.Log.error('未知连接状态: =' + resp.ErrorInfo);
+                break;
+        }
+    };
+    //被新实例踢下线的回调处理
+    function onKickedEventCall(){
+        webim.Log.error("其他地方登录，被T了");
+        alert("其他地方登录，被T了!请重新登录！");
+//        document.getElementById("webim_demo").style.display = "none";
+    }
+    //IE9(含)以下浏览器用到的jsonp回调函数
+    function jsonpCallback(rspData) {
+        webim.setJsonpLastRspData(rspData);
+    }
+
+    //监听新消息事件
+    //newMsgList 为新消息数组，结构为[Msg]
+    function onMsgNotify(newMsgList) {
+        //console.warn(newMsgList);
+        var sess, newMsg;
+        //获取所有聊天会话
+        var sessMap = webim.MsgStore.sessMap();
+
+        for (var j in newMsgList) {//遍历新消息
+            newMsg = newMsgList[j];
+
+            if(!selToID){//没有聊天对象
+                selToID=newMsg.getSession().id();
+                selType=newMsg.getSession().type();
+                selSess = newMsg.getSession();
+                var headUrl;
+                if(selType==webim.SESSION_TYPE.C2C){
+                    headUrl=friendHeadUrl;
+                }else{
+                    headUrl=groupHeadUrl;
+                }
+                addSess(selType,selToID, newMsg.getSession().name(), headUrl, 0, 'sesslist');//新增一个对象
+                setSelSessStyleOn(selToID);
+            }
+            if (newMsg.getSession().id() == selToID) {//为当前聊天对象的消息
+                //在聊天窗体中新增一条消息
+                //console.warn(newMsg);
+                addMsg(newMsg);
+            }
+        }
+        //消息已读上报，以及设置会话自动已读标记
+        webim.setAutoRead(selSess, true, true);
+
+        for (var i in sessMap) {
+            sess = sessMap[i];
+            if (selToID != sess.id()) {//更新其他聊天对象的未读消息数
+                updateSessDiv(sess.type(), sess.id(), sess.name(), sess.unread());
+                console.debug(sess.unread());
+                // stopPolling = true;
+            }
+        }
+    }
+    var msgflow = document.getElementsByClassName("msgflow")[0];
+    var bindScrollHistoryEvent = {
+        init: function() {
+            msgflow.onscroll = function() {
+                if (msgflow.scrollTop == 0) {
+                    msgflow.scrollTop = 10;
+                    if (selType == webim.SESSION_TYPE.C2C) {
+                        getPrePageC2CHistoryMsgs();
+                    } else {
+                        getPrePageGroupHistoryMsgs();
+                    }
+
+                }
+            }
+        },
+        reset: function() {
+            msgflow.onscroll = null;
+        }
+    };
+
+</script>
+<script src="macao/assets/admin/js/jquery-2.0.3.min.js"></script>
+</html>

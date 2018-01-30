@@ -1,0 +1,8 @@
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-07-05 09:40:09 Exception:LoginController/login msg:
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/backstage-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarManagerMapper.xml]
+### The error may involve com.yinghai.macao.backstage.dao.SpcarManagerMapper.selectByName
+### The error occurred while executing a query
+### SQL: select            id, username, password, email, email_verified, create_time, last_updated, role_id,      remark,im_name,sign         from spcar_manager     where username = ?     order by id asc limit 1
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+; SQL []; No operations allowed after connection closed.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.

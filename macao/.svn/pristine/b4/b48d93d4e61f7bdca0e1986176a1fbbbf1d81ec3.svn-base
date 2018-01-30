@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Loading Container -->
+	<!--  /Loading Container -->
+	<!-- Navbar -->
+<#include "../common/head.html"/>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+        <!-- Page Sidebar -->
+
+        <#include "../common/menu.html"/>
+            <!-- /Sidebar Menu -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                </div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="${base!}/admin/spcarnews/toEdit" title="新增"> <i
+							class="glyphicon glyphicon-plus"></i>
+						</a>
+						<!-- <a  title="推送廣告" onclick=""> <i
+							class="glyphicon glyphicon-export"></i>
+						</a> -->
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-body">
+					<div class="row">
+						<div class="col-xs-12 col-md-12">
+							<div class="widget">
+							<form action='${base!}/admin/spcarnews/list' id='searchs' method="POST">
+								<div class="widget-header ">
+									<span class="widget-caption">最新消息列表</span>標題： <input type="text"
+										class="searchinput"value='<#if spcarNews??>${spcarNews.newsTitle!}</#if>' id='newsTitle'
+										name='newsTitle'>
+										</form>
+										<i onclick='search()'
+										class="searchicon fa fa-search"></i>
+									<div class="widget-buttons">
+										<a href="#" data-toggle="maximize"> <i
+											class="fa fa-expand"></i>
+										</a>
+									</div>
+								</div>
+								
+								<div class="widget-body">
+									<table class="table table-striped table-bordered table-hover"
+										id="simpledatatable">
+										<thead>
+											<tr>
+												<th>編號</th>
+												<th>標題</th>
+												<th>發佈日期</th>
+												<th>發佈截止日期</th>
+												<th>範疇</th>
+												<th>推送次數</th>
+												<th>最新推送時間</th>
+												<th>更多操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<#if page??> <#list page as item>
+											<tr id="${item.newsId!}Tr">
+												<td>
+													<div class="checker">
+														<span class=""><input type="checkbox"
+															class="checkboxes" value="${item.newsId!}"></span>${item.newsId!}
+													</div>
+												</td>
+												<td>${item.newsTitle!}</td>
+												<td>${(item.publishSince?string("yyyy-MM-dd HH:mm:ss"))!}</td>
+                                            	<td>${(item.publishTill?string("yyyy-MM-dd HH:mm:ss"))!}</td>
+												<!-- <td>${item.realm!}</td> -->
+												<td><#if item.realm??><#if (item.realm=="driver")>司機<#else>乘客</#if></#if> </td>
+												<td>${item.pushTotalTimes!}</td>
+												<td>${(item.pushLatestTime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
+												<td><ma-column> <ma-string-column>
+													<span class="ng-binding"> <a
+														href="${base!}/admin/spcarnews/toEdit?id=${item.newsId!}&act=upd">编辑</a>
+														&nbsp <a href="javascript:void(0)"
+														onclick="delNews('${item.newsId!}')">删除</a>
+														&nbsp;&nbsp;&nbsp;&nbsp;<a title="推送消息" onclick="pushInfo('${item.newsId!}')"> <i class="glyphicon glyphicon-export"></i></a>
+													</span></ma-string-column></ma-column></td>
+											</tr>
+  										</#list> 
+										</#if>
+										</tbody>
+									</table>
+									<div class="row DTTTFooter">
+										<div class="col-sm-6">
+											<div class="dataTables_info" id="simpledatatable_info"
+												role="alert" aria-live="polite" aria-relevant="all"></div>
+										</div>
+										<div class="col-sm-6"><#import "/ftl/pager.ftl" as p/>
+											<#if page??> <@p.pager pageNo=pageNo pageSize=pageSize
+											recordCount=recordCount pageCount=pageCount
+											toURL="${base!}/admin/spcarnews/list" method="post"/> </#if></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+
+	<!--Page Related Scripts-->
+	<!--Sparkline Charts Needed Scripts-->
+
+
+	<script>
+		/* $('#date-picker').datepicker(); */
+		var h = parseFloat(screen.height) / 5 * 3;
+		var w = parseFloat(screen.width) / 7 * 3;
+		/* $("#message").click(function() {
+			
+		}) */
+		
+		function delNews(id) {
+	        var sure = confirm("確定刪除?");
+	        if(sure) {
+	            $.post("${base!}/admin/spcarnews/del", {
+	                    "id" : id
+	                },
+	                function(data) {
+	                    if (data.code == "1") {
+	                        alert("刪除成功!");
+	                        $("#" + id + "Tr").remove();
+	                    } else {
+	                        alert("刪除失敗!");
+	                    }
+	                });
+	        }
+		}
+		
+		function search(){
+			 document.getElementById("searchs").submit();
+		}
+		function pushInfo(id){
+        	
+           	//	alert(score)
+           	//	alert(comments)
+           	var json = {
+           			  "id":id
+           	}
+       		$.post("${base}/admin/spcarnews/pushMsg",json,function(data){
+          		if (data.code == "1") {
+           			alert("success");
+           		   //layer.close(index);
+                }else{
+           			alert("推送失敗！稍後重試"+data.code);
+           		}
+                window.location.reload();
+       		});
+
+		}
+	</script>
+
+
+</body>
+<!--  /Body -->
+</html>

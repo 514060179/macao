@@ -1,0 +1,49 @@
+package com.yinghai.macao.app.service;
+
+import java.util.Date;
+import java.util.UUID;
+
+import javax.annotation.Resource;
+
+import com.yinghai.macao.app.dao.TaxigoAccessTokensDao;
+import com.yinghai.macao.app.model.TaxigoAccessTokens;
+
+public class TaxigoAccessTokensServiceImpl implements TaxigoAccessTokensService {
+	@Resource
+	private TaxigoAccessTokensDao tokensDao;
+
+	@Override
+	public String validateUserToken(String userId) {
+		// 根据前端POST参数里的TOKEN 查找数据库
+		TaxigoAccessTokens tokens = tokensDao.selectByUserId(userId);
+
+		if (tokens == null) {
+			return null;
+		} else {
+			// 若TOKEN存在,验证TOKEN 是否过期
+			return tokens.getId().toString();
+		}
+	}
+
+	@Override
+	public String createUserToken(String userId) {
+		String accessTokenString = "";
+//		accessTokenString = RandomUtil.getrandomString(64, typeEnum.both);
+		accessTokenString = UUID.randomUUID()+""+UUID.randomUUID();
+		accessTokenString = accessTokenString.replace("-", "");
+		TaxigoAccessTokens tokens = new TaxigoAccessTokens();
+		tokens.setCreated(new Date());
+		tokens.setUserid(Integer.valueOf(userId));
+		// tokens.setTtl(5184000.00);
+		tokens.setId(accessTokenString);
+		tokensDao.insertSelective(tokens);
+		return accessTokenString;
+	}
+	
+	@Override
+	public String getUserTokenByUseIdI(String userId) {
+		TaxigoAccessTokens tokens = tokensDao.selectByUserId(userId);
+		return tokens.getId().toString();
+	}
+
+}

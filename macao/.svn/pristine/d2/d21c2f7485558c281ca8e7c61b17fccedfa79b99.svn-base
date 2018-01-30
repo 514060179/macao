@@ -1,0 +1,60 @@
+package com.yinghai.macao.app.controller;
+
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.yinghai.macao.common.model.Parameter;
+import com.yinghai.macao.common.model.SpcarComment;
+import com.yinghai.macao.common.model.SpcarOrder;
+import com.yinghai.macao.common.service.ParameterService;
+import com.yinghai.macao.common.service.SpcarCommentService;
+import com.yinghai.macao.common.service.SpcarOrderService;
+import com.yinghai.macao.common.service.SpcarPassengerService;
+import com.yinghai.macao.common.util.JsonDateValueProcessor;
+import com.yinghai.macao.common.util.Page;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+
+@Controller
+@RequestMapping("/spcar/parameter")
+public class ParameterAction {
+	
+	private Logger log = Logger.getLogger(this.getClass());
+	@Autowired
+	ParameterService parameterService;
+	@Autowired
+	SpcarPassengerService spcarPassengerService;
+
+	@Autowired
+	SpcarOrderService spcarOrderService;
+	@RequestMapping(value = "list", method = RequestMethod.POST)
+	public void list(HttpServletRequest request,HttpServletResponse response)
+	{
+		Parameter parameter = new Parameter();
+		JSONObject responseObject = new JSONObject();
+		Page<Parameter> page = parameterService.findList(1, 200, parameter);
+		 JsonConfig config = new JsonConfig();
+         config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+         JSONArray parameterList = JSONArray.fromObject(page.getResult(), config);
+			JSONObject data = new JSONObject();
+			data.put("parameterList", parameterList);
+			responseObject.put("msg", "操作成功");
+			responseObject.put("code", "1");
+			responseObject.put("data", data);
+			ResponseUtils.renderJson(response, responseObject.toString());
+	            return;
+	}
+}

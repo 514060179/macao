@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarOrderMapper" >
+	<resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.SpcarOrder" >
+		<id column="spcar_order_id" property="spcarOrderId" jdbcType="INTEGER" />
+		<result column="order_id" property="orderId" jdbcType="INTEGER" />
+		<result column="order_no" property="orderNo" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="driver_id" property="driverId" jdbcType="INTEGER" />
+		<result column="passenger_id" property="passengerId" jdbcType="INTEGER" />
+		<result column="spcar_id" property="spcarId" jdbcType="INTEGER" />
+		<result column="confirm_id" property="confirmId" jdbcType="INTEGER" />
+		<result column="confirm_type" property="confirmType" jdbcType="VARCHAR" />
+		<result column="reject_type" property="rejectType" jdbcType="VARCHAR" />
+		<result column="memo" property="memo" jdbcType="VARCHAR" />
+		<result column="monthly" property="monthly" jdbcType="BIT" />
+		<result column="comment" property="comment" jdbcType="BIT" />
+		<result column="start_x" property="startX" jdbcType="DOUBLE" />
+		<result column="start_y" property="startY" jdbcType="DOUBLE" />
+		<result column="start_address" property="startAddress" jdbcType="VARCHAR" />
+		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="driver_arrive_time" property="driverArriveTime" jdbcType="TIMESTAMP" />
+		<result column="driver_setout_time" property="driverSetoutTime" jdbcType="TIMESTAMP" />
+		<result column="passenger_arrive_time" property="passengerArriveTime" jdbcType="TIMESTAMP" />
+		<result column="complete_time" property="completeTime" jdbcType="TIMESTAMP" />
+		<result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
+		<result column="amount" property="amount" jdbcType="INTEGER" />
+		<result column="refundMoney" property="refund_money" jdbcType="INTEGER" />
+		<result column="pay_status" property="payStatus" jdbcType="INTEGER" />
+		<result column="total_hour" property="totalHour" jdbcType="INTEGER" />
+		<result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+		<result column="cancel_type" property="cancelType" jdbcType="VARCHAR" />
+		<result column="pay_way" property="payWay" jdbcType="VARCHAR" />
+		<result column="pay_way_code" property="payWayCode" jdbcType="INTEGER" />
+		<result column="end_x" property="endX" jdbcType="DOUBLE" />
+		<result column="end_y" property="endY" jdbcType="DOUBLE" />
+		<result column="end_address" property="endAddress" jdbcType="VARCHAR" />
+		<result column="cancel_time" property="cancelTime" jdbcType="TIMESTAMP" />
+		<association property="spcarDriver"  javaType="com.yinghai.macao.common.model.SpcarDriver">
+			<id column="spcar_driver_id" property="spcarDriverId" jdbcType="INTEGER" />
+			<result column="name" property="name" jdbcType="VARCHAR" />
+			<result column="loc_x" property="locX" jdbcType="DOUBLE" />
+			<result column="loc_y" property="locY" jdbcType="DOUBLE" />
+			<result column="status" property="status" jdbcType="VARCHAR" />
+			<result column="license" property="license" jdbcType="VARCHAR" />
+			<result column="image" property="image" jdbcType="VARCHAR" />
+			<result column="driver_type" property="driverType" jdbcType="VARCHAR" />
+			<result column="spcar_type" property="spcarType" jdbcType="VARCHAR" />
+			<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+			<result column="last_update" property="lastUpdate" jdbcType="TIMESTAMP" />
+			<result column="device_id" property="deviceId" jdbcType="VARCHAR" />
+			<result column="verification" property="verification" jdbcType="VARCHAR" />
+			<result column="country_code" property="countryCode" jdbcType="VARCHAR" />
+			<result column="tel" property="tel" jdbcType="VARCHAR" />
+			<result column="given_name" property="givenName" jdbcType="VARCHAR" />
+			<result column="family_name" property="familyName" jdbcType="VARCHAR" />
+			<result column="userId" property="userid" jdbcType="INTEGER" />
+			<result column="rating" property="rating" jdbcType="DOUBLE" />
+			<result column="english_capability" property="englishCapability" jdbcType="BIT" />
+			<result column="profile_image" property="profileImage" jdbcType="VARCHAR" />
+			<result column="order_count" property="orderCount" jdbcType="DOUBLE" />
+			<result column="cancel_count" property="cancelCount" jdbcType="DOUBLE" />
+			<result column="finish_count" property="finishCount" jdbcType="DOUBLE" />
+			<result column="deleted" property="deleted" jdbcType="BIT" />
+			<result column="license_true" property="licenseTrue" jdbcType="VARCHAR" />
+			<result column="license_till" property="licenseTill" jdbcType="TIMESTAMP" />
+			<result column="shift" property="shift" jdbcType="VARCHAR" />
+			<result column="device_type" property="deviceType" jdbcType="VARCHAR" />
+			<result column="im_name" property="imName" jdbcType="VARCHAR" />
+		</association>
+		<association property="spcarPassenger" javaType="com.yinghai.macao.common.model.SpcarPassenger">
+			<id column="spcar_passenger_id" property="spcarId" jdbcType="INTEGER" />
+			<result column="name" property="name" jdbcType="VARCHAR" />
+			<result column="vip" property="vip" jdbcType="BIT" />
+			<result column="family_name" property="familyName" jdbcType="VARCHAR" />
+			<result column="given_name" property="givenName" jdbcType="VARCHAR" />
+			<result column="country_code" property="countryCode" jdbcType="VARCHAR" />
+			<result column="tel" property="tel" jdbcType="VARCHAR" />
+			<result column="title" property="title" jdbcType="VARCHAR" />
+			<result column="loc_x" property="locX" jdbcType="DOUBLE" />
+			<result column="loc_y" property="locY" jdbcType="DOUBLE" />
+			<result column="last_login" property="lastLogin" jdbcType="TIMESTAMP" />
+			<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+			<result column="device_id" property="deviceId" jdbcType="VARCHAR" />
+			<result column="passenger_id" property="passengerId" jdbcType="VARCHAR" />
+			<result column="status" property="status" jdbcType="INTEGER" />
+			<result column="sex" property="sex" jdbcType="BIT" />
+			<result column="order_count" property="orderCount" jdbcType="DOUBLE" />
+			<result column="cancel_count" property="cancelCount" jdbcType="DOUBLE" />
+			<result column="finish_count" property="finishCount" jdbcType="DOUBLE" />
+			<result column="deleted" property="deleted" jdbcType="BIT" />
+			<result column="rating" property="rating" jdbcType="DOUBLE" />
+			<result column="device_type" property="deviceType" jdbcType="VARCHAR" />
+			<result column="im_name" property="imName" jdbcType="VARCHAR" />
+			<result column="sign" property="sign" jdbcType="VARCHAR" />
+		</association>
+		<association property="spcar" javaType="com.yinghai.macao.common.model.Spcar">
+			<id column="spcar_id" property="spcarId" jdbcType="INTEGER" />
+			<result column="spcar_type" property="spcarType" jdbcType="VARCHAR" />
+			<result column="spcar_color" property="spcarColor" jdbcType="VARCHAR" />
+			<result column="spcar_no" property="spcarNo" jdbcType="VARCHAR" />
+			<result column="spcar_sit" property="spcarSit" jdbcType="INTEGER" />
+			<result column="spcar_used" property="spcarUsed" jdbcType="BIT" />
+			<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+			<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+		</association>
+	</resultMap>
+	<resultMap id="AppResultMap" type="com.yinghai.macao.common.model.SpcarOrder" >
+		<id column="spcar_order_id" property="spcarOrderId" jdbcType="INTEGER" />
+		<result column="order_id" property="orderId" jdbcType="INTEGER" />
+		<result column="order_no" property="orderNo" jdbcType="VARCHAR" />
+		<result column="monthly" property="monthly" jdbcType="BIT" />
+		<result column="comment" property="comment" jdbcType="BIT" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="driver_id" property="driverId" jdbcType="INTEGER" />
+		<result column="passenger_id" property="passengerId" jdbcType="INTEGER" />
+		<result column="spcar_id" property="spcarId" jdbcType="INTEGER" />
+		<result column="confirm_id" property="confirmId" jdbcType="INTEGER" />
+		<result column="confirm_type" property="confirmType" jdbcType="VARCHAR" />
+		<result column="reject_type" property="rejectType" jdbcType="VARCHAR" />
+		<result column="memo" property="memo" jdbcType="VARCHAR" />
+		<result column="start_x" property="startX" jdbcType="DOUBLE" />
+		<result column="start_y" property="startY" jdbcType="DOUBLE" />
+		<result column="start_address" property="startAddress" jdbcType="VARCHAR" />
+		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="driver_arrive_time" property="driverArriveTime" jdbcType="TIMESTAMP" />
+		<result column="driver_setout_time" property="driverSetoutTime" jdbcType="TIMESTAMP" />
+		<result column="passenger_arrive_time" property="passengerArriveTime" jdbcType="TIMESTAMP" />
+		<result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
+		<result column="amount" property="amount" jdbcType="INTEGER" />
+		<result column="refund_money" property="refundMoney" jdbcType="INTEGER" />
+		<result column="pay_status" property="payStatus" jdbcType="INTEGER" />
+		<result column="total_hour" property="totalHour" jdbcType="INTEGER" />
+		<result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+		<result column="cancel_type" property="cancelType" jdbcType="VARCHAR" />
+		<result column="pay_way" property="payWay" jdbcType="VARCHAR" />
+		<result column="pay_way_code" property="payWayCode" jdbcType="INTEGER" />
+		<result column="end_x" property="endX" jdbcType="DOUBLE" />
+		<result column="end_y" property="endY" jdbcType="DOUBLE" />
+		<result column="end_address" property="endAddress" jdbcType="VARCHAR" />
+		<result column="cancel_time" property="cancelTime" jdbcType="TIMESTAMP" />
+		<result column="o_reject_id" property="rejectId" jdbcType="LONGVARCHAR" />
+		<association property="spcarDriver"  javaType="com.yinghai.macao.common.model.SpcarDriver">
+			<id column="spcar_driver_id" property="spcarDriverId" jdbcType="INTEGER" />
+			<result column="d_name" property="name" jdbcType="VARCHAR" />
+			<result column="d_loc_x" property="locX" jdbcType="DOUBLE" />
+			<result column="d_loc_y" property="locY" jdbcType="DOUBLE" />
+			<result column="d_status" property="status" jdbcType="VARCHAR" />
+			<result column="d_license" property="license" jdbcType="VARCHAR" />
+			<result column="d_image" property="image" jdbcType="VARCHAR" />
+			<result column="d_driver_type" property="driverType" jdbcType="VARCHAR" />
+			<result column="d_spcar_type" property="spcarType" jdbcType="VARCHAR" />
+			<result column="d_create_time" property="createTime" jdbcType="TIMESTAMP" />
+			<result column="d_last_update" property="lastUpdate" jdbcType="TIMESTAMP" />
+			<result column="d_device_id" property="deviceId" jdbcType="VARCHAR" />
+			<result column="d_verification" property="verification" jdbcType="VARCHAR" />
+			<result column="d_country_code" property="countryCode" jdbcType="VARCHAR" />
+			<result column="d_tel" property="tel" jdbcType="VARCHAR" />
+			<result column="d_given_name" property="givenName" jdbcType="VARCHAR" />
+			<result column="d_family_name" property="familyName" jdbcType="VARCHAR" />
+			<result column="d_userId" property="userid" jdbcType="INTEGER" />
+			<result column="d_rating" property="rating" jdbcType="DOUBLE" />
+			<result column="d_english_capability" property="englishCapability" jdbcType="BIT" />
+			<result column="d_profile_image" property="profileImage" jdbcType="VARCHAR" />
+			<result column="d_order_count" property="orderCount" jdbcType="DOUBLE" />
+			<result column="d_cancel_count" property="cancelCount" jdbcType="DOUBLE" />
+			<result column="d_finish_count" property="finishCount" jdbcType="DOUBLE" />
+			<result column="d_deleted" property="deleted" jdbcType="BIT" />
+			<result column="d_license_true" property="licenseTrue" jdbcType="VARCHAR" />
+			<result column="d_license_till" property="licenseTill" jdbcType="TIMESTAMP" />
+			<result column="d_shift" property="shift" jdbcType="VARCHAR" />
+			<result column="d_device_type" property="deviceType" jdbcType="VARCHAR" />
+			<result column="d_im_name" property="imName" jdbcType="VARCHAR" />
+		</association>
+		<association property="spcarPassenger" javaType="com.yinghai.macao.common.model.SpcarPassenger">
+			<id column="spcar_passenger_id" property="spcarId" jdbcType="INTEGER" />
+			<result column="p_name" property="name" jdbcType="VARCHAR" />
+			<result column="p_vip" property="vip" jdbcType="BIT" />
+			<result column="p_family_name" property="familyName" jdbcType="VARCHAR" />
+			<result column="p_given_name" property="givenName" jdbcType="VARCHAR" />
+			<result column="title" property="title" jdbcType="VARCHAR" />
+			<result column="p_country_code" property="countryCode" jdbcType="VARCHAR" />
+			<result column="p_tel" property="tel" jdbcType="VARCHAR" />
+			<result column="p_loc_x" property="locX" jdbcType="DOUBLE" />
+			<result column="p_loc_y" property="locY" jdbcType="DOUBLE" />
+			<result column="p_last_login" property="lastLogin" jdbcType="TIMESTAMP" />
+			<result column="p_create_time" property="createTime" jdbcType="TIMESTAMP" />
+			<result column="p_device_id" property="deviceId" jdbcType="VARCHAR" />
+			<result column="p_passenger_id" property="passengerId" jdbcType="VARCHAR" />
+			<result column="p_status" property="status" jdbcType="INTEGER" />
+			<result column="p_sex" property="sex" jdbcType="BIT" />
+			<result column="p_order_count" property="orderCount" jdbcType="DOUBLE" />
+			<result column="p_cancel_count" property="cancelCount" jdbcType="DOUBLE" />
+			<result column="p_finish_count" property="finishCount" jdbcType="DOUBLE" />
+			<result column="p_deleted" property="deleted" jdbcType="BIT" />
+			<result column="p_rating" property="rating" jdbcType="DOUBLE" />
+			<result column="p_device_type" property="deviceType" jdbcType="VARCHAR" />
+			<result column="p_im_name" property="imName" jdbcType="VARCHAR" />
+			<result column="p_sign" property="sign" jdbcType="VARCHAR" />
+		</association>
+		<association property="spcar" javaType="com.yinghai.macao.common.model.Spcar">
+			<id column="c_spcar_id" property="spcarId" jdbcType="INTEGER" />
+			<result column="c_spcar_type" property="spcarType" jdbcType="VARCHAR" />
+			<result column="c_spcar_color" property="spcarColor" jdbcType="VARCHAR" />
+			<result column="c_spcar_no" property="spcarNo" jdbcType="VARCHAR" />
+			<result column="c_spcar_sit" property="spcarSit" jdbcType="INTEGER" />
+			<result column="c_spcar_used" property="spcarUsed" jdbcType="BIT" />
+			<result column="c_create_time" property="createTime" jdbcType="TIMESTAMP" />
+			<result column="c_update_time" property="updateTime" jdbcType="TIMESTAMP" />
+		</association>
+		<collection  property="list"  ofType="com.yinghai.macao.common.model.SpcarOrderSon">
+			<id column="o_spcar_order_id" property="spcarOrderIdSon" jdbcType="INTEGER" />
+			<result column="o_order_id" property="orderIdSon" jdbcType="INTEGER" />
+			<result column="o_monthly" property="monthlySon" jdbcType="BIT" />
+			<result column="o_total_hour" property="totalHourSon" jdbcType="INTEGER" />
+			<result column="o_amount" property="amountSon" jdbcType="INTEGER" />
+			<result column="o_refund_money" property="refundMoneySon" jdbcType="INTEGER" />
+			<result column="o_status" property="statusSon" jdbcType="INTEGER" />
+		</collection>
+	</resultMap>
+	<resultMap id="ResultMapWithBLOBs" type="com.yinghai.macao.common.model.SpcarOrder" extends="BaseResultMap" >
+	</resultMap>
+	<sql id="Base_Column_List" >
+		spcar_order_id,order_id, order_no, status, driver_id, passenger_id, spcar_id,confirm_id, confirm_type,
+		reject_type, memo, start_x, start_y, start_address, update_time, create_time, pay_time,
+		amount, pay_status, total_hour, start_time, cancel_type, pay_way, pay_way_code, end_x,
+		end_y, end_address,cancel_time,monthly,comment,refund_money
+	</sql>
+	<sql id="Blob_Column_List" >
+		reject_id
+	</sql>
+	<sql id="App_Column_list">
+		o.spcar_order_id,o.order_id, o.monthly,o.comment,o.order_no , o.status , o.driver_id , o.passenger_id , o.spcar_id ,o.confirm_id , o.confirm_type ,o.cancel_time,o.reject_id AS o_reject_id,o.refund_money,
+        o.reject_type , o.memo, o.start_x , o.start_y , o.start_address , o.update_time, o.create_time , o.pay_time ,o.driver_arrive_time,o.driver_setout_time,o.passenger_arrive_time,o.complete_time,
+        o.amount , o.pay_status , o.total_hour, o.start_time , o.cancel_type, o.pay_way , o.pay_way_code , o.end_x ,   o.end_y , o.end_address ,c.spcar_id AS c_spcar_id,
+        c.spcar_type AS c_spcar_type, c.spcar_color AS c_spcar_color, c.spcar_no AS c_spcar_no, c.spcar_sit AS c_spcar_sit, c.spcar_used AS c_spcar_used, c.create_time AS c_create_tme,         c.update_time AS c_update_time, p.spcar_id  AS spcar_passenger_id,
+         p.name AS p_name, p.vip AS p_vip,p.family_name AS p_family_name, p.given_name AS p_given_name, p.country_code AS p_country_code, p.tel AS p_tel, p.loc_x AS p_loc_x, p.loc_y AS p_loc_y, p.last_login AS p_last_login,      p.create_time AS p_create_tme, p.device_id AS p_device_id, p.passenger_id AS p_passenger_id,
+         p.status AS p_status, p.sex AS p_sex, p.order_count AS p_order_count, p.cancel_count AS p_cancel_count, p.finish_count AS p_finish_count,  p.title,    p.deleted AS p_deleted,p.rating AS p_rating, p.device_type AS p_device_type, p.im_name AS p_im_name, p.sign AS p_sign,p.verification AS p_verification,d.spcar_driver_id AS spcar_driver_id,
+         d.name AS d_name, d.loc_x AS d_loc_x, d.loc_y AS d_loc_Y, d.status AS d_status, d.license, d.image, d.driver_type, d.spcar_type AS d_spcar_type,      d.create_time AS d_create_tme, d.last_update, d.device_id  AS d_device_id, d.verification  AS d_verification,
+         d.country_code AS d_country_code, d.tel AS d_tel, d.given_name AS d_given_name,      d.family_name AS d_family_name, d.userId AS d_userId, d.rating AS d_rating, d.english_capability AS d_english_capability, d.profile_image AS d_profile_image, d.order_count AS d_order_count, d.cancel_count AS d_cancel_count,      d.finish_count AS d_finish_count,
+          d.deleted AS d_deleted, d.license_true AS d_license_true, d.license_till AS d_license_till, d.shift AS d_shift, d.device_type AS d_device_type,d.im_name as d_im_name
+	</sql>
+		<sql id="Apptwo_Column_list">
+	  	o.spcar_order_id,o.order_id, o.monthly,o.order_no , o.comment,o.status , o.driver_id , o.passenger_id , o.spcar_id ,o.confirm_id , o.confirm_type ,o.cancel_time,o.reject_id AS o_reject_id,o.refund_money,
+        o.reject_type , o.memo, o.start_x , o.start_y , o.start_address , o.update_time, o.create_time , o.pay_time ,o.driver_arrive_time,o.driver_setout_time,o.passenger_arrive_time,o.complete_time,
+        o.amount , o.pay_status , o.total_hour, o.start_time , o.cancel_type, o.pay_way , o.pay_way_code , o.end_x ,   o.end_y , o.end_address ,c.spcar_id AS c_spcar_id,
+        c.spcar_type AS c_spcar_type, c.spcar_color AS c_spcar_color, c.spcar_no AS c_spcar_no, c.spcar_sit AS c_spcar_sit, c.spcar_used AS c_spcar_used, c.create_time AS c_create_tme,         c.update_time AS c_update_time, p.spcar_id  AS spcar_passenger_id,
+         p.name AS p_name, p.vip AS p_vip,p.family_name AS p_family_name, p.given_name AS p_given_name,p.title, p.country_code AS p_country_code, p.tel AS p_tel, p.loc_x AS p_loc_x, p.loc_y AS p_loc_y, p.last_login AS p_last_login,      p.create_time AS p_create_tme, p.device_id AS p_device_id, p.passenger_id AS p_passenger_id,
+         p.status AS p_status, p.sex AS p_sex, p.order_count AS p_order_count, p.cancel_count AS p_cancel_count, p.finish_count AS p_finish_count,      p.deleted AS p_deleted,p.rating AS p_rating, p.device_type AS p_device_type, p.im_name AS p_im_name, p.sign AS p_sign,p.verification AS p_verification,d.spcar_driver_id AS spcar_driver_id,
+         d.name AS d_name, d.loc_x AS d_loc_x, d.loc_y AS d_loc_Y, d.status AS d_status, d.license, d.image, d.driver_type, d.spcar_type AS d_spcar_type,      d.create_time AS d_create_tme, d.last_update, d.device_id  AS d_device_id, d.verification  AS d_verification,
+         d.country_code AS d_country_code, d.tel AS d_tel, d.given_name AS d_given_name,      d.family_name AS d_family_name, d.userId AS d_userId, d.rating AS d_rating, d.english_capability AS d_english_capability, d.profile_image AS d_profile_image, d.order_count AS d_order_count, d.cancel_count AS d_cancel_count,      d.finish_count AS d_finish_count,
+          d.deleted AS d_deleted, d.license_true AS d_license_true, d.license_till AS d_license_till, d.shift AS d_shift, d.device_type AS d_device_type,d.im_name AS d_im_name,or.spcar_order_id AS o_spcar_order_id,or.order_id AS o_order_id, or.monthly AS o_monthly,or.total_hour  AS o_total_hour,or.amount AS o_amount,or.refund_money AS o_refund_money,or.status AS o_status
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+		select
+		<include refid="Base_Column_List" />
+		,
+		<include refid="Blob_Column_List" />
+		from spcar_order
+		where spcar_order_id = #{spcarOrderId,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+		delete from spcar_order
+		where spcar_order_id = #{spcarOrderId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.yinghai.macao.common.model.SpcarOrder" >
+		insert into spcar_order (spcar_order_id, order_no, status,
+		driver_id, passenger_id, confirm_id,
+		confirm_type, reject_type, memo,
+		start_x, start_y, start_address,
+		update_time, create_time, pay_time,
+		amount, refund_money,pay_status, total_hour,
+		start_time, cancel_type, pay_way,
+		pay_way_code, end_x, end_y,
+		end_address, reject_id)
+		values (#{spcarOrderId,jdbcType=INTEGER}, #{orderNo,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{driverId,jdbcType=INTEGER}, #{passengerId,jdbcType=INTEGER}, #{confirmId,jdbcType=INTEGER},
+		#{confirmType,jdbcType=VARCHAR}, #{rejectType,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR},
+		#{startX,jdbcType=DOUBLE}, #{startY,jdbcType=DOUBLE}, #{startAddress,jdbcType=VARCHAR},
+		#{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{payTime,jdbcType=TIMESTAMP},
+		#{amount,jdbcType=INTEGER},#{refundMoney,jdbcType=INTEGER},  #{payStatus,jdbcType=INTEGER}, #{totalHour,jdbcType=INTEGER},
+		#{startTime,jdbcType=TIMESTAMP}, #{cancelType,jdbcType=VARCHAR}, #{payWay,jdbcType=VARCHAR},
+		#{payWayCode,jdbcType=INTEGER}, #{endX,jdbcType=DOUBLE}, #{endY,jdbcType=DOUBLE},
+		#{endAddress,jdbcType=VARCHAR}, #{rejectId,jdbcType=LONGVARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.yinghai.macao.common.model.SpcarOrder" useGeneratedKeys="true" keyProperty="spcarOrderId" >
+		insert into spcar_order
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="spcarOrderId != null" >
+				spcar_order_id,
+			</if>
+			<if test="orderId != null" >
+				order_id,
+			</if>
+			<if test="spcarId != null" >
+				spcar_id,
+			</if>
+			<if test="orderNo != null" >
+				order_no,
+			</if>
+			<if test="monthly != null" >
+				monthly,
+			</if>
+			<if test="status != null" >
+				status,
+			</if>
+			<if test="driverId != null" >
+				driver_id,
+			</if>
+			<if test="passengerId != null" >
+				passenger_id,
+			</if>
+			<if test="confirmId != null" >
+				confirm_id,
+			</if>
+			<if test="confirmType != null" >
+				confirm_type,
+			</if>
+			<if test="rejectType != null" >
+				reject_type,
+			</if>
+			<if test="memo != null" >
+				memo,
+			</if>
+			<if test="startX != null" >
+				start_x,
+			</if>
+			<if test="startY != null" >
+				start_y,
+			</if>
+			<if test="startAddress != null" >
+				start_address,
+			</if>
+			<if test="updateTime != null" >
+				update_time,
+			</if>
+			<if test="createTime != null" >
+				create_time,
+			</if>
+			<if test="driverArriveTime != null" >
+				driver_arrive_time,
+			</if>
+			<if test="driverSetoutTime != null" >
+				driver_setout_time,
+			</if>
+			<if test="passengerArriveTime != null" >
+				passenger_arrive_time,
+			</if>
+			<if test="completeTime != null" >
+				complete_time,
+			</if>
+			<if test="payTime != null" >
+				pay_time,
+			</if>
+			<if test="amount != null" >
+				amount,
+			</if>
+			<if test="refundMoney != null" >
+				refund_money,
+			</if>
+			<if test="payStatus != null" >
+				pay_status,
+			</if>
+			<if test="totalHour != null" >
+				total_hour,
+			</if>
+			<if test="startTime != null" >
+				start_time,
+			</if>
+			<if test="cancelType != null" >
+				cancel_type,
+			</if>
+			<if test="payWay != null" >
+				pay_way,
+			</if>
+			<if test="payWayCode != null" >
+				pay_way_code,
+			</if>
+			<if test="endX != null" >
+				end_x,
+			</if>
+			<if test="endY != null" >
+				end_y,
+			</if>
+			<if test="endAddress != null" >
+				end_address,
+			</if>
+			<if test="rejectId != null" >
+				reject_id,
+			</if>
+			<if test="comment != null" >
+				comment,
+			</if>
+			
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="spcarOrderId != null" >
+				#{spcarOrderId,jdbcType=INTEGER},
+			</if>
+			<if test="orderId != null" >
+				#{orderId,jdbcType=INTEGER},
+			</if>
+			<if test="spcarId != null" >
+				#{spcarId,jdbcType=INTEGER},
+			</if>
+			<if test="orderNo != null" >
+				#{orderNo,jdbcType=VARCHAR},
+			</if>
+			<if test="monthly != null" >
+				#{monthly,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null" >
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="driverId != null" >
+				#{driverId,jdbcType=INTEGER},
+			</if>
+			<if test="passengerId != null" >
+				#{passengerId,jdbcType=INTEGER},
+			</if>
+			<if test="confirmId != null" >
+				#{confirmId,jdbcType=INTEGER},
+			</if>
+			<if test="confirmType != null" >
+				#{confirmType,jdbcType=VARCHAR},
+			</if>
+			<if test="rejectType != null" >
+				#{rejectType,jdbcType=VARCHAR},
+			</if>
+			<if test="memo != null" >
+				#{memo,jdbcType=VARCHAR},
+			</if>
+			<if test="startX != null" >
+				#{startX,jdbcType=DOUBLE},
+			</if>
+			<if test="startY != null" >
+				#{startY,jdbcType=DOUBLE},
+			</if>
+			<if test="startAddress != null" >
+				#{startAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null" >
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="createTime != null" >
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="driverArriveTime != null" >
+				#{driverArriveTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="driverSetoutTime != null" >
+				#{driverSetoutTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="completeTime != null" >
+				#{completeTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="payTime != null" >
+				#{payTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="amount != null" >
+				#{amount,jdbcType=INTEGER},
+			</if>
+			<if test="refundMoney != null" >
+				#{refundMoney,jdbcType=INTEGER},
+			</if>
+			<if test="payStatus != null" >
+				#{payStatus,jdbcType=INTEGER},
+			</if>
+			<if test="totalHour != null" >
+				#{totalHour,jdbcType=INTEGER},
+			</if>
+			<if test="startTime != null" >
+				#{startTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="cancelType != null" >
+				#{cancelType,jdbcType=VARCHAR},
+			</if>
+			<if test="payWay != null" >
+				#{payWay,jdbcType=VARCHAR},
+			</if>
+			<if test="payWayCode != null" >
+				#{payWayCode,jdbcType=INTEGER},
+			</if>
+			<if test="endX != null" >
+				#{endX,jdbcType=DOUBLE},
+			</if>
+			<if test="endY != null" >
+				#{endY,jdbcType=DOUBLE},
+			</if>
+			<if test="endAddress != null" >
+				#{endAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="rejectId != null" >
+				#{rejectId,jdbcType=LONGVARCHAR},
+			</if>
+				<if test="comment != null" >
+				#{comment,jdbcType=BIT},
+			</if>
+			
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.common.model.SpcarOrder" >
+		update spcar_order
+		<set >
+		<if test="orderId != null" >
+				order_id = #{orderId,jdbcType=INTEGER},
+			</if>
+			<if test="orderNo != null" >
+				order_no = #{orderNo,jdbcType=VARCHAR},
+			</if>
+			<if test="monthly != null" >
+				monthly = #{monthly,jdbcType=BIT},
+			</if>
+			<if test="comment != null" >
+				comment = #{comment,jdbcType=BIT},
+			</if>
+			<if test="status != null" >
+				status = #{status,jdbcType=INTEGER},
+			</if>
+			<if test="driverId != null" >
+				driver_id = #{driverId,jdbcType=INTEGER},
+			</if>
+			<if test="passengerId != null" >
+				passenger_id = #{passengerId,jdbcType=INTEGER},
+			</if>
+			<if test="spcarId != null" >
+				spcar_id = #{spcarId,jdbcType=INTEGER},
+			</if>
+			<if test="confirmId != null" >
+				confirm_id = #{confirmId,jdbcType=INTEGER},
+			</if>
+			<if test="confirmType != null" >
+				confirm_type = #{confirmType,jdbcType=VARCHAR},
+			</if>
+			<if test="rejectType != null" >
+				reject_type = #{rejectType,jdbcType=VARCHAR},
+			</if>
+			<if test="memo != null" >
+				memo = #{memo,jdbcType=VARCHAR},
+			</if>
+			<if test="startX != null" >
+				start_x = #{startX,jdbcType=DOUBLE},
+			</if>
+			<if test="startY != null" >
+				start_y = #{startY,jdbcType=DOUBLE},
+			</if>
+			<if test="startAddress != null" >
+				start_address = #{startAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null" >
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="cancelTime != null" >
+				cancel_time = #{cancelTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="createTime != null" >
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="driverArriveTime != null" >
+				driver_arrive_time = #{driverArriveTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="driverSetoutTime != null" >
+				driver_setout_time = #{driverSetoutTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="passengerArriveTime != null" >
+				passenger_arrive_time = #{passengerArriveTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="completeTime != null" >
+				complete_time = #{completeTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="payTime != null" >
+				pay_time = #{payTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="amount != null" >
+				amount = #{amount,jdbcType=INTEGER},
+			</if>
+			<if test="refundMoney != null" >
+				refund_money = #{refundMoney,jdbcType=INTEGER},
+			</if>
+			<if test="payStatus != null" >
+				pay_status = #{payStatus,jdbcType=INTEGER},
+			</if>
+			<if test="totalHour != null" >
+				total_hour = #{totalHour,jdbcType=INTEGER},
+			</if>
+			<if test="startTime != null" >
+				start_time = #{startTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="cancelType != null" >
+				cancel_type = #{cancelType,jdbcType=VARCHAR},
+			</if>
+			<if test="payWay != null" >
+				pay_way = #{payWay,jdbcType=VARCHAR},
+			</if>
+			<if test="payWayCode != null" >
+				pay_way_code = #{payWayCode,jdbcType=INTEGER},
+			</if>
+			<if test="endX != null" >
+				end_x = #{endX,jdbcType=DOUBLE},
+			</if>
+			<if test="endY != null" >
+				end_y = #{endY,jdbcType=DOUBLE},
+			</if>
+			<if test="endAddress != null" >
+				end_address = #{endAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="rejectId != null" >
+				reject_id = #{rejectId,jdbcType=LONGVARCHAR},
+			</if>
+		
+		</set>
+		where spcar_order_id = #{spcarOrderId,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yinghai.macao.common.model.SpcarOrder" >
+		update spcar_order
+		set order_no = #{orderNo,jdbcType=VARCHAR},
+		status = #{status,jdbcType=INTEGER},
+		driver_id = #{driverId,jdbcType=INTEGER},
+		passenger_id = #{passengerId,jdbcType=INTEGER},
+		confirm_id = #{confirmId,jdbcType=INTEGER},
+		confirm_type = #{confirmType,jdbcType=VARCHAR},
+		reject_type = #{rejectType,jdbcType=VARCHAR},
+		memo = #{memo,jdbcType=VARCHAR},
+		start_x = #{startX,jdbcType=DOUBLE},
+		start_y = #{startY,jdbcType=DOUBLE},
+		start_address = #{startAddress,jdbcType=VARCHAR},
+		update_time = #{updateTime,jdbcType=TIMESTAMP},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		pay_time = #{payTime,jdbcType=TIMESTAMP},
+		amount = #{amount,jdbcType=INTEGER},
+		refund_money = #{refundMoney,jdbcType=INTEGER},
+		pay_status = #{payStatus,jdbcType=INTEGER},
+		total_hour = #{totalHour,jdbcType=INTEGER},
+		start_time = #{startTime,jdbcType=TIMESTAMP},
+		cancel_type = #{cancelType,jdbcType=VARCHAR},
+		pay_way = #{payWay,jdbcType=VARCHAR},
+		pay_way_code = #{payWayCode,jdbcType=INTEGER},
+		end_x = #{endX,jdbcType=DOUBLE},
+		end_y = #{endY,jdbcType=DOUBLE},
+		end_address = #{endAddress,jdbcType=VARCHAR},
+		reject_id = #{rejectId,jdbcType=LONGVARCHAR}
+		where spcar_order_id = #{spcarOrderId,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.yinghai.macao.common.model.SpcarOrder" >
+		update spcar_order
+		set order_no = #{orderNo,jdbcType=VARCHAR},
+		status = #{status,jdbcType=INTEGER},
+		driver_id = #{driverId,jdbcType=INTEGER},
+		passenger_id = #{passengerId,jdbcType=INTEGER},
+		confirm_id = #{confirmId,jdbcType=INTEGER},
+		confirm_type = #{confirmType,jdbcType=VARCHAR},
+		reject_type = #{rejectType,jdbcType=VARCHAR},
+		memo = #{memo,jdbcType=VARCHAR},
+		start_x = #{startX,jdbcType=DOUBLE},
+		start_y = #{startY,jdbcType=DOUBLE},
+		start_address = #{startAddress,jdbcType=VARCHAR},
+		update_time = #{updateTime,jdbcType=TIMESTAMP},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		pay_time = #{payTime,jdbcType=TIMESTAMP},
+		amount = #{amount,jdbcType=INTEGER},
+		refund_money = #{refundMoney,jdbcType=INTEGER},
+		pay_status = #{payStatus,jdbcType=INTEGER},
+		total_hour = #{totalHour,jdbcType=INTEGER},
+		start_time = #{startTime,jdbcType=TIMESTAMP},
+		cancel_type = #{cancelType,jdbcType=VARCHAR},
+		pay_way = #{payWay,jdbcType=VARCHAR},
+		pay_way_code = #{payWayCode,jdbcType=INTEGER},
+		end_x = #{endX,jdbcType=DOUBLE},
+		end_y = #{endY,jdbcType=DOUBLE},
+		end_address = #{endAddress,jdbcType=VARCHAR}
+		where spcar_order_id = #{spcarOrderId,jdbcType=INTEGER}
+	</update>
+
+	<select id="selectByCondition" parameterType="com.yinghai.macao.common.model.SpcarOrder" resultMap="ResultMapWithBLOBs">
+		select
+		<include refid="Base_Column_List" />
+		,
+		<include refid="Blob_Column_List" />
+		from spcar_order
+		where 1=1
+		<if test="orderNo != null" >
+			and    order_no = #{orderNo,jdbcType=VARCHAR}
+		</if>
+		limit 0,1
+	</select>
+
+	<select id="findListPage" parameterType="com.yinghai.macao.common.model.SpcarOrder" resultMap="AppResultMap">
+		select
+		<include refid="App_Column_list" />
+		from spcar_order o LEFT JOIN spcar c ON o.spcar_id=c.spcar_id LEFT JOIN spcar_passenger p ON o.passenger_id=p.spcar_id LEFT JOIN spcar_driver d ON o.driver_id=d.spcar_driver_id
+		where 1=1
+		<if test="spcarOrderId != null" >
+			and    o.spcar_order_id = #{spcarOrderId,jdbcType=INTEGER}
+		</if>
+			<if test="payWayCode != null" >
+			and    o.pay_way_code = #{payWayCode,jdbcType=INTEGER}
+		</if>
+		<if test="status != null" >
+			and    o.status = #{status,jdbcType=INTEGER}
+		</if>
+		
+		
+			<if test="orderId != null" >
+			and    o.order_id = #{orderId,jdbcType=INTEGER}
+		</if>
+			<if test="monthly != null" >
+			and    o.monthly = #{monthly,jdbcType=BIT}
+		</if>
+		<if test="driverId != null" >
+			and    o.driver_id = #{driverId,jdbcType=INTEGER}
+		</if>
+		<if test="passengerId != null" >
+			and    o.passenger_id = #{passengerId,jdbcType=INTEGER}
+		</if>
+			<if test="spcarPassenger != null" >
+				<if test="spcarPassenger.tel != null" >
+				and    p.tel = #{spcarPassenger.tel,jdbcType=VARCHAR}
+				</if>
+				<if test="spcarPassenger.countryCode != null" >
+				and    p.country_code = #{spcarPassenger.countryCode,jdbcType=VARCHAR}
+				</if>
+		</if>
+			<if test="payStatus != null" >
+				and    o.pay_status != #{payStatus,jdbcType=INTEGER}
+				</if>
+			<if test="spcarDriver != null" >
+				<if test="spcarDriver.tel != null" >
+				and    d.tel = #{spcarDriver.tel,jdbcType=VARCHAR}
+				</if>
+				<if test="spcarDriver.countryCode != null" >
+				and    d.country_code = #{spcarDriver.countryCode,jdbcType=VARCHAR}
+				</if>
+		</if>
+		<if test="statusArray!=null">
+    		and o.`status` in
+    		<foreach item="item" index="index" collection="statusArray" open="("
+            	separator="," close=")">
+            	#{item}  
+         	</foreach>
+    		</if>
+		<if test="createTimeS != null" >
+			and    unix_timestamp(o.create_time) <![CDATA[ >=]]> unix_timestamp(#{createTimeS,jdbcType=TIMESTAMP})
+		</if>
+		<if test="createTimeE != null" >
+			and    unix_timestamp(o.create_time) <![CDATA[ <=]]> unix_timestamp(#{createTimeE,jdbcType=TIMESTAMP})
+		</if>
+		order by FIELD(o.`status`,2,3,4,0,5,999,998,997),o.spcar_order_id desc
+	</select>
+	<select id="selectByPrimaryKeyToApp" parameterType="java.lang.Integer" resultMap="AppResultMap">
+		select
+		<include refid="App_Column_list" />
+		from spcar_order o LEFT JOIN spcar c ON o.spcar_id=c.spcar_id LEFT JOIN spcar_passenger p ON o.passenger_id=p.spcar_id LEFT JOIN spcar_driver d ON o.driver_id=d.spcar_driver_id
+		where 1=1 and o.spcar_order_id = #{spcarOrderId,jdbcType=INTEGER}
+	</select>
+	
+		<select id="getNewAppointmentOrder"  resultMap="AppResultMap">
+		select
+		<include refid="App_Column_list" />
+		from spcar_order o LEFT JOIN spcar c ON o.spcar_id=c.spcar_id LEFT JOIN spcar_passenger p ON o.passenger_id=p.spcar_id LEFT JOIN spcar_driver d ON o.driver_id=d.spcar_driver_id
+		where 1=1 
+	<if test="map.passengerId!=null">
+    	and o.passenger_id = #{map.passengerId,jdbcType=INTEGER}
+    </if>
+    	<if test="map.orderId!=null">
+    	and o.order_id = #{map.orderId,jdbcType=INTEGER}
+    </if>
+     <if test="map.status!=null">
+    	and o.`status` in 
+    	<foreach item="item" index="index" collection="map.status" open="("
+            separator="," close=")">
+            #{item}  
+         </foreach>
+    </if>
+	</select>
+
+
+	<select id="selectByDriverId" resultMap="AppResultMap">
+		select
+		<include refid="App_Column_list" />
+		from spcar_order o LEFT JOIN spcar c ON o.spcar_id=c.spcar_id LEFT JOIN spcar_passenger p ON o.passenger_id=p.spcar_id LEFT JOIN spcar_driver d ON o.driver_id=d.spcar_driver_id
+		where 1=1 and o.driver_id = #{driverId,jdbcType=INTEGER}
+		and o.status in(#{status,jdbcType=VARCHAR})
+		ORDER BY o.spcar_order_id
+	</select>
+	<select id="findFinishList" parameterType="com.yinghai.macao.common.model.SpcarOrder" resultMap="AppResultMap">
+		select
+		<include refid="Apptwo_Column_list" />
+		from spcar_order o LEFT JOIN spcar c ON o.spcar_id=c.spcar_id LEFT JOIN spcar_passenger p ON o.passenger_id=p.spcar_id LEFT JOIN spcar_driver d ON o.driver_id=d.spcar_driver_id
+		 LEFT JOIN (SELECT spcar_order_id,spcar_id ,order_id ,monthly,total_hour , amount,refund_money,status FROM spcar_order) `or` ON o.spcar_order_id=`or`.order_id where 1=1
+		<if test="spcarOrderId != null" >
+			and    o.spcar_order_id = #{spcarOrderId,jdbcType=INTEGER}
+		</if>
+		<if test="driverId != null" >
+			and    o.driver_id = #{driverId,jdbcType=INTEGER}
+		</if>
+			<if test="monthly != null" >
+			and    o.monthly = #{monthly,jdbcType=BIT}
+		</if>
+			<if test="passengerId != null" >
+			and    o.passenger_id = #{passengerId,jdbcType=INTEGER}
+		</if>
+		<if test="status != null" >
+			and    o.status = #{status,jdbcType=INTEGER}
+		</if>
+		<if test="statusArray!=null">
+    		and o.`status` in
+    		<foreach item="item" index="index" collection="statusArray" open="("
+            	separator="," close=")">
+            	#{item}  
+         	</foreach>
+    		</if>
+		<if test="createTimeS != null" >
+			and    unix_timestamp(o.create_time) <![CDATA[ >=]]> unix_timestamp(#{createTimeS,jdbcType=TIMESTAMP})
+		</if>
+		<if test="createTimeE != null" >
+			and    unix_timestamp(o.create_time) <![CDATA[ <=]]> unix_timestamp(#{createTimeE,jdbcType=TIMESTAMP})
+		</if>
+		order by o.complete_time desc
+	</select>
+	
+		 <select id="findGoingDriverOrder" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from spcar_order
+    where status!=5  and status!=999 and status!=998
+    and driver_id = #{driverId,jdbcType=INTEGER}
+  </select>
+	
+</mapper>

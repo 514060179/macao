@@ -1,0 +1,144 @@
+package com.yinghai.macao.common.service.impl;
+
+import com.yinghai.macao.common.dao.SpcarPassengerMapper;
+import com.yinghai.macao.common.dao.TaxigoPassengerMapper;
+import com.yinghai.macao.common.dao.TaxigoUserMapper;
+import com.yinghai.macao.common.model.Passenger;
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.model.TaxigoUser;
+import com.yinghai.macao.common.service.SpcarPassengerService;
+import com.yinghai.macao.common.util.Page;
+import com.yinghai.macao.common.util.PageHelper;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Map;
+
+
+public class SpcarPassengerServiceImpl implements SpcarPassengerService {
+	private Logger log = Logger.getLogger(this.getClass());
+	@Autowired
+	private SpcarPassengerMapper spcarPassengerMapper;
+	@Autowired
+	private TaxigoUserMapper taxigoUserMapper;
+	@Autowired
+	private TaxigoPassengerMapper taxigoPassengerMapper;
+	public int addSpcarPassenger(String sign, String imClient, Integer id) {
+		// TODO Auto-generated method stub
+		return spcarPassengerMapper.insertByTaxigoUser(sign,imClient,id);
+	}
+	public int addSpcarPassenger(SpcarPassenger spcarPassenger) {
+		return spcarPassengerMapper.insertSelective(spcarPassenger);
+	}
+
+	public int updateSpcarPaaengerStatus(Integer spcarId, Integer status) {
+		SpcarPassenger spcarPassenger = new SpcarPassenger();
+		spcarPassenger.setSpcarId(spcarId);
+		spcarPassenger.setStatus(status);
+		return spcarPassengerMapper.updateByPrimaryKeySelective(spcarPassenger);
+	}
+	@Override
+	public SpcarPassenger findById(Integer spcarPassengerId) {
+		// TODO Auto-generated method stub
+		return spcarPassengerMapper.selectByPrimaryKey(spcarPassengerId);
+	}
+	@Override
+	public Page<SpcarPassenger> findList(int pageNum, int pageSize, SpcarPassenger spcarPassenger) {
+		// TODO Auto-generated method stub
+		PageHelper.startPage(pageNum,pageSize);
+		return spcarPassengerMapper.findList(spcarPassenger);
+	}
+	@Override
+	public SpcarPassenger findByTel(String countryCode, String tel) {
+		// TODO Auto-generated method stub
+		return spcarPassengerMapper.findByTel(countryCode, tel);
+	}
+	@Transactional
+	@Override
+	public int updateSpcarPaaenger(SpcarPassenger spcarPassenger) {
+		// TODO Auto-generated method stub
+		SpcarPassenger updateSpcarPassenger = new SpcarPassenger();
+		if(spcarPassenger.getVip()){
+			updateSpcarPassenger.setVip(false);
+		}else{
+			updateSpcarPassenger.setVip(true);
+		}
+		updateSpcarPassenger.setSpcarId(spcarPassenger.getSpcarId());
+		int i = 0;
+		try {
+			spcarPassengerMapper.updateTaxigoUser(updateSpcarPassenger.getSpcarId()+"", updateSpcarPassenger.getVip());
+			i++;
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error("����taxigoUserʧ��"+e);
+			e.printStackTrace();
+			throw  new RuntimeException("����taxigoUserʧ��");
+			
+		}
+		try {
+			spcarPassengerMapper.updateByPrimaryKeySelective(updateSpcarPassenger);
+			i++;
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error("����ר���˿���Ϣʧ��"+e);
+			e.printStackTrace();
+			throw  new RuntimeException("����ר���˿���Ϣʧ��");
+		}
+		return i;
+	}
+	@Override
+	public int updateTaxigoUser(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return spcarPassengerMapper.updateUserByMap(map);
+	}
+	@Override
+	public List<SpcarPassenger> findAllList(SpcarPassenger spcarPassenger) {
+		// TODO Auto-generated method stub
+		 return spcarPassengerMapper.findList(spcarPassenger);
+	}
+	
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public int updateSpcarPassengerAndTaxiGo(SpcarPassenger spcarPassenger) {
+		//更新TaxiGo中的乘客和用户
+		TaxigoUser taxigo = taxigoUserMapper.findTaxigoUser(TransformUtils.toInt(spcarPassenger.getSpcarId()));
+		if(taxigo==null){
+			throw new RuntimeException("taxigouser is not found");
+		}
+		TaxigoUser updateTaxigo = new TaxigoUser();
+		Passenger passenger = new Passenger();
+		updateTaxigo.setId(taxigo.getId());
+		passenger.setId(TransformUtils.toInt(spcarPassenger.getSpcarId()));
+		updateTaxigo.setVip(spcarPassenger.getVip());
+		updateTaxigo.setSex(spcarPassenger.getSex());
+		updateTaxigo.setTitle(spcarPassenger.getTitle());
+		passenger.setTitle(spcarPassenger.getTitle());
+		updateTaxigo.setGivenName(spcarPassenger.getGivenName());
+		passenger.setGivenName(spcarPassenger.getGivenName());
+		updateTaxigo.setFamilyName(spcarPassenger.getFamilyName());
+		passenger.setFamilyName(spcarPassenger.getFamilyName());
+		updateTaxigo.setName(spcarPassenger.getFamilyName()+spcarPassenger.getGivenName());
+		passenger.setName(spcarPassenger.getFamilyName()+spcarPassenger.getGivenName());
+		int i = taxigoUserMapper.updateTaxigoUserSelective(updateTaxigo);
+		if(i!=1){
+			throw new RuntimeException("update fail,TaxigoUser update fail");
+		}
+		int j = taxigoPassengerMapper.updatePassengerWithBLOBsSelective(passenger);
+		if(j!=1){
+			throw new RuntimeException("update fail,passenger update fail");
+		}
+		//更新专车中的乘客
+		int k = spcarPassengerMapper.updateByPrimaryKeySelective(spcarPassenger);
+		if(k!=1){
+			throw new RuntimeException("update fail,spcarPassenger update fail");
+		}
+		return 1;
+	}
+
+}

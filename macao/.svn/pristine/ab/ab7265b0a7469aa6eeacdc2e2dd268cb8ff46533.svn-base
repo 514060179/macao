@@ -1,0 +1,126 @@
+package com.yinghai.macao.common.model;
+
+import java.util.Date;
+
+/**
+ * 流水记录表
+ * 
+ * @author TaxiGo01
+ *
+ */
+public class SpcarComment {
+	private Integer SpcarCommentId;
+	/**
+	 * 时间（小时）
+	 */
+	private Integer spcarPassengerId;
+
+	private Integer spcarDriverId;
+
+	private Double score;
+
+	private Integer orderStatus;
+
+	private String comments;
+
+	private Integer orderId;
+	
+	private Date createTime;
+	
+	private String spcarPassengerName;
+	
+	private String spcarPassengerTel;
+	
+	//多重查询
+	private Integer[] orderArray; 
+
+	public Integer[] getOrderArray() {
+		return orderArray;
+	}
+
+	public void setOrderArray(Integer[] orderArray) {
+		this.orderArray = orderArray;
+	}
+
+	public Integer getSpcarCommentId() {
+		return SpcarCommentId;
+	}
+
+	public void setSpcarCommentId(Integer spcarCommentId) {
+		SpcarCommentId = spcarCommentId;
+	}
+
+
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
+	}
+
+	public Integer getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(Integer orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
+	public Integer getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+
+	public Integer getSpcarPassengerId() {
+		return spcarPassengerId;
+	}
+
+	public void setSpcarPassengerId(Integer spcarPassengerId) {
+		this.spcarPassengerId = spcarPassengerId;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getSpcarPassengerName() {
+		return spcarPassengerName;
+	}
+
+	public void setSpcarPassengerName(String spcarPassengerName) {
+		this.spcarPassengerName = spcarPassengerName;
+	}
+
+	public String getSpcarPassengerTel() {
+		return spcarPassengerTel;
+	}
+
+	public void setSpcarPassengerTel(String spcarPassengerTel) {
+		this.spcarPassengerTel = spcarPassengerTel;
+	}
+
+	public Integer getSpcarDriverId() {
+		return spcarDriverId;
+	}
+
+	public void setSpcarDriverId(Integer spcarDriverId) {
+		this.spcarDriverId = spcarDriverId;
+	}
+}

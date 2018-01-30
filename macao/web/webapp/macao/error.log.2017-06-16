@@ -1,0 +1,27 @@
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 09:28:23 Exception:LoginController/login msg:
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/backstage-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarManagerMapper.xml]
+### The error may involve com.yinghai.macao.backstage.dao.SpcarManagerMapper.selectByName
+### The error occurred while executing a query
+### SQL: select            id, username, password, email, email_verified, create_time, last_updated, role_id,      remark,im_name,sign         from spcar_manager     where username = ?     order by id asc limit 1
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+; SQL []; No operations allowed after connection closed.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 09:28:25 Exception:LoginController/login msg:
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/backstage-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarManagerMapper.xml]
+### The error may involve com.yinghai.macao.backstage.dao.SpcarManagerMapper.selectByName
+### The error occurred while executing a query
+### SQL: select            id, username, password, email, email_verified, create_time, last_updated, role_id,      remark,im_name,sign         from spcar_manager     where username = ?     order by id asc limit 1
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+; SQL []; No operations allowed after connection closed.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:53:57 Exception:BackSpcarOrderController/comfirmCarry msg:null
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:54:01 Exception:BackSpcarOrderController/comfirmCarry msg:null
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:54:04 Exception:BackSpcarOrderController/comfirmCarry msg:null
+[http-apr-8089-exec-10] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:54:06 Exception:BackSpcarOrderController/comfirmCarry msg:null
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:54:09 Exception:BackSpcarOrderController/comfirmCarry msg:null
+[http-apr-8089-exec-1] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:54:12 Exception:BackSpcarOrderController/comfirmCarry msg:null
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:54:41 Exception:BackSpcarOrderController/comfirmCarry msg:null
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======更新異常，更新條數不足======
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:55:08 Exception:BackSpcarOrderController/comfirmCarry msg:======更新異常，更新條數不足======
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/update======更新異常，更新條數不足======
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-16 04:56:04 Exception:BackSpcarOrderController/comfirmCarry msg:======更新異常，更新條數不足======

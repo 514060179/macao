@@ -1,0 +1,19 @@
+##云通信IM应用id
+sdkAppId=1400028529
+##独立模式帐号体系集成的accountType
+accountType=11902
+##管理员表示id
+identifier = admin
+##参与签名文件
+#jnisigcheckUrl=/home/yinghai-05/tls/sign/jnisigcheck_mt_x64.so
+jnisigcheckUrl=C:/Users/Administrator/Desktop/java/jnisigcheck_mt_x64.dll
+##群主id
+GroupId=ReceiveOrderGroup
+ec_key=ec_key.pem
+public_key=public.pem
+#微信支付回调url
+weixinCallBackUrl=http://14.21.210.244:8089/macao/wechat/weixinOrder
+splId=11750
+weixinPayAppId=wxd74af2b277375f05
+mch_id=1380512402
+weixinPayKey=f4qtruo91k4x20fwoiwde23ur345lskd

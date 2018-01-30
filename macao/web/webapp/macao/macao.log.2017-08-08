@@ -1,0 +1,154 @@
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@1966fd95, {}, org.apache.catalina.connector.ResponseFacade@3b4db001]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1966fd95, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@1966fd95, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver begins with [org.apache.catalina.connector.RequestFacade@1966fd95, org.apache.catalina.connector.ResponseFacade@3b4db001, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast begins with [org.apache.catalina.connector.RequestFacade@3021ea41, org.apache.catalina.connector.ResponseFacade@fa8f1f7]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.backstage.controller.SpcarBroadcastController - ==========新增推送信息==========
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FPgzAYRd-5FYTXGW0LDczEBzTTzSHZIhDnS1PXsnwbMEYLgy3*dxWXSOJ9Pefm5p4N0zStKHi95uv1vi40010pLfPWtJB19QfLEgTjmtmV*AdlW0IlGU*1rHqIKaUEoaEDQhYaUrgYXORQDLASO9Zv-Pad7zLxKBkPFdj08GUSP8weaZstyX0EvHv*8G6KoF6KZLE5BqPdEb2p99M2zOBpNV3NbR8m-qhrFoewjn0nnWdSzIJuvE38g99gO-TcfBqTVslIncokvhtMasjl5RAi2KWugwe0kZWCfdELBGGKiY1*Yhmfxhdl2l3D
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@7a446094, {}, org.apache.catalina.connector.ResponseFacade@7a109d8e]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a446094, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7a446094, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver begins with [org.apache.catalina.connector.RequestFacade@7a446094, org.apache.catalina.connector.ResponseFacade@7a109d8e, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast begins with [org.apache.catalina.connector.RequestFacade@61b7dfad, org.apache.catalina.connector.ResponseFacade@6f702deb]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.backstage.controller.SpcarBroadcastController - ==========新增推送信息==========
+[http-apr-8089-exec-3] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj0FPwjAAhe-7FcuuGG07isOEwyYwEcaEGiK7LHXtsJKtS9cB0-jflUliE9-1*15e3qdl27bzvCDXNMtkU*pUtxV37DvbAc7VH6wqwVKqU1exf5CfKqF4SnPNVQchxhgBYDqC8VKLXFwMygpRGrhm*7Tb*O33f8rIw2hoKmLXwWiyup-5c-kQB1EsF0-HjXso6DRpgmFbf6iETlSUjIP5OkQ7so*UL-xGnnrTeLwh*XaWD14IHYRvGe-BvH3EryDceksi38n6xo2Po5ExqUXBL4cAgrfY60ODHriqhSw7AQGIIXLBOY71ZX0DHzBc2A__
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6e171d7c, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver begins with [org.apache.catalina.connector.RequestFacade@6e171d7c, org.apache.catalina.connector.ResponseFacade@60072c4a, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.backstage.controller.SpcarBroadcastController - ==========新增推送信息==========
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FPgzAYRd-5FQ2vGFdKO8A3IZ3ZMjRFZjJfSKGdfuoY0qqbxv*u4hKbeF-Pubm5Hx5CyK*W16eybXcvna3todc*OkM*9k-*YN*DqqWto0H9g3rfw6BrubF6GGHIGCMYuw4o3VnYwNGQagudg416rMeN3z79LpOEkdRV4G6EBV-nc5FnFyXOc0p5IuMiiHkum6G5nTFCE1jYFCIxWTaUV5NWzO-PCzy7Sfdv*MoE00WxyqrqgZvL4D1I1k-ZKhRTrkRpn02ZBc6kha0*HsIkjGNK3EuvejCw60aB4JCFJMI-8b1P7wuJtFnt
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6e171d7c, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver begins with [org.apache.catalina.connector.RequestFacade@7b21a3fe, org.apache.catalina.connector.ResponseFacade@5cca548c, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.backstage.controller.SpcarBroadcastController - ==========新增推送信息==========
+[http-apr-8089-exec-10] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj0FPgzAAhe-8CsJVY0pLB5h4cAOBZZO5uc3s0rC1hcYVGuiWgfG-q7hEEt-1*15e3odhmqb1OlvdZYdDdSo10a1ilnlvWsC6-YNKCUoyTVBN-0F2UaJmJOOa1T20McYQgKEjKCu14OJqZFSKcoAb*k76jd**812GHob*UBF5D*fhepK8BEhuYq91F6PiCZRvsdhtj8vgUarZWM5tmkXL51W3PxVxWuVJvh5FoRr70yTgbVikU1RseMdv2i5N02MT7eF2soDneFcj72EwqYVk10MA2q7r*M6AnlndiKrsBQhsbEMEfmIZn8YXAChc6Q__
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7b21a3fe, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver begins with [org.apache.catalina.connector.RequestFacade@7b21a3fe, org.apache.catalina.connector.ResponseFacade@5cca548c, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.backstage.controller.SpcarBroadcastController - ==========新增推送信息==========
+[http-apr-8089-exec-7] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FPgzAYRd-5FYRnY0qhq5r4sCkkIpouaBRfmo6W*akUpB1sM-53FZfYxPt6zs3N-fB83w-u8uJYVFW70ZbbXacC-8wPUHD0B7sOJBeWR738B9W2g15xUVvVTzAkhGCEXAek0hZqOBhCNqAdbOQrnzZ**-F3GZ8QfOoqsJ7gTXJ-cbVgOBI0KTNlLtM816uifNun1wwr084WFWFDZcrm-faFbueQzMdVMaq9ts0mKtJxWD5mzwktn2Co66WJa51kTLJ1Th9Qde5MWmjU4RDCIaUzFDt0UL2BVk8CRiEJcYR*Enif3heJf14w
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver end with massage:null
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7b21a3fe, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast begins with [org.apache.catalina.connector.RequestFacade@7b21a3fe, org.apache.catalina.connector.ResponseFacade@5cca548c]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.backstage.controller.SpcarBroadcastController - ==========新增推送信息==========
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj11PgzAARd-5FQ3PRkpZWdmbGxpBFAzE6V4ashYpX2tK2VwW-7uTLZHE*3rOzc09GQAAM4vS23y73Q2dpvoouQkWwITmzR*UUjCaa*oo9g-yLykUp3mhuRqhjTFGEE4dwXinRSGuRs5a0U1wz2o6blz6s3MZEYy8qSI*R-h8-7EKXlfEnWckyTeBE-RcxmGhDs3QNqV6t5s*jN2HtHRY4s1IdgjKu5cNSaz2LcZ*vay81Koea8tfu*F6L7CM0jaq1OAfl0*ecieTWrT8eggie34OmdA9V73YdaOAoI1t5MDfmMa38QPgR1yh
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast begins with [org.apache.catalina.connector.RequestFacade@6e171d7c, org.apache.catalina.connector.ResponseFacade@60072c4a]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.backstage.controller.SpcarBroadcastController - ==========新增推送信息==========
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, org.apache.catalina.connector.ResponseFacade@70d10747, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1tvgjAAhd-5FaSvW0ZbKZcle5ER5uK8hCHbU4O2YjHUWqoRl-13HTMZyc7r952cnC-Ltm3wPk4fitVqd5CGmlZxYD-aAIL7P6iUYLQwdKDZP8hPSmhOi7XhuoOIEIIh7DuCcWnEWtyMgtVC9nDDtrTb*O271zIOCA77iig7*BZn0Wj*nEXei1bnSdsSL83bTV2lSbioUSO4u02GeTy7S6al-Kj281GZyyXboCM54ShaDvdejtLXAE3N2dHhgownWRX6sVMdXOfzqTdpRM1vhyBGvh9g0qNHrhuxk52AISIID*BPgPVtXQD7cVxz
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method saveBroadcast end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method pushMsgToDriver end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@7d131fb8, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！
+[pool-1-thread-1] INFO com.yinghai.macao.common.job.SpcarOrderTask - 提醒乘客，预约订单即将进行！

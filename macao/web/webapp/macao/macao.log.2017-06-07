@@ -1,0 +1,657 @@
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method cancel begins with [org.apache.catalina.connector.RequestFacade@32728d91, org.apache.catalina.connector.ResponseFacade@6078c182]
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 09:40:59 Exception:SpcarOrderAction/cancel msg:org.springframework.dao.DataAccessResourceFailureException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+### The error may exist in URL [jar:file:/C:/project/new/macao/web/webapp/WEB-INF/lib/common-1.0-SNAPSHOT.jar!/mybatis/mapping/SpcarOrderMapper.xml]
+### The error may involve com.yinghai.macao.common.dao.SpcarOrderMapper.selectByCondition
+### The error occurred while executing a query
+### SQL: select       spcar_order_id, order_no, status, driver_id, passenger_id, spcar_id,confirm_id, confirm_type,   reject_type, memo, start_x, start_y, start_address, update_time, create_time, pay_time,   amount, pay_status, total_hour, start_time, cancel_type, pay_way, pay_way_code, end_x,   end_y, end_address,cancel_time      ,       reject_id      from spcar_order   where 1=1        and    order_no = ?       limit 0,1
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+; SQL []; No operations allowed after connection closed.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method cancel begins with [org.apache.catalina.connector.RequestFacade@32728d91, org.apache.catalina.connector.ResponseFacade@6078c182]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method cancel end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method cancel begins with [org.apache.catalina.connector.RequestFacade@32728d91, org.apache.catalina.connector.ResponseFacade@6078c182]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method cancel end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@4d2ffc2c, org.apache.catalina.connector.ResponseFacade@2c52ab44]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@4d2ffc2c, org.apache.catalina.connector.ResponseFacade@2c52ab44]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@4d2ffc2c, org.apache.catalina.connector.ResponseFacade@2c52ab44]
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.app.controller.SpcarUserController - 2017-06-07 10:31:27发送验证码失败！8615919161025 return msg{"result":1001,"errmsg":"sig error, sig incorrect","ext":""}
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@4d2ffc2c, org.apache.catalina.connector.ResponseFacade@2c52ab44]
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.app.controller.SpcarUserController - 2017-06-07 10:33:21发送验证码失败！8615919161025 return msg{"result":1001,"errmsg":"sig error, sig incorrect","ext":""}
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[RMI TCP Connection(3)-127.0.0.1] ERROR org.springframework.web.servlet.DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Unexpected exception parsing XML document from ServletContext resource [/WEB-INF/spring-mvc.xml]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'spcarDriverController' for bean class [com.yinghai.macao.backstage.controller.SpcarDriverController] conflicts with existing, non-compatible bean definition of same name and class [com.yinghai.macao.app.controller.SpcarDriverController]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:414)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:510)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:667)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:633)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:552)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:493)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1227)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1140)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1027)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5038)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5348)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:753)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:729)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1696)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:484)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:433)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:324)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'spcarDriverController' for bean class [com.yinghai.macao.backstage.controller.SpcarDriverController] conflicts with existing, non-compatible bean definition of same name and class [com.yinghai.macao.app.controller.SpcarDriverController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:320)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:259)
+	at org.springframework.context.annotation.ComponentScanBeanDefinitionParser.parse(ComponentScanBeanDefinitionParser.java:87)
+	at org.springframework.beans.factory.xml.NamespaceHandlerSupport.parse(NamespaceHandlerSupport.java:74)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1411)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1401)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:168)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:138)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:94)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:508)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:392)
+	... 65 more
+[http-apr-8089-exec-1] ERROR org.springframework.web.servlet.DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Unexpected exception parsing XML document from ServletContext resource [/WEB-INF/spring-mvc.xml]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'spcarDriverController' for bean class [com.yinghai.macao.backstage.controller.SpcarDriverController] conflicts with existing, non-compatible bean definition of same name and class [com.yinghai.macao.app.controller.SpcarDriverController]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:414)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:510)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:667)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:633)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:552)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:493)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1227)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1140)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:817)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:135)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2521)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2510)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'spcarDriverController' for bean class [com.yinghai.macao.backstage.controller.SpcarDriverController] conflicts with existing, non-compatible bean definition of same name and class [com.yinghai.macao.app.controller.SpcarDriverController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:320)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:259)
+	at org.springframework.context.annotation.ComponentScanBeanDefinitionParser.parse(ComponentScanBeanDefinitionParser.java:87)
+	at org.springframework.beans.factory.xml.NamespaceHandlerSupport.parse(NamespaceHandlerSupport.java:74)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1411)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1401)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:168)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:138)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:94)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:508)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:392)
+	... 36 more
+[RMI TCP Connection(3)-127.0.0.1] ERROR org.springframework.web.servlet.DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping': Initialization of bean failed; nested exception is java.lang.IllegalStateException: Cannot map handler 'spcarDriverAction' to URL path [/spcarDriver/me]: There is already handler of type [class com.yinghai.macao.app.controller.DriverController$$EnhancerBySpringCGLIB$$691db92f] mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:291)
+	at org.springframework.web.servlet.DispatcherServlet.createDefaultStrategy(DispatcherServlet.java:849)
+	at org.springframework.web.servlet.DispatcherServlet.getDefaultStrategies(DispatcherServlet.java:818)
+	at org.springframework.web.servlet.DispatcherServlet.initHandlerMappings(DispatcherServlet.java:588)
+	at org.springframework.web.servlet.DispatcherServlet.initStrategies(DispatcherServlet.java:482)
+	at org.springframework.web.servlet.DispatcherServlet.onRefresh(DispatcherServlet.java:471)
+	at org.springframework.web.servlet.FrameworkServlet.onApplicationEvent(FrameworkServlet.java:805)
+	at org.springframework.web.servlet.FrameworkServlet$ContextRefreshListener.onApplicationEvent(FrameworkServlet.java:1119)
+	at org.springframework.web.servlet.FrameworkServlet$ContextRefreshListener.onApplicationEvent(FrameworkServlet.java:1115)
+	at org.springframework.context.event.GenericApplicationListenerAdapter.onApplicationEvent(GenericApplicationListenerAdapter.java:56)
+	at org.springframework.context.event.SourceFilteringListener.onApplicationEventInternal(SourceFilteringListener.java:107)
+	at org.springframework.context.event.SourceFilteringListener.onApplicationEvent(SourceFilteringListener.java:71)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:163)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:136)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:381)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:335)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:855)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:667)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:633)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:552)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:493)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1227)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1140)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1027)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5038)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5348)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:753)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:729)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1696)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:484)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:433)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:300)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:324)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Cannot map handler 'spcarDriverAction' to URL path [/spcarDriver/me]: There is already handler of type [class com.yinghai.macao.app.controller.DriverController$$EnhancerBySpringCGLIB$$691db92f] mapped.
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:322)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:292)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:82)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:119)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:94)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	... 74 more
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@5504e862, org.apache.catalina.connector.ResponseFacade@118a5a02]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@5504e862, org.apache.catalina.connector.ResponseFacade@118a5a02]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@5504e862, org.apache.catalina.connector.ResponseFacade@118a5a02]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate begins with [org.apache.catalina.connector.RequestFacade@5504e862, org.apache.catalina.connector.ResponseFacade@118a5a02]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate begins with [org.apache.catalina.connector.RequestFacade@5504e862, org.apache.catalina.connector.ResponseFacade@118a5a02]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate begins with [org.apache.catalina.connector.RequestFacade@5504e862, org.apache.catalina.connector.ResponseFacade@118a5a02]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate begins with [org.apache.catalina.connector.RequestFacade@5504e862, org.apache.catalina.connector.ResponseFacade@118a5a02]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate begins with [org.apache.catalina.connector.RequestFacade@5504e862, org.apache.catalina.connector.ResponseFacade@118a5a02]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverUpdate end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@617f1426, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@2545a9ca, {}, org.apache.catalina.connector.ResponseFacade@3c481f1e]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@2545a9ca, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@3768a106, org.apache.catalina.connector.ResponseFacade@530d4552]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@3768a106, org.apache.catalina.connector.ResponseFacade@530d4552]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@3768a106, org.apache.catalina.connector.ResponseFacade@530d4552]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@3768a106, org.apache.catalina.connector.ResponseFacade@530d4552]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@3768a106, org.apache.catalina.connector.ResponseFacade@530d4552]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@3768a106, org.apache.catalina.connector.ResponseFacade@530d4552]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLocUpdate begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLocUpdate end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLocUpdate begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLocUpdate end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, {}, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave end with massage:driver/edit
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save begins with [org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest@1b98a3e3, org.apache.catalina.connector.ResponseFacade@4a072473, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj8FOg0AQhu88xWavGt3dgm1NeqAFjERIWwjxtqHdhUyKsMBS2xrfXURNSZzDJJPvm-wzHwZCCMcv0V2631ddqbk*K4nRI8IE316hUiB4qvmkEf*gPCloJE8zLZsBUsuyGCFjB4QsNWTwZxCngWM-XI1WHPgQ8yOY-T6bWWw*ViAfYOBuVs9uXWSdsEu-CIujE7be7n2bLc*R8hPvtEw8QvNtvb4o01nZYAvXrl7jpgBwg42YRrv6KVfp-Y32snUX*V1yiC8smIbayReLUaSGN-l70PxhRs2*j2j-QQtVOQiMUIuyCfkubHwaX8OAXwQ_
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FQ23GG0LHat3k4B8jDjcYuIVadYOXwkfQtnQxf*u4hJJPLfPc3LO2UAImbv19lrs981Q61y-t8pEt8jE5tUfbFuQudC53cl-UI0tdCoXB626CRLGGMV47oBUtYYDXAwhK6hnuJdlPm389p3vMl0yyucKFBNM-WcvyrwsPDZWBffWh0hu7l6H-mltsbcy2VbBo8d9SBYrosIhdr1T9LLa6M72TwNn0UNcFOW4wQlNSZHhxFUkLoNwl0Z9I4PRnZ-WUKnLIb5YEsfh7oweVddDU08CxYQRauOfmMan8QWoA1wG
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 01:49:04 Exception:SpcarDriverController/save msg:java.lang.RuntimeException
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save begins with [org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest@34805d16, org.apache.catalina.connector.ResponseFacade@4a072473, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj11PgzAUhu-5FaS3GtMWq7C7UZZBZBOQfXnT4FqkIQMCFTeM-12GmmE8dyfPc-K*50PTdR3E-tNNst*Xb4Vi6lQJoE90AMH1BVaV5CxRzKj5PyiOlawFS1Il6gEiQgiGcOxILgolU-lrIKeWbb9cjIbnbIj5Fm77e2wSbI0V*TrAxWxHvZA26GHxKPLw4Pqd13SnK27YbWpn28hJFTyWkWvQdZwlW2fqZdNl54sZXe3iIHet9dKnHrSDAOG2eJ*HeHPfruDGfHGi*TMZRSp5ED*FrDsTEfinUP9BI8tiEDBEBGEDngdon9oX9p9dGg__
+[http-apr-8089-exec-3] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljltPwjAAhd-3K5Y*G20LnRuJD3QQLWC4eQlPTV3LVs26UsoEjP9dmSTOeF6-7*ScjyAMQ-AwWV6KLKt2xnN-sAqEvRBAcPELrdWSC887Tv6Dam*1U1ysvXINRIQQDGHb0VIZr9f6bAhZatPCW-nGm42ffve7jGOCk7ai8wbeDx9TNk9nU8dmxWpDi1fz3l0Ql94*79zdcVT4aJBMrp5wuewf7J75nOWMWjKmdgxhlY0wrGM0XGTwWkSyvxq8bAizdCpoLUs3v2lNel2q86EkihGBfw7Vym11ZRoBQ0QQ7sBTQPAZfAELLlzO
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 01:57:40 Exception:SpcarDriverController/save msg:java.lang.RuntimeException
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@69a4fe92, org.apache.catalina.connector.ResponseFacade@4a072473]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save begins with [org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest@1768b5d1, org.apache.catalina.connector.ResponseFacade@4a072473, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj11rgzAUhu-9FeL1mDEaq4NdiA2sTulGZ6neSDBpDbV*JFmZG-3vc26lws7d4XkO73m-NF3Xjbd4c0-Ksn1vVKGGjhn6g24A4*4Gu47TgqjCFvQfZB8dF6wge8XEBC2EEARg7nDKGsX3-GrApeDncbkZkh6LKeZXcMZ76CHozxV*mGCC03D1FBGzSlXkJv5Qq89F8iy95foFQZJj7PRhnNHYlKXTRlnAcVADh7xKdmSelBUMdzjNs*oc1NvV*tCX7rDJxa43T629yB5nkYqf2N9DvutZyAbOjI4NJG*bSYDAQha0wc8Y2kX7BgThXcA_
+[http-apr-8089-exec-4] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljsFvgjAche-8FQ1Xl9EWy2TJDkSZcZkc1EbHpSFQzC*OAm3RkWX-*zZmIsne9fte3vt0EELu7nV7n*V53SkrbN9IFz0iF7t3N9g0UIjMCl8X-6D8aEBLkZVW6gESxhjFeOxAIZWFEq5GVlSgRtgUJzFs-PWnP2U6YzQcK3Ac4Drm89ViEryH8-5SQt7qCvfSkCNJ1OZtt372tpsuTQ-U05LEHCKIo7oMKE-35tSfo6UJvMOUZ*2kl8s6SB7aZLFqQkPb7vKi*NNo0kIlr4fCYEaYj9mInqU2UKtBoJgwQn38G9f5cr4BM6NdVA__
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 02:02:08 Exception:SpcarDriverController/save msg:java.lang.RuntimeException
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@774d0f50, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@774d0f50, {}, org.apache.catalina.connector.ResponseFacade@2b27c0ca]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@774d0f50, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@774d0f50, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave begins with [org.apache.catalina.connector.RequestFacade@774d0f50, org.apache.catalina.connector.ResponseFacade@2b27c0ca, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave end with massage:driver/edit
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save begins with [org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest@46fe5e1b, org.apache.catalina.connector.ResponseFacade@5664b48a, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj01vgkAQhu-8CsK5KfvBFmzSA1FEEmptZPvhhSCsZkJd6bIopul-L2IbSTq3yfNM3nm-DNM0rSRe3mZ5vm*kTvWpEpZ5b1rIurnCqoIizXRKVfEPirYCJdJso4XqIWaMEYSGDhRCatjAn0EnCg7dcjXqokz7mIvgdPfEY2Q0VGDbw8eAj6Op9Bch514xCyet7forxhYcchXO41X0Elc4E9PGRQmp33wIfC21nZyCxNH5*t0pPwU-PvF2aR-GrxEv1UfzfHTmNJ-t1tuHQaSGnfh9aHTnYea6dEC7BjXsZS8QhBkmFJ3HMr6NHwK0XfA_
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8iqZXjS0tFWayA5kGTcQEgZl5IRVa12xAKZ1ZY-bfVVwiie-6fS-vfXoAAFg85le8rvtDZyvrtIDgBkAML-*g1qqpuK2oaf5BcdTKiIpLK8wEfcYYwXjuqEZ0Vkl1NnjTqm6Gx2ZXTRu--eC7TCJGFnNFvU8wvctWD3Hq0iTK1iggeWePq7QkCCVDSWkf1AFZx4ML5biTpdvGKt5GaEARx05STfP24rV8q5*KvdvfP-uZ3IRjcWC3*oUlJl4uZ5NWteJ8aHEd*SwMgxn9EGZUfTcJBPvMJxT-BHon7wuDelv9
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save end with massage:driver/list
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@c5b1be8, org.apache.catalina.connector.ResponseFacade@5664b48a]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 03:58:12 Exception:OrderController/gotoCarry msg:java.lang.NumberFormatException: null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@738396b1, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@738396b1, {}, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@bfa10f, {}, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@340796b3, {}, org.apache.catalina.connector.ResponseFacade@240644e1]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@bfa10f, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method orderList end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@6405e601, {}]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:passenger/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@bfa10f, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:driver/list
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414, {}]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method editOrSave end with massage:driver/edit
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save begins with [org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest@26f79cb0, org.apache.catalina.connector.ResponseFacade@6b2d1c1a, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj11rwjAUhu-7K0JvN0Yal6qDXchsiHZ2aOtHd1NqEuUo-SDNnN3Yf19XFAs7d4fnObzn-bYQQnb0Gj6kQhQfuUlMXSobPSEb2-c3WJYgk9QkPS3-QXUuQask3RmlW*hQSgnGXQekyg3s4Go8jjWcmuVmVPKYtDEXobknA0qGXQX2LZx5y5cJ82Ofj4Mw4l4x27wb0MGBf0XxFo7rwzI4fXoFZyqb4sXbCLxRLQUTxM82NQgVh2J6t2YlJVvGfVcuJnpf0WrunldczJ87kQYydXlo6A4I6ffdDm0aVFDkrUCwQx3Sw39jWz-WL4B0Xow_
+[http-apr-8089-exec-4] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljs1Og0AYRfc8xYStRocpI9SkCwTTsUIaWvFvQwgzJZ8wgDAVium7q9hEEu-2nJt7PzWEkP7gby*SNK32pYrVoRY6ukY61s--YF0DjxMVzxr*D4q*hkbEyU6JZoQGpZRgPHWAi1LBDk5GwiWUE9zyPB43fvvmd5nYlMynCmQjDG5D985derg0W57K7rDaC*kNz*bZi89Y7-SOcx8F68607JQ9ZZ0DN*7j5WsR5cZynRbvLeRhVWwJZQEbNsJeDdkm8Xx4kxGxw8ViMqlAitOh*ZVNiGVZE-ohmhaqchQINqhBZvgnunbUvgAuZ108
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save end with massage:driver/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save begins with [org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest@1619a, org.apache.catalina.connector.ResponseFacade@6b2d1c1a, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj01Pg0AQhu-8ig3XGrMsrIBJD7R6sEBbY4vUy4Z2PzIx5XMRW*N-F9FYEuc2eZ7JO**HgRAyN9HTdXY4FG2umT6VwkS3yMTm1QWWJXCWaWbX-B8U7yXUgmVSi3qAFqWUYDx2gItcg4Q-466Gt365GA1-ZUPMj*D098SjxB8roAYY3z-OH*a*IytdpsHKr*M0cRaJs2vayfL87K46HR1DSSvqJZUd7AOYKcWjHRbr7b47TQoa5tl6ky3Cl7jjqZpJWKo2xW68PVvBdDqK1HAUvw-5Nx6xLdce0b5BA0U*CARb1CI2-h7T*DS*ACnwXeE_
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FYRXjLZlhc03UNFlLLjgEvWFVNrNj64Fu44wjf9dxSWSeF-Pubn3w3Fd13vIinNWVc1B29IeW*G5l66HvLM-2LbAS2bLwPB-UPQtGFGyjRVmgJhSShAaO8CFtrCBk8G4Aj3Cey7LYeO3P-kukykls7EC2wEub56u5qvrzF*nYawYlo9Q9N3z3b1lVSPTWidykeQX71kxMXn8ptBq-hpnUiMUVpBsg0YesG-QS5Qua*h65auI0x3c5oudrYm-Hk1aUOJ0aBZOSYCjYEQ7YfbQ6EEgCFNMAvQTz-l0vgAbfV0c
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method save end with massage:driver/list
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:13:46 Exception:OrderController/gotoCarry msg:java.lang.NullPointerException
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:14:23 Exception:OrderController/gotoCarry msg:java.lang.NullPointerException
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:14:36 Exception:OrderController/gotoCarry msg:java.lang.NullPointerException
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method sendVerifyCode begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:14:50 Exception:SpcarUserController/sendVerifyCode msg:org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 3
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method sendVerifyCode begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:15:18 Exception:SpcarUserController/sendVerifyCode msg:org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 3
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:16:29 Exception:OrderController/gotoCarry msg:java.lang.NullPointerException
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method sendVerifyCode begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:16:30 Exception:SpcarUserController/sendVerifyCode msg:org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 3
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method sendVerifyCode begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:23:11 Exception:SpcarUserController/sendVerifyCode msg:org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 3
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method sendVerifyCode begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@6405e601, org.apache.catalina.connector.ResponseFacade@6b2d1c1a]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:23:39 Exception:OrderController/gotoCarry msg:java.lang.NullPointerException
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method sendVerifyCode end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FYRXjdKWLrDEB8aIEseUbFN8Ik1b9GODYimLaPzvKi6RxPt6zs29H5Zt2852tblgnKu*MYUZWunYc9txnfM-2LYgCmYKosU-KN9a0LJgpZF6hIhSil136oCQjYESTgYTNTQT3Il9MW789r3vMvYpDqYKPI8wjXdREl2v8-6S8Srm67JW3T3yDu80fqyqpeKhQPlxyXXgET2oEOJwdpMkC8*nLekjkveLze2w857U2Uqnr3F295ITOGRonz2w9GoyaaCWp0PBzMfED-CEHqXuQDWjgF1EESbuTxzr0-oC9ppcrQ__
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"Fail to send message(91000),please try again","ErrorCode":91000}======
+[http-apr-8089-exec-9] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/chooseSpcar======通知微信用户失败！======
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FYTXGW07imDiA0OMIyMjbrBkL01DC35MoLIyWYz-XcUlknhfz7m598MwTdParjbXPM-bvtFMn5W0zDvTQtbVH1QKBOOazTvxD8pBQScZL7TsRogppQShqQNCNhoKuBhc1NBM8FEc2Ljx27e-y8SlxJsqUI4wDtNgGXov0bt*wOXhrY9Ot7hYbJN9NiT*evWUO0imizrm7izm0PgQ*lWQqqCqZ6-tsx31u4SU1WYvls5gE-eGZ7nyH4cuW8udG95PJjXU8nLIc1xiY4dM6El2R2ibUSAIU0zm6CeW8Wl8AfK7XKs_
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======离线推送失败:{"ActionStatus":"FAIL","ErrorInfo":"Fail to send message(91000),please try again","ErrorCode":91000}======
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@738396b1, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@738396b1, org.apache.catalina.connector.ResponseFacade@174108ad]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:42:44 Exception:OrderController/gotoCarry msg:java.lang.NullPointerException
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-4] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:43:35 Exception:OrderController/gotoCarry msg:java.lang.NullPointerException
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1LwzAYhe-7K0JuFU3TpR-CLlYdMl3BbnO7LCF5173TpqFNx4r439U6sOC5fZ7DOR8eIYRulusbqVTdGVe43gIld4Qyev0HrUVdSFcEjf4H4WyxgULuHTQD9IUQnLGxgxqMwz1eDKkrNCPc6rdi2PjtT77LPBY8GStYDjCb5-eLNMz0obt6j-uzkbk9wvrZQPlS9VGULXf5ygeTol1lixpnmBr-qPrkNdw9dKneKN3yraomT7fl6VHxdq7jbTRLD52TPJ9OR5MOK7gcSsKYCxYGI3qCpsXaDAJnvvB5wH5CvU-vC3gOXak_
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-3] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-3] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljsFugkAURfd8BWFLU4ehU7RJF4oQbSrWIKmsyJR5kkcL4jCKpem-a6lJSXq359zc*6Xpum6sn8Nbnqa7Q6kS9VmBoT-oBjFu-mBVoUi4Smwp-kE4VSgh4VsFsoMWY4wS0ndQQKlwi1eDiwLLHq7Fe9Jt-PbvLmU6ZHTUVzDr4MKL3LmfVsTlS9LATOVh4Jl*5Lh5-hLHG1pbTxNsXyeet2KBXY7RGx*mx7gQTbMx-aX-MQjNVubZCQYB2e-XK4iyaZuasJi98fljb1JhAddDo-shZQ51evQIssZd2QmUWMyiNvmJoX1rZ-rRXQI_
+[http-apr-8089-exec-3] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:55:29 Exception:OrderController/driverArrive msg:java.lang.NullPointerException
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogin end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljs9PgzAAhe-8FQ1no6XYAd4Y44BjZIgw56VpaJnNwo-RIuDi-65jSyTxXb-v5b2zBgDQX8PknuZ53VWKqLHhOngCOtTv-mDTCEaoImbL-kE*NKLlhBaKtxM0MMYIwrkjGK*UKMTNoKwU1QxLdiTTxrX-*FtGNkbOXBGHCW78vRfEq2w9HJNC7vyvJA4L23nrC*bBVRP1vV8*jGlYL987c5NZy0Pw4a63Y2BUXp4uTnE6GPRZtl394kYZTdKdOqVMunsabc1OstmkEiW-HXIWNsKWZc7oJ2*lqKtJQNDABjLhJbr2rf0AnOpeXg__
+[http-apr-8089-exec-2] ERROR com.yinghai.macao.aop.AccessTokenAop - time:2017-06-07 04:56:14 Exception:OrderController/driverArrive msg:java.lang.NullPointerException
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FQ3XxpVCNzDZBZ3gMI45mahXDVkLvCpQWVn8iP9dxSU28dw*z8k5HxZCyN5eZafFbtcNreb6TUkbnSEb2yd-UCkQvNDc7cU-KF8V9JIXpZb9CB1KKcHYdEDIVkMJR6MQDbQG3osnPm789r3vMvEpCUwFqhGuos0iic*TjkVymeNJ6s8yVTXpnV6yuguiDYthDUNZLxhTD*5lCGE9qO0knOXTkK4VE**QrZ51f1N4t-X1fRnnGhPvJblQj2k1nxuTGhp5PBRMfUJ9xzx0kP0eunYUCHaoQ1z8E9v6tL4AxKFchw__
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLogout end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAUhd-5FaTPRttCJ5j4wCbZqlZjcFGfSAe3ct2AjnVzavzvKi6RxPP6fSfnfHi*75P76*xYF0W7bVzu3iwQ-8wnlBz9QWuxzLXLg678B2FvsYNcGwddD5kQglM6dLCExqHBg6HLGpsB3pTLvN-47YffZR4JHg8VfO6hSucTOb6DbDee3Co5T6aA8Tpj4WW3YMV*VVkT6lTJoFJTjG7eE0wTVFVqorW9ODHSrDScvhSyfl224spsF09UNA*PiZwls9jQ88GkwxoOh*JRxEU0Cgd0B90G26YXOGWC8YD*hHif3hcDdVzj
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-4] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-4] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAARd-5FaSvGFPKx2DJHthkDpwmDSNRXgjSDsoESqkMY-zvOlwiiff1nJt7PxVVVcFhH91med6*NzKVH5wCdakCCG7*IOeMpJlMDUH*QTpyJmiaHSUVE9Qty0IQzh1GaCPZkV2NjNSsmeGenNJp47dv-pSRYyF3rrBigo8*3gTrM6yx6NAClk9co4bnJkOY7*LXZOcHffR2ikOzq7iNu9Bj6*3dczHUGq5K6BmBPqLF9qUvkmo8bMq9Np59p42r*wcRhXi1mk1KVtPrIdd2kA11c0YHKnrWNpOAoG7pyICXAOVL*Qbmplyu
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:812非法操作,當前狀態為:4當前操作匹配訂單狀態：3
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8CsIVI6WsBLw5NjcYGjeW4bw0hRZWzAC7wqZm-32KS2ziu37fy3tfmq7rxjpObkmeN10tsfxomaHf6QYwbv5g23KKicSOoP8gO7VcMEwKycQAbYQQBEB1OGW15AW-GoTuea3gA33Dw8Zvf-Rdhh6CvqrwcoCP020QLidpNF-LaPk0DaqXV9K*p8mxmxBgBeHYyfrq8*HUmJvCsnZZGe7uo2cHeZ1MslUp0sVq0TRVPNrGx83cHUfJrJv1LIclNZPIVCYl37PrId-1oAt8R6E9Ewfe1IMAgY1s6ICfGNpZuwAY9F0D
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FaS3Gm3LQGayi2HQ6SYTZXN3hI-CXjdKLR0ZGP*7ikts4rl9npNzPgzTNFG0eLlIsqw*cBWrTjBkXpsIo-M-KATkcaJiS*b-IDsKkCxOCsXkAIlt2xRj3YGccQUFnIwkr4BruMl38bDx2x99l6lr07GuQDnARz*8uffTvtu-PQe3DnBvOfMd6geLal72l2eHpuvxJgu80Ff7UFZTmAqXbB2L13K1adt05r6O1C66k8XT*1x5URts04f1mhxrvConE21SQcVOh8aOSx1CrzTaMtlAzQeBYmITauGfIOPT*AJ67V35
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-6] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/comfirmCarry======訂單:812非法操作,當前狀態為:0當前操作匹配訂單狀態：4
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method completeOrder begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1rgzAYhe-9FeLtxkyisTrYRVuFFlzph93aK8lMlJfV1MYolrH-vs0VFti5fZ7DOR*WbdtOlu4eWFGcO6lzfW2EYz-aDnLu-2DTAM*Zzj3F-0ExNKBEzkot1AgxpZQgZDrAhdRQws1gvAZp4Ja-5*PGb9--LpOQkshUoBrhc7KfLzdxCqnKArTO3Fbse8Sh3xxTCt3rccBvvs8GmczjyU5uT9WyKhm61tvVpHo5TFdFPOt4dCB*doLZXXlJLmrqLjx3scbYa5*MSQ21uB2KgpAElIYG7YVq4SxHgSBMMfHQTxzr0-oC3ttcTg__
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method completeOrder end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:812非法操作,當前狀態為:5當前操作匹配訂單狀態：3
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-5] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:701非法操作,當前狀態為:5當前操作匹配訂單狀態：3
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLocUpdate begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverLocUpdate end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:691非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-7] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/driverSetOut======訂單:691非法操作,當前狀態為:3當前操作匹配訂單狀態：3
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-1] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-1] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PwjAYhe-3K5rdarRrmdtMvIAJqKtEMjR41cz1wze4rmwVQeN-ByeJSzy3z3NyzpeHEPIXLD8ryrJ*N467nZU*ukQ*9k--oLUgeOE4bcQ-KLcWGskL5WTTwSAMQ4Jx3wEhjQMFR6MQFZgebsWKdxu--cGhTOKQJH0FdAfvx4-p7Wia0Cyd1aCv1eaBqRucvS3LE3b*wVg7z2ha64QtR2mu8RDGw7WcrdYLG6l4B9WEmQjg7jN9eZrE*TafF2ZqX-OBqpl*1le9SQeVPB5KLmISURz06EY2LdSmEwgOwoBQ-BPf*-b2-eNdLA__
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PwjAYhe-3K5ZdG207iqsJF0KWuag4PsISb5aydvhK6GrXQcX439VJwhLO7fOcnPPl*b4fLJ8W17ws61bZwn5qGfh3foCCqzPUGkTBbREacQGl02BkwSsrTQcxpZQg1HdASGWhgpPBxQ5UDzdiW3Qb--3Bb5lElLC*ApsOPsezSTp*TN0Nnk2zRRaHTK5csp7w*GNOVltdYSMkZ*Vxs3cIxD2MnYqGrG1QFuUqX8v6TU8HWbV8Tyo2N*nDa36IXto0oUdxGI16kxZ28nSIDSNyG4a4R-fSNFCrTiAIU0xC9JfA*-Z*ADoPXY8_
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FvgjAUhd-5FQ2vLrMUO3CJD9gws2USjCYbTw2jBe*c0JSCotl-nzKTkey*ft-JOfdsIYTszev6Ps2yqikNN52SNnpENrbv-qBSIHhquKvFPyiPCrTkaW6k7qFDKSUYDx0QsjSQw81IxR7KAa7Fjvcdv-nJJUx8SqZDBYoeLsMVe16Mkyzy5emQPHUxZmnxGdXB13aVvy-bgEo2ZqA*1i9t24wCmDdhJyq9y0wNbTeni9BP4gk7bd9Gnjaxq5SKD9FxE5iqmM0GlQb28jZo*uATz-WGL7VS11CVvUCwQx3i4uvZ1rf1A8J*Xqw_
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry end with massage:null
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method completeOrder begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-3] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-3] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAYhe-5FYRr40r5kJl4sU0Tl40Qom5xN00pBV8UWrsC3Rb-u8qWSOK5fZ6Tc06WbdvO8-rpmjIm2kYTfZDcsW9tBzlXf1BKyAnVxFP5P8iNBMUJLTRXA3SDIMAIjR3IeaOhgItB8xqaEd7n72TYOPf9nzKOAjwdK1AOMH54WSzTe36sGIcurVSkPx7nfpbIuDW7let1lTF9XLTZZ3rsaxbOluWGRWvjKdElu0Skm8NkVnjZSotyi4Vsw8krAzpf9OatSO9Gkxpqfjk0DSN846NwRDuu9iCaQcDIDVzsod841pf1DVqMX7g_
+[http-apr-8089-exec-3] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method completeOrder end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljktPg0AYRff8iglbjBnm0UITF6YY6YOmpI*4I1NmIF8fwwhjsTX*dxWbSOLdnnNz74eDEHLX89W9yPPqTdvMXoxy0Qi52L37g8aAzITNaC3-QfVuoFaZKKyqO*hzzgnGfQek0hYKuBlCnkD3cCMPWbfx22ffZRJwEvYVKDuYPG3GkzQ6xHOReNf4XHGdHKf09VngSLFdvC1Srz62j3S2WHiXHQzbSRlpf1nZ6bU0L3scVQ1TpWlWdOlJNmhpCuNoluzzdaiCzUNv0sJJ3Q6Fg4AMWcB79KzqBirdCQT73CcU-8R1Pp0vDepc8w__
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FYTXGYFCNzDxYSKic4YtSgReSLN2y*dGaaAl64z-3YlLJPG*nnNz76dhmqb1tny9JptNo7ispBbMMm9My7Gu-qAQQCsiK6*l-yA7CmhZRbaStQN0McbIccYOUMYlbOFiEFoDH*GO7qth47fvn8sowCgcK7Ab4EucRU-RgvW7IlvlCUu0vVjuc5V24ui-8*iQZqlf3MeezrqC2v0c4vnpQT-eNR91oNRa5yQjs2QiJrpWGMp16Tfl6fmQu2Bzt7gdTUqo2eVQOA3QbBqiEe1Z20HDBwE5LnaR5-zEMr6Mb5J*XhM_
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive end with massage:null
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-10] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-10] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljs1Og0AYRfc8BWFtdPjqUNrEhfyUYCgNKW2RDZkwQx0pDNARNMZ312ITSbzbc27u-VRUVdXiYHtL8ly81TKTHw3T1KWqIe3mDzYNpxmR2ayj-yB7b3jHMlJI1o1QxxgDQlOHU1ZLXvCrQWjF6wk*0zIbN3779z9lMDEspgo-jnDt7mw-svsgXA-J65NROmlQ7faxYVUAlrtftY-iQEG8pMkBvCEvBv9obcyoPPlh7Ib21u*j1EkibzVvnWexSenJ8khc2P0dR235MJmUvGLXQwvDhLmJYEJ71p25qEcBkI51mKFLNOVL*Qb-2Vzs
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method completeOrder begins with [org.apache.catalina.connector.RequestFacade@bfa10f, org.apache.catalina.connector.ResponseFacade@35880414]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljs1OwkAYRfd9iqZbjJl*-SdxwU*FIhApWMVNU5lp*2Fox*mgJcZ3FyuJk3i359zc*6npum5s5uvrbLerj5VM5YkzQ*-rBjGu-iDnSNNMppag-yBrOQqWZrlkooOm4zhAiOogZZXEHC9GRg9YKbihr2m38du3z2XwHQhUBYsOLsKHUTS9i6i1kl7rLooscC1rG0-t2XGPsIRiVe8jLpLZfbwUL8UAw0Fpn4ZtryrHz17DYTjqJevJIySbPB7fkrp9C5-m0UcZw2Rr3yiTEg-scihwffB821ToOxMN1lUnADEdEyzyE0P70r4BpONcHA__
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method completeOrder end with massage:null
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8iqZXjJTWbtTEg5kLaTKYOFG3S8PWDjtdIV1hLMb-ruISSXzX73t578MDAMDH2eKy2GyqxjjhTrWC4BpABC-*YF1rKQoniJX-oOpqbZUotk7ZHoaUUozQ0NFSGae3*mwUcq-NAB-km*g3fvtX32UcUcyGii57mEzzCc8ms6PPxrgxKVnPff-u9ZhWY5QQfz4yT5Kvkk5m8fNDtyubjJc5b9EtXS9dukOnOH5hZBmsiLJB1rU6WLzb*ymLeRWmZX4zmHR6r86H2CjCEYnIgLbKHnRlegGjkIaYoJ9A79P7AoF2W-Y_
+[http-apr-8089-exec-2] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method gotoCarry end with massage:null
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljl1PgzAARd-5FaSvGFfK2hUTXwA3McNlcUucL6RpO2xkhZQO9xH-uxOX2MT7es7NvWfP932wmr-cMs6bvbalPbYS*Hc*gODmD7atEiWzZWTEPygPrTKyZFsrzQBDjDGC0HWUkNqqrboaTOyUdnAnPsph47c-vpQRxSh2FVUNsHhYp-kyjWxKKXml5FTTxRNZLj5nozqFk4BU82kBNzLlfbY3I11UeZWJ7rnGPc*T8WlD0WPfxVP1-mZWtQiSbBYkE8KOzYEbtL53Jq3ayeuhmNDLIUwd2kvTqUYPAoIhDlEEfwK8L*8bXDxbzw__
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverArrive end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FaSvGtd2KwHfcBsLcRLJMNl8IdAW-TbXMugEYvzvKi6xiff1nJt7PxzXdVG23twUnOuzMrkZaoncWxdhdP0H6xpEXph82oh-UPY1NDIvKiObERLGGMXYdkBIZaCCi1GIIygLt*KQjxu--dl3mfqMBrYCLyN8WO7mcbqI*rt7rBeHfaBmMNnvyvh5SB67KOv8Tb9N*SpMVsNprSdVF7*GyVvWibMBs4xCXWbCfwoYVyYlgvDmpIfSY-gKl3E731qTBo7ycijwfOp7lFj0XTYtaDUKFBNG6BT-BDmfzhdyq13S
+[http-apr-8089-exec-9] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverConfirmCarry end with massage:null
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method completeOrder begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-7] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-7] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FaSvM1oKRViyB2aG4ubMUFj0hTDa6hdHqdAtE*N-V3HJmnhfz7m599OybRs9Lh7Oy6pqdlIX*kNxZI9thNHZCSoFrCh14bbsH*QHBS0vSqF5O0CHUkowNh1gXGoQcDRKVoM0cMfeimHjr*-9lElASWgq8DLAu9nqKol20ZK67kHtt2t49sIyFb6v4iRsVMbFikrON69p7vX1OoIpfcq8efKe34zYRSc26fa2gjy5l07WL4Jl30-dUX4dN7N5HE0mxqSGmh8PhX5AQueSGHTP2w4aOQgEO9QhLv4Nsr6sb-G7XJg_
+[http-apr-8089-exec-7] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method completeOrder end with massage:null
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin begins with [org.apache.catalina.connector.RequestFacade@40e541a4, {}]
+[http-apr-8089-exec-1] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method tologin end with massage:login
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login begins with [org.apache.catalina.connector.RequestFacade@40e541a4, {}, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method login end with massage:null
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@40e541a4, {}]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:manager/list
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@40e541a4, {}]
+[http-apr-8089-exec-10] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@40e541a4, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-2] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@340796b3, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljkFPgzAAhe-8iobrjCtlNWWJBzId1kHGBurchSDtZqOUCmWMGP*7DpfYxHf9vpf3Pi0AgJ2GyWVeFFUrdaZ7xW0wBTa0L-6gUoJluc7cmv2D-KhEzbN8p3k9QAdjjCA0HcG41GInzkbOSiEN3LC3bNj47U9*yohg5JmK2A8wun2Y0dVN-ErvUb*KNslyxB*deOGP1*lhzvy7lAS9asPlUzdz5i*B7Oh*E277d-Icy3gst8e2G5VF85ErTNmioHGTuBX3Ij5xA59cG5NalPx8yLsiLkSIGPTA60ZUchAQdLCDXHiKbX1Z3-p1XOc_
+[http-apr-8089-exec-8] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxlj1FPgzAUhd-5FaTPRkuhCL4xGQsByZQRJy8NrIVVAqWsOhbjf3fDJZJ4X7-v5Jz7pem6DjZxelvsduKjU0Sdegb0Bx1AcPMH*55TUihiDvQfZGPPB0aKSrFhggbGGEE4dzhlneIVvxoFbXk3wwfakKnjN2*dw8jByJ0rvJ7g0-LtMXz25Tq6z2UptqtV6VbQHpP341EZMmjKLAjv2kw4OInH*tXywr0XNWphR-QlXwdplon8hKWbqv0gl9jy8*1G1JGXJG3sL9CsUvGWXQe5tmNCZM1f*mTDgYtuEhA0sIFMeDmgfWs-IpddBw__
+[http-apr-8089-exec-8] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-8] ERROR com.yinghai.macao.common.service.impl.SpcarOrderServiceImpl - SpcarOrderServiceImpl/pushMsg======单聊通知失败:imName=null======
+[http-apr-8089-exec-8] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@40e541a4, {}]
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session begins with [org.apache.catalina.connector.RequestFacade@40e541a4, org.apache.catalina.connector.ResponseFacade@63787f0b]
+[http-apr-8089-exec-7] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method session end with massage:null
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar begins with [org.apache.catalina.connector.RequestFacade@40e541a4, {}]
+[http-apr-8089-exec-4] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcar end with massage:order/chooseSpcar
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure begins with [org.apache.catalina.connector.RequestFacade@340796b3, org.apache.catalina.connector.ResponseFacade@415aaada]
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFrgzAYRd-9FeLrxojRqC30wY0OBhZ1E9n2ElIT5as0Bk1b69h-X*sKC*y*nnO598uybdspkrcHVlXdQWqqz0o49tJ2kHP-B5UCTpmmXs--QTEq6AVltRb9DF1CCEbIdIALqaGGm8H4HqSBB97SeeO371-KOCJ4YSrQzHCzzp9e4ror2sM4ZI34LAKi4wTSNf8YRJX32fSs4nDMpu3wXt5lMcQk3UysweGuiYKU6Okki4zVLDqx3RG15VbpMMGP5Vm*5quVMalhL26HFkHkIT-wDXoU-QCdnAWMXOJiD13jWN-WD9LiXok_
+[http-apr-8089-exec-5] INFO com.yinghai.macao.common.util.TlsSignUtil - ======获取TLS签名成功======eJxljlFPgzAYRd-5FaSvGi0thWHiQwMzmRskm8z41jS0bJ84VkvnHMb-ruISSbyv59zc**H5vo-KxcOVrKr9oXXCnYxG-o2PMLr8g8aAEtIJatU-qN8NWC1k7bQdYMAYIxiPHVC6dVDD2ZBqB*0Id6oRw8ZvP-wukwkjyViBzQDz6Tqd8b5z8shjSBo6W23jNK8vsuXjKjr0dw2oTBuXv84p7*IThym3SdYnL2mupV0XLK0jwnu*3G7KInSL6npeP8eFvS*b41N1O5p0sNPnQ0k0oTiMxofetO1g3w4CwQELCMU-Qd6n9wUztV1N
+[http-apr-8089-exec-5] INFO net.sf.json.JSONObject - Property 'statusArray' of class com.yinghai.macao.common.model.SpcarOrder has no read method. SKIPPED
+[http-apr-8089-exec-5] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method chooseSpcarSure end with massage:null
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list begins with [org.apache.catalina.connector.RequestFacade@340796b3, {}]
+[http-apr-8089-exec-6] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method list end with massage:order/list
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe begins with [org.apache.catalina.connector.RequestFacade@340796b3, org.apache.catalina.connector.ResponseFacade@415aaada]
+[http-apr-8089-exec-9] INFO com.yinghai.macao.aop.AccessTokenAop - ======>The request method driverMe end with massage:null

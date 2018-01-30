@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yinghai.macao.common.dao.SpcarPassengerMapper" >
+  <resultMap id="BaseResultMap" type="com.yinghai.macao.common.model.SpcarPassenger" >
+    <id column="spcar_id" property="spcarId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="family_name" property="familyName" jdbcType="VARCHAR" />
+    <result column="given_name" property="givenName" jdbcType="VARCHAR" />
+    <result column="country_code" property="countryCode" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="loc_x" property="locX" jdbcType="DOUBLE" />
+    <result column="loc_y" property="locY" jdbcType="DOUBLE" />
+    <result column="last_login" property="lastLogin" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="device_id" property="deviceId" jdbcType="VARCHAR" />
+    <result column="passenger_id" property="passengerId" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="sex" property="sex" jdbcType="BIT" />
+    <result column="vip" property="vip" jdbcType="BIT" />
+    <result column="order_count" property="orderCount" jdbcType="INTEGER" />
+    <result column="cancel_count" property="cancelCount" jdbcType="INTEGER" />
+    <result column="finish_count" property="finishCount" jdbcType="INTEGER" />
+    <result column="deleted" property="deleted" jdbcType="BIT" />
+    <result column="rating" property="rating" jdbcType="DOUBLE" />
+     <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="device_type" property="deviceType" jdbcType="VARCHAR" />
+    <result column="im_name" property="imName" jdbcType="VARCHAR" />
+    <result column="sign" property="sign" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yinghai.macao.common.model.SpcarPassenger" extends="BaseResultMap" >
+    <result column="verification" property="verification" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    spcar_id, name, family_name, given_name, country_code, tel, loc_x, loc_y, last_login, 
+    create_time, device_id, passenger_id, status, sex, order_count, cancel_count, finish_count, 
+    deleted, rating, device_type, im_name, sign,vip,title
+  </sql>
+  <sql id="Blob_Column_List" >
+    verification
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from spcar_passenger
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from spcar_passenger
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yinghai.macao.common.model.SpcarPassenger" >
+    insert into spcar_passenger (spcar_id, name, family_name, 
+      given_name, country_code, tel, 
+      loc_x, loc_y, last_login, 
+      create_time, device_id, passenger_id, 
+      status, sex, order_count, 
+      cancel_count, finish_count, deleted, 
+      rating, device_type, im_name, 
+      sign, verification)
+    values (#{spcarId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{familyName,jdbcType=VARCHAR}, 
+      #{givenName,jdbcType=VARCHAR}, #{countryCode,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{locX,jdbcType=DOUBLE}, #{locY,jdbcType=DOUBLE}, #{lastLogin,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{deviceId,jdbcType=VARCHAR}, #{passengerId,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{sex,jdbcType=BIT}, #{orderCount,jdbcType=INTEGER},
+      #{cancelCount,jdbcType=INTEGER}, #{finishCount,jdbcType=INTEGER}, #{deleted,jdbcType=BIT},
+      #{rating,jdbcType=DOUBLE}, #{deviceType,jdbcType=VARCHAR}, #{imName,jdbcType=VARCHAR}, 
+      #{sign,jdbcType=VARCHAR}, #{verification,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yinghai.macao.common.model.SpcarPassenger" >
+    insert into spcar_passenger
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="spcarId != null" >
+        spcar_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="familyName != null" >
+        family_name,
+      </if>
+      <if test="givenName != null" >
+        given_name,
+      </if>
+      <if test="countryCode != null" >
+        country_code,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="locX != null" >
+        loc_x,
+      </if>
+      <if test="locY != null" >
+        loc_y,
+      </if>
+      <if test="lastLogin != null" >
+        last_login,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="deviceId != null" >
+        device_id,
+      </if>
+      <if test="passengerId != null" >
+        passenger_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+       <if test="vip != null" >
+        vip,
+      </if>
+      <if test="orderCount != null" >
+        order_count,
+      </if>
+      <if test="cancelCount != null" >
+        cancel_count,
+      </if>
+      <if test="finishCount != null" >
+        finish_count,
+      </if>
+      <if test="deleted != null" >
+        deleted,
+      </if>
+      <if test="rating != null" >
+        rating,
+      </if>
+      <if test="deviceType != null" >
+        device_type,
+      </if>
+      <if test="imName != null" >
+        im_name,
+      </if>
+      <if test="sign != null" >
+        sign,
+      </if>
+      <if test="verification != null" >
+        verification,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="spcarId != null" >
+        #{spcarId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="familyName != null" >
+        #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="givenName != null" >
+        #{givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null" >
+        #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="locX != null" >
+        #{locX,jdbcType=DOUBLE},
+      </if>
+      <if test="locY != null" >
+        #{locY,jdbcType=DOUBLE},
+      </if>
+      <if test="lastLogin != null" >
+        #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceId != null" >
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="passengerId != null" >
+        #{passengerId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=BIT},
+      </if>
+      <if test="vip != null" >
+        #{vip,jdbcType=BIT},
+      </if>
+      <if test="orderCount != null" >
+        #{orderCount,jdbcType=INTEGER},
+      </if>
+      <if test="cancelCount != null" >
+        #{cancelCount,jdbcType=INTEGER},
+      </if>
+      <if test="finishCount != null" >
+        #{finishCount,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null" >
+        #{deleted,jdbcType=BIT},
+      </if>
+      <if test="rating != null" >
+        #{rating,jdbcType=DOUBLE},
+      </if>
+      <if test="deviceType != null" >
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="imName != null" >
+        #{imName,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null" >
+        #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="verification != null" >
+        #{verification,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yinghai.macao.common.model.SpcarPassenger" >
+    update spcar_passenger
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="familyName != null" >
+        family_name = #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="givenName != null" >
+        given_name = #{givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null" >
+        country_code = #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="locX != null" >
+        loc_x = #{locX,jdbcType=DOUBLE},
+      </if>
+      <if test="locY != null" >
+        loc_y = #{locY,jdbcType=DOUBLE},
+      </if>
+      <if test="lastLogin != null" >
+        last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceId != null" >
+        device_id = #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="passengerId != null" >
+        passenger_id = #{passengerId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=BIT},
+      </if>
+       <if test="vip != null" >
+        vip = #{vip,jdbcType=BIT},
+      </if>
+      <if test="orderCount != null" >
+        order_count = #{orderCount,jdbcType=INTEGER},
+      </if>
+      <if test="cancelCount != null" >
+        cancel_count = #{cancelCount,jdbcType=INTEGER},
+      </if>
+      <if test="finishCount != null" >
+        finish_count = #{finishCount,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null" >
+        deleted = #{deleted,jdbcType=BIT},
+      </if>
+      <if test="rating != null" >
+        rating = #{rating,jdbcType=DOUBLE},
+      </if>
+      <if test="deviceType != null" >
+        device_type = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="imName != null" >
+        im_name = #{imName,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null" >
+        sign = #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="verification != null" >
+        verification = #{verification,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yinghai.macao.common.model.SpcarPassenger" >
+    update spcar_passenger
+    set name = #{name,jdbcType=VARCHAR},
+      family_name = #{familyName,jdbcType=VARCHAR},
+      given_name = #{givenName,jdbcType=VARCHAR},
+      country_code = #{countryCode,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      loc_x = #{locX,jdbcType=DOUBLE},
+      loc_y = #{locY,jdbcType=DOUBLE},
+      last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      device_id = #{deviceId,jdbcType=VARCHAR},
+      passenger_id = #{passengerId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      sex = #{sex,jdbcType=BIT},
+      order_count = #{orderCount,jdbcType=INTEGER},
+      cancel_count = #{cancelCount,jdbcType=INTEGER},
+      finish_count = #{finishCount,jdbcType=INTEGER},
+      deleted = #{deleted,jdbcType=BIT},
+      rating = #{rating,jdbcType=DOUBLE},
+      device_type = #{deviceType,jdbcType=VARCHAR},
+      im_name = #{imName,jdbcType=VARCHAR},
+      sign = #{sign,jdbcType=VARCHAR},
+      verification = #{verification,jdbcType=LONGVARCHAR}
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yinghai.macao.common.model.SpcarPassenger" >
+    update spcar_passenger
+    set name = #{name,jdbcType=VARCHAR},
+      family_name = #{familyName,jdbcType=VARCHAR},
+      given_name = #{givenName,jdbcType=VARCHAR},
+      country_code = #{countryCode,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      loc_x = #{locX,jdbcType=DOUBLE},
+      loc_y = #{locY,jdbcType=DOUBLE},
+      last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      device_id = #{deviceId,jdbcType=VARCHAR},
+      passenger_id = #{passengerId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      sex = #{sex,jdbcType=BIT},
+      order_count = #{orderCount,jdbcType=INTEGER},
+      cancel_count = #{cancelCount,jdbcType=INTEGER},
+      finish_count = #{finishCount,jdbcType=INTEGER},
+      deleted = #{deleted,jdbcType=BIT},
+      rating = #{rating,jdbcType=DOUBLE},
+      device_type = #{deviceType,jdbcType=VARCHAR},
+      im_name = #{imName,jdbcType=VARCHAR},
+      sign = #{sign,jdbcType=VARCHAR}
+    where spcar_id = #{spcarId,jdbcType=INTEGER}
+  </update>
+  <insert id="insertByTaxigoUser">
+    insert into spcar_passenger (spcar_id,name, family_name, 
+      given_name, country_code, tel, 
+      loc_x, loc_y, last_login, 
+      create_time, device_id, passenger_id, 
+      status, sex, order_count, 
+      cancel_count, finish_count, deleted, 
+      rating, device_type, im_name, 
+      sign, verification)
+    select NULL AS spcar_id,username,family_name,given_name,country_code,tel,0,0,now(),now(),
+    "",realm_id,1,1,0,0,0,0,0,1,#{imClient,jdbcType=VARCHAR},#{sign,jdbcType=VARCHAR},0 from taxigouser where id = #{id,jdbcType=INTEGER}
+  </insert>
+  
+	<select id="findList" resultMap="BaseResultMap"
+		parameterType="com.yinghai.macao.common.model.SpcarPassenger">
+		select
+		<include refid="Base_Column_List" />
+		from spcar_passenger
+		where 1=1
+		<if test="familyName != null">
+			and family_name like #{familyName,jdbcType=VARCHAR}
+		</if>
+		<if test="givenName != null">
+			and given_name like #{givenName,jdbcType=VARCHAR}
+		</if>
+		<if test="name != null">
+			and name like #{name,jdbcType=VARCHAR}
+		</if>
+		<if test="countryCode != null">
+			and country_code = #{countryCode,jdbcType=VARCHAR}
+		</if>
+		<if test="status != null">
+			and status = #{status,jdbcType=INTEGER}
+		</if>
+		<if test="sex != null">
+			and sex = #{sex,jdbcType=BIT}
+		</if>
+		<if test="vip != null">
+			and vip = #{vip,jdbcType=BIT}
+		</if>
+		<if test="tel != null">
+			and tel like #{tel,jdbcType=VARCHAR}
+		</if>
+		<if test="emailVerified != null">
+			and email_verified = #{emailVerified,jdbcType=TINYINT}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime,jdbcType=TIMESTAMP}
+		</if>
+	</select>
+  
+  <select id="findByTel" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from spcar_passenger
+    where country_code = #{countryCode,jdbcType=VARCHAR} 
+    and tel = #{tel,jdbcType=VARCHAR}
+  </select>
+
+  <update id="updateUserByMap" parameterType="java.util.Map" >
+    update taxigouser
+    <set >
+      <if test="map.name != null" >
+        name = #{map.name,jdbcType=VARCHAR},
+      </if>
+      <if test="map.familyName != null" >
+        family_name = #{map.familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="map.givenName != null" >
+        given_name = #{map.givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="map.title != null" >
+        deleted = #{map.title,jdbcType=TINYINT}
+      </if>
+    </set>
+    where realm_id = #{map.spcarPassengerId,jdbcType=VARCHAR} and realm='passenger'
+  </update>
+<update id="updateTaxigoUser" parameterType="java.lang.String" >
+    update taxigouser
+    <set >
+      <if test="vip != null" >
+        vip = #{vip,jdbcType=BIT},
+      </if>
+    </set>
+    where realm_id = #{realmId,jdbcType=VARCHAR} and realm='passenger'
+  </update>
+</mapper>

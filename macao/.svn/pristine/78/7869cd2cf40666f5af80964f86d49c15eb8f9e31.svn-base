@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8" />
+<title>M'cars 澳門專車</title>
+
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="${base!}/assets/admin/css/jquery.pagination.css" />
+<style type="text/css">
+body, html {
+	height: 820px;
+	margin: 0px;
+	font: 12px Arial;
+}
+
+#container {
+	height: 820px;
+	margin: 0px;
+	font: 12px Arial;
+	width: 80%;
+	float: left;
+}
+
+.taiwan {
+	border: solid 1px red;
+	color: red;
+	float: left;
+	width: 50px;
+	background-color: rgba(255, 0, 0, 0.1)
+}
+
+.amap-marker-label {
+	background: rgba(240, 252, 255, 0.91);
+	color: rgba(23, 20, 20, 0.96);
+	/*border: solid 1px red;*/
+	border-style: none;
+}
+
+#rightBar {
+	width: 20%;
+	float: left;
+	display: block;
+}
+
+#driverlist_table {
+	height: 90%;
+}
+
+.pages {
+	position: absolute;
+	align-self: center;
+	text-align: center;
+	top:810px;
+	width: 18%;
+
+}
+
+#driver_orders {
+	width: 20%;
+	float: left;
+	display: none;
+}
+#order_pages{
+position: absolute;
+
+right : 0;
+
+display: none;
+
+}
+#order_detail{
+	width: 20%;
+	float: left;
+	display: none;
+}
+.tables {
+	position: relative;
+	margin-top: 5%;
+	width: 100%;
+	left: 2%;
+	background: white;
+	height: 50px;
+}
+
+.back {
+	position: relative;
+	top: 10px;
+}
+/*.amap-markers:hover .amap-marker-label{*/
+/*display:none;*/
+/*}*/
+td {
+	/*border: 1px solid red; 用於調整table內td的長度*/
+	
+}
+
+hr {
+	margin: 0;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0;
+	height: 1px;
+	border: none;
+	border-top: 1px solid #555555;
+}
+
+
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<script src="http://webapi.amap.com/js/marker.js"></script>
+	<script
+		src="http://webapi.amap.com/maps?v=1.3&key=0e9b6dcfb377605405574d67bc184aed"></script>
+	<!--<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>-->
+	<!-- Loading Container -->
+	<!--  /Loading Container -->
+	<!-- Navbar -->
+	<#include "../common/head.html"/>
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+			<#include "../common/menu.html"/>
+			<!-- /Page Sidebar -->
+			<!-- Page Content -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+						<li><a href="${base!}/admin/driver/list">返回列表</a></li>
+					</ul>
+				</div>
+				<!-- /Page Breadcrumb -->
+				<!-- Page Header -->
+				<div class="page-header position-relative">
+					<div class="header-title"></div>
+
+					<!--Header Buttons-->
+					<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a>
+
+					</div>
+					<!--Header Buttons End-->
+				</div>
+				<!-- /Page Header -->
+				<!-- Page Body -->
+				<div class="page-header">
+					<form action="#" method="post" id="form1">
+						<div class="page-title">
+							<span>日期</span>
+							<input name="searchTime" class="searchinput" id="searchTime" 
+							type="text" data-date-format="yyyy-mm-dd" readonly="readonly" value="" 
+							onclick="laydate({istoday:false,istime: false,isclear: true,format: 'YYYY-MM-DD',min:laydate.now(-7), max: laydate.now(-1),choose:searchData})"/>
+							<span id="today"></span>
+						</div>
+					</form>
+				</div>
+				<div class="page-body" id="container">
+				
+				</div>
+				<div id="rightBar">
+<!-- 					<div id="driverlist_table">
+					
+					</div>
+					<div id="pages" class="pages"></div> -->
+					<span id="driverId" value="${driver.spcarDriverId!}" hidden="true">${driver.spcarDriverId!}</span>
+					<table id="table${driver.spcarDriverId!}" class="tables">
+						<tr>
+							<td width="25%">
+								<img src='${base!}/assets/img/dimg.png' width='50%' height='25%'>
+							</td>
+							<td>${driver.name!}</td>
+						</tr>
+						<tr>
+							<td>
+								電話:
+							</td>
+							<td>
+								+${driver.countryCode!}-${driver.tel!}
+							</td>
+						</tr>
+						
+					</table>
+			
+						
+				</div>
+				<div id="driver_orders"> </div>
+						
+            	<div id="order_pages" class="pages"></div>
+            	
+            	<div id="order_detail"></div>
+           
+				<!-- /Page Body -->
+			</div>
+			<!-- /Page Content -->
+		</div>
+		<!-- /Page Container -->
+		<!-- Main Container -->
+
+	</div>
+
+	<script src="${base!}/assets/admin/js/laydate/laydate.js"></script>	
+	<script type="text/javascript" src="${base!}/assets/admin/js/jquery.js"></script>
+<!-- 	<script>
+		/* 查询该司机在选择日期对应的已完成订单数据， */
+		function searchData(){
+			//查询当前司机中选定日期的所有已完成订单列表
+			var driverId = $("#driverId").text();
+			var driver = $("#driverId");
+			if(driverId!=""){
+				var time = $("#searchTime").val();
+				if(time!=""){
+					var json={
+						"driverId":driverId,
+						"time":time
+					}
+					$.post("${base}/admin/driver/findAllRouteAndOrder",json,
+						function(data){
+							if(data.code=="1"){//请求成功
+								//获取司机订单数据并显示
+								var orders = data.data.order;
+								$.each(orders,function(i,order){
+										var ordersDiv = document.getElementById("driver_orders");
+										var tab = document.createElement("table");
+										tab.setAttribute("id","orderTable"+order.orderId);
+										tab.setAttribute("class","tables");
+										ordersDiv.appendChild(tab);
+										var tr1 = document.createElement("tr");
+						    			var td1 = document.createElement("td");
+						    			td1.innerHTML = "<a href='javascript:void(0)' >"+"訂單"+(i+1)+"</a>"
+						    			var td2 = document.createElement("td");
+						    			td2.innerHTML="訂單編號";
+						    			var td3 = document.createElement("td");
+						    			td3.innerHTML = order.spcarOrderId;
+						    			var tr2 = document.createElement("tr");
+						    			var td4 = document.createElement("td");
+						    			var td5 = document.createElement("td");
+						    			td5.innerHTML = "訂單狀態";
+						    			var td6 = document.createElement("td");
+						    			var tr3 = document.createElement("tr");
+						    			var td7 = document.createElement("td");
+						    			var td8 = document.createElement("td");
+						    			td8.innerHTML = "開始時間";
+						    			var td9 = document.createElement("td");
+						    			td9.innerHTML = order.startTime;
+						    			var tr4 = document.createElement("tr");
+						    			var td10 = document.createElement("td");
+						    			var td11 = document.createElement("td");
+						    			td11.innerHTML = "預約時長";
+						    			var td12 = document.createElement("td");
+						    			td12.innerHTML = order.totalHour+"小時";
+						    			if(order.status=='0' || order.status==0){
+						    				td6.innerHTML = "進行中";
+						    			}
+						    		
+						    			else if(order.status=='3' || order.status==3){
+						    				td6.innerHTML = "已配對";
+						    			}
+						    			else if(order.status=='4' || order.status==4){
+						    				td6.innerHTML = "接載中";
+						    			}
+						    			else if(order.status=='997' || order.status==997){
+						    				td6.innerHTML = "續單";
+						
+						    			}else if(order.status=='5'){
+						    				td6.innerHTML = "已完成";
+						    			}
+						    			
+					    				tab.appendChild(tr1);
+					    				tab.appendChild(tr2);
+					    				tab.appendChild(tr3);
+					    				tab.appendChild(tr4);
+					    				tr1.appendChild(td1);
+					    				tr1.appendChild(td2);
+					    				tr1.appendChild(td3);
+					    				tr2.appendChild(td4);
+					    				tr2.appendChild(td5);
+					    				tr2.appendChild(td6);
+					    				tr3.appendChild(td7);
+					    				tr3.appendChild(td8);
+					    				tr3.appendChild(td9);
+					    				tr4.appendChild(td10);
+					    				tr4.appendChild(td11);
+					    				tr4.appendChild(td12);
+					    				ordersDiv.style.display = "block";
+								})
+							}else{
+								alert(data.msg);
+							}
+							//获取位置数据并显示
+							var arr = data.data.location;
+							var lineArr = new Array();
+							$.each(arr,function(i,loc){
+								var li = new Array(loc.locX,loc.locY);
+								lineArr[i] = li;
+							});
+							
+							if(lineArr.length!=0){
+								var polyline = new AMap.Polyline({
+							        path: lineArr,          //设置线覆盖物路径
+							        strokeColor: "#3366FF", //线颜色
+							        strokeOpacity: 1,       //线透明度
+							        strokeWeight: 5,        //线宽
+							        strokeStyle: "solid",   //线样式
+							        strokeDasharray: [10, 5] //补充线样式
+							    });
+								polyline.setMap(map);
+							}
+							
+						}
+					);
+				}
+			}
+			//更新该日期全天司机对应的足迹线路
+		}
+		function time(){
+			 var now= new Date();
+			  var year=now.getFullYear();
+			  var month=now.getMonth();
+			  var date=now.getDate();
+			//获取相应ID
+			 document.getElementById("today").innerHTML="只能选择当前日期的前一周记录，当前日期："+year+"-"+(month+1)+"-"+date;
+		}
+	</script> -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		time();
+	});
+	var polyline; 
+	var map = new AMap.Map('container', {
+		resizeEnable : true,
+		zoom : 9,
+		center : [ 113.548604, 22.189792 ]
+	});
+	//    var provinces = [{
+	//        "name": "聖家學院",
+	//        "center": "113.549331,22.200161",
+	//        "type": 0,
+	//        "subDistricts": []
+	//    }, {
+	//        "name": "信志大廈",
+	//        "center": "113.545898,22.199128",
+	//        "type": 0,
+	//        "subDistricts": []
+	//    }, {
+	//        "name": "利安大廈",
+	//        "center": "113.549294,22.198001",
+	//        "type": 0,
+	//        "subDistricts": []
+	//    }, {
+	//        "name": "澳門國父紀念館",
+	//        "center": "113.553997,22.196919",
+	//        "type": 0,
+	//        "subDistricts": []
+	//    }];
+	var icon = new AMap.Icon({
+		image : '${base!}/assets/img/driver_point_green.png',
+		size : new AMap.Size(30, 30),
+		imageSize : new AMap.Size(30, 30)
+
+	});
+	var icon2 = new AMap.Icon({
+		image : '${base!}/assets/img/driver_point_red.png',//24px*24px
+		//icon可缺省，缺省时为默认的蓝色水滴图标，
+		size : new AMap.Size(30, 30),
+		imageSize : new AMap.Size(30, 30)
+	});
+	//    var markers = []; //province见Demo引用的JS文件
+	//    for (var i = 0; i < provinces.length; i += 1) {
+	//        var marker;
+	//        if (provinces[i].type === 0) {
+	//
+	//            marker = new AMap.Marker({
+	//                icon: icon,
+	//                position: provinces[i].center.split(','),
+	//                offset: new AMap.Pixel(-12, -12),
+	//                zIndex: 101,
+	//                title: provinces[i].name,
+	//                src: provinces[i].name,
+	//                map: map
+	//            });
+	//        } else {
+	//            marker = new AMap.Marker({
+	//                position: provinces[i].center.split(','),
+	//                title: provinces[i].name,
+	//                src: provinces[i].name,
+	//                map: map
+	//            });
+	//
+	//        }
+	//        markers.push(marker);
+	//    }
+	var redMarker = "";
+	var nowPage = 1;
+	var orderPage = 1;
+	var markerList = new Array(); //司机标注数组
+	
+	var firstLoad = true; //初次地图加载
+	
+	/* 查询该司机在选择日期对应的已完成订单数据， */
+	function searchData(){
+		//查询当前司机中选定日期的所有已完成订单列表
+		var driverId = $("#driverId").text();
+		var driver = $("#driverId");
+		if(driverId!=""){
+			var time = $("#searchTime").val();
+			if(time!=""){
+				var json={
+					"driverId":driverId,
+					"time":time
+				}
+				$.post("${base}/admin/driver/findAllRouteAndOrder",json,
+					function(data){
+						if(data.code=="1"){//请求成功
+							//获取司机订单数据并显示
+							var orders = data.data.order;
+							var ordersDiv = document.getElementById("driver_orders");
+							ordersDiv.innerHTML = "";
+							$.each(orders,function(i,order){
+									var tab = document.createElement("table");
+									tab.setAttribute("id","orderTable"+order.orderId);
+									tab.setAttribute("class","tables");
+									ordersDiv.appendChild(tab);
+									var tr1 = document.createElement("tr");
+					    			var td1 = document.createElement("td");
+					    			td1.innerHTML = "<a href='javascript:void(0)' >"+"訂單"+(i+1)+"</a>"
+					    			var td2 = document.createElement("td");
+					    			td2.innerHTML="訂單編號";
+					    			var td3 = document.createElement("td");
+					    			td3.innerHTML = order.spcarOrderId;
+					    			var tr2 = document.createElement("tr");
+					    			var td4 = document.createElement("td");
+					    			var td5 = document.createElement("td");
+					    			td5.innerHTML = "訂單狀態";
+					    			var td6 = document.createElement("td");
+					    			var tr3 = document.createElement("tr");
+					    			var td7 = document.createElement("td");
+					    			var td8 = document.createElement("td");
+					    			td8.innerHTML = "開始時間";
+					    			var td9 = document.createElement("td");
+					    			td9.innerHTML = order.startTime;
+					    			var tr4 = document.createElement("tr");
+					    			var td10 = document.createElement("td");
+					    			var td11 = document.createElement("td");
+					    			td11.innerHTML = "預約時長";
+					    			var td12 = document.createElement("td");
+					    			td12.innerHTML = order.totalHour+"小時";
+					    			if(order.status=='0' || order.status==0){
+					    				td6.innerHTML = "進行中";
+					    			}
+					    		
+					    			else if(order.status=='3' || order.status==3){
+					    				td6.innerHTML = "已配對";
+					    			}
+					    			else if(order.status=='4' || order.status==4){
+					    				td6.innerHTML = "接載中";
+					    			}
+					    			else if(order.status=='997' || order.status==997){
+					    				td6.innerHTML = "續單";
+					
+					    			}else if(order.status=='5'){
+					    				td6.innerHTML = "已完成";
+					    			}
+					    			
+				    				tab.appendChild(tr1);
+				    				tab.appendChild(tr2);
+				    				tab.appendChild(tr3);
+				    				tab.appendChild(tr4);
+				    				tr1.appendChild(td1);
+				    				tr1.appendChild(td2);
+				    				tr1.appendChild(td3);
+				    				tr2.appendChild(td4);
+				    				tr2.appendChild(td5);
+				    				tr2.appendChild(td6);
+				    				tr3.appendChild(td7);
+				    				tr3.appendChild(td8);
+				    				tr3.appendChild(td9);
+				    				tr4.appendChild(td10);
+				    				tr4.appendChild(td11);
+				    				tr4.appendChild(td12);
+				    				ordersDiv.style.display = "block";
+							})
+						}else{
+							alert(data.msg);
+						}
+						//获取位置数据并显示
+						var arr = data.data.location;
+						var lineArr = new Array();
+						map.clearMap();
+						$.each(arr,function(i,loc){
+							var li = new Array(loc.locY,loc.locX);
+							lineArr[i] = li;
+					        var marker = new AMap.Marker({
+					            icon : 'http://192.168.0.176:8088/images/circle.png',//24px*24px
+					            position : li,
+					            offset : new AMap.Pixel(-6,-6),
+					            zoomEnable:false,
+					            map : map
+					    	});
+						});
+						if(lineArr.length!=0){
+							polyline = new AMap.Polyline({
+						        path: lineArr,          //设置线覆盖物路径
+						        strokeColor: "#3366FF", //线颜色
+						        strokeOpacity: 1,       //线透明度
+						        strokeWeight: 5,        //线宽
+						        strokeStyle: "solid",   //线样式
+						        strokeDasharray: [10, 5] //补充线样式
+						    });
+							polyline.setMap(map);
+						}
+						
+					}
+				);
+			}
+		}
+		//更新该日期全天司机对应的足迹线路
+	}
+	function time(){
+		 var now= new Date();
+		  var year=now.getFullYear();
+		  var month=now.getMonth();
+		  var date=now.getDate();
+		//获取相应ID
+		 document.getElementById("today").innerHTML="只能选择当前日期的前一周记录，当前日期："+year+"-"+(month+1)+"-"+date;
+	}
+		    
+	</script>
+<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+<script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+
+<script type="text/javascript" src="${base!}/assets/admin/js/jquery.pagination.min.js"></script>
+</body>
+<!--  /Body -->
+</html>
+						

@@ -1,0 +1,42 @@
+package com.yinghai.macao.common.service;
+
+import java.util.List;
+
+import com.yinghai.macao.common.model.Spcar;
+import com.yinghai.macao.common.model.SpcarDriver;
+import com.yinghai.macao.common.util.Page;
+
+/**
+ * Created by Administrator on 2017/5/16.
+ */
+public interface SpcarService {
+    /**
+     * 查找沒有使用的專車
+     * @return
+     */
+    List<Spcar> findNoUsedList();
+	/**
+	 * 查找列表
+	 * @param pageNum 第几页
+	 * @param pageSize 每页条数
+	 * @param spcarDriver
+	 * @return
+	 */
+	Page<Spcar> findList(int pageNum,int pageSize,Spcar spcar);
+	int delete(Integer id);
+	
+	Spcar findById(Integer id);
+	/**
+	 * 检查该车牌号码是否存在
+	 * @param spcar
+	 * @return
+	 */
+	Spcar findBySpcarNo(String spcarNo);
+	int createSpcar(Spcar spcar);
+	int updateSpcar(Spcar spcar);
+	/**
+	 * 查找所有专车
+	 * @return
+	 */
+	List<Spcar> findAllList();
+}

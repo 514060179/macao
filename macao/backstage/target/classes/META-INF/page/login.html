@@ -1,0 +1,90 @@
+<html lang="en" class="fixed accounts sign-in"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>M'cars澳門專車</title>
+    <script src="${base!}/assets/admin/js/jquery-2.0.3.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="${base!}/assets/css/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="${base!}/assets/css/stylesheets/css/style.css">
+    
+</head>
+
+<body>
+
+
+
+<div class="wrap">
+    <div class="page-body animated slideInDown">
+        <div class="logo">
+            <img alt="logo" src="${base!}/assets/img/logo-dark.png">
+        </div>
+        <div class="box">
+            <div class="panel mb-none">
+                <div class="panel-content bg-scale-0">
+                    <form>
+                        <div class="form-group mt-md">
+                            <span class="input-with-icon">
+                                    <input type="text" class="form-control" id="username" name = "username" placeholder="Email">
+                                    <i class="fa fa-envelope"></i>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                                <span class="input-with-icon">
+                                        <input type="password" class="form-control" id="password" name = "password"  placeholder="Password">
+                                        <i class="fa fa-key"></i>
+                                    </span> 
+                        </div>
+
+                        <div class="form-group">
+                           <button class="btn btn-theme btn-block" type="submit" id="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$("#submit").click(
+		function() {
+	 var username = document.getElementById('username').value;
+		 var password = document.getElementById('password').value;
+	if (username == "") {
+		$("#username").focus();
+		alert("请输入正确账号!");
+	} else if (password == "") {
+		$("#password").focus();
+		alert("请输入正确密码!");
+	} else {
+		var jsonUser = {
+			"username" : username,
+			"password" : password
+		};
+		$.post( "${base!}/managerLogin/login", jsonUser,
+				function(date) {
+					if (date.code=="1") {
+						window.location.href = "${base}/admin/driver/list";
+					}else if(date.code=="105"){
+						alert("用戶名或密碼錯誤！");
+						$("username").focus();
+					}else if(date.code=="102"){
+						alert("用戶不存在，請重新輸入！");
+						$("username").focus()
+					}else{
+						alert("系統異常，稍後重試！");
+					}
+				})
+	}
+	return false;
+		})
+
+
+	</script>
+</body></html>

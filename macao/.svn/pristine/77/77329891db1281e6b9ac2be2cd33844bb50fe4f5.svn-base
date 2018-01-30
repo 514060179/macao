@@ -1,0 +1,21 @@
+package com.yinghai.macao.app.dao;
+
+import com.yinghai.macao.app.model.TaxigoAccessTokens;
+
+public interface TaxigoAccessTokensDao {
+	  int deleteByPrimaryKey(String id);
+
+	    int insert(TaxigoAccessTokens record);
+
+	    int insertSelective(TaxigoAccessTokens record);
+
+	    TaxigoAccessTokens selectByPrimaryKey(String id);
+	    
+	    TaxigoAccessTokens selectByUserId(String userId);
+
+	    int updateByPrimaryKeySelective(TaxigoAccessTokens record);
+
+	    int updateByPrimaryKey(TaxigoAccessTokens record);
+	    
+	    TaxigoAccessTokens selectByRealmId(Integer realmId);
+}

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        .driverArrive{animation:change 1s linear 0s infinite;}
+        /*@keyframes change{0% {color:#333;}25%{color:#ff0;}50%{color:#f60;}75%{color:#cf0;}100% {color:#f00;}}*/
+
+        @keyframes change{
+            0%{background-color: rgba(0, 0, 0, 0);}
+
+            100% {background-color: rgba(0, 0, 0, 0.25);}
+
+        }
+        .toMatch{
+        	background-color:#FAFAD2;
+        }
+        .laydate_body .laydate_y .laydate_yms ul{
+  		width: inherit;
+		}
+    </style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<!-- Loading Container -->
+<#include "../common/head.html"/>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+        <!-- Page Sidebar -->
+
+        <#include "../common/menu.html"/>
+            <!-- /Sidebar Menu -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <#if back??>
+	                    <li>
+	                    	<i class="fa fa-backward"></i>
+	                    	<#if back=1>
+	                        <a href="${base!}/admin/driver/edit?act=upd&id=${id}">后退</a>
+	                        <#else>
+	                        <a href="${base!}/admin/passenger/edit?act=upd&id=${id}">后退</a>
+	                        </#if>
+	                    </li>
+                    </#if>
+
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                </div>
+
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#"title="放大">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="" href=""title="刷新">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a  id="fullscreen-toggler" href="#" title="全屏">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                    <a  href="${base!}/admin/order/edit" title="新增">
+                        <i class="glyphicon glyphicon-plus"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="widget">
+                        <form action="${base!}/admin/order/list" method="post" id="form1">
+                            <div class="widget-header ">
+                                <span class="widget-caption">訂單列表</span> 司機手機號：  <input
+										class="searchinput" type="text"
+										value='${drivertel!}' id='drivertel'
+										name='drivertel' onkeyup="searchenter(event);">
+										乘客手機號：  <input
+										class="searchinput" type="text"
+										value='${tel!}' id='tel'
+										name='tel' onkeyup="searchenter(event);">訂單狀態：
+                                    <select class="selectpicker" name="status" id='status' onchange="runQuery();">
+                                        <option value="">所有狀態</option>
+                                        <option value="999" <#if status??><#if status='999'>selected</#if></#if> >未支付</option>
+                                        <option value="2" <#if status??><#if status='2'>selected</#if></#if> >匹配中</option>
+                                        <option value="3" <#if status??><#if status='3'>selected</#if></#if> >已匹配(司機未確認)</option>
+                                        <option value="6" <#if status??><#if status='6'>selected</#if></#if> >已匹配(司機已確認)</option>
+                                        <option value="4;0" <#if status??><#if status='4;0'>selected</#if></#if> >接載并進行</option>
+                                        <option value="5" <#if status??><#if status='5'>selected</#if></#if> >已完成</option>
+                                        <option value="998" <#if status??><#if status='998'>selected</#if></#if> >已取消</option>
+                                        <option value="997" <#if status??><#if status='997'>selected</#if></#if> >续单</option>
+                                  </select>支付方式：
+                                    <select class="selectpicker" name="payWayCode" id='payWayCode' onchange="runQuery();">
+                                        <option value="">所有方式</option>
+                                        <option value="0" <#if payWayCode??><#if payWayCode='0'>selected</#if></#if> >微信APP</option>
+                                        <option value="1" <#if payWayCode??><#if payWayCode='1'>selected</#if></#if> >支付寶</option>
+                                        <option value="2" <#if payWayCode??><#if payWayCode='2'>selected</#if></#if> >PayPal支付</option>
+                                        <option value="3" <#if payWayCode??><#if payWayCode='3'>selected</#if></#if> >微信公眾號</option>
+                                        <option value="4" <#if payWayCode??><#if payWayCode='4'>selected</#if></#if> >現金支付</option>
+                                        <option value="5" <#if payWayCode??><#if payWayCode='5'>selected</#if></#if> >月結</option>
+                                  </select>
+                                    編號：
+                                    <input type="text" class="searchinput" name="spcarOrderId" id = 'spcarOrderId'value="${spcarOrderId!}" onkeyup="searchenter(event);">
+                                    下單時間：
+                                    <input name="createTimeS" class="searchinput" id="createTimeS" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" value="${createTimeS!}" onkeyup="searchenter(event)" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">--
+                                    <input name="createTimeE" class="searchinput" id="createTimeE" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" value="${createTimeE!}" onkeyup="searchenter(event);" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
+                                <i class="searchicon fa fa-search" onclick="submit()" title="查询"></i>
+                                <i class="typcn typcn-cross" onclick="doExcel()" title="導出列表"></i>
+                                <div class="widget-buttons">
+                                        <a href="#" data-toggle="maximize">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="widget-body">
+                                <table class="table table-bordered table-hover" id="simpledatatable">
+                                    <thead>
+                                    <#if page??>
+                                    <tr>
+                                        <th>
+                                            編號
+                                        </th>
+                                        <th>
+                                           乘客姓名
+                                        </th>
+                                        <th>
+                                           乘客電話
+                                        </th>
+                                        <th>
+                                           司機電話
+                                        </th>
+                                        <th>
+                                           支付方式
+                                        </th>
+                                        <th>
+                                            訂單狀態
+                                        </th>
+
+                                        <th>
+                                            金額（元）
+                                        </th>
+                                        <th>
+                                            上車地點 
+                                        </th>
+                                        <th>
+                                            下車地點 
+                                        </th>
+                                        <th>
+                                            訂單時長（小時）
+                                        </th>
+										  <th>
+                                            起始時間
+                                        </th>
+										  <th>
+                                            下單時間
+                                        </th>
+										  <th>
+                                            計時器
+                                        </th>
+                                        <th>更多操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <#list page as item>
+                                                <#if item.status=4>
+                                                    <#if item.spcarDriver??>
+                                                        <#if item.spcarDriver.status='4'>
+                                                            <tr class="driverArrive">
+                                                        </#if>
+                                                    </#if>
+                                                <#elseif item.status=2>
+                                                	<tr class="toMatch">
+                                                <#else>
+                                                    <tr>
+                                                </#if>
+                                            <td><a href="${base!}/admin/order/show?id=${item.spcarOrderId!}&act=upd">${item.spcarOrderId!}</a>
+                                            </td>
+                                                <td><#if item.spcarPassenger??>${item.alias!}</#if></td>
+                                                <td><#if item.spcarPassenger??>${item.spcarPassenger.countryCode!}-${item.spcarPassenger.tel!}</#if></td>
+                                                 <td><#if item.spcarDriver??>${item.spcarDriver.countryCode!}-${item.spcarDriver.tel!}</#if></td>
+                                                <td>
+                                              <#if item.payWayCode??>   <#if item.payWayCode=0>APP微信
+                                                        <#elseif item.payWayCode=1>支付寶
+                                                            <#elseif item.payWayCode=2>PayPal支付
+                                                            <#elseif item.payWayCode=3>微信公眾號
+                                                            <#elseif item.payWayCode=4>现金<#elseif item.payWayCode=5>月結</#if>  </#if></td>
+                                            <td class="s">
+                                                <#if item.status=0>進行中
+                                                        <#elseif item.status=2>匹配中
+                                                            <#elseif item.status=3>已匹配
+                                                            <#elseif item.status=6>已匹配 <spcan style="color: red">(司機已確認)</spcan>
+                                                                <#elseif item.status=4>接載中
+                                                                    <#elseif item.status=5>已完成
+                                                                        <#elseif item.status=999>未支付
+                                                                        <#elseif item.status=998>已取消
+                                                                        <#elseif item.status=997>續單 <spcan style="color: red">( ${item.orderId!})</spcan>
+                                                </#if>
+                                                <#if (item.status=999||item.status=998)>
+                                                        <#if item.orderId??>
+                                                            <spcan style="color: red">(续单 ${item.orderId!})</spcan>
+                                                        </#if>
+                                               </#if>
+                                               
+                                         
+                                               
+											       <#if item.status=4>
+                                                    <#if item.spcarDriver??>
+                                                        <#if item.spcarDriver.status='4'>
+                                                            <spcan style="color: red">(司機已到達)</spcan>
+                                                        </#if>
+                                                    </#if>
+                                                </#if>
+                                            </td>
+ 										  <td><#if item.amount??>   ￥ ${item.amount/100.00!}</#if> </td>
+ 										     <td>
+                                             ${item.startAddress!}
+                                            </td>
+                                            <td>
+                                             ${item.endAddress!}
+                                            </td>
+                                            <td>${item.totalHour!}</td>
+                                            <td>${(item.startTime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
+                                            <td>${(item.createTime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
+                                            <td class="status">
+                                                <#if item.status=0>
+                                                    <span id="hour${item_index}">${item.passengerArriveTimeL.hour!}</span>小时
+                                                    <span id="minute${item_index}">${item.passengerArriveTimeL.minute!}</span>分
+                                                    <span id="seconds${item_index}">${item.passengerArriveTimeL.seconds!}</span>秒
+                                                </#if>
+                                                <#if item.status=4>
+                                                    <#if item.driverSetoutTime??>
+                                                        <#if item.driverArriveTime??>
+                                                            <span id="hour${item_index}">${item.driverArriveTimeL.hour!}</span>小时
+                                                            <span id="minute${item_index}">${item.driverArriveTimeL.minute!}</span>分
+                                                            <span id="seconds${item_index}">${item.driverArriveTimeL.seconds!}</span>秒
+                                                        <#else>
+                                                            <span id="hour${item_index}">${item.driverSetoutTimeL.hour!}</span>小时
+                                                            <span id="minute${item_index}">${item.driverSetoutTimeL.minute!}</span>分
+                                                            <span id="seconds${item_index}">${item.driverSetoutTimeL.seconds!}</span>秒
+                                                        </#if>
+                                                    </#if>
+                                                </#if>
+                                            </td>
+
+                                                <td>
+                                                <#if item.status=0><button onclick="compiled(${item.spcarOrderId!})" class="btn btn-danger">完成訂單</button>
+                                                    <#elseif item.status=2><button onclick="showDriverList(${item.spcarOrderId!})" class="btn btn-default">選擇專車</button>
+                                                        <#elseif (item.status=3||item.status=6)><button onclick="driverSetOut(${item.spcarOrderId!})" class="btn btn-primary">前往接載</button>
+                                                        		<button onclick="changeSpcar(${item.spcarOrderId!})" class="btn btn-info">更换司机</button>
+                                                            <#elseif item.status=4><button onclick="comfirmArrive(${item.spcarOrderId!})" class="btn btn-success">司機到達</button><button onclick="comfirmCarry(${item.spcarOrderId!})" class="btn btn-info">接到乘客</button>
+                                                            
+                                                </#if>
+                                                <#if (item.status==0||item.status==2||item.status==3||item.status==4||item.status==6||item.status==997) > <button onclick="showReback(${item.spcarOrderId!})" class="btn btn-warning">取消訂單</button></#if>
+                                                <#if item.orderId??><#else><#if item.status!=2><#if item.status!=998><#if item.status!=5><#if item.status!=999>
+                                                <a href="${base}/admin/order/edit?orderId=${item.spcarOrderId!}">續單</a>
+                                                </#if></#if></#if></#if></#if>
+                                              <#if item.status=0><button class="icon" onclick="showOrderDirection(${item.spcarOrderId!})" title="途徑">
+                                                                                <span class="typcn typcn-camera-outline"></span>
+                                                                            </button>
+                                              <#elseif item.status=5>
+                                              <button class="icon" onclick="showOrderDirection(${item.spcarOrderId!})" title="途徑">
+                                                                                <span class="typcn typcn-camera-outline"></span>
+                                                                            </button>
+                                              </#if>
+                                              <#if ((item.status==2||item.status==3)&&item.payWayCode==5)><span class="ng-binding"> <a
+													href="${base!}/admin/order/edit?id=${item.spcarOrderId!}&act=upd">編輯</a>
+													</#if>
+                                            </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <div class="row DTTTFooter">
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_info" id="simpledatatable_info" role="alert" aria-live="polite" aria-relevant="all">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <#import "/ftl/pager.ftl" as p/>
+                                        <#if page??>
+                                            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount pageCount=pageCount toURL="${base!}/admin/order/list" method="post"/>
+                                        </#if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+<div id="newMessageDIV" style="display:none"></div>
+</div>
+
+<!--Basic Scripts-->
+<!--Sparkline Charts Needed Scripts-->
+<script src="${base!}/assets/admin/js/laydate/laydate.js"></script>
+<script>
+	function changeSpcar(id){
+		$.post("${base}/vip/session", function(data){
+            if (data.code == "1") {
+                layer.open({
+                    title:"更換專車司機",
+                    shift:1,
+                    type: 2,
+                    area: ['650px', '500px'],
+                    shadeClose :true,
+                    content: ['${base}/admin/order/changeSpcar?id='+id,'no'],
+                    close:function(){
+                    	 var timerId = window.setInterval(refresh,10000);
+                         $(document).data("timer",timerId);
+                    },
+                    end:function () {
+                        window.location.reload();
+                        var timerId = window.setInterval(refresh,10000);
+                        $(document).data("timer",timerId);
+                    }
+                });
+                window.clearInterval($(document).data("timer"));
+            }else{
+                window.location.href="${base!}";
+            }
+        })
+	}
+
+</script>
+<script>
+    var timeRefresh = 20000;
+    $(document).ready(function(){
+
+        //定时刷新页面
+        var timerId = window.setInterval(refresh,timeRefresh);
+        $(document).data("timer",timerId);
+        play();
+    });
+    function play(){
+        $(".s").each(function(){
+           if($(this).text().trim()=="匹配中"){
+               $('#newMessageDIV').html('<audio autoplay="autoplay"><source src="/images/voice/neworder.mp3"'
+                   + 'type="audio/wav"/><source src="/images/voice/neworder.mp3" type="audio/mpeg"/></audio>');
+               return;
+           }
+        });
+        //IE9+,Firefox,Chrome均支持<audio/>
+
+
+    }
+    function refresh() {
+        location.reload();
+    }
+    function showDriverList(id){
+        $.post("${base}/vip/session", function(data){
+            if (data.code == "1") {
+                layer.open({
+                    title:"選擇專車",
+                    shift:1,
+                    type: 2,
+                    area: ['650px', '500px'],
+                    shadeClose :true,
+                    content: ['${base}/admin/order/chooseSpcar?id='+id,'no'],
+                    close:function(){
+                   		var timerId = window.setInterval(refresh,timeRefresh);
+                        $(document).data("timer",timerId);
+                    },
+                    end:function () {
+                        window.location.reload();
+                        var timerId = window.setInterval(refresh,timeRefresh);
+                        $(document).data("timer",timerId);
+                    }
+                });
+                window.clearInterval($(document).data("timer"));
+            }else{
+                window.location.href="${base!}";
+            }
+        })
+
+    }
+    function showOrderDirection(id){
+        $.post('${base}/admin/order/showOrderDirection?id='+id, function(data){
+            if (data.code == "1") {
+            	var str = data.msg;
+            	layer.open({
+            		  title: '途徑'+data.orderId
+            		  ,content: str
+            		});   
+            }else{
+                window.location.href="${base!}";
+            }
+        })
+
+    }
+function driverSetOut(orderId) {
+    var json = {
+        "orderId":orderId
+    }
+    if(confirm("確定司機前往接載？訂單編號#"+orderId)){
+        $.post("${base}/admin/order/driverSetOut",json,function(data){
+            if (data.code == "1") {
+                alert("success");
+                window.location.reload();
+            }else {
+                alert(data.msg);
+            }
+
+        });
+    }
+}
+function comfirmArrive(orderId){
+    var json = {
+        "orderId":orderId
+    }
+    if(confirm("確定司機已到達接載乘客處？訂單編號#"+orderId)){
+        $.post("${base}/admin/order/comfirmArrive",json,function(data){
+            if (data.code == "1") {
+                alert("success");
+                window.location.reload();
+            }else {
+                alert(data.msg);
+            }
+        });
+    }
+}
+    function compiled(orderId){
+        var json = {
+            "orderId":orderId
+        }
+        if(confirm("確定完成訂單？訂單編號#"+orderId)){
+            $.post("${base}/admin/order/orderFinished",json,function(data){
+                if (data.code == "1") {
+                    alert("success");
+                    window.location.reload();
+                }else {
+                    alert(data.msg);
+                }
+            });
+        }
+    }
+function comfirmCarry(orderId){
+    var json = {
+        "orderId":orderId
+    }
+        if(confirm("確定司機已接到乘客？訂單編號#"+orderId)){
+            $.post("${base}/admin/order/comfirmCarry",json,function(data){
+                if (data.code == "1") {
+                    alert("success");
+                    window.location.reload();
+                }else {
+                    alert(data.msg);
+                }
+            });
+        }
+    }
+    function doExcel(){
+    	var boo = true;
+    	var status = $('#status option:selected')
+		.val();
+		var payWayCode = $('#payWayCode option:selected')
+		.val();
+		var drivertel = document.getElementById('drivertel').value;
+		var tel = document.getElementById('tel').value;
+		var spcarOrderId = document.getElementById('spcarOrderId').value;
+		var createTimeS = document.getElementById('createTimeS').value;
+		var createTimeE = document.getElementById('createTimeE').value;
+		var jsonUser = {};
+		if(status!=''){
+			jsonUser["status"] = status;
+		}
+		if(payWayCode!=''){
+			jsonUser["payWayCode"] = payWayCode;
+		}
+		if(drivertel!=''){
+			jsonUser["drivertel"] = drivertel;
+		}
+		if(tel!=''){
+			jsonUser["tel"] = tel;
+		}
+		if(spcarOrderId!=''){
+			jsonUser["spcarOrderId"] = spcarOrderId;
+		}
+		if(createTimeS!=''){
+			jsonUser["createTimeS"] = createTimeS;
+		}
+		if(createTimeE!=''){
+			jsonUser["createTimeE"] = createTimeE;
+		}
+    	   $.post("${base!}/admin/order/doExcel",jsonUser,function(data){
+    		   if (data.code == "-1") {
+                   alert(data.msg);
+                   return false;
+               }else{
+            	   document.getElementById("form1").action="${base!}/admin/order/doExcel";
+              	 $("#form1").submit();
+               }
+    	   });
+    }
+function showReback(orderId){
+//    $.post("${base}/vip/session", function(data){
+//        if (data.code == "1") {
+//            layer.prompt({
+//                formType:1,
+//                title: '輸入操作密碼',
+//                type:'password',
+//                shadeClose :true
+//            },function(val, index){
+//                layer.msg('得到了'+val);
+//                //验证密码
+//                var json = {
+//                    "pwd":val,
+//                    "orderId":orderId
+//                }
+//                $.post("${base}/admin/order/refund",json,function(data){
+//                    if (data.code == "1") {
+//                       //展开页面形式
+//                        window.location.href=data.data;
+//                    }else {
+//                        alert(data.msg);
+//                    }
+//                });
+//                layer.close(index);
+//            });
+//        }else{
+//
+//        }
+//    });
+//默认prompt
+    window.location.href="${base}/admin/order/rebackPage?orderId="+orderId;
+}
+//提交表單
+    function submit(){
+    	document.getElementById("form1").action="${base!}/admin/order/list";
+   	 	$("#form1").submit();
+    }
+    
+    function runQuery(){
+    	submit();
+	}
+	function searchenter(event) {
+        event = event || window.event;
+        if (event.keyCode == 13) {
+        	submit();
+        }
+    } 
+   
+</script>
+
+
+<script>
+    //计时器：
+    function msTimeCount(){
+        this._hour=0;   //“小时”数
+        this._minute=0;   //“分”数
+        this._seconds=0;  //“秒”数
+        //
+        this._hourHtmlObj={};//“小时”html对象
+        this._minuteHtmlObj={};//“分”html对象
+        this._secondsHtmlObj={};//“秒”html对象
+        //
+        this._totalSeconds=0;//总秒数
+    };
+    msTimeCount.prototype={
+        //1.获取对象
+        $:function(ID){
+            return document.getElementById(ID);
+        },
+        //2.初始化：
+        /*
+         * arrTime:  传入时间数组，格式为[1,30,30]，代表 1小时30分30秒;
+         * arrHtmlObj: 更新时间数据的Html对象数组，格式为["hour","minute","seconds"];
+         */
+        init:function(arrTime,arrHtmlObj){
+            var _this=this;
+            _this._hour=parseInt(arrTime[0]);
+            _this._minute=parseInt(arrTime[1]);
+            _this._seconds=parseInt(arrTime[2]);
+            _this._hourHtmlObj=_this.$(arrHtmlObj[0]);
+            _this._minuteHtmlObj=_this.$(arrHtmlObj[1]);
+            _this._secondsHtmlObj=_this.$(arrHtmlObj[2]);
+            _this._totalSeconds=parseInt(_this._hour*60*60+_this._minute*60+_this._seconds);
+            //开始计时：
+            _this.timeCount();
+        },
+        //3.计时器：
+        timeCount:function(){
+            var _this=this;
+            var tmpTimeCount=setInterval(
+                function(){
+                    _this._totalSeconds++;
+                    //alert(_this._totalSeconds);
+                    _this.refreshTime();
+                    if(_this._totalSeconds<1){
+                        clearInterval(tmpTimeCount);
+                        return;
+                    }
+                }
+                ,1000);
+        },
+        //4.刷新页面时间:
+        refreshTime:function(){
+            var _this=this;
+            if(_this._totalSeconds>0){
+                _this._hour=parseInt(_this._totalSeconds/3600);
+                _this._minute=parseInt((_this._totalSeconds-_this._hour*3600)/60);
+                _this._seconds=_this._totalSeconds-_this._hour*3600-_this._minute*60;
+            }else{
+                _this._hour=_this._minute=_this._seconds=0;
+            }
+            _this._hourHtmlObj.innerHTML=_this._hour;
+            _this._minuteHtmlObj.innerHTML=_this._minute;
+            _this._secondsHtmlObj.innerHTML=_this._seconds;
+        }
+    }
+    $(document).ready(function () {
+        $(".status").each(function(index,element){
+            if($(element).text().trim()==""){
+                return;
+            }
+            var timeCount0=new msTimeCount();
+            var hour = parseInt($("#hour"+index).text());
+            var minute = parseInt($("#minute"+index).text());
+            var seconds = parseInt($("#seconds"+index).text());
+            timeCount0.init([hour,minute,seconds],["hour"+index,"minute"+index,"seconds"+index]);
+        })
+    })
+</script>
+</body>
+<!--  /Body -->
+</html>

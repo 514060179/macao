@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>M'cars 澳門專車</title>
+
+    <meta name="description" content="Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Loading Container -->
+	<#include "../common/head.html"/>
+	<!-- /Navbar -->
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<!-- Page Sidebar -->
+
+			<#include "../common/menu.html"/>
+			<!-- /Sidebar Menu -->
+			<div class="page-content">
+				<!-- Page Breadcrumb -->
+				<div class="page-breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#">Home</a></li>
+						<li><a href="${base!}/admin/driver/list">返回列表</a></li>
+					</ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>專車</h1>
+                    <small>
+                        <i class="fa fa-angle-right"></i>
+                         <#if spcarDriver??>编辑司機#${spcarDriver.spcarDriverId}<#else>新增司機 </#if>
+                    </small>
+                </div>
+
+                <!--Header Buttons-->
+<div class="header-buttons">
+						<a class="sidebar-toggler" href="#" title="放大"> <i
+							class="fa fa-arrows-h"></i>
+						</a> <a class="" href="" title="刷新"> <i
+							class="glyphicon glyphicon-refresh"></i>
+						</a> <a id="fullscreen-toggler" href="#" title="全屏"> <i
+							class="glyphicon glyphicon-fullscreen"></i>
+						</a> <a href="${base!}/admin/driver/edit" title="新增"> <i
+							class="glyphicon glyphicon-plus"></i>
+						</a>
+					</div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-2"></div>
+                    <div class="col-sm-8">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header">
+                                <span class="widget-caption">新增</span>
+                            </div>
+                            <div class="widget-body">
+                                <form action='${base}/admin/driver/save' enctype="multipart/form-data"  id="registrationForm" method="post" class="form-horizontal bv-form" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" novalidate="novalidate">
+                                    <div class="form-title">
+                                        根據提示填寫以下內容
+                                         <input type="hidden" class="form-control" id="id" name="id" value="<#if spcarDriver??>${spcarDriver.spcarDriverId!}</#if>" >
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">姓名</label>
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" value='<#if spcarDriver??>${spcarDriver.familyName!}</#if>'id="firstName" name="firstName" placeholder="First name" data-bv-notempty="true" data-bv-notempty-message="The first name is required and cannot be empty" data-bv-field="firstName"><i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">The first name is required and cannot be empty</small></div>
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" value='<#if spcarDriver??>${spcarDriver.givenName!}</#if>' id="lastName" name="lastName" placeholder="Last name" data-bv-notempty="true" data-bv-notempty-message="The last name is required and cannot be empty" data-bv-field="lastName"><i class="form-control-feedback" data-bv-field="lastName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="lastName" class="help-block" style="display: none;">The last name is required and cannot be empty</small></div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">手機</label>
+                                        <div class="col-lg-4">
+                                            <select class="selectpicker" id= 'countryCode' name= 'countryCode'  onchange = 'checkTel()'<#if spcarDriver??>disabled="disabled"</#if>>
+                                                <option value="853" <#if spcarDriver??><#if
+											spcarDriver.countryCode='853'>selected</#if></#if> >Macaw 853</option>
+                                                <option value="852" <#if spcarDriver??><#if
+											spcarDriver.countryCode='852'>selected</#if></#if> >HK 852</option>
+                                                <option value="86" <#if spcarDriver??><#if
+											spcarDriver.countryCode='86'>selected</#if></#if> >P.R.C 86</option>
+                                            </select>
+                                            <i class="form-control-feedback" data-bv-field="firstName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="firstName" class="help-block" style="display: none;">The first name is required and cannot be empty</small></div>
+                                        <div class="col-lg-4">
+                                            <input type="text" value='<#if spcarDriver??>${spcarDriver.tel!}</#if>' onchange = 'checkTel()' class="form-control" id="tel" name="tel" placeholder="phone" data-bv-notempty="true" data-bv-notempty-message="The last name is required and cannot be empty" data-bv-field="lastName" <#if spcarDriver??>disabled="disabled"</#if> ><i class="form-control-feedback" data-bv-field="lastName" style="display: none;"></i>
+                                            <small data-bv-validator="notEmpty" data-bv-validator-for="lastName" class="help-block" style="display: none;">The last name is required and cannot be empty</small></div>
+                                    		<p class="help-block" style="color:red;font-size:10px;"></p>
+                                    </div>
+
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">牌照號碼</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" value='<#if spcarDriver??>${spcarDriver.licenseTrue!}</#if>' class="form-control" id="license_true" name="license_true" data-bv-message="The license is not valid" data-bv-notempty="true" data-bv-notempty-message="The license is required and cannot be empty" data-bv-regexp="true" data-bv-regexp-regexp="[a-zA-Z0-9_\.]+" data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore" data-bv-stringlength="true" data-bv-stringlength-min="6" data-bv-stringlength-max="30" data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long" data-bv-different="true" data-bv-different-field="password" data-bv-different-message="The username and password cannot be the same as each other" data-bv-field="username"><i class="form-control-feedback" data-bv-field="username" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="license" class="help-block" style="display: none;">The username and password cannot be the same as each other</small><small data-bv-validator="notEmpty" data-bv-validator-for="username" class="help-block" style="display: none;">The username is required and cannot be empty</small><small data-bv-validator="regexp" data-bv-validator-for="username" class="help-block" style="display: none;">The username can only consist of alphabetical, number, dot and underscore</small><small data-bv-validator="stringLength" data-bv-validator-for="username" class="help-block" style="display: none;">The username must be more than 6 and less than 30 characters long</small></div>
+                                    </div>
+
+                          
+
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">牌照到期日</label>
+                                        <div class="col-lg-8">
+                                         <input type="date" value='<#if spcarDriver??>${spcarDriver.licenseTill?string("yyyy-MM-dd")}</#if>' data-date-format="yyyy-MM-dd " class="form-control" id="license_till" name="license_till" data-bv-message="The form-control is not valid" data-bv-notempty="true" data-bv-notempty-message="The license is required and cannot be empty" data-bv-regexp="true" data-bv-regexp-regexp="[a-zA-Z0-9_\.]+" data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore" data-bv-stringlength="true" data-bv-stringlength-min="6" data-bv-stringlength-max="30" data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long" data-bv-different="true" data-bv-different-field="password" data-bv-different-message="The username and password cannot be the same as each other" data-bv-field="username"><i class="form-control-feedback" data-bv-field="username" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="password" class="help-block" style="display: none;">The password cannot be the same as username</small><small data-bv-validator="identical" data-bv-validator-for="password" class="help-block" style="display: none;">The password and its confirm are not the same</small><small data-bv-validator="notEmpty" data-bv-validator-for="password" class="help-block" style="display: none;">The password is required and cannot be empty</small></div>
+                                    </div>
+
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label">牌照文件</label>
+                                        <div class="col-lg-8">
+                                            <img src="<#if spcarDriver??>${base}/${spcarDriver.image!}</#if>" id="previewFile" style="height:150px;width:150px;border: 1px solid #ddd;" />
+                                            <a href="javascript:;" class="a-upload">
+                                                <input type="file" id="file" name="file" >
+                                                 <input type="hidden" id="boochange" name="boochange" value='false'>
+                                                  <input type="hidden" id="id" name="id" value='<#if spcarDriver??>${spcarDriver.spcarDriverId!}</#if>'>
+                                            </a><i class="form-control-feedback" data-bv-field="confirmPassword" style="display: none;"></i>
+                                            <small data-bv-validator="different" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The password cannot be the same as username</small><small data-bv-validator="identical" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The password and its confirm are not the same</small><small data-bv-validator="notEmpty" data-bv-validator-for="confirmPassword" class="help-block" style="display: none;">The confirm password is required and cannot be empty</small></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-4"></div>
+                                        <div class="col-xs-4">
+                                            <input class="btn btn-default btn-lg btn-block" type="button" id ='submits' value="Validate">
+                                        </div>
+                                        <div class="col-xs-4"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+
+</div>
+
+<!--Page Related Scripts-->
+<!--Sparkline Charts Needed Scripts-->
+
+
+<script>
+function getFileType(filePath){  
+    var startIndex = filePath.lastIndexOf(".");  
+    if(startIndex != -1)  
+        return filePath.substring(startIndex+1, filePath.length).toLowerCase();  
+    else return "";  
+}  
+$("#submits").click(
+		function() {
+			  var firstName = document.getElementById("firstName").value;
+              var lastName = document.getElementById('lastName').value;
+              var countryCode = $('#countryCode option:selected').val();
+              var tel = document.getElementById('tel').value;
+              var id = document.getElementById('id').value;
+              var license = document.getElementById('license_true').value;
+              var license_till = $("#license_till").val();
+			  var boochange = $("#boochange").val();
+			  if (firstName == "") {
+					$("#firstName").focus();
+					alert("请輸入姓!");
+					return false;
+				}  if (lastName == "") {
+					$("#lastName").focus();
+					alert("请輸入名字 ！");
+					return false;
+				}  if (tel == "") {
+					$("#tel").focus();
+					alert("请输入電話號碼!");
+					return false;
+				}  if (license == "") {
+					$("#license").focus();
+					alert("請輸入駕照號碼!");
+					return false;
+				}  if (license_till == "") {
+					$("#license_till").focus();
+					alert("请輸入駕照到期時間!");
+					return false;
+				}  
+				var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+					if (countryCode == 853 || countryCode == 852) {
+						reg = /^0?6\d{7}$/;
+						if (!reg.test(tel)) {
+							// alert("");
+							$("#tel").focus();
+							$("#tel").next().text("該手機號不合法！");
+							return false;
+						} else {
+							$("#tel").next().text("");
+						}
+					} else {
+						if (!reg.test(tel)) {
+							$("#tel").focus();
+							$("#tel").next().text("該手機號不合法！");
+							return false;
+						} else {
+							$("#tel").next().text("");
+						}
+					}
+					var boo = false;
+					 $.post("${base}/admin/driver/checkTel?tel="+tel+"&countryCode="+countryCode+"&id="+id, 
+				                function(data) {
+				                    if (data.code == "105") {
+				                    	boo=true;
+				                    	alert("該手機號已存在!");
+				                    	$("#tel").focus();
+										$("#tel").next().text("該手機號不合法！");
+										return false;
+				                    } 
+				                    if(boo){
+										 return false;
+									 }
+									//$("#registrationForm").submit();
+									var filePath = $("#file").val();  
+									if("" != filePath){  
+									    var fileType = getFileType(filePath);  
+									    //判断上传的附件是否为图片  
+									    if("jpg"!=fileType && "jpeg"!=fileType && "bmp"!=fileType && "png"!=fileType && "gif"!=fileType){  
+									        alert("请上传JPG,JPEG,BMP,PNG,GIF格式的图片");  
+									        return false;
+									    }  
+									    else{  
+									        //获取附件大小（单位：KB）  
+									        var fileSize = document.getElementById("file").files[0].size / 1024;  
+									        if(fileSize > 2048){  
+									            alert("图片大小不能超过2MB");  
+									            return false;
+									        }  
+									    } 
+									}
+									 document.getElementById("registrationForm").submit();
+				                });
+					
+
+		});
+    $('#date-picker').datepicker();
+    $(document).ready(function () {
+        document.getElementById('file').onchange = function(evt) {
+            // 如果浏览器不支持FileReader，则不处理
+            if (!window.FileReader) return;
+            document.getElementById("boochange").value='true';
+            var files = evt.target.files;
+            for (var i = 0, f; f = files[i]; i++) {
+                if (!f.type.match('image.*')) {
+                    continue;
+                }
+                var reader = new FileReader();
+                reader.onload = (function(theFile) {
+
+                    return function(e) {
+                        // img 元素
+                        document.getElementById('previewFile').style.display='block';
+                        document.getElementById('previewFile').src = e.target.result;
+                    };
+                })(f);
+                reader.readAsDataURL(f);
+            }
+        } 
+    	
+    })
+  
+    function checkTel() {
+			var tel = document.getElementById("tel").value;
+			var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+			var countryCode = $('#countryCode option:selected').val();
+			if (tel != null && tel != '') {
+				if (countryCode == 853 || countryCode == 852) {
+					reg = /^0?6\d{7}$/;
+					if (!reg.test(tel)) {
+						// alert("");
+						$("#tel").focus();
+						$("#tel").next().text("該手機號不合法！");
+						alert("該手機號不合法！");
+						return false;
+					} else {
+						$("#tel").next().text("");
+					}
+				} else {
+					if (!reg.test(tel)) {
+						$("#tel").focus();
+						$("#tel").next().text("該手機號不合法！");
+						alert("該手機號不合法！");
+						return false;
+					} else {
+						$("#tel").next().text("");
+					}
+				}
+			}
+	            $.post("${base}/admin/driver/checkTel?tel="+tel+"&countryCode="+countryCode, 
+	                function(data) {
+	                    if (data.code == "105") {
+	                    	alert("該手機號已存在!");
+	                    	$("#tel").focus();
+							$("#tel").next().text("該手機號不合法！");
+	                    } 
+	                });
+		}
+</script>
+
+
+</body>
+<!--  /Body -->
+</html>

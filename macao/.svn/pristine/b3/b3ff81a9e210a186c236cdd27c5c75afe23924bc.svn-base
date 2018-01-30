@@ -1,0 +1,112 @@
+package com.yinghai.macao.app.controller;
+
+import com.yinghai.macao.common.model.SpcarPassenger;
+import com.yinghai.macao.common.service.SpcarPassengerService;
+import com.yinghai.macao.common.util.JsonDateValueProcessor;
+import com.yinghai.macao.common.util.ResponseUtils;
+import com.yinghai.macao.common.util.StringUtil;
+import com.yinghai.macao.common.util.TransformUtils;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by Administrator on 2017/6/5.
+ */
+@Controller
+@RequestMapping("spcar")
+public class SpcarPassengerController {
+    @Autowired
+    SpcarPassengerService spcarPassengerService;
+    @RequestMapping(value = "/me", method = RequestMethod.POST)
+    public void passengerDetail(HttpServletRequest request, HttpServletResponse response){
+
+        String spcarPassnegerId = request.getParameter("spcarPassnegerId");//乘客id
+        JSONObject responseObject = new JSONObject();
+        JsonConfig config = new JsonConfig();
+        config.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+        if (StringUtil.empty(spcarPassnegerId)) {
+            responseObject.put("msg", "spcarPassnegerId不能为空！");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        SpcarPassenger spcarPassenger = spcarPassengerService.findById(Integer.parseInt(spcarPassnegerId));
+        if(spcarPassenger==null){
+            responseObject.put("msg", "没有找到该用户："+spcarPassnegerId);
+            responseObject.put("code", "102");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        JSONObject data = JSONObject.fromObject(spcarPassenger, config);
+        responseObject.put("msg", "success");
+        responseObject.put("code", "1");
+        responseObject.put("data", data);
+        ResponseUtils.renderJson(response, responseObject.toString());
+    }
+    @RequestMapping(value = "/updateUser", method = RequestMethod.POST)
+    public void updatePassenger(HttpServletRequest request, HttpServletResponse response){
+        JSONObject responseObject = new JSONObject();
+        String familyName = TransformUtils.toString(request.getParameter("familyName"));
+        String givenName = TransformUtils.toString(request.getParameter("givenName"));
+        String title = TransformUtils.toString(request.getParameter("title"));
+        String spcarPassengerId = TransformUtils.toString(request.getParameter("spcarPassengerId"));
+        Map<String,String> map = new HashMap<String,String>();
+        if(spcarPassengerId == null || "".equals(spcarPassengerId.trim())){
+            responseObject.put("msg", "spcarPassengerId not exist");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(familyName == null || "".equals(familyName.trim())){
+            responseObject.put("msg", "familyName not exist");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(givenName == null || "".equals(givenName.trim())){
+            responseObject.put("msg", "givenName not exist");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        if(title == null || "".equals(title.trim())){
+            responseObject.put("msg", "title not exist");
+            responseObject.put("code", "101");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+            return;
+        }
+        map.put("familyName",familyName);
+        map.put("givenName",givenName);
+        map.put("name",familyName + givenName);
+        map.put("title",Integer.parseInt(title)==0?"0":"1");
+        map.put("spcarPassengerId",spcarPassengerId);
+        int i = spcarPassengerService.updateTaxigoUser(map);
+        if(i>0){
+            responseObject.put("msg", "success");
+            responseObject.put("code", "1");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+        }else{
+            responseObject.put("msg", "更新失败！");
+            responseObject.put("code", "0");
+            responseObject.put("data", new JSONObject());
+            ResponseUtils.renderJson(response, responseObject.toString());
+        }
+    }
+}
